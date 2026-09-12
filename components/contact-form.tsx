@@ -215,7 +215,7 @@ export function ContactForm({
             htmlFor="message"
             className="mb-1.5 block text-sm font-semibold text-slate-700"
           >
-            {aiMode ? "What should we build?" : "What should we audit?"}
+            {aiMode ? "What AI surface should we test?" : "What should we audit?"}
           </label>
           <textarea
             id="message"
@@ -224,7 +224,7 @@ export function ContactForm({
             rows={5}
             placeholder={
               aiMode
-                ? "The AI feature, data you already have, current stack, and what done looks like..."
+                ? "Chatbot / RAG / agent, stack, next release date, and failure modes that worry you..."
                 : "Product, stack, next release date, and the journeys that must not break..."
             }
             className={`${inputClassName} resize-y`}

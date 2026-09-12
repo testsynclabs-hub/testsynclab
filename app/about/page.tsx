@@ -13,7 +13,7 @@ import { futureRoadmap, SITE_LINKEDIN, SITE_NAME, team } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "TestSync Lab is a worldwide QA agency founded by two QA partners, with in-house AI engineering for practical copilots, RAG, and workflow automation.",
+    "TestSync Lab is a worldwide QA agency founded by two QA partners, with AI testing for chatbots and LLM products — plus optional AI build when needed.",
   alternates: { canonical: "/about" },
 };
 
@@ -26,8 +26,8 @@ export default function AboutPage() {
             About {SITE_NAME}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Two QA founders. One in-house AI engineer. Quality first — with
-            practical AI when a product actually needs it.
+            Two QA founders. AI testing for modern products. Quality first —
+            including the chatbots and LLM features your customers already use.
           </p>
         </div>
       </section>
@@ -45,11 +45,12 @@ export default function AboutPage() {
               always know who owns quality outcomes.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
-              AI development is live now, delivered by an in-house engineer —
-              copilots, RAG, and workflow automation, tested like the rest of
-              the product. We work with clients worldwide. Timezones are a
-              feature when handoffs are structured: your day ends with a build;
-              our day starts with verification.
+              AI testing is live now — chatbots, RAG, copilots, and LLM
+              workflows — so AI features get the same release bar as the rest of
+              the product. Optional build support exists when you need a slice
+              shipped and tested together. We work with clients worldwide.
+              Timezones are a feature when handoffs are structured: your day ends
+              with a build; our day starts with verification.
             </p>
             <a
               href={SITE_LINKEDIN}

@@ -31,7 +31,11 @@ Link: https://www.testsynclab.com/contact
 - Publish 1 blog already on site to LinkedIn as a document/carousel summary.
 - Ask every connection for 1 intro (referrals convert fastest).
 
-## SEO you must click (cannot be done in code)
+## AI testing (client magnet)
+US/CA SaaS teams ship chatbots and copilots fast. Offer **AI testing** (golden
+sets, hallucination/jailbreak checks, RAG faithfulness) beside QA retainers.
+Build/sprint is optional secondary — do not lead with “we also develop AI.”
+Outbound angle: “We QA the AI feature you already shipped.”
 1. [Google Search Console](https://search.google.com/search-console) → add `testsynclab.com` → DNS or HTML-file verify → submit `https://testsynclab.com/sitemap.xml`.
 2. Do **not** create a Google Business Profile with a fake US/Canada street address. That is a trust and policy risk. Remote + honest timezone copy ranks cleaner than a fake NAP.
 3. After the site is live with the new pages, request indexing on `/`, `/qa-services-usa`, `/qa-services-canada`, `/outsourced-qa`, `/pricing`, `/contact`.

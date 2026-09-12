@@ -1,6 +1,6 @@
 export const FREE_QA_AUDIT_LABEL = "Free QA Audit" as const;
 export const FREE_QA_AUDIT_PLAN = "audit" as const;
-export const AI_CONSULT_LABEL = "Talk about AI" as const;
+export const AI_CONSULT_LABEL = "Talk about AI testing" as const;
 export const AI_CONSULT_PLAN = "ai" as const;
 
 export const PLAN_LABELS: Record<string, string> = {
@@ -9,8 +9,10 @@ export const PLAN_LABELS: Record<string, string> = {
   growth: "Growth",
   scale: "Scale",
   enterprise: "Enterprise",
-  ai: "AI development",
-  "ai-sprint": "AI Feature Sprint",
+  ai: "AI testing",
+  "ai-test-sprint": "AI Testing Sprint",
+  "ai-qa-retainer": "AI + QA retainer add-on",
+  "ai-sprint": "AI Feature Sprint (build + test)",
   "ai-pod": "AI + QA pod",
 };
 

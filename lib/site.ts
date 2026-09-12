@@ -27,16 +27,17 @@ export const SITE_KEYWORDS = [
   "Regression Testing",
   "Remote QA Partner",
   "TestSync Lab",
-  "AI development services",
-  "LLM feature development",
-  "RAG chatbot development",
+  "AI testing services",
+  "chatbot testing",
+  "LLM QA",
+  "RAG testing",
 ] as const;
 
 /** Flat links for footer / sitemap-style lists */
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/ai", label: "AI" },
+  { href: "/ai", label: "AI testing" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
@@ -90,8 +91,8 @@ export const primaryNav: PrimaryNavItem[] = [
       },
       {
         href: "/ai",
-        label: "AI development",
-        description: "Copilots, RAG, and workflow automation — with QA included.",
+        label: "AI testing",
+        description: "Chatbots, RAG, LLM evals, and AI product QA.",
       },
     ],
   },
@@ -121,7 +122,7 @@ export const primaryNav: PrimaryNavItem[] = [
       {
         href: "/about",
         label: "About us",
-        description: "QA founders plus in-house AI engineering.",
+        description: "QA founders with AI testing and optional AI build.",
       },
       {
         href: "/qa-services-usa",
@@ -141,7 +142,7 @@ export const primaryNav: PrimaryNavItem[] = [
       {
         href: "/contact",
         label: "Contact",
-        description: "Book a free QA audit or ask about an AI feature.",
+        description: "Book a free QA audit or ask about AI testing.",
       },
     ],
   },
@@ -209,7 +210,7 @@ export const team = [
   {
     title: "In-house AI engineer",
     detail:
-      "Practical LLM features, RAG, and copilots — built as product slices, not demos.",
+      "Supports AI testing on chatbots and LLM products — plus optional build sprints when you need a feature and the QA gate together.",
   },
 ] as const;
 
@@ -261,9 +262,9 @@ export const organizationJsonLd = {
       },
       {
         "@type": "Offer",
-        name: "AI Feature Sprint",
+        name: "AI Testing Sprint",
         description:
-          "Scoped AI feature development — copilots, RAG, or workflow automation — with QA included",
+          "Scoped QA for chatbots, RAG, and LLM products — golden sets, jailbreak checks, and release gates",
       },
     ],
   },

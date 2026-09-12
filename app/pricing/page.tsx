@@ -52,11 +52,12 @@ export default function PricingPage() {
       <section className="border-t border-line bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl">
-            AI work is scoped separately
+            AI testing is scoped separately
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Monthly QA retainers stay predictable. AI sprints are quoted after a
-            short discovery so you are not buying an open-ended experiment.
+            Monthly QA retainers stay predictable. AI testing sprints are quoted
+            after a short discovery so you are not buying an open-ended
+            experiment.
           </p>
           <ul className="mt-10 grid gap-5 md:grid-cols-2">
             {aiPackages.map((plan) => (
@@ -85,9 +86,9 @@ export default function PricingPage() {
             ))}
           </ul>
           <p className="mt-8 text-sm text-muted">
-            Full AI lanes, evals, and sprint flow:{" "}
+            Full AI testing lanes and sprint flow:{" "}
             <Link href="/ai" className="font-semibold text-brand hover:text-brand-deep">
-              AI development →
+              AI testing →
             </Link>
           </p>
         </div>

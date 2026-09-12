@@ -26,7 +26,7 @@ export function AiServiceBanner({ source }: AiServiceBannerProps) {
           href="/ai"
           className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-brand-deep hover:bg-brand-soft"
         >
-          Explore AI services
+          Explore AI testing
         </Link>
         <Link
           href={aiHref(source)}

@@ -10,7 +10,7 @@ import { services } from "@/lib/site";
 export const metadata: Metadata = {
   title: "QA Services",
   description:
-    "Manual testing, API validation, Playwright/Selenium automation, performance, and practical AI development for product teams worldwide.",
+    "Manual testing, API validation, Playwright/Selenium automation, performance, and AI testing for chatbots and LLM products.",
   alternates: { canonical: "/services" },
 };
 

@@ -1,55 +1,57 @@
+/** AI Testing is the client-facing AI lane. Build sprints stay optional/secondary. */
+
 export const aiOffer = {
-  eyebrow: "Live now — not a roadmap item",
-  title: "Practical AI development",
+  eyebrow: "QA lane — live now",
+  title: "AI testing for chatbots & LLM products",
   summary:
-    "In-house AI engineering for product teams that need a useful feature, not a demo. Copilots, RAG, and workflow automation — shipped with the same QA bar as the rest of TestSync Lab.",
+    "Senior QA for AI features US and Canadian product teams are already shipping: chatbots, copilots, RAG search, and AI workflows. We catch hallucinations, broken tools, weak retrieval, and release regressions — before your users do.",
   differentiator:
-    "Most AI shops ship a prompt. We ship a product slice you can test, regress, and release.",
+    "Most vendors demo prompts. We test AI like a release: happy path, failure path, jailbreaks, and a golden set you can re-run when the model changes.",
 } as const;
 
 export const aiLanes = [
   {
-    slug: "copilots",
-    title: "Product copilots & chat",
+    slug: "chatbot-testing",
+    title: "Chatbot & copilot QA",
     summary:
-      "In-app assistants that answer from your product context — not a generic chatbot bolted onto a help page.",
+      "Conversation quality, guardrails, and tool actions — not just “does the widget open?”",
     points: [
-      "Scoped user journeys and guardrails",
-      "Tool/function calling when the product needs actions, not only answers",
-      "Tone, citations, and fallbacks that match your brand",
+      "Intent coverage across real user journeys",
+      "Tone, refusal, and escalation checks",
+      "Tool/function-calling failures and side effects",
     ],
   },
   {
-    slug: "rag",
-    title: "RAG & knowledge search",
+    slug: "rag-testing",
+    title: "RAG & knowledge QA",
     summary:
-      "Retrieval over docs, tickets, or internal knowledge so answers stay grounded in your data.",
+      "Grounded answers from your docs and tickets — with clear failure when retrieval is weak.",
     points: [
-      "Chunking, indexing, and source freshness",
-      "Cited answers with “I don’t know” when retrieval is weak",
-      "Evaluation set so quality does not drift after launch",
+      "Citation / source faithfulness spot-checks",
+      "Stale, missing, and conflicting document cases",
+      "“I don’t know” behavior when context is thin",
     ],
   },
   {
-    slug: "automation",
-    title: "AI workflow automation",
+    slug: "llm-evals",
+    title: "LLM evals & prompt regression",
     summary:
-      "Practical LLM steps inside existing ops: triage, summaries, classification, and draft replies.",
+      "Repeatable eval sets so a model or prompt swap does not silently break production.",
     points: [
-      "Human-in-the-loop where mistakes are expensive",
-      "Structured outputs your systems can actually consume",
-      "Logging so you can debug a bad answer next week",
+      "Golden-set scoring before you change models",
+      "Prompt and system-instruction regression",
+      "Release gates you can plug into CI",
     ],
   },
   {
-    slug: "ai-quality",
-    title: "AI quality & evals",
+    slug: "ai-product-qa",
+    title: "AI product & workflow QA",
     summary:
-      "The QA-native lane: hallucination checks, prompt regression, and release gates for model changes.",
+      "End-to-end quality for AI-built features: triage, summaries, classification, draft replies.",
     points: [
-      "Golden-set evals before you swap a model",
-      "Regression for prompts, tools, and retrieval",
-      "Same reporting cadence as our QA retainers",
+      "Human-in-the-loop paths and override behavior",
+      "Structured output contract checks",
+      "Privacy, PII leak, and abuse scenarios",
     ],
   },
 ] as const;
@@ -57,57 +59,66 @@ export const aiLanes = [
 export const aiEngagementSteps = [
   {
     step: "01",
-    title: "Scope the smallest useful feature",
+    title: "Map AI risk on your product",
     detail:
-      "We pick one job-to-be-done, the data you already have, and what “done” looks like — not a 40-page AI strategy deck.",
+      "We list the AI surfaces (chat, search, agents), failure modes that hurt revenue or trust, and the thinnest useful test plan for the next release.",
   },
   {
     step: "02",
-    title: "Build in a time-boxed sprint",
+    title: "Build a golden set you own",
     detail:
-      "Your AI engineer ships against a written spec. QA partners test the happy path, failure path, and obvious jailbreaks.",
+      "Real prompts, expected behaviors, and severity. This becomes the regression memory every time you swap a model or tweak a prompt.",
   },
   {
     step: "03",
-    title: "Release with a quality bar",
+    title: "Run release gates with QA retainers",
     detail:
-      "You get the feature, the eval notes, and a maintainable handoff — so it does not rot the week after go-live.",
+      "Findings go to Slack/Jira like the rest of your QA. Add AI coverage to Basic/Growth/Scale — or run a focused AI testing sprint before a launch.",
   },
 ] as const;
 
 export const aiPackages = [
   {
-    id: "ai-sprint",
-    name: "AI Feature Sprint",
+    id: "ai-test-sprint",
+    name: "AI Testing Sprint",
     priceLabel: "Scoped",
     priceNote: "fixed quote",
     description:
-      "One practical AI feature — copilot, RAG, or workflow — with QA baked into the sprint, not added after launch.",
-    ctaLabel: "Scope a sprint",
-    ctaHref: "/contact?plan=ai-sprint&source=ai-pricing",
+      "Time-boxed QA for one AI surface — chatbot, RAG, or workflow — with a written risk map and golden-set starter.",
+    ctaLabel: "Scope AI testing",
+    ctaHref: "/contact?plan=ai-test-sprint&source=ai-pricing",
     features: [
-      "Discovery call and written scope",
-      "Build against one job-to-be-done",
-      "QA on happy path, edges, and failure modes",
-      "Eval notes and handoff docs",
+      "AI surface + risk discovery",
+      "Golden-set starter (prompts + expected behavior)",
+      "Happy path, failure path, jailbreak / abuse checks",
+      "Written findings with severity and repro",
       "Fixed quote before we start",
     ],
   },
   {
-    id: "ai-pod",
-    name: "AI + QA pod",
+    id: "ai-qa-retainer",
+    name: "AI + QA retainer add-on",
     priceLabel: "Custom",
     priceNote: "monthly",
     description:
-      "Ongoing AI iteration plus the same monthly quality cadence that already protects your releases.",
-    ctaLabel: "Talk about a pod",
-    ctaHref: "/contact?plan=ai-pod&source=ai-pricing",
+      "Ongoing AI regression beside your monthly QA package — so model and prompt changes do not surprise production.",
+    ctaLabel: "Add AI to QA",
+    ctaHref: "/contact?plan=ai-qa-retainer&source=ai-pricing",
     features: [
-      "In-house AI engineer capacity",
-      "QA coverage on AI and product paths",
-      "Prompt / retrieval regression as models change",
+      "Fits beside Basic / Growth / Scale",
+      "Prompt & retrieval regression each cycle",
+      "Chatbot / RAG release smoke",
       "Shared Slack and weekly status",
       "Scoped month to month",
     ],
   },
 ] as const;
+
+/** Optional secondary lane — not the hero offer */
+export const aiBuildNote = {
+  title: "Need the feature built too?",
+  detail:
+    "We can scope a small AI feature sprint when you need build + test together. Most inbound buyers start with AI testing on what they already shipped.",
+  href: "/contact?plan=ai-sprint&source=ai-build-note",
+  label: "Ask about build + test",
+} as const;

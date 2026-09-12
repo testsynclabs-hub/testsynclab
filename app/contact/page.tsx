@@ -25,9 +25,9 @@ export async function generateMetadata({
 
   if (isAiInquiry(plan)) {
     return {
-      title: "Talk about AI development",
+      title: "Talk about AI testing",
       description:
-        "Scope a practical AI feature with TestSync Lab — copilots, RAG, or workflow automation, with QA included.",
+        "Scope chatbot, RAG, or LLM product QA with TestSync Lab — golden sets, jailbreak checks, and release gates.",
       alternates: { canonical: "/contact" },
     };
   }
@@ -60,12 +60,12 @@ export default async function ContactPage({
           </p>
           <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
             {aiMode
-              ? "Talk about an AI feature"
+              ? "Talk about AI testing"
               : "Book your free QA audit"}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
             {aiMode
-              ? "Share the job-to-be-done, the data you already have, and the deadline. We will recommend a scoped sprint or an AI + QA pod — or tell you it is not a fit yet."
+              ? "Share the AI surface (chatbot, RAG, agent), the stack, and the next release date. We will recommend an AI testing sprint or an AI add-on to your QA retainer — or tell you it is not a fit yet."
               : "Share your website, product context, and release goals. We'll map risks and recommend the right monthly package — this is the same form every blog post sends you to."}
           </p>
         </div>
@@ -107,7 +107,7 @@ export default async function ContactPage({
                     the conversation
                   </li>
                   <li>• Scoped quote after a short discovery, not hourly drift</li>
-                  <li>• QA included so the feature can survive a release</li>
+                  <li>• Golden sets + release gates for chatbots and LLM features</li>
                 </>
               ) : (
                 <>

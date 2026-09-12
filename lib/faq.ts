@@ -91,20 +91,20 @@ export const faqs: FaqItem[] = [
   },
   {
     category: "AI",
-    question: "Do you only do QA, or can you also build AI features?",
+    question: "Do you test AI chatbots and LLM products?",
     answer:
-      "QA retainers are the core offer. We also ship practical AI features now — copilots, RAG, and workflow automation — with an in-house AI engineer. Custom software and BPO stay on the later roadmap so we do not pretend to be a full agency yet.",
+      "Yes. AI testing is a live QA lane: chatbots, copilots, RAG search, prompt regression, and AI workflow quality. We build golden sets, check hallucinations and jailbreaks, and gate releases the same way we gate the rest of your product.",
   },
   {
     category: "AI",
-    question: "How is AI work priced compared with monthly QA retainers?",
+    question: "How is AI testing priced compared with monthly QA retainers?",
     answer:
-      "QA stays on clear monthly packages ($999 / $1,899 / $2,799). AI is scoped as a fixed-quote feature sprint or a custom AI + QA pod. You get a written scope before we start — not an open-ended experiment billed by the hour.",
+      "QA stays on clear monthly packages ($999 / $1,899 / $2,799). AI testing is a scoped sprint (fixed quote) or a monthly add-on beside your retainer. You get a written scope before we start — not an open-ended AI experiment billed by the hour.",
   },
   {
     category: "AI",
-    question: "Why buy AI from a QA lab instead of a specialist AI studio?",
+    question: "Can you also build AI features, or only test them?",
     answer:
-      "Because the feature has to survive a release. We build the slice and test the happy path, failure path, and obvious jailbreaks in the same engagement. Most AI demos skip that. If you only need testing, start with a free QA audit instead.",
+      "Testing is the default offer — that is what most US and Canadian buyers need first. If you also need a small feature built, we can scope build + test together. Custom software and BPO stay on the later roadmap.",
   },
 ];
