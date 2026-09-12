@@ -32,6 +32,11 @@ body {
   font-family: var(--font-body), ui-sans-serif, sans-serif;
 }
 
+/* Avoid double Free QA Audit CTAs while the mobile nav is open */
+body.mobile-nav-open [data-sticky-cta] {
+  display: none;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

@@ -16,6 +16,52 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-testing-sprint-vs-retainer-addon",
+    title: "AI Testing Sprint vs Retainer Add-on: What to Buy First",
+    description:
+      "Keep monthly QA packages clean. Buy an AI Testing Sprint first, then add ongoing AI regression beside Growth or Scale — without burying open-ended AI work in Basic.",
+    date: "2026-09-12",
+    readingTime: "6 min",
+    tags: ["AI Testing", "Pricing"],
+    keywords: [
+      "AI testing pricing",
+      "chatbot QA sprint",
+      "LLM QA retainer",
+      "AI testing add-on",
+      "RAG testing cost",
+    ],
+    sections: [
+      {
+        heading: "Do not stuff AI into Basic",
+        paragraphs: [
+          "Basic, Growth, and Scale are meant to be boring in a good way: clear monthly capacity for product QA. AI chatbots, RAG, and tool-calling copilots need discovery before a fair quote. If a vendor hides that work inside a $999 line, you will either under-test the model or overpay for capacity you cannot use.",
+          "TestSync Lab keeps AI testing separate on purpose. Monthly QA retainers stay on /pricing. AI testing is a scoped sprint or a Growth/Scale add-on — written scope first.",
+        ],
+      },
+      {
+        heading: "Buy the sprint when the surface is new or risky",
+        paragraphs: [
+          "Choose an AI Testing Sprint when one surface matters for the next release: an in-app chatbot, a RAG search path, or an agent that calls tools. You get a risk map, a golden-set starter, jailbreak and failure-path checks, and findings with severity — on a fixed quote.",
+          "That is the right first buy when the feature is already live, about to launch, or recently swapped models. You do not need a full AI “transformation.” You need evidence before the next deploy.",
+        ],
+      },
+      {
+        heading: "Add the retainer when prompts and models keep changing",
+        paragraphs: [
+          "Once the golden set exists, most teams need regression every cycle — the same way Playwright protects checkout. The AI + QA add-on sits beside Growth or Scale: shared Slack, weekly status, prompt and retrieval smoke on release weeks.",
+          "Basic can host light AI smoke on request, but Growth or Scale is the better pair when automation and release gates already matter. Enterprise can take AI testing pods when you have multiple products.",
+        ],
+      },
+      {
+        heading: "How to start without a long RFP",
+        paragraphs: [
+          "Open contact with plan “AI Testing Sprint” or “AI + QA retainer add-on,” share the AI surface, stack, and next release date. We reply with a yes, a narrower scope, or a no. Classic product QA still starts with a free audit on /pricing.",
+          "Read the AI testing page for lanes (chatbot, RAG, evals, workflows). The decision is simple: sprint for a time-boxed risk cut, add-on when the model keeps moving.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "outsourced-qa-for-us-startups",
     title: "Outsourced QA for US Startups: What to Buy Before You Hire",
     description:
@@ -123,7 +169,7 @@ export const blogPosts: BlogPost[] = [
         heading: "The demo is not the product",
         paragraphs: [
           "Most AI work dies in the week after a demo. The chatbot answers the founder’s three sample questions, then hallucinates on a real customer ticket, leaks a competitor’s pricing, or silently fails when retrieval returns nothing.",
-          "That is not an AI problem first. It is a quality problem. TestSync Lab is a QA agency. AI testing is a live lane because US and Canadian product teams are shipping chatbots and copilots faster than they can verify them.",
+          "That is not an AI problem first. It is a quality problem. TestSync Lab is a QA agency. AI testing is a live lane because product teams are shipping chatbots and copilots faster than they can verify them.",
         ],
       },
       {

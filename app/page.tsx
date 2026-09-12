@@ -372,6 +372,23 @@ export default function HomePage() {
           <Reveal>
             <PackageGrid />
           </Reveal>
+          <p className="mt-10 text-center text-sm text-muted">
+            Shipping a chatbot or RAG feature? AI testing stays separate —{" "}
+            <Link
+              href="/pricing#ai-testing"
+              className="font-semibold text-brand hover:text-brand-deep"
+            >
+              see AI testing options
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/ai"
+              className="font-semibold text-brand hover:text-brand-deep"
+            >
+              explore the AI lane
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

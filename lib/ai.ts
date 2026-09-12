@@ -1,12 +1,19 @@
-/** AI Testing is the client-facing AI lane. Build sprints stay optional/secondary. */
+/** AI Testing is the client-facing AI lane. Keep it scoped separately from monthly QA retainers. */
 
 export const aiOffer = {
   eyebrow: "QA lane — live now",
   title: "AI testing for chatbots & LLM products",
   summary:
-    "Senior QA for AI features US and Canadian product teams are already shipping: chatbots, copilots, RAG search, and AI workflows. We catch hallucinations, broken tools, weak retrieval, and release regressions — before your users do.",
+    "Senior QA for AI features product teams are already shipping: chatbots, copilots, RAG search, and AI workflows. We catch hallucinations, broken tools, weak retrieval, and release regressions — before your users do.",
   differentiator:
     "Most vendors demo prompts. We test AI like a release: happy path, failure path, jailbreaks, and a golden set you can re-run when the model changes.",
+} as const;
+
+/** Why AI stays off the $999 / $1,899 / $2,799 cards */
+export const aiPackagePolicy = {
+  headline: "AI testing stays separate from monthly QA packages",
+  body: "Basic, Growth, and Scale stay predictable for product QA. AI surfaces need a short discovery before a fair quote — so we sell a scoped sprint or a retainer add-on, not a vague line item inside Basic.",
+  tip: "Most teams start with an AI Testing Sprint, then add ongoing AI regression beside Growth or Scale.",
 } as const;
 
 export const aiLanes = [
@@ -73,7 +80,7 @@ export const aiEngagementSteps = [
     step: "03",
     title: "Run release gates with QA retainers",
     detail:
-      "Findings go to Slack/Jira like the rest of your QA. Add AI coverage to Basic/Growth/Scale — or run a focused AI testing sprint before a launch.",
+      "Findings go to Slack/Jira like the rest of your QA. Run a focused AI Testing Sprint before launch — or add AI regression beside Growth or Scale.",
   },
 ] as const;
 
@@ -83,6 +90,7 @@ export const aiPackages = [
     name: "AI Testing Sprint",
     priceLabel: "Scoped",
     priceNote: "fixed quote",
+    pairsWith: "Best first buy",
     description:
       "Time-boxed QA for one AI surface — chatbot, RAG, or workflow — with a written risk map and golden-set starter.",
     ctaLabel: "Scope AI testing",
@@ -100,12 +108,13 @@ export const aiPackages = [
     name: "AI + QA retainer add-on",
     priceLabel: "Custom",
     priceNote: "monthly",
+    pairsWith: "Pairs with Growth or Scale",
     description:
       "Ongoing AI regression beside your monthly QA package — so model and prompt changes do not surprise production.",
     ctaLabel: "Add AI to QA",
     ctaHref: "/contact?plan=ai-qa-retainer&source=ai-pricing",
     features: [
-      "Fits beside Basic / Growth / Scale",
+      "Add-on to Growth / Scale (Basic on request)",
       "Prompt & retrieval regression each cycle",
       "Chatbot / RAG release smoke",
       "Shared Slack and weekly status",

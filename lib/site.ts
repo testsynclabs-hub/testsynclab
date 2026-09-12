@@ -31,6 +31,8 @@ export const SITE_KEYWORDS = [
   "chatbot testing",
   "LLM QA",
   "RAG testing",
+  "AI testing sprint",
+  "prompt regression testing",
 ] as const;
 
 /** Flat links for footer / sitemap-style lists */
@@ -111,6 +113,16 @@ export const primaryNav: PrimaryNavItem[] = [
         href: "/faq",
         label: "FAQ",
         description: "Retainers, timelines, and how engagements work.",
+      },
+      {
+        href: "/ai",
+        label: "AI testing guide",
+        description: "Chatbots, RAG, LLM evals — and how we price the lane.",
+      },
+      {
+        href: "/blog/ai-testing-sprint-vs-retainer-addon",
+        label: "AI sprint vs add-on",
+        description: "When to buy a sprint vs fold AI into Growth or Scale.",
       },
     ],
   },

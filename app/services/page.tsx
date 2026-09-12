@@ -31,8 +31,8 @@ export default function ServicesPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
             Practical quality engineering for web and mobile products — scoped
-            to your release cadence. Built for US and Canadian teams first,
-            delivered remotely worldwide.
+            to your release cadence. Delivered remotely for product teams
+            worldwide.
           </p>
         </div>
       </section>
