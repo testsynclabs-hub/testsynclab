@@ -98,11 +98,15 @@ async function sendViaSmtp(options: {
   let lastError: unknown;
   for (const attempt of attempts) {
     try {
+      const requireTLS =
+        process.env.SMTP_REQUIRE_TLS === "true" ||
+        (process.env.SMTP_REQUIRE_TLS !== "false" && !attempt.secure);
+
       const transporter = nodemailer.createTransport({
         host,
         port: attempt.port,
         secure: attempt.secure,
-        requireTLS: !attempt.secure,
+        requireTLS,
         auth: { user, pass },
         connectionTimeout: 8000,
         greetingTimeout: 8000,
