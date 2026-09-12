@@ -29,7 +29,7 @@ export default async function ContactPage({
   const deliveryError = params.error === "delivery";
 
   return (
-    <main className="flex-1 pb-24 md:pb-0">
+    <main className="flex-1">
       <section className="border-b border-line bg-gradient-to-br from-white via-sky-50 to-blue-100 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand">

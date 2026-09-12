@@ -52,14 +52,6 @@ export function SiteFooter() {
             ))}
             <li>
               <Link
-                href="/pricing"
-                className="transition-colors hover:text-blue-300"
-              >
-                Packages
-              </Link>
-            </li>
-            <li>
-              <Link
                 href={auditHref("footer-nav")}
                 className="transition-colors hover:text-blue-300"
               >

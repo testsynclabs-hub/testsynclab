@@ -23,7 +23,7 @@ Use **Hostinger SMTP** (same mailbox password as `info@testsynclab.com`):
 | `SMTP_USER` | `info@testsynclab.com` |
 | `SMTP_PASS` | your Hostinger email password |
 
-Optional fallback: `RESEND_API_KEY` from https://resend.com (free tier). Without SMTP or Resend, the form shows a delivery error instead of fake success.
+Optional fallbacks: `RESEND_API_KEY` (or `RESEND_API_KEY`) from https://resend.com, then FormSubmit. Without any delivery path, the form shows a clear error instead of fake success.
 
 ### Google Analytics 4 (free)
 1. Create a GA4 property at https://analytics.google.com for `testsynclab.com`.
@@ -60,9 +60,10 @@ Keep Hostinger email / MX records for mailbox. DNS for web (A/CNAME) and email (
 Submit sitemap in Google Search Console.
 
 ## Lead form
-The contact form emails **info@testsynclab.com** in this order:
+The contact form emails **info@testsynclab.com** from the server in this order:
 
-1. The visitor’s browser posts to FormSubmit (no Vercel secret). The **first** submit sends an activation email to `info@` — open it once. After that, every lead arrives in the inbox.
-2. If that path is blocked, the server tries Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`) then Resend (`RESEND_API_KEY`).
+1. Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)
+2. Resend (`RESEND_API_KEY`)
+3. FormSubmit API fallback (first submit may need inbox confirmation)
 
-Set SMTP on Vercel for a direct mailbox send. Check spam for the FormSubmit confirmation.
+If every path fails, the visitor sees a delivery error and can email `info@` directly.

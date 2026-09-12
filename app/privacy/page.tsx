@@ -25,9 +25,10 @@ export default function PrivacyPage() {
           Information we collect
         </h2>
         <p>
-          When you contact us, we collect your name, email address, message
-          content, and any package interest you select. Server logs may include
-          standard technical data such as IP address and browser type.
+          When you contact us, we collect your name, email address, company,
+          website URL, message content, and any package interest you select.
+          Server logs may include standard technical data such as IP address and
+          browser type.
         </p>
         <h2 className="pt-4 font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
           How we use information
@@ -35,6 +36,14 @@ export default function PrivacyPage() {
         <p>
           We use this information to respond to inquiries, provide proposed QA
           scopes, and improve our services. We do not sell personal information.
+        </p>
+        <h2 className="pt-4 font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+          Processors
+        </h2>
+        <p>
+          Lead emails may be delivered through Hostinger SMTP, Resend, and/or
+          FormSubmit so your request reaches {SITE_EMAIL}. If Google Analytics is
+          configured, Google may process anonymized usage metrics.
         </p>
         <h2 className="pt-4 font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
           Contact

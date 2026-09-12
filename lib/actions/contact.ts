@@ -39,9 +39,7 @@ async function sendViaSmtp(options: {
   const host = process.env.SMTP_HOST?.trim();
   const user = process.env.SMTP_USER?.trim();
   const pass = process.env.SMTP_PASS?.trim();
-  if (!host || !user || !pass) {
-    return false;
-  }
+  if (!host || !user || !pass) return false;
 
   const preferredPort = Number(process.env.SMTP_PORT || "465");
   const attempts = [
@@ -112,12 +110,63 @@ async function sendViaResend(options: {
   });
 
   if (!response.ok) {
-    const body = await response.text();
-    console.error("Resend error", response.status, body);
+    console.error("Resend error", response.status, await response.text());
     return false;
   }
 
   return true;
+}
+
+async function sendViaFormSubmit(fields: {
+  name: string;
+  email: string;
+  company: string;
+  website: string;
+  plan: string;
+  source: string;
+  message: string;
+  subject: string;
+}) {
+  try {
+    const response = await fetch(
+      `https://formsubmit.co/ajax/${encodeURIComponent(LEAD_INBOX)}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: fields.name,
+          email: fields.email,
+          _replyto: fields.email,
+          _subject: fields.subject,
+          _template: "table",
+          _captcha: "false",
+          company: fields.company || "—",
+          website: fields.website || "—",
+          plan: fields.plan,
+          source: fields.source || "direct",
+          message: fields.message,
+        }),
+      },
+    );
+
+    const body = (await response.json().catch(() => null)) as {
+      success?: boolean | string;
+      message?: string;
+    } | null;
+
+    return (
+      response.ok &&
+      (body?.success === true ||
+        body?.success === "true" ||
+        Boolean(body?.message?.toLowerCase().includes("success")))
+    );
+  } catch (error) {
+    console.error("FormSubmit delivery failed", error);
+    return false;
+  }
 }
 
 export async function submitContact(formData: FormData) {
@@ -174,7 +223,20 @@ export async function submitContact(formData: FormData) {
   }
 
   if (!delivered) {
-    console.error("Lead NOT emailed via SMTP/Resend", {
+    delivered = await sendViaFormSubmit({
+      name,
+      email,
+      company,
+      website,
+      plan,
+      source,
+      message,
+      subject,
+    });
+  }
+
+  if (!delivered) {
+    console.error("Lead NOT emailed", {
       name,
       email,
       company,

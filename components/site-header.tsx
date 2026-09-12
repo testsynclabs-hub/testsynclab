@@ -54,9 +54,11 @@ export function SiteHeader() {
   const menuBaseId = useId();
 
   useEffect(() => {
-    setMobileOpen(false);
-    setDesktopMenu(null);
-    setMobileMenu(null);
+    queueMicrotask(() => {
+      setMobileOpen(false);
+      setDesktopMenu(null);
+      setMobileMenu(null);
+    });
   }, [pathname]);
 
   useEffect(() => {

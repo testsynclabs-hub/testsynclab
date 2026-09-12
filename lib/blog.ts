@@ -640,6 +640,7 @@ export function getRelatedPosts(slug: string, limit = 3) {
 }
 
 export function blogPostingJsonLd(post: BlogPost, url: string) {
+  const cover = `/images/blog/${post.slug}.svg`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -648,6 +649,7 @@ export function blogPostingJsonLd(post: BlogPost, url: string) {
     datePublished: post.date,
     dateModified: post.date,
     keywords: post.keywords.join(", "),
+    image: [`https://testsynclab.com${cover}`],
     author: {
       "@type": "Organization",
       name: "TestSync Lab",
