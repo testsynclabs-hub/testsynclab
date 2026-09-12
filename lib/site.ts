@@ -5,10 +5,10 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "Remote QA for US & Canada Teams | TestSync Lab from $999" as const;
+  "Remote QA Retainers from $999 | TestSync Lab — Worldwide" as const;
 
 export const SITE_DESCRIPTION =
-  "Hire senior software QA for US and Canadian product teams. Monthly retainers from $999 for manual testing, API validation, and Playwright automation — follow-the-sun coverage without a full-time hire." as const;
+  "Hire senior software QA for product teams worldwide. Monthly retainers from $999 for manual testing, API validation, and Playwright automation — with fastest inbound focus on US and Canadian startups." as const;
 
 export const SITE_KEYWORDS = [
   "hire QA agency",

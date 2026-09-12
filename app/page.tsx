@@ -457,11 +457,13 @@ export default function HomePage() {
                 id="markets-heading"
                 className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
               >
-                Built for US and Canadian product teams
+                Worldwide delivery. Fastest path: US and Canada.
               </h2>
               <p className="mt-4 text-lg text-muted">
-                USD retainers, English reporting, Slack/Jira, and follow-the-sun
-                verification — without a fake local office.
+                We take clients anywhere English-speaking teams ship. Right now
+                we push hardest where deals close faster — US and Canadian
+                product teams — with USD retainers, Slack/Jira, and
+                follow-the-sun verification.
               </p>
             </div>
           </Reveal>

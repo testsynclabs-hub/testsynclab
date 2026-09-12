@@ -16,8 +16,8 @@ export const coverageStats = [
   },
   {
     value: "US · CA",
-    label: "Primary markets",
-    detail: "Remote pods for United States and Canadian teams — plus worldwide.",
+    label: "Go-to markets",
+    detail: "Worldwide delivery — US and Canada first for speed-to-client.",
   },
 ] as const;
 

@@ -4,7 +4,9 @@ Website SEO compounds in 30–90 days. **First clients still come from outbound.
 
 ## Offer (say this everywhere)
 Free QA audit in 24h → recommend Basic ($999) / Growth ($1,899) / Scale ($2,799).
-Primary buyers: **US and Canadian** founders, CTOs, VP Eng, Head of Product.
+Serve **worldwide**. Push hardest where deals close faster: **US and Canadian**
+founders, CTOs, VP Eng, Head of Product. Do not refuse good leads from UK, EU,
+or elsewhere — just prioritize outbound lists toward US/CA first.
 
 ## Today (Day 1) — do in order
 1. Finish LinkedIn invites (you + partner = up to 100).
