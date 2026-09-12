@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import {
   navLinks,
   SITE_EMAIL,
@@ -57,6 +58,14 @@ export function SiteFooter() {
                 Packages
               </Link>
             </li>
+            <li>
+              <Link
+                href={auditHref("footer-nav")}
+                className="transition-colors hover:text-blue-300"
+              >
+                {FREE_QA_AUDIT_LABEL}
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -71,6 +80,12 @@ export function SiteFooter() {
             >
               {SITE_EMAIL}
             </a>
+            <Link
+              href={auditHref("footer-contact")}
+              className="mt-4 inline-flex rounded-lg bg-brand px-3.5 py-2 text-sm font-bold text-white hover:bg-brand-bright"
+            >
+              {FREE_QA_AUDIT_LABEL}
+            </Link>
           </div>
           <div>
             <h3 className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[0.14em] text-blue-300">

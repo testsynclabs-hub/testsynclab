@@ -12,10 +12,16 @@ export const metadata: Metadata = {
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ plan?: string; sent?: string; error?: string }>;
+  searchParams: Promise<{
+    plan?: string;
+    source?: string;
+    sent?: string;
+    error?: string;
+  }>;
 }) {
   const params = await searchParams;
-  const plan = params.plan || "general";
+  const plan = params.plan || "audit";
+  const source = params.source || "contact-page";
   const sent = params.sent === "1";
   const error = params.error === "1";
 
@@ -27,8 +33,9 @@ export default async function ContactPage({
             Start your free QA audit
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Share your product context and release goals. We&apos;ll respond
-            with a practical quality plan.
+            Share your website, product context, and release goals. We&apos;ll
+            respond with a practical quality plan — this is the same form every
+            blog post sends you to.
           </p>
         </div>
       </section>
@@ -64,7 +71,12 @@ export default async function ContactPage({
               cadence — we&apos;ll propose a retainer that fits.
             </p>
           </div>
-          <ContactForm plan={plan} sent={sent} error={error} />
+          <ContactForm
+            plan={plan}
+            source={source}
+            sent={sent}
+            error={error}
+          />
         </div>
       </section>
     </main>

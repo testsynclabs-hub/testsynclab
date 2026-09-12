@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { futureRoadmap, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -77,19 +77,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-surface py-14">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p className="text-lg text-muted">
-            Want to see if we&apos;re a fit? Book a free QA audit.
-          </p>
-          <Link
-            href="/contact"
-            className="rounded-xl bg-brand px-6 py-3 text-center font-bold text-white hover:bg-brand-deep"
-          >
-            Contact us
-          </Link>
-        </div>
-      </section>
+      <FreeQaAuditCta
+        source="about-footer"
+        heading="Want to see if we are a fit?"
+        body="Book a free QA audit. Two QA partners, worldwide coverage, and a written plan before you pick a retainer."
+      />
     </main>
   );
 }

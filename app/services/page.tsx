@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -41,24 +43,22 @@ export default function ServicesPage() {
               <p className="mt-3 text-base leading-relaxed text-slate-700">
                 {service.details}
               </p>
+              <Link
+                href={auditHref(`services:${service.slug}`)}
+                className="mt-5 inline-flex font-bold text-brand hover:text-brand-deep"
+              >
+                {FREE_QA_AUDIT_LABEL} →
+              </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-line bg-surface py-14">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
-          <p className="max-w-xl text-lg text-muted">
-            Not sure which services you need? Start with a free QA audit.
-          </p>
-          <Link
-            href="/contact"
-            className="rounded-xl bg-brand px-6 py-3 font-bold text-white hover:bg-brand-deep"
-          >
-            Talk to us
-          </Link>
-        </div>
-      </section>
+      <FreeQaAuditCta
+        source="services-footer"
+        heading="Not sure which services you need?"
+        body="Start with a free QA audit. We map manual, API, automation, and performance risk to a monthly package."
+      />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function CookiesPage() {
           </a>
         </p>
       </div>
+      <FreeQaAuditCta source="cookies" variant="compact" />
     </main>
   );
 }

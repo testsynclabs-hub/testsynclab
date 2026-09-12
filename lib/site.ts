@@ -18,6 +18,10 @@ export const SITE_KEYWORDS = [
   "API Testing Services",
   "Monthly QA Retainer",
   "Software Testing Services",
+  "Free QA Audit",
+  "QA Testing Blog",
+  "Regression Testing",
+  "Remote QA Partner",
   "TestSync Lab",
 ] as const;
 

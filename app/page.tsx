@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { PackageGrid } from "@/components/package-grid";
+import { blogPosts } from "@/lib/blog";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { services, SITE_NAME } from "@/lib/site";
 
 const impactStats = [
@@ -58,10 +61,10 @@ export default function HomePage() {
             </p>
             <div className="animate-fade-up delay-300 mt-10 flex flex-wrap gap-3">
               <Link
-                href="/contact?plan=growth"
+                href={auditHref("home-hero")}
                 className="animate-cta-pulse inline-flex items-center justify-center rounded-xl bg-brand px-7 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep"
               >
-                Get a Free QA Audit
+                {FREE_QA_AUDIT_LABEL}
               </Link>
               <Link
                 href="/pricing"
@@ -147,6 +150,12 @@ export default function HomePage() {
                   <p className="mt-2 text-base leading-relaxed text-muted">
                     {service.summary}
                   </p>
+                  <Link
+                    href={auditHref(`home-service:${service.slug}`)}
+                    className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    {FREE_QA_AUDIT_LABEL} →
+                  </Link>
                 </article>
               </li>
             ))}
@@ -203,25 +212,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-brand-deep py-16 sm:py-20">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center sm:px-8">
-          <div className="max-w-xl">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready for a free QA audit?
-            </h2>
-            <p className="mt-3 text-lg text-blue-100">
-              Tell us about your release goals — we&apos;ll map risks and a
-              practical plan.
-            </p>
+      <section
+        className="border-t border-line bg-white py-20 sm:py-24"
+        aria-labelledby="blog-preview-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <h2
+                id="blog-preview-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                From the QA blog
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted">
+                Playbooks that end in a free QA audit — retainers, Playwright,
+                APIs, and release gates.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="text-sm font-bold text-brand hover:text-brand-deep"
+            >
+              All posts →
+            </Link>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-brand-deep transition duration-200 hover:bg-brand-soft"
-          >
-            Contact {SITE_NAME}
-          </Link>
+          <ul className="mt-12 grid gap-5 md:grid-cols-3">
+            {blogPosts.slice(0, 3).map((post) => (
+              <li key={post.slug}>
+                <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand/10">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand">
+                    {post.date}
+                  </p>
+                  <h3 className="mt-3 font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-brand">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                    {post.description}
+                  </p>
+                  <Link
+                    href={auditHref(`home-blog:${post.slug}`)}
+                    className="mt-4 text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    {FREE_QA_AUDIT_LABEL} →
+                  </Link>
+                </article>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
+
+      <FreeQaAuditCta
+        source="home-footer"
+        heading={`Ready for a ${FREE_QA_AUDIT_LABEL.toLowerCase()}?`}
+        body={`Tell ${SITE_NAME} about your release goals — we will map risks and a practical plan.`}
+      />
     </main>
   );
 }

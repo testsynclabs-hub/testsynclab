@@ -16,15 +16,20 @@ export async function submitContact(formData: FormData) {
   const name = asString(formData.get("name"));
   const email = asString(formData.get("email"));
   const message = asString(formData.get("message"));
-  const plan = asString(formData.get("plan")) || "general";
+  const website = asString(formData.get("website"));
+  const plan = asString(formData.get("plan")) || "audit";
+  const source = asString(formData.get("source"));
+
+  const failQuery = new URLSearchParams({ error: "1", plan });
+  if (source) failQuery.set("source", source);
 
   if (!name || !email || !message) {
-    redirect(`/contact?error=1&plan=${encodeURIComponent(plan)}`);
+    redirect(`/contact?${failQuery.toString()}`);
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    redirect(`/contact?error=1&plan=${encodeURIComponent(plan)}`);
+    redirect(`/contact?${failQuery.toString()}`);
   }
 
   const payload = {
@@ -32,6 +37,8 @@ export async function submitContact(formData: FormData) {
     from: email,
     name,
     plan,
+    source,
+    website,
     message,
     receivedAt: new Date().toISOString(),
   };
@@ -50,7 +57,7 @@ export async function submitContact(formData: FormData) {
           to: [SITE_EMAIL],
           reply_to: email,
           subject: `New lead (${plan}): ${name}`,
-          text: `Name: ${name}\nEmail: ${email}\nPlan: ${plan}\n\n${message}`,
+          text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website || "—"}\nPlan: ${plan}\nSource: ${source || "direct"}\n\n${message}`,
         }),
       });
     } catch {
@@ -61,5 +68,7 @@ export async function submitContact(formData: FormData) {
     console.info("Lead captured (configure RESEND_API_KEY for email delivery)", payload);
   }
 
-  redirect(`/contact?sent=1&plan=${encodeURIComponent(plan)}`);
+  const okQuery = new URLSearchParams({ sent: "1", plan });
+  if (source) okQuery.set("source", source);
+  redirect(`/contact?${okQuery.toString()}`);
 }

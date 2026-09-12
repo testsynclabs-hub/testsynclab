@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { navLinks, SITE_NAME } from "@/lib/site";
 
 export function SiteHeader() {
@@ -40,10 +41,10 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
-            href="/contact?plan=growth"
+            href={auditHref("header")}
             className="rounded-lg bg-brand px-3.5 py-2 text-white shadow-md shadow-brand/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-deep"
           >
-            Get Audit
+            {FREE_QA_AUDIT_LABEL}
           </Link>
         </nav>
 
@@ -78,11 +79,11 @@ export function SiteHeader() {
             ))}
             <li>
               <Link
-                href="/contact?plan=growth"
+                href={auditHref("header-mobile")}
                 className="mt-1 inline-flex rounded-lg bg-brand px-3.5 py-2 text-white"
                 onClick={() => setOpen(false)}
               >
-                Get Audit
+                {FREE_QA_AUDIT_LABEL}
               </Link>
             </li>
           </ul>
