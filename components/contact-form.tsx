@@ -4,12 +4,14 @@ type ContactFormProps = {
   plan?: string;
   sent?: boolean;
   error?: boolean;
+  deliveryError?: boolean;
 };
 
 export function ContactForm({
   plan = "general",
   sent = false,
   error = false,
+  deliveryError = false,
 }: ContactFormProps) {
   return (
     <form
@@ -43,6 +45,15 @@ export function ContactForm({
           role="alert"
         >
           Please complete name, a valid email, and message before submitting.
+        </p>
+      ) : null}
+      {deliveryError ? (
+        <p
+          className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
+          role="alert"
+        >
+          We could not deliver your request by email. Please email us directly
+          at info@testsynclab.com or try again in a few minutes.
         </p>
       ) : null}
 

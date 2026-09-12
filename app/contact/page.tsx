@@ -18,6 +18,7 @@ export default async function ContactPage({
   const plan = params.plan || "general";
   const sent = params.sent === "1";
   const error = params.error === "1";
+  const deliveryError = params.error === "delivery";
 
   return (
     <main className="flex-1 pb-24 md:pb-0">
@@ -68,7 +69,12 @@ export default async function ContactPage({
               <li>• Serving startups and product teams worldwide</li>
             </ul>
           </div>
-          <ContactForm plan={plan} sent={sent} error={error} />
+          <ContactForm
+            plan={plan}
+            sent={sent}
+            error={error}
+            deliveryError={deliveryError}
+          />
         </div>
       </section>
     </main>
