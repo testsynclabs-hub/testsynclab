@@ -8,7 +8,7 @@ export const SITE_TITLE =
   "Remote QA Retainers from $999 | TestSync Lab — Worldwide" as const;
 
 export const SITE_DESCRIPTION =
-  "Hire senior software QA for product teams worldwide. Monthly retainers from $999 for manual testing, API validation, and Playwright automation — with fastest inbound focus on US and Canadian startups." as const;
+  "Hire senior software QA for product teams worldwide. Monthly retainers from $999 for manual testing, API validation, and Playwright automation — remote delivery for startups and SaaS teams." as const;
 
 export const SITE_KEYWORDS = [
   "hire QA agency",
