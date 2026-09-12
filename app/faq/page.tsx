@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers about TestSync Lab pricing, retainers, free QA audits, AI development sprints, and how remote collaboration works.",
+    "Answers about TestSync Lab pricing, retainers, free QA audits, AI testing for chatbots and LLM products, and how remote collaboration works.",
   alternates: { canonical: "/faq" },
 };
 

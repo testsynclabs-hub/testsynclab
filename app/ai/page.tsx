@@ -2,30 +2,33 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import {
+  aiBuildNote,
   aiEngagementSteps,
   aiLanes,
   aiOffer,
   aiPackages,
 } from "@/lib/ai";
-import { AI_CONSULT_LABEL, aiHref } from "@/lib/cta";
+import { AI_CONSULT_LABEL, aiHref, auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AI Development",
+  title: "AI Testing",
   description:
-    "Practical AI development from TestSync Lab: copilots, RAG, workflow automation, and AI quality evals — shipped with the same QA bar as our monthly testing retainers.",
+    "AI testing for chatbots, copilots, RAG, and LLM products. Hallucination checks, prompt regression, and release gates from TestSync Lab — for US, Canadian, and worldwide teams.",
   keywords: [
-    "AI development services",
-    "LLM feature development",
-    "RAG chatbot development",
-    "AI quality evals",
-    "hire AI engineer",
+    "AI testing services",
+    "chatbot testing",
+    "LLM QA",
+    "RAG testing",
+    "prompt regression testing",
+    "AI product QA",
+    "hire AI QA",
   ],
   alternates: { canonical: "/ai" },
   openGraph: {
-    title: `AI Development | ${SITE_NAME}`,
+    title: `AI Testing | ${SITE_NAME}`,
     description:
-      "Copilots, RAG, and workflow automation — built in-house and tested like a product.",
+      "Chatbot, RAG, and LLM QA — golden sets, jailbreak checks, and release gates from a QA lab.",
     url: `${SITE_URL}/ai`,
   },
 };
@@ -33,16 +36,16 @@ export const metadata: Metadata = {
 const aiJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Practical AI development",
+  name: "AI testing for chatbots and LLM products",
   provider: {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
   },
-  areaServed: "Worldwide",
-  serviceType: "AI software development",
+  areaServed: ["United States", "Canada", "Worldwide"],
+  serviceType: "Software quality assurance",
   description:
-    "Scoped AI feature sprints and AI + QA pods for copilots, RAG, workflow automation, and model evals.",
+    "QA for AI features: chatbot testing, RAG faithfulness, LLM evals, prompt regression, and AI workflow quality.",
   url: `${SITE_URL}/ai`,
 };
 
@@ -64,7 +67,7 @@ export default function AiPage() {
             {aiOffer.eyebrow}
           </p>
           <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
-            AI development that can actually ship
+            AI testing that protects the release
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">{aiOffer.summary}</p>
           <p className="mt-4 max-w-2xl text-base font-semibold text-brand-deep">
@@ -78,10 +81,10 @@ export default function AiPage() {
               {AI_CONSULT_LABEL}
             </Link>
             <Link
-              href="/services"
+              href={auditHref("ai-hero-qa")}
               className="inline-flex rounded-xl border border-brand/30 bg-white px-6 py-3.5 font-bold text-brand-deep hover:bg-brand-soft"
             >
-              See QA services
+              {FREE_QA_AUDIT_LABEL}
             </Link>
           </div>
         </div>
@@ -94,10 +97,11 @@ export default function AiPage() {
               id="ai-lanes-heading"
               className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
             >
-              What we build
+              What we test
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-muted">
-              Narrow, useful features — not an AI transformation program.
+              AI surfaces that already hit customers — chat, search, agents, and
+              workflows.
             </p>
           </Reveal>
           <ul className="mt-12 grid gap-10 sm:grid-cols-2">
@@ -132,10 +136,11 @@ export default function AiPage() {
               id="ai-how-heading"
               className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
             >
-              How an AI sprint runs
+              How AI testing runs here
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-muted">
-              QA founders stay in the loop so the feature is testable on day one.
+              Same QA discipline as your retainer — applied to models, prompts,
+              and retrieval.
             </p>
           </Reveal>
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
@@ -166,11 +171,11 @@ export default function AiPage() {
               id="ai-pricing-heading"
               className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
             >
-              How we price AI work
+              How we price AI testing
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-muted">
-              QA stays on clear monthly retainers. AI is scoped so you are not
-              buying an open-ended experiment.
+              Start with a scoped sprint, or fold AI regression into a monthly
+              QA retainer. Clear quote — not an open-ended AI experiment.
             </p>
           </Reveal>
           <ul className="mt-12 grid gap-5 md:grid-cols-2">
@@ -207,14 +212,27 @@ export default function AiPage() {
               </li>
             ))}
           </ul>
+
+          <aside className="mt-10 rounded-2xl border border-line bg-surface p-6 sm:p-7">
+            <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
+              {aiBuildNote.title}
+            </h3>
+            <p className="mt-2 max-w-2xl text-muted">{aiBuildNote.detail}</p>
+            <Link
+              href={aiBuildNote.href}
+              className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+            >
+              {aiBuildNote.label} →
+            </Link>
+          </aside>
         </div>
       </section>
 
       <section className="border-t border-line bg-brand-deep py-14">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
           <p className="max-w-xl text-lg text-blue-100">
-            Have a feature in mind? Tell us the job-to-be-done, the data you
-            already have, and the deadline. We will say yes, no, or not yet.
+            Shipping a chatbot or RAG feature? Tell us the product, the model
+            stack, and the next release date. We will say what to test first.
           </p>
           <Link
             href={aiHref("ai-footer")}

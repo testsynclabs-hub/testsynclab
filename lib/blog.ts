@@ -105,44 +105,45 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "qa-plus-ai-same-lab",
-    title: "Why AI Features Need a QA Lab — Not Just a Prompt Engineer",
+    title: "Why AI Chatbots Need QA — Not Just Another Prompt Tweak",
     description:
-      "A practical AI feature still has to survive a release. How TestSync Lab ships copilots, RAG, and workflow automation with the same quality bar as monthly QA retainers.",
+      "How TestSync Lab tests chatbots, RAG, and LLM products: golden sets, hallucination checks, and release gates US and Canadian teams can run every sprint.",
     date: "2026-09-12",
     readingTime: "7 min",
-    tags: ["AI Development", "QA Strategy"],
+    tags: ["AI Testing", "QA Strategy"],
     keywords: [
-      "AI development with QA",
+      "AI testing services",
+      "chatbot testing",
       "RAG chatbot testing",
-      "LLM feature development",
-      "AI evals for startups",
+      "LLM QA for startups",
+      "prompt regression testing",
     ],
     sections: [
       {
         heading: "The demo is not the product",
         paragraphs: [
           "Most AI work dies in the week after a demo. The chatbot answers the founder’s three sample questions, then hallucinates on a real customer ticket, leaks a competitor’s pricing, or silently fails when retrieval returns nothing.",
-          "That is not an AI problem first. It is a quality problem. TestSync Lab started as a QA agency because release confidence is the job. AI development is now a live lane — not a roadmap slogan — because we already had an in-house engineer who can ship a useful slice, and QA partners who will not sign off on a parlor trick.",
+          "That is not an AI problem first. It is a quality problem. TestSync Lab is a QA agency. AI testing is a live lane because US and Canadian product teams are shipping chatbots and copilots faster than they can verify them.",
         ],
       },
       {
-        heading: "What we will build (and what we will not)",
+        heading: "What we test (and what we will not pretend to be)",
         paragraphs: [
-          "We build practical product features: in-app copilots, RAG over your docs or tickets, and LLM steps inside existing workflows (triage, summaries, classification). The scope is one job-to-be-done, the data you already have, and a written definition of done.",
-          "We will not sell an “AI transformation,” a custom foundation model, or a six-month strategy workshop. If the smallest useful feature is still unclear, we say not yet. QA retainers stay the core offer; AI is scoped as a sprint or a custom pod so it does not blur the $999 / $1,899 / $2,799 retainers.",
+          "We test AI surfaces that already hit users: in-app chat, RAG over docs or tickets, tool-calling copilots, and LLM steps inside workflows (triage, summaries, classification). The deliverable is a golden set, severity-ranked findings, and a release gate you can re-run after the next model swap.",
+          "We will not sell an “AI transformation,” a custom foundation model, or a six-month strategy workshop. If you also need a small feature built, we can scope build + test — but most buyers start with testing what they already shipped. QA retainers stay the core offer at $999 / $1,899 / $2,799.",
         ],
       },
       {
-        heading: "QA is the unfair advantage",
+        heading: "QA is the unfair advantage for AI products",
         paragraphs: [
           "An AI studio can ship a prompt. A QA lab can tell you whether the prompt still works after you swap models, add a tool, or change chunking. We treat AI like any other release: happy path, failure path, obvious jailbreaks, and a golden set you can re-run next month.",
-          "That is why AI quality and evals sit next to copilots on our AI page. If you only need testing, start with a free QA audit. If you need the feature and the gate, talk about an AI sprint.",
+          "That is the whole pitch on /ai. If you only need classic product QA, start with a free audit. If the chatbot is already in production, talk about an AI testing sprint.",
         ],
       },
       {
         heading: "How to start",
         paragraphs: [
-          "Open the contact form with plan “AI development,” share the job-to-be-done, and tell us the deadline. We reply with a yes, a no, or a narrower scope. Monthly QA packages stay on /pricing. AI work is quoted after discovery — not billed as an open-ended experiment.",
+          "Open the contact form with plan “AI testing,” share the AI surface and next release date, and tell us the stack. We reply with a yes, a no, or a narrower scope. Monthly QA packages stay on /pricing. AI testing is quoted after discovery — not billed as an open-ended experiment.",
         ],
       },
     ],

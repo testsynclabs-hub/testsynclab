@@ -97,7 +97,7 @@ export default function HomePage() {
                 href="/ai"
                 className="text-sm font-medium text-sky-300 transition hover:text-sky-200"
               >
-                Also: AI development →
+                Also: AI testing →
               </Link>
             </div>
           </div>
