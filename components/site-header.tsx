@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { navLinks, SITE_NAME } from "@/lib/site";
 
@@ -12,9 +13,17 @@ export function SiteHeader() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8 sm:py-4">
         <Link
           href="/"
-          className="font-[family-name:var(--font-display)] text-lg font-bold tracking-tight text-brand sm:text-xl"
+          className="flex items-center gap-2.5 font-[family-name:var(--font-display)] text-lg font-bold tracking-tight text-brand sm:text-xl"
         >
-          {SITE_NAME}
+          <Image
+            src="/brand/logo-mark.svg"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-lg"
+            priority
+          />
+          <span>{SITE_NAME}</span>
         </Link>
 
         <nav

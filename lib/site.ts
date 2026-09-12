@@ -88,7 +88,7 @@ export const organizationJsonLd = {
   name: SITE_NAME,
   legalName: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.svg`,
+  logo: `${SITE_URL}/brand/logo-icon-1024.png`,
   image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
   email: SITE_EMAIL,
