@@ -33,14 +33,14 @@ export function HeroHeadline() {
   return (
     <h1
       id="hero-heading"
-      className="animate-fade-up delay-100 mt-5 font-[family-name:var(--font-display)] text-3xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.65rem]"
+      className="animate-fade-up delay-100 mt-6 max-w-xl font-[family-name:var(--font-display)] text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]"
     >
       QA retainers that keep every release{" "}
       <span className="relative inline-grid align-baseline">
         {rotatingWords.map((word, wordIndex) => (
           <span
             key={word}
-            className={`col-start-1 row-start-1 text-brand transition-all duration-300 ${
+            className={`col-start-1 row-start-1 text-sky-300 transition-all duration-300 ${
               wordIndex === index && visible
                 ? "translate-y-0 opacity-100"
                 : "pointer-events-none translate-y-1 opacity-0"
