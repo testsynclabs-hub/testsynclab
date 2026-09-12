@@ -13,6 +13,8 @@ export function Reveal({ children, className = "", delayMs = 0 }: RevealProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    document.documentElement.classList.add("js-ready");
+
     const node = ref.current;
     if (!node) return;
 
@@ -20,14 +22,14 @@ export function Reveal({ children, className = "", delayMs = 0 }: RevealProps) {
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (reduceMotion) {
-      setVisible(true);
+      queueMicrotask(() => setVisible(true));
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          setVisible(true);
+          queueMicrotask(() => setVisible(true));
           observer.disconnect();
         }
       },

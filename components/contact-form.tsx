@@ -8,6 +8,7 @@ import type { ContactState } from "@/lib/contact-state";
 import { SITE_EMAIL } from "@/lib/site";
 
 const initialContactState: ContactState = { status: "idle" };
+
 type ContactFormProps = {
   plan?: string;
   source?: string;
@@ -99,12 +100,9 @@ export function ContactForm({
         </p>
       ) : null}
 
-      {plan !== "general" ? (
+      {plan !== "general" && plan !== "audit" ? (
         <p className="mb-5 rounded-xl border border-brand/20 bg-brand-soft/50 px-4 py-3 text-sm font-medium text-brand-deep">
-          Selected plan:{" "}
-          <span className="font-bold capitalize">
-            {plan === "audit" ? "Free QA Audit" : plan}
-          </span>
+          Selected plan: <span className="font-bold capitalize">{plan}</span>
         </p>
       ) : null}
 

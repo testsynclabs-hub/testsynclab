@@ -1,10 +1,14 @@
 import { ImageResponse } from "next/og";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-export const alt = "TestSync Lab — Enterprise Software Quality Assurance";
+export const alt =
+  "TestSync Lab — Affordable monthly QA retainers from $999";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OpenGraphImage() {
+  const host = SITE_URL.replace(/^https?:\/\//, "");
+
   return new ImageResponse(
     (
       <div
@@ -29,27 +33,27 @@ export default function OpenGraphImage() {
             fontWeight: 800,
           }}
         >
-          TestSync Lab
+          {SITE_NAME}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
             style={{
               color: "#0f172a",
-              fontSize: 58,
+              fontSize: 54,
               fontWeight: 800,
               lineHeight: 1.1,
               maxWidth: 920,
             }}
           >
-            Enterprise Software Quality Assurance & Automation
+            Senior QA retainers that keep every release shippable
           </div>
           <div style={{ color: "#475569", fontSize: 28, maxWidth: 860 }}>
-            Automated testing, API validation, performance testing, and
-            continuous QA for web and mobile platforms.
+            Manual, API, Playwright automation, and release gates — monthly
+            packages from $999 for product teams worldwide.
           </div>
         </div>
         <div style={{ color: "#1e40af", fontSize: 22, fontWeight: 600 }}>
-          testsynclab.com
+          {host}
         </div>
       </div>
     ),

@@ -76,9 +76,7 @@ async function sendViaSmtp(options: {
   const host = process.env.SMTP_HOST?.trim();
   const user = process.env.SMTP_USER?.trim();
   const pass = process.env.SMTP_PASS?.trim();
-  if (!host || !user || !pass) {
-    return false;
-  }
+  if (!host || !user || !pass) return false;
 
   const preferredPort = Number(process.env.SMTP_PORT || "465");
   const attempts = [
@@ -156,8 +154,7 @@ async function sendViaResend(options: {
   });
 
   if (!response.ok) {
-    const body = await response.text();
-    console.error("Resend error", response.status, body);
+    console.error("Resend error", response.status, await response.text());
     return false;
   }
 

@@ -68,4 +68,4 @@ Delivery order on the server:
 2. Resend (`RESEND_API_KEY`)
 3. Brevo (`BREVO_API_KEY`)
 
-Set SMTP on Vercel so leads land in **info@testsynclab.com**.
+Set SMTP on Vercel so leads land in **info@testsynclab.com**. If every path fails, the visitor sees an on-page error and can email `info@` directly.

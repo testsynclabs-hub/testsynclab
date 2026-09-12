@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Manual Testing">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#422006"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="110" cy="520" r="180" fill="#FBBF24" opacity="0.08"/>
+  <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
+  <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
+  <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
+  <text x="72" y="220" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800">Manual Testing</text>
+  <text x="72" y="280" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500" opacity="0.78">Still finds what bots miss</text>
+  <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
+  <path d="M900 180 C980 160 1060 200 1080 280 C1100 360 1040 430 960 440 C880 450 820 390 820 310 C820 230 840 195 900 180Z" fill="#FBBF24" opacity="0.25" stroke="#FBBF24" stroke-width="8"/>
+        <path d="M940 250 L980 290 L1060 210" fill="none" stroke="#FBBF24" stroke-width="16" stroke-linecap="round"/>
+        <rect x="860" y="470" width="220" height="16" rx="8" fill="#fff" opacity="0.25"/>
+</svg>

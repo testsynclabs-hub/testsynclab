@@ -21,7 +21,7 @@ export const packages: PackagePlan[] = [
     description:
       "Hands-on manual QA for teams that need reliable coverage without building an in-house test function yet.",
     ctaLabel: "Start with Basic",
-    ctaHref: "/contact?plan=basic",
+    ctaHref: "/contact?plan=basic&source=pricing-card",
     features: [
       "Manual exploratory & regression testing",
       "Clear bug reports and test notes",
@@ -39,7 +39,7 @@ export const packages: PackagePlan[] = [
       "Scale quality with API checks and automation so releases move faster with fewer surprises.",
     featured: true,
     ctaLabel: "Choose Growth",
-    ctaHref: "/contact?plan=growth",
+    ctaHref: "/contact?plan=growth&source=pricing-card",
     features: [
       "Everything in Basic",
       "API / contract validation",
@@ -56,7 +56,7 @@ export const packages: PackagePlan[] = [
     description:
       "Full-stack QA with a named lead cadence — release gates, reporting, and performance spot checks included.",
     ctaLabel: "Get QA Lead",
-    ctaHref: "/contact?plan=qa-lead",
+    ctaHref: "/contact?plan=qa-lead&source=pricing-card",
     features: [
       "Everything in Growth",
       "Performance spot checks (JMeter)",
@@ -73,7 +73,7 @@ export const packages: PackagePlan[] = [
     description:
       "Need more than one pod, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
     ctaLabel: "Talk to us",
-    ctaHref: "/contact?plan=enterprise",
+    ctaHref: "/contact?plan=enterprise&source=pricing-card",
     features: [
       "Multi-app / multi-squad capacity",
       "Custom SLAs and reporting",

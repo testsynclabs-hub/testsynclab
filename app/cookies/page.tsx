@@ -22,15 +22,20 @@ export default function CookiesPage() {
           platforms such as Vercel.
         </p>
         <p>
-          We do not currently use advertising cookies. If analytics are added
-          later, this page will be updated and consent controls provided where
-          required.
+          If Google Analytics 4 is enabled via{" "}
+          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">
+            NEXT_PUBLIC_GA_MEASUREMENT_ID
+          </code>
+          , GA may set analytics cookies to measure traffic sources and page
+          views. We do not use advertising cookies.
         </p>
         <p>
-          Questions:{" "}
+          You can block analytics cookies in your browser settings. For product
+          questions, email{" "}
           <a href={`mailto:${SITE_EMAIL}`} className="text-brand">
             {SITE_EMAIL}
           </a>
+          .
         </p>
       </div>
       <FreeQaAuditCta source="cookies" variant="compact" />
