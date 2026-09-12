@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { SITE_EMAIL } from "@/lib/site";
 
 export function StickyCta() {
@@ -12,10 +13,10 @@ export function StickyCta() {
           Email Us
         </a>
         <Link
-          href="/contact?plan=growth"
+          href={auditHref("sticky-mobile")}
           className="inline-flex flex-[1.4] items-center justify-center rounded-lg bg-brand px-3 py-3 text-sm font-bold text-white"
         >
-          Free QA Audit
+          {FREE_QA_AUDIT_LABEL}
         </Link>
       </div>
     </div>

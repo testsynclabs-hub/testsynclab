@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { outcomePillars } from "@/lib/home-content";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { futureRoadmap, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -117,10 +118,10 @@ export default function AboutPage() {
             Want to see if we&apos;re a fit? Book a free QA audit.
           </p>
           <Link
-            href="/contact"
+            href={auditHref("about-footer")}
             className="rounded-xl bg-brand px-6 py-3 text-center font-bold text-white hover:bg-brand-deep"
           >
-            Contact us
+            {FREE_QA_AUDIT_LABEL}
           </Link>
         </div>
       </section>

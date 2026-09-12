@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { SITE_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function TermsPage() {
           </a>
         </p>
       </div>
+      <FreeQaAuditCta source="terms" variant="compact" />
     </main>
   );
 }

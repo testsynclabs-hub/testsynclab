@@ -83,15 +83,19 @@ export async function submitContact(formData: FormData) {
   const company = asString(formData.get("company"));
   const website = asString(formData.get("website"));
   const message = asString(formData.get("message"));
-  const plan = asString(formData.get("plan")) || "general";
+  const plan = asString(formData.get("plan")) || "audit";
+  const source = asString(formData.get("source"));
+
+  const failQuery = new URLSearchParams({ error: "1", plan });
+  if (source) failQuery.set("source", source);
 
   if (!name || !email || !message) {
-    redirect(`/contact?error=1&plan=${encodeURIComponent(plan)}`);
+    redirect(`/contact?${failQuery.toString()}`);
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    redirect(`/contact?error=1&plan=${encodeURIComponent(plan)}`);
+    redirect(`/contact?${failQuery.toString()}`);
   }
 
   const subject = `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`;
@@ -101,6 +105,7 @@ export async function submitContact(formData: FormData) {
     `Company: ${company || "—"}`,
     `Website: ${website || "—"}`,
     `Plan: ${plan}`,
+    `Source: ${source || "direct"}`,
     "",
     message,
   ].join("\n");
@@ -124,10 +129,14 @@ export async function submitContact(formData: FormData) {
   if (!delivered) {
     console.error(
       "Lead NOT emailed — configure SMTP_* (Hostinger) or RESEND_API_KEY on Vercel",
-      { name, email, company, website, plan, message },
+      { name, email, company, website, plan, source, message },
     );
-    redirect(`/contact?error=delivery&plan=${encodeURIComponent(plan)}`);
+    const deliveryQuery = new URLSearchParams({ error: "delivery", plan });
+    if (source) deliveryQuery.set("source", source);
+    redirect(`/contact?${deliveryQuery.toString()}`);
   }
 
-  redirect(`/contact?sent=1&plan=${encodeURIComponent(plan)}`);
+  const okQuery = new URLSearchParams({ sent: "1", plan });
+  if (source) okQuery.set("source", source);
+  redirect(`/contact?${okQuery.toString()}`);
 }

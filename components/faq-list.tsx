@@ -46,7 +46,7 @@ export function FaqCta() {
         Still unsure which package fits? Get a free audit.
       </p>
       <Link
-        href="/contact"
+        href="/contact?plan=audit&source=faq-cta"
         className="mt-4 inline-flex rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white hover:bg-brand-deep sm:mt-0"
       >
         Book free QA audit

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { PackageGrid } from "@/components/package-grid";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 
 export const metadata: Metadata = {
   title: "Pricing & Packages",
@@ -21,6 +23,12 @@ export default function PricingPage() {
             No hourly meters. Clear scope. Built for startups and product teams
             that want senior QA without enterprise pricing.
           </p>
+          <Link
+            href={auditHref("pricing-hero")}
+            className="mt-6 inline-flex rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white hover:bg-brand-deep"
+          >
+            {FREE_QA_AUDIT_LABEL} first
+          </Link>
         </div>
       </section>
 
@@ -39,6 +47,12 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+
+      <FreeQaAuditCta
+        source="pricing-footer"
+        heading="Unsure which package fits?"
+        body="Book a free QA audit. We recommend Basic, Growth, QA Lead, or Enterprise from your actual release risk."
+      />
     </main>
   );
 }

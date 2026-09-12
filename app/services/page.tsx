@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CapabilityExplorer } from "@/components/capability-explorer";
 import { Reveal } from "@/components/reveal";
 import { capabilityAreas } from "@/lib/home-content";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -130,10 +131,10 @@ export default function ServicesPage() {
             map risk to the right package.
           </p>
           <Link
-            href="/contact"
+            href={auditHref("services-footer")}
             className="rounded-xl bg-white px-6 py-3 font-bold text-brand-deep transition hover:bg-brand-soft"
           >
-            Talk to us
+            {FREE_QA_AUDIT_LABEL}
           </Link>
         </div>
       </section>

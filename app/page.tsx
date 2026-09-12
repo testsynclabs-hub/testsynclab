@@ -13,6 +13,7 @@ import {
   outcomePillars,
   workflowTools,
 } from "@/lib/home-content";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { services, SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 export default function HomePage() {
@@ -49,10 +50,10 @@ export default function HomePage() {
             </p>
             <div className="animate-fade-up delay-300 mt-10 flex flex-wrap gap-3">
               <Link
-                href="/contact?plan=growth"
+                href={auditHref("home-hero")}
                 className="animate-cta-pulse inline-flex items-center justify-center rounded-xl bg-brand px-7 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep"
               >
-                Book Free QA Audit
+                {FREE_QA_AUDIT_LABEL}
               </Link>
               <Link
                 href="/pricing"
@@ -212,10 +213,10 @@ export default function HomePage() {
           </ol>
           <Reveal className="mt-10">
             <Link
-              href="/contact"
+              href={auditHref("home-audit-steps")}
               className="inline-flex rounded-xl bg-brand px-6 py-3.5 font-bold text-white transition hover:bg-brand-deep"
             >
-              Start Free Audit
+              {FREE_QA_AUDIT_LABEL}
             </Link>
           </Reveal>
         </div>
@@ -449,10 +450,10 @@ export default function HomePage() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href={auditHref("home-footer")}
             className="inline-flex shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-brand-deep transition duration-200 hover:bg-brand-soft"
           >
-            Contact {SITE_NAME}
+            {FREE_QA_AUDIT_LABEL}
           </Link>
         </div>
       </section>
