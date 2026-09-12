@@ -14,7 +14,7 @@ Push to `main` (production branch).
 3. Add env vars (Project → Settings → Environment Variables), then **redeploy**:
 
 ### Lead form → info@ inbox (required)
-Use **Hostinger SMTP** (same mailbox password as `info@testsynclab.com`):
+The contact form stays on `/contact` and shows an on-page “Form submitted” message. It emails **info@testsynclab.com** using the first working provider:
 
 | Name | Value |
 |------|--------|
@@ -23,7 +23,7 @@ Use **Hostinger SMTP** (same mailbox password as `info@testsynclab.com`):
 | `SMTP_USER` | `info@testsynclab.com` |
 | `SMTP_PASS` | your Hostinger email password |
 
-Optional fallback: `RESEND_API_KEY` from https://resend.com (free tier). Without SMTP or Resend, the form shows a delivery error instead of fake success.
+Optional fallbacks: `RESEND_API_KEY` (https://resend.com) or `BREVO_API_KEY` (https://www.brevo.com). Without at least one of these, the form shows an on-page error and a `mailto:` link — it will not send visitors to a third-party site.
 
 ### Google Analytics 4 (free)
 1. Create a GA4 property at https://analytics.google.com for `testsynclab.com`.
@@ -60,9 +60,12 @@ Keep Hostinger email / MX records for mailbox. DNS for web (A/CNAME) and email (
 Submit sitemap in Google Search Console.
 
 ## Lead form
-The contact form emails **info@testsynclab.com** in this order:
+The contact form never leaves testsynclab.com. After a successful send it replaces the fields with a “Form submitted” confirmation.
 
-1. The visitor’s browser posts to FormSubmit (no Vercel secret). The **first** submit sends an activation email to `info@` — open it once. After that, every lead arrives in the inbox.
-2. If that path is blocked, the server tries Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`) then Resend (`RESEND_API_KEY`).
+Delivery order on the server:
 
-Set SMTP on Vercel for a direct mailbox send. Check spam for the FormSubmit confirmation.
+1. Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)
+2. Resend (`RESEND_API_KEY`)
+3. Brevo (`BREVO_API_KEY`)
+
+Set SMTP on Vercel so leads land in **info@testsynclab.com**.

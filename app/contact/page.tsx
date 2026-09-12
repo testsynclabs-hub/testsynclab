@@ -18,15 +18,12 @@ export default async function ContactPage({
     plan?: string;
     source?: string;
     sent?: string;
-    error?: string;
   }>;
 }) {
   const params = await searchParams;
   const plan = params.plan || "audit";
   const source = params.source || "contact-page";
   const sent = params.sent === "1";
-  const error = params.error === "1";
-  const deliveryError = params.error === "delivery";
 
   return (
     <main className="flex-1 pb-24 md:pb-0">
@@ -78,13 +75,7 @@ export default async function ContactPage({
               <li>• Serving startups and product teams worldwide</li>
             </ul>
           </div>
-          <ContactForm
-            plan={plan}
-            source={source}
-            sent={sent}
-            error={error}
-            deliveryError={deliveryError}
-          />
+          <ContactForm plan={plan} source={source} sent={sent} />
         </div>
       </section>
     </main>

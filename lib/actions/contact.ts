@@ -1,8 +1,13 @@
 "use server";
 
-import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
+
+export type ContactState = {
+  status: "idle" | "success" | "validation" | "delivery";
+};
+
+export const initialContactState: ContactState = { status: "idle" };
 
 const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
 
@@ -31,10 +36,47 @@ function leadText(fields: {
   ].join("\n");
 }
 
+function leadHtml(fields: {
+  name: string;
+  email: string;
+  company: string;
+  website: string;
+  plan: string;
+  source: string;
+  message: string;
+}) {
+  const row = (label: string, value: string) =>
+    `<tr><td style="padding:8px 12px;color:#64748b;font:600 13px/1.4 ui-sans-serif,system-ui">${label}</td><td style="padding:8px 12px;color:#0f172a;font:400 13px/1.4 ui-sans-serif,system-ui">${value}</td></tr>`;
+
+  return `<!doctype html><html><body style="margin:0;background:#f8fafc;padding:24px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;border-radius:16px">
+    <tr><td style="padding:20px 24px;border-bottom:1px solid #e2e8f0">
+      <div style="font:800 18px/1.2 ui-sans-serif,system-ui;color:#1e3a8a">${SITE_NAME} website lead</div>
+      <div style="margin-top:6px;font:500 13px/1.4 ui-sans-serif,system-ui;color:#64748b">New form submission</div>
+    </td></tr>
+    <tr><td style="padding:8px 12px">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        ${row("Name", fields.name)}
+        ${row("Email", fields.email)}
+        ${row("Company", fields.company || "—")}
+        ${row("Website", fields.website || "—")}
+        ${row("Plan", fields.plan)}
+        ${row("Source", fields.source || "direct")}
+      </table>
+    </td></tr>
+    <tr><td style="padding:16px 24px 24px">
+      <div style="font:600 13px/1.4 ui-sans-serif,system-ui;color:#64748b;margin-bottom:8px">Message</div>
+      <div style="white-space:pre-wrap;font:400 14px/1.6 ui-sans-serif,system-ui;color:#0f172a">${fields.message}</div>
+    </td></tr>
+  </table>
+  </body></html>`;
+}
+
 async function sendViaSmtp(options: {
   replyTo: string;
   subject: string;
   text: string;
+  html: string;
 }) {
   const host = process.env.SMTP_HOST?.trim();
   const user = process.env.SMTP_USER?.trim();
@@ -73,6 +115,7 @@ async function sendViaSmtp(options: {
         replyTo: options.replyTo,
         subject: options.subject,
         text: options.text,
+        html: options.html,
       });
       return true;
     } catch (error) {
@@ -88,6 +131,7 @@ async function sendViaResend(options: {
   replyTo: string;
   subject: string;
   text: string;
+  html: string;
 }) {
   const resendKey = process.env.RESEND_API_KEY?.trim();
   if (!resendKey) return false;
@@ -108,6 +152,7 @@ async function sendViaResend(options: {
       reply_to: options.replyTo,
       subject: options.subject,
       text: options.text,
+      html: options.html,
     }),
   });
 
@@ -120,10 +165,53 @@ async function sendViaResend(options: {
   return true;
 }
 
-export async function submitContact(formData: FormData) {
+async function sendViaBrevo(options: {
+  replyTo: string;
+  subject: string;
+  text: string;
+  html: string;
+}) {
+  const apiKey = process.env.BREVO_API_KEY?.trim();
+  if (!apiKey) return false;
+
+  const fromEmail =
+    process.env.BREVO_FROM?.trim() ||
+    process.env.SMTP_USER?.trim() ||
+    LEAD_INBOX;
+
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "api-key": apiKey,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      sender: { name: `${SITE_NAME} Website`, email: fromEmail },
+      to: [{ email: LEAD_INBOX, name: SITE_NAME }],
+      replyTo: { email: options.replyTo },
+      subject: options.subject,
+      textContent: options.text,
+      htmlContent: options.html,
+    }),
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    console.error("Brevo error", response.status, body);
+    return false;
+  }
+
+  return true;
+}
+
+export async function submitContact(
+  _prev: ContactState,
+  formData: FormData,
+): Promise<ContactState> {
   const honeypot = asString(formData.get("company_website"));
   if (honeypot) {
-    redirect("/contact?sent=1");
+    return { status: "success" };
   }
 
   const name = asString(formData.get("name"));
@@ -134,61 +222,27 @@ export async function submitContact(formData: FormData) {
   const plan = asString(formData.get("plan")) || "audit";
   const source = asString(formData.get("source"));
 
-  const failQuery = new URLSearchParams({ error: "1", plan });
-  if (source) failQuery.set("source", source);
-
-  if (!name || !email || !message) {
-    redirect(`/contact?${failQuery.toString()}`);
-  }
-
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    redirect(`/contact?${failQuery.toString()}`);
+  if (!name || !email || !message || !emailPattern.test(email)) {
+    return { status: "validation" };
   }
 
+  const fields = { name, email, company, website, plan, source, message };
   const subject = `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`;
-  const text = leadText({
-    name,
-    email,
-    company,
-    website,
-    plan,
-    source,
-    message,
-  });
+  const text = leadText(fields);
+  const html = leadHtml(fields);
 
-  let delivered = false;
-
-  try {
-    delivered = await sendViaSmtp({ replyTo: email, subject, text });
-  } catch (error) {
-    console.error("SMTP delivery failed", error);
-  }
-
-  if (!delivered) {
+  const attempts = [sendViaSmtp, sendViaResend, sendViaBrevo];
+  for (const send of attempts) {
     try {
-      delivered = await sendViaResend({ replyTo: email, subject, text });
+      if (await send({ replyTo: email, subject, text, html })) {
+        return { status: "success" };
+      }
     } catch (error) {
-      console.error("Resend delivery failed", error);
+      console.error("Lead email attempt failed", error);
     }
   }
 
-  if (!delivered) {
-    console.error("Lead NOT emailed via SMTP/Resend", {
-      name,
-      email,
-      company,
-      website,
-      plan,
-      source,
-      message,
-    });
-    const deliveryQuery = new URLSearchParams({ error: "delivery", plan });
-    if (source) deliveryQuery.set("source", source);
-    redirect(`/contact?${deliveryQuery.toString()}`);
-  }
-
-  const okQuery = new URLSearchParams({ sent: "1", plan });
-  if (source) okQuery.set("source", source);
-  redirect(`/contact?${okQuery.toString()}`);
+  console.error("Lead NOT emailed", { name, email, company, website, plan, source });
+  return { status: "delivery" };
 }

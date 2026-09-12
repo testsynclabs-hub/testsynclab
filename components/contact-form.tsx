@@ -1,64 +1,48 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
 import { FREE_QA_AUDIT_LABEL } from "@/lib/cta";
-import { SITE_EMAIL, SITE_URL } from "@/lib/site";
+import {
+  initialContactState,
+  submitContact,
+  type ContactState,
+} from "@/lib/actions/contact";
+import { SITE_EMAIL } from "@/lib/site";
 
 type ContactFormProps = {
   plan?: string;
   source?: string;
   sent?: boolean;
-  error?: boolean;
-  deliveryError?: boolean;
 };
 
-function asString(value: FormDataEntryValue | null) {
-  return typeof value === "string" ? value.trim() : "";
-}
+const inputClassName =
+  "w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20";
 
-async function sendViaFormSubmit(formData: FormData) {
-  const name = asString(formData.get("name"));
-  const email = asString(formData.get("email"));
-  const company = asString(formData.get("company"));
-  const website = asString(formData.get("website"));
-  const message = asString(formData.get("message"));
-  const plan = asString(formData.get("plan")) || "audit";
-  const source = asString(formData.get("source"));
-
-  const response = await fetch(
-    `https://formsubmit.co/ajax/${encodeURIComponent(SITE_EMAIL)}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        _replyto: email,
-        _subject: `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`,
-        _template: "table",
-        _captcha: "false",
-        company: company || "—",
-        website: website || "—",
-        plan,
-        source: source || "direct",
-        message,
-      }),
-    },
-  );
-
-  const body = (await response.json().catch(() => null)) as {
-    success?: boolean | string;
-    message?: string;
-  } | null;
-
+function SuccessCard() {
   return (
-    response.ok &&
-    (body?.success === true ||
-      body?.success === "true" ||
-      Boolean(body?.message?.toLowerCase().includes("success")))
+    <div
+      className="flex min-h-[420px] flex-col items-center justify-center rounded-2xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-8 text-center shadow-xl shadow-emerald-900/5 sm:p-10"
+      role="status"
+      aria-live="polite"
+    >
+      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500 text-3xl text-white shadow-lg shadow-emerald-500/30">
+        ✓
+      </span>
+      <h2 className="mt-6 font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-emerald-950">
+        Form submitted
+      </h2>
+      <p className="mt-3 max-w-md text-base leading-relaxed text-emerald-900/80">
+        Thank you — we received your request at{" "}
+        <span className="font-semibold">{SITE_EMAIL}</span>. A TestSync Lab
+        partner will reply within 24 hours on business days.
+      </p>
+      <a
+        href="/"
+        className="mt-8 inline-flex items-center justify-center rounded-xl bg-brand px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-deep"
+      >
+        Back to home
+      </a>
+    </div>
   );
 }
 
@@ -66,57 +50,23 @@ export function ContactForm({
   plan = "audit",
   source = "",
   sent = false,
-  error = false,
-  deliveryError = false,
 }: ContactFormProps) {
-  const [pending, setPending] = useState(false);
-  const [clientError, setClientError] = useState(false);
+  const [state, formAction, pending] = useActionState<ContactState, FormData>(
+    submitContact,
+    sent ? { status: "success" } : initialContactState,
+  );
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setPending(true);
-    setClientError(false);
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    if (asString(formData.get("company_website"))) {
-      window.location.href = `/contact?sent=1&plan=${encodeURIComponent(plan)}`;
-      return;
-    }
-
-    try {
-      const delivered = await sendViaFormSubmit(formData);
-      if (delivered) {
-        const ok = new URLSearchParams({ sent: "1", plan });
-        if (source) ok.set("source", source);
-        window.location.href = `/contact?${ok.toString()}`;
-        return;
-      }
-    } catch {
-      // Native FormSubmit POST still reaches info@ if ajax is blocked.
-    }
-
-    form.submit();
+  if (state.status === "success") {
+    return <SuccessCard />;
   }
 
   return (
     <form
-      action={`https://formsubmit.co/${SITE_EMAIL}`}
-      method="POST"
-      onSubmit={onSubmit}
+      action={formAction}
       className="relative rounded-2xl border border-line bg-white p-6 shadow-xl shadow-brand/10 sm:p-8"
     >
       <input type="hidden" name="plan" value={plan} />
       <input type="hidden" name="source" value={source} />
-      <input type="hidden" name="_subject" value={`New website lead (${plan})`} />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input
-        type="hidden"
-        name="_next"
-        value={`${SITE_URL}/contact?sent=1&plan=${encodeURIComponent(plan)}`}
-      />
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label htmlFor="company_website">Company website</label>
         <input
@@ -126,34 +76,27 @@ export function ContactForm({
           tabIndex={-1}
           autoComplete="off"
         />
-        <label htmlFor="_honey">Leave blank</label>
-        <input id="_honey" name="_honey" type="text" tabIndex={-1} />
       </div>
 
-      {sent ? (
-        <p
-          className="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800"
-          role="status"
-        >
-          Thank you — your free QA audit request was sent to {SITE_EMAIL}.
-          We&apos;ll reply shortly.
-        </p>
-      ) : null}
-      {error ? (
+      {state.status === "validation" ? (
         <p
           className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
           role="alert"
         >
-          Please complete name, a valid email, and message before submitting.
+          Please complete name, a valid work email, and a short message before
+          submitting.
         </p>
       ) : null}
-      {deliveryError || clientError ? (
+      {state.status === "delivery" ? (
         <p
           className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
           role="alert"
         >
-          Email delivery is not configured yet. Check {SITE_EMAIL} (including
-          spam) for a one-time FormSubmit confirmation, or email us directly.
+          We could not send that just now. Email us directly at{" "}
+          <a className="font-semibold underline" href={`mailto:${SITE_EMAIL}`}>
+            {SITE_EMAIL}
+          </a>{" "}
+          and we&apos;ll pick it up.
         </p>
       ) : null}
 
@@ -182,7 +125,7 @@ export function ContactForm({
               required
               autoComplete="name"
               placeholder="Alex Morgan"
-              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+              className={inputClassName}
             />
           </div>
           <div>
@@ -199,7 +142,7 @@ export function ContactForm({
               required
               autoComplete="email"
               placeholder="alex@company.com"
-              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+              className={inputClassName}
             />
           </div>
         </div>
@@ -218,7 +161,7 @@ export function ContactForm({
               type="text"
               autoComplete="organization"
               placeholder="Acme Inc."
-              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+              className={inputClassName}
             />
           </div>
           <div>
@@ -235,7 +178,7 @@ export function ContactForm({
               inputMode="url"
               autoComplete="url"
               placeholder="https://app.yourproduct.com"
-              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+              className={inputClassName}
             />
           </div>
         </div>
@@ -253,7 +196,7 @@ export function ContactForm({
             required
             rows={5}
             placeholder="Product, stack, next release date, and the journeys that must not break..."
-            className="w-full resize-y rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            className={`${inputClassName} resize-y`}
           />
         </div>
         <button
@@ -261,11 +204,11 @@ export function ContactForm({
           disabled={pending}
           className="inline-flex w-full items-center justify-center rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep hover:shadow-2xl hover:shadow-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:cursor-wait disabled:opacity-70"
         >
-          {pending ? "Sending to info@…" : `Request ${FREE_QA_AUDIT_LABEL}`}
+          {pending ? "Submitting…" : `Request ${FREE_QA_AUDIT_LABEL}`}
         </button>
         <p className="text-center text-xs text-muted">
-          Submits to {SITE_EMAIL}. No commitment. Response within 24 hours on
-          business days.
+          Stays on this page. Goes to {SITE_EMAIL}. No commitment. Response
+          within 24 hours on business days.
         </p>
       </div>
     </form>
