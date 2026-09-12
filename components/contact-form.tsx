@@ -2,13 +2,11 @@
 
 import { useActionState } from "react";
 import { FREE_QA_AUDIT_LABEL } from "@/lib/cta";
-import {
-  initialContactState,
-  submitContact,
-  type ContactState,
-} from "@/lib/actions/contact";
+import { submitContact } from "@/lib/actions/contact";
+import type { ContactState } from "@/lib/contact-state";
 import { SITE_EMAIL } from "@/lib/site";
 
+const initialContactState: ContactState = { status: "idle" };
 type ContactFormProps = {
   plan?: string;
   source?: string;

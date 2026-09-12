@@ -1,13 +1,8 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import type { ContactState } from "@/lib/contact-state";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
-
-export type ContactState = {
-  status: "idle" | "success" | "validation" | "delivery";
-};
-
-export const initialContactState: ContactState = { status: "idle" };
 
 const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
 
