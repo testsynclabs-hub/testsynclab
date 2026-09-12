@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CapabilityExplorer } from "@/components/capability-explorer";
 import { FaqCta, FaqList } from "@/components/faq-list";
+import { HeroHeadline } from "@/components/hero-headline";
 import { HeroVisual } from "@/components/hero-visual";
 import { PackageGrid } from "@/components/package-grid";
 import { Reveal } from "@/components/reveal";
@@ -38,12 +39,7 @@ export default function HomePage() {
             <p className="animate-fade-up font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl lg:text-[3.4rem]">
               {SITE_NAME}
             </p>
-            <h1
-              id="hero-heading"
-              className="animate-fade-up delay-100 mt-5 font-[family-name:var(--font-display)] text-3xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.65rem]"
-            >
-              Senior QA retainers that keep every release shippable.
-            </h1>
+            <HeroHeadline />
             <p className="animate-fade-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
               Manual, API, Playwright automation, and release gates — monthly
               from $999, for product teams worldwide.

@@ -45,7 +45,7 @@ export default function OpenGraphImage() {
               maxWidth: 920,
             }}
           >
-            Senior QA retainers that keep every release shippable
+            QA retainers that keep every release shippable
           </div>
           <div style={{ color: "#475569", fontSize: 28, maxWidth: 860 }}>
             Manual, API, Playwright automation, and release gates — monthly
