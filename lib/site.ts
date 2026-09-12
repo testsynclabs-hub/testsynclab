@@ -25,6 +25,7 @@ export const SITE_KEYWORDS = [
   "TestSync Lab",
 ] as const;
 
+/** Flat links for footer / sitemap-style lists */
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -33,6 +34,89 @@ export const navLinks = [
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export type NavChild = {
+  href: string;
+  label: string;
+  description?: string;
+};
+
+export type PrimaryNavItem =
+  | { type: "link"; href: string; label: string }
+  | { type: "menu"; id: string; label: string; href?: string; children: NavChild[] };
+
+/** Testlio-style primary navigation with dropdowns */
+export const primaryNav: PrimaryNavItem[] = [
+  { type: "link", href: "/", label: "Home" },
+  {
+    type: "menu",
+    id: "services",
+    label: "Services",
+    href: "/services",
+    children: [
+      {
+        href: "/services",
+        label: "All services",
+        description: "Manual, API, automation, and performance under one retainer.",
+      },
+      {
+        href: "/services#manual-testing",
+        label: "Manual testing",
+        description: "Exploratory and regression coverage before every release.",
+      },
+      {
+        href: "/services#api-testing",
+        label: "API testing",
+        description: "Contract and integration checks that protect your backend.",
+      },
+      {
+        href: "/services#automation",
+        label: "Test automation",
+        description: "Playwright / Selenium suites wired into CI.",
+      },
+      {
+        href: "/services#performance",
+        label: "Performance testing",
+        description: "Load signals and release gates for traffic spikes.",
+      },
+    ],
+  },
+  { type: "link", href: "/pricing", label: "Pricing" },
+  {
+    type: "menu",
+    id: "resources",
+    label: "Resources",
+    children: [
+      {
+        href: "/blog",
+        label: "Blog",
+        description: "Practical QA guides for product and engineering teams.",
+      },
+      {
+        href: "/faq",
+        label: "FAQ",
+        description: "Retainers, timelines, and how engagements work.",
+      },
+    ],
+  },
+  {
+    type: "menu",
+    id: "company",
+    label: "Company",
+    children: [
+      {
+        href: "/about",
+        label: "About us",
+        description: "Two QA partners focused on affordable monthly quality.",
+      },
+      {
+        href: "/contact",
+        label: "Contact",
+        description: "Book a free QA audit or ask about a retainer.",
+      },
+    ],
+  },
 ] as const;
 
 export const services = [
