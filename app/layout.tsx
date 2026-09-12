@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Remote QA retainers for US and Canada from $999`,
+        alt: `${SITE_NAME} — Remote QA retainers worldwide from $999`,
       },
     ],
   },
