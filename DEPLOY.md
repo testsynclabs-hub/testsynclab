@@ -62,10 +62,11 @@ Submit sitemap in Google Search Console.
 ## Lead form
 The contact form never leaves testsynclab.com. After a successful send it replaces the fields with a “Form submitted” confirmation.
 
-Delivery order on the server:
+Delivery order:
 
-1. Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)
-2. Resend (`RESEND_API_KEY`)
-3. Brevo (`BREVO_API_KEY`)
+1. Browser posts to the activated FormSubmit form (and CCs **info@testsynclab.com**)
+2. Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)
+3. Resend (`RESEND_API_KEY`)
+4. Brevo (`BREVO_API_KEY`)
 
-Set SMTP on Vercel so leads land in **info@testsynclab.com**. If every path fails, the visitor sees an on-page error and can email `info@` directly.
+Set SMTP on Vercel as a durable mailbox send. If every path fails, the visitor sees an on-page error and can email `info@` directly.

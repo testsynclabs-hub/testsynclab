@@ -5,7 +5,12 @@ import Link from "next/link";
 import { FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { submitContact } from "@/lib/actions/contact";
 import type { ContactState } from "@/lib/contact-state";
+import { sendLeadFromBrowser } from "@/lib/send-lead-client";
 import { SITE_EMAIL } from "@/lib/site";
+
+function asString(value: FormDataEntryValue | null) {
+  return typeof value === "string" ? value.trim() : "";
+}
 
 const initialContactState: ContactState = { status: "idle" };
 
@@ -52,7 +57,31 @@ export function ContactForm({
   sent = false,
 }: ContactFormProps) {
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
-    submitContact,
+    async (prev, formData) => {
+      if (asString(formData.get("company_website"))) {
+        return { status: "success" };
+      }
+
+      const fields = {
+        name: asString(formData.get("name")),
+        email: asString(formData.get("email")),
+        company: asString(formData.get("company")),
+        website: asString(formData.get("website")),
+        plan: asString(formData.get("plan")) || plan,
+        source: asString(formData.get("source")) || source,
+        message: asString(formData.get("message")),
+      };
+
+      try {
+        if (await sendLeadFromBrowser(fields)) {
+          return { status: "success" };
+        }
+      } catch {
+        // Fall through to the server action (SMTP / Resend / Brevo).
+      }
+
+      return submitContact(prev, formData);
+    },
     sent ? { status: "success" } : initialContactState,
   );
 
