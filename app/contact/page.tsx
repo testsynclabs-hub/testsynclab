@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { SITE_EMAIL, SITE_LINKEDIN } from "@/lib/site";
 
+export const maxDuration = 30;
+
 export const metadata: Metadata = {
   title: "Book a Free QA Audit",
   description:
