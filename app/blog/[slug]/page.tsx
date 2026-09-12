@@ -35,15 +35,25 @@ export default async function BlogPostPage({ params }: Props) {
             ← Blog
           </Link>
         </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {post.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand-deep"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
         <h1 className="mt-4 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
           {post.title}
         </h1>
         <p className="mt-4 text-sm text-muted">
-          {post.date} · {post.readingTime} · {post.tags.join(", ")}
+          {post.date} · {post.readingTime}
         </p>
         <div className="mt-10 space-y-5 text-lg leading-relaxed text-slate-700">
           {post.content.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
           ))}
         </div>
         <div className="mt-12 rounded-2xl border border-brand/20 bg-brand-soft/40 p-6">

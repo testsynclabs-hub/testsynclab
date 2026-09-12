@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaqCta, FaqList } from "@/components/faq-list";
 import { PackageGrid } from "@/components/package-grid";
 import { StickyCta } from "@/components/sticky-cta";
 import { services, SITE_EMAIL, SITE_NAME } from "@/lib/site";
@@ -36,25 +37,6 @@ const auditSteps = [
     step: "3",
     title: "Start testing",
     detail: "Begin with Basic, Growth, or QA Lead — cancel-friendly monthly.",
-  },
-] as const;
-
-const faqs = [
-  {
-    q: "How fast can you start?",
-    a: "Usually within 3–5 business days after scope confirmation. Urgent releases can be prioritized.",
-  },
-  {
-    q: "Do you only serve Canada and USA?",
-    a: "No — we serve product teams worldwide. North America is a strong fit for timezone overlap, but geography is not a limit.",
-  },
-  {
-    q: "Is $999 enough for real coverage?",
-    a: "Basic is focused manual QA for early teams. Growth adds API + automation. QA Lead adds release-gate ownership.",
-  },
-  {
-    q: "What do you need from us to begin?",
-    a: "Access to staging/test builds, acceptance criteria, and a Slack/email channel. We keep process light.",
   },
 ] as const;
 
@@ -304,25 +286,24 @@ export default function HomePage() {
         aria-labelledby="faq-heading"
       >
         <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-          <h2
-            id="faq-heading"
-            className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
-          >
-            FAQ
-          </h2>
-          <ul className="mt-10 grid gap-4 md:grid-cols-2">
-            {faqs.map((item) => (
-              <li
-                key={item.q}
-                className="rounded-2xl border border-line bg-sky-50/40 p-6"
-              >
-                <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
-                  {item.q}
-                </h3>
-                <p className="mt-2 text-muted">{item.a}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <h2
+              id="faq-heading"
+              className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+            >
+              FAQ
+            </h2>
+            <Link
+              href="/faq"
+              className="text-sm font-bold text-brand hover:text-brand-deep"
+            >
+              View all FAQs →
+            </Link>
+          </div>
+          <div className="mx-auto mt-10 max-w-3xl">
+            <FaqList showCategories={false} limit={6} />
+            <FaqCta />
+          </div>
         </div>
       </section>
 
