@@ -5,10 +5,10 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "TestSync Lab | Affordable Monthly QA Retainers from $999" as const;
+  "Remote QA Retainers from $999 | TestSync Lab — Worldwide" as const;
 
 export const SITE_DESCRIPTION =
-  "Hire senior software QA without full-time overhead. Monthly retainers for manual testing, API validation, Playwright automation, and performance checks — serving product teams in the US, Canada, and worldwide." as const;
+  "Hire senior software QA for product teams worldwide. Monthly retainers from $999 for manual testing, API validation, and Playwright automation — with fastest inbound focus on US and Canadian startups." as const;
 
 export const SITE_KEYWORDS = [
   "hire QA agency",
@@ -18,17 +18,25 @@ export const SITE_KEYWORDS = [
   "API testing services",
   "outsourced QA for startups",
   "QA automation agency",
+  "QA services USA",
+  "QA services Canada",
+  "outsourced QA United States",
+  "hire remote QA team",
   "Free QA Audit",
   "QA Testing Blog",
   "Regression Testing",
   "Remote QA Partner",
   "TestSync Lab",
+  "AI development services",
+  "LLM feature development",
+  "RAG chatbot development",
 ] as const;
 
 /** Flat links for footer / sitemap-style lists */
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/ai", label: "AI" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
@@ -80,6 +88,11 @@ export const primaryNav: PrimaryNavItem[] = [
         label: "Performance testing",
         description: "Load signals and release gates for traffic spikes.",
       },
+      {
+        href: "/ai",
+        label: "AI development",
+        description: "Copilots, RAG, and workflow automation — with QA included.",
+      },
     ],
   },
   { type: "link", href: "/pricing", label: "Pricing" },
@@ -108,12 +121,27 @@ export const primaryNav: PrimaryNavItem[] = [
       {
         href: "/about",
         label: "About us",
-        description: "Two QA partners focused on affordable monthly quality.",
+        description: "QA founders plus in-house AI engineering.",
+      },
+      {
+        href: "/qa-services-usa",
+        label: "QA for US teams",
+        description: "Remote retainers for United States product teams.",
+      },
+      {
+        href: "/qa-services-canada",
+        label: "QA for Canadian teams",
+        description: "USD packages and ET/PT-friendly handoffs.",
+      },
+      {
+        href: "/outsourced-qa",
+        label: "Outsourced QA",
+        description: "Senior coverage without a hiring cycle.",
       },
       {
         href: "/contact",
         label: "Contact",
-        description: "Book a free QA audit or ask about a retainer.",
+        description: "Book a free QA audit or ask about an AI feature.",
       },
     ],
   },
@@ -161,14 +189,27 @@ export const futureRoadmap = [
       "CSR, sales assistance, and chat support pods for teams that need reliable customer operations.",
   },
   {
-    title: "AI Development",
-    description:
-      "Practical AI features and automation for product teams that need more than testing alone.",
-  },
-  {
     title: "Custom Development",
     description:
-      "On-demand engineering capacity when your roadmap needs an extra pair of hands.",
+      "On-demand engineering capacity when your roadmap needs an extra pair of hands beyond QA and AI.",
+  },
+] as const;
+
+export const team = [
+  {
+    title: "Founding QA partner",
+    detail:
+      "Hands-on manual, exploratory, and release quality — strategy stays next to execution.",
+  },
+  {
+    title: "Founding QA partner",
+    detail:
+      "Automation, API, and performance cadence so coverage compounds month over month.",
+  },
+  {
+    title: "In-house AI engineer",
+    detail:
+      "Practical LLM features, RAG, and copilots — built as product slices, not demos.",
   },
 ] as const;
 
@@ -188,7 +229,10 @@ export const organizationJsonLd = {
     email: SITE_EMAIL,
     availableLanguage: ["English"],
   },
-  areaServed: "Worldwide",
+  areaServed: [
+    { "@type": "Country", name: "United States" },
+    { "@type": "Country", name: "Canada" },
+  ],
   knowsAbout: [...SITE_KEYWORDS],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -214,6 +258,12 @@ export const organizationJsonLd = {
         price: "2799",
         priceCurrency: "USD",
         description: "Full-stack QA with dedicated lead cadence",
+      },
+      {
+        "@type": "Offer",
+        name: "AI Feature Sprint",
+        description:
+          "Scoped AI feature development — copilots, RAG, or workflow automation — with QA included",
       },
     ],
   },

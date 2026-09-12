@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AiServiceBanner } from "@/components/ai-service-banner";
 import { CapabilityExplorer } from "@/components/capability-explorer";
 import { Reveal } from "@/components/reveal";
 import { capabilityAreas } from "@/lib/home-content";
@@ -9,7 +10,7 @@ import { services } from "@/lib/site";
 export const metadata: Metadata = {
   title: "QA Services",
   description:
-    "Manual testing, API validation, Playwright/Selenium automation, performance, release readiness, and accessibility checks for product teams worldwide.",
+    "Manual testing, API validation, Playwright/Selenium automation, performance, and practical AI development for product teams worldwide.",
   alternates: { canonical: "/services" },
 };
 
@@ -30,7 +31,8 @@ export default function ServicesPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
             Practical quality engineering for web and mobile products — scoped
-            to your release cadence, not a bloated checklist.
+            to your release cadence. Built for US and Canadian teams first,
+            delivered remotely worldwide.
           </p>
         </div>
       </section>
@@ -121,6 +123,12 @@ export default function ServicesPage() {
                 </li>
               ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <AiServiceBanner source="services-ai" />
         </div>
       </section>
 

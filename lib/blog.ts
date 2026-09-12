@@ -16,6 +16,138 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "outsourced-qa-for-us-startups",
+    title: "Outsourced QA for US Startups: What to Buy Before You Hire",
+    description:
+      "When a US SaaS team should outsource QA vs hire in-house — retainers, USD pricing, follow-the-sun coverage, and a free audit path.",
+    date: "2026-09-12",
+    readingTime: "8 min",
+    tags: ["Startups", "Outsourced QA", "United States"],
+    keywords: [
+      "outsourced QA for US startups",
+      "hire QA testers United States",
+      "remote QA team USA",
+      "QA retainer vs hiring",
+    ],
+    sections: [
+      {
+        heading: "US startups do not fail from a lack of test tools",
+        paragraphs: [
+          "They fail from a lack of named coverage on the week of launch. Playwright is installed. Nobody owns the flaky spec. The founder is still clicking through checkout on Friday night. That is the moment to buy a retainer, not open a two-month req.",
+          "TestSync Lab sells monthly QA to US product teams in USD: Basic $999, Growth $1,899, Scale $2,799. The job is senior testing in your Slack — not a 40-person offshore dump. If that is your situation, start on the QA for US teams page or book a free audit.",
+        ],
+      },
+      {
+        heading: "Outsource when speed beats headcount",
+        paragraphs: [
+          "Hire in-house when quality must live inside the company every day and you can wait on recruiting. Outsource when the next release is inside 30 days and bugs are already reaching customers. Many Series A teams do both over a year: retainer now, hire later, keep the pod for overflow.",
+          "The vendor test is simple. Can they explain what they will test this sprint, in writing, before you pay? If the pitch is only “we have 200 IST testers,” keep walking.",
+        ],
+      },
+      {
+        heading: "Follow-the-sun is a feature if reporting is tight",
+        paragraphs: [
+          "A US East or West Coast team can close with a build and wake up to repro steps. That only works if bugs are written like an engineer would write them: environment, severity, evidence. We do not claim a New York office. We claim overnight verification and a 24-hour audit response on business days.",
+          "Tools should be yours: GitHub, Linear, Jira, Slack. If an agency needs a separate portal for every bug, you will stop reading it.",
+        ],
+      },
+      {
+        heading: "Start this week",
+        paragraphs: [
+          "Share the product URL, stack, and next release date. We map risk to a package. If we are not a fit, you still keep the audit note. That is the whole funnel — not a 12-page RFP.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "remote-qa-for-canadian-saas",
+    title: "Remote QA for Canadian SaaS Teams: Timezones, USD, and What to Expect",
+    description:
+      "How Canadian startups in Toronto, Vancouver, and beyond buy remote QA without a local test department — pricing, ET handoffs, and a free audit.",
+    date: "2026-09-12",
+    readingTime: "7 min",
+    tags: ["Startups", "Canada", "Outsourced QA"],
+    keywords: [
+      "QA services Canada",
+      "outsourced QA Canada",
+      "remote QA Toronto",
+      "software testing company Canada",
+    ],
+    sections: [
+      {
+        heading: "Canadian SaaS has US release pressure and a thinner QA market",
+        paragraphs: [
+          "Toronto, Vancouver, Montreal, and Waterloo teams ship into the same North American customer base as US peers. The hiring pool for senior QA is smaller, and a full-time salary still hurts at seed. A remote retainer is the gap-filler: coverage this month, in USD, without pretending we sit on King Street.",
+          "TestSync Lab’s Canadian page is the short version. This article is the buying checklist so you do not confuse a body shop with a partner.",
+        ],
+      },
+      {
+        heading: "Pay in USD, demand English evidence",
+        paragraphs: [
+          "Public packages are $999 / $1,899 / $2,799 USD. Ask any vendor for the number before a “discovery workshop.” Ask how bugs are written. If you cannot paste a sample into Jira, the process will not survive your sprint review.",
+          "Privacy questions are reasonable. Least-privilege staging, no extra production data, terms before kickoff. Share a staging URL in the audit form — that is enough to start.",
+        ],
+      },
+      {
+        heading: "ET and PT handoffs without fake overlap theater",
+        paragraphs: [
+          "Most Canadian clients do not need someone on the 10am standup every day. They need notes at 9am Eastern: what broke, how bad, how to repro. Live overlap can be scheduled. The default is follow-the-sun plus Slack.",
+          "If your product is bilingual (EN/FR), say so in the audit. We will tell you honestly whether the scope fits Basic or needs a custom note.",
+        ],
+      },
+      {
+        heading: "How to brief us this week",
+        paragraphs: [
+          "Open contact, pick the free QA audit, mention you are a Canadian team, and include the next release date. We recommend Basic, Growth, Scale, or a no. Read QA for Canadian teams if you want the retainer framing first.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "qa-plus-ai-same-lab",
+    title: "Why AI Features Need a QA Lab — Not Just a Prompt Engineer",
+    description:
+      "A practical AI feature still has to survive a release. How TestSync Lab ships copilots, RAG, and workflow automation with the same quality bar as monthly QA retainers.",
+    date: "2026-09-12",
+    readingTime: "7 min",
+    tags: ["AI Development", "QA Strategy"],
+    keywords: [
+      "AI development with QA",
+      "RAG chatbot testing",
+      "LLM feature development",
+      "AI evals for startups",
+    ],
+    sections: [
+      {
+        heading: "The demo is not the product",
+        paragraphs: [
+          "Most AI work dies in the week after a demo. The chatbot answers the founder’s three sample questions, then hallucinates on a real customer ticket, leaks a competitor’s pricing, or silently fails when retrieval returns nothing.",
+          "That is not an AI problem first. It is a quality problem. TestSync Lab started as a QA agency because release confidence is the job. AI development is now a live lane — not a roadmap slogan — because we already had an in-house engineer who can ship a useful slice, and QA partners who will not sign off on a parlor trick.",
+        ],
+      },
+      {
+        heading: "What we will build (and what we will not)",
+        paragraphs: [
+          "We build practical product features: in-app copilots, RAG over your docs or tickets, and LLM steps inside existing workflows (triage, summaries, classification). The scope is one job-to-be-done, the data you already have, and a written definition of done.",
+          "We will not sell an “AI transformation,” a custom foundation model, or a six-month strategy workshop. If the smallest useful feature is still unclear, we say not yet. QA retainers stay the core offer; AI is scoped as a sprint or a custom pod so it does not blur the $999 / $1,899 / $2,799 retainers.",
+        ],
+      },
+      {
+        heading: "QA is the unfair advantage",
+        paragraphs: [
+          "An AI studio can ship a prompt. A QA lab can tell you whether the prompt still works after you swap models, add a tool, or change chunking. We treat AI like any other release: happy path, failure path, obvious jailbreaks, and a golden set you can re-run next month.",
+          "That is why AI quality and evals sit next to copilots on our AI page. If you only need testing, start with a free QA audit. If you need the feature and the gate, talk about an AI sprint.",
+        ],
+      },
+      {
+        heading: "How to start",
+        paragraphs: [
+          "Open the contact form with plan “AI development,” share the job-to-be-done, and tell us the deadline. We reply with a yes, a no, or a narrower scope. Monthly QA packages stay on /pricing. AI work is quoted after discovery — not billed as an open-ended experiment.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "free-qa-audit-what-you-get",
     title: "Free QA Audit: What Product Teams Actually Get",
     description:

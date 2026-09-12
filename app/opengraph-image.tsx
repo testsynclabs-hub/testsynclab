@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
           </div>
           <div style={{ color: "#475569", fontSize: 28, maxWidth: 860 }}>
             Manual, API, Playwright automation, and release gates — monthly
-            packages from $999 for product teams worldwide.
+            packages from $999 for US and Canadian product teams.
           </div>
         </div>
         <div style={{ color: "#1e40af", fontSize: 22, fontWeight: 600 }}>

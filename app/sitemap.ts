@@ -8,6 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/services",
+    "/ai",
+    "/qa-services-usa",
+    "/qa-services-canada",
+    "/outsourced-qa",
     "/pricing",
     "/about",
     "/contact",
@@ -22,7 +26,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency:
       path === "" || path === "/blog" ? ("weekly" as const) : ("monthly" as const),
     priority:
-      path === "" ? 1 : path === "/blog" || path === "/contact" ? 0.9 : path === "/pricing" ? 0.9 : 0.7,
+      path === ""
+        ? 1
+        : path === "/blog" || path === "/contact"
+          ? 0.9
+          : path === "/pricing" ||
+              path === "/ai" ||
+              path === "/qa-services-usa" ||
+              path === "/qa-services-canada" ||
+              path === "/outsourced-qa"
+            ? 0.9
+            : 0.7,
   }));
 
   const posts = blogPosts.map((post) => ({

@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
   applicationName: SITE_NAME,
   category: "technology",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Affordable monthly QA retainers from $999`,
+        alt: `${SITE_NAME} — Remote QA retainers for US and Canada from $999`,
       },
     ],
   },
@@ -79,7 +76,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
