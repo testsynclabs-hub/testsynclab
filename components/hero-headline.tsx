@@ -24,7 +24,7 @@ export function HeroHeadline() {
       window.setTimeout(() => {
         setIndex((value) => (value + 1) % rotatingWords.length);
         setVisible(true);
-      }, 220);
+      }, 180);
     }, 2800);
 
     return () => window.clearInterval(interval);
@@ -36,15 +36,24 @@ export function HeroHeadline() {
       className="animate-fade-up delay-100 mt-5 font-[family-name:var(--font-display)] text-3xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.65rem]"
     >
       QA retainers that keep every release{" "}
-      <span
-        className={`inline-block min-w-[9.5ch] bg-gradient-to-r from-brand to-brand-deep bg-clip-text text-transparent transition-all duration-300 ${
-          visible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
-        }`}
-        aria-live="polite"
-      >
-        {rotatingWords[index]}
+      <span className="relative inline-grid align-baseline">
+        {rotatingWords.map((word, wordIndex) => (
+          <span
+            key={word}
+            className={`col-start-1 row-start-1 text-brand transition-all duration-300 ${
+              wordIndex === index && visible
+                ? "translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-1 opacity-0"
+            }`}
+            aria-hidden={wordIndex === index ? undefined : true}
+          >
+            {word}
+          </span>
+        ))}
+        <span className="invisible col-start-1 row-start-1 whitespace-nowrap">
+          release-ready
+        </span>
       </span>
-      .
     </h1>
   );
 }
