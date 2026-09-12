@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import Link from "next/link";
 import { FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { submitContact } from "@/lib/actions/contact";
 import type { ContactState } from "@/lib/contact-state";
@@ -34,12 +35,12 @@ function SuccessCard() {
         <span className="font-semibold">{SITE_EMAIL}</span>. A TestSync Lab
         partner will reply within 24 hours on business days.
       </p>
-      <a
+      <Link
         href="/"
         className="mt-8 inline-flex items-center justify-center rounded-xl bg-brand px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-deep"
       >
         Back to home
-      </a>
+      </Link>
     </div>
   );
 }
