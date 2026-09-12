@@ -1,4 +1,19 @@
 export const blogCovers: Record<string, { src: string; accent: string; bg: string }> = {
+  "outsourced-qa-for-us-startups": {
+    src: "/images/blog/outsourced-qa-for-us-startups.svg",
+    accent: "#60A5FA",
+    bg: "#0B1F4B",
+  },
+  "remote-qa-for-canadian-saas": {
+    src: "/images/blog/remote-qa-for-canadian-saas.svg",
+    accent: "#F87171",
+    bg: "#7F1D1D",
+  },
+  "qa-plus-ai-same-lab": {
+    src: "/images/blog/qa-plus-ai-same-lab.svg",
+    accent: "#38BDF8",
+    bg: "#0B1220",
+  },
   "free-qa-audit-what-you-get": {
     "src": "/images/blog/free-qa-audit-what-you-get.svg",
     "accent": "#3B82F6",

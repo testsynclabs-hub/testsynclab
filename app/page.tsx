@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { CapabilityExplorer } from "@/components/capability-explorer";
 import { FaqCta, FaqList } from "@/components/faq-list";
 import { HeroHeadline } from "@/components/hero-headline";
@@ -7,6 +8,7 @@ import { PackageGrid } from "@/components/package-grid";
 import { Reveal } from "@/components/reveal";
 import { StickyCta } from "@/components/sticky-cta";
 import { TrustCarousel } from "@/components/trust-carousel";
+import { AiServiceBanner } from "@/components/ai-service-banner";
 import {
   auditSteps,
   coverageStats,
@@ -16,7 +18,14 @@ import {
   workflowTools,
 } from "@/lib/home-content";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
-import { services, SITE_EMAIL, SITE_NAME } from "@/lib/site";
+import { services, SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
+import { markets, outsourcedQa } from "@/lib/markets";
+
+export const metadata: Metadata = {
+  title: { absolute: SITE_TITLE },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
@@ -40,7 +49,7 @@ export default function HomePage() {
             <HeroHeadline />
             <p className="animate-fade-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-slate-300 sm:text-xl">
               Manual, API, Playwright automation, and release gates — monthly
-              from $999, for product teams worldwide.
+              from $999, for product teams in the US, Canada, and worldwide.
             </p>
             <div className="animate-fade-up delay-300 mt-10 flex flex-wrap gap-3">
               <Link
@@ -82,6 +91,13 @@ export default function HomePage() {
                 className="text-sm font-medium text-sky-300 transition hover:text-sky-200"
               >
                 Fixed monthly packages →
+              </Link>
+              <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
+              <Link
+                href="/ai"
+                className="text-sm font-medium text-sky-300 transition hover:text-sky-200"
+              >
+                Also: AI development →
               </Link>
             </div>
           </div>
@@ -295,6 +311,9 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+          <Reveal className="mt-12">
+            <AiServiceBanner source="home-services" />
+          </Reveal>
         </div>
       </section>
 
@@ -423,6 +442,64 @@ export default function HomePage() {
                 </Reveal>
               </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-surface py-20 sm:py-24"
+        aria-labelledby="markets-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="markets-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Built for US and Canadian product teams
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                USD retainers, English reporting, Slack/Jira, and follow-the-sun
+                verification — without a fake local office.
+              </p>
+            </div>
+          </Reveal>
+          <ul className="mt-12 grid gap-8 md:grid-cols-3">
+            {markets.map((market, index) => (
+              <li key={market.path}>
+                <Reveal delayMs={index * 60}>
+                  <article className="h-full border-t border-brand/25 pt-5">
+                    <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                      {market.navLabel}
+                    </h3>
+                    <p className="mt-2 text-muted">{market.navDescription}</p>
+                    <Link
+                      href={market.path}
+                      className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                    >
+                      {market.eyebrow} QA services →
+                    </Link>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+            <li>
+              <Reveal delayMs={120}>
+                <article className="h-full border-t border-brand/25 pt-5">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {outsourcedQa.navLabel}
+                  </h3>
+                  <p className="mt-2 text-muted">{outsourcedQa.navDescription}</p>
+                  <Link
+                    href={outsourcedQa.path}
+                    className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    How outsourced QA works →
+                  </Link>
+                </article>
+              </Reveal>
+            </li>
           </ul>
         </div>
       </section>

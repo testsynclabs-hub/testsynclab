@@ -25,13 +25,13 @@ export function SiteFooter() {
             {SITE_NAME}
           </p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            {SITE_NAME} is a software quality assurance partner for product and
-            engineering teams worldwide. Two QA partners. Affordable monthly
-            retainers. Release confidence without enterprise price tags.
+            {SITE_NAME} is a software quality assurance partner for US and
+            Canadian product teams. Two QA founders plus in-house AI
+            engineering. Affordable monthly retainers — and practical AI
+            features when you need them.
           </p>
           <p className="mt-4 text-sm text-slate-500">
-            Roadmap:{" "}
-            {futureRoadmap.map((item) => item.title).join(" · ")}
+            Later: {futureRoadmap.map((item) => item.title).join(" · ")}
           </p>
         </div>
 
@@ -50,6 +50,30 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/qa-services-usa"
+                className="transition-colors hover:text-blue-300"
+              >
+                QA for US teams
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/qa-services-canada"
+                className="transition-colors hover:text-blue-300"
+              >
+                QA for Canadian teams
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/outsourced-qa"
+                className="transition-colors hover:text-blue-300"
+              >
+                Outsourced QA
+              </Link>
+            </li>
             <li>
               <Link
                 href={auditHref("footer-nav")}
@@ -98,8 +122,8 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>
-            © {year} {SITE_NAME}. All rights reserved. Serving product teams
-            worldwide.
+            © {year} {SITE_NAME}. All rights reserved. Serving US, Canadian, and
+            worldwide product teams.
           </p>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-5 gap-y-2">

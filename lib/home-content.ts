@@ -15,9 +15,9 @@ export const coverageStats = [
     detail: "$999 · $1,899 · $2,799 — scope you can budget against.",
   },
   {
-    value: "Global",
-    label: "Remote delivery",
-    detail: "Timezone-friendly pods for US, Canada, and worldwide teams.",
+    value: "US · CA",
+    label: "Primary markets",
+    detail: "Remote pods for United States and Canadian teams — plus worldwide.",
   },
 ] as const;
 

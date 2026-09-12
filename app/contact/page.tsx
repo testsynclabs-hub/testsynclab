@@ -1,29 +1,55 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import {
+  AI_CONSULT_LABEL,
+  isAiInquiry,
+  planDisplayName,
+} from "@/lib/cta";
 import { SITE_EMAIL, SITE_LINKEDIN } from "@/lib/site";
 
 export const maxDuration = 30;
 
-export const metadata: Metadata = {
-  title: "Book a Free QA Audit",
-  description:
-    "Request a free software QA audit from TestSync Lab. Manual, API, and automation retainers from $999/mo for product teams worldwide.",
-  alternates: { canonical: "/contact" },
+type ContactSearch = {
+  plan?: string;
+  source?: string;
+  sent?: string;
 };
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<ContactSearch>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const plan = params.plan || "audit";
+
+  if (isAiInquiry(plan)) {
+    return {
+      title: "Talk about AI development",
+      description:
+        "Scope a practical AI feature with TestSync Lab — copilots, RAG, or workflow automation, with QA included.",
+      alternates: { canonical: "/contact" },
+    };
+  }
+
+  return {
+    title: "Book a Free QA Audit",
+    description:
+      "Request a free software QA audit from TestSync Lab. Manual, API, and automation retainers from $999/mo for product teams worldwide.",
+    alternates: { canonical: "/contact" },
+  };
+}
 
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{
-    plan?: string;
-    source?: string;
-    sent?: string;
-  }>;
+  searchParams: Promise<ContactSearch>;
 }) {
   const params = await searchParams;
   const plan = params.plan || "audit";
   const source = params.source || "contact-page";
   const sent = params.sent === "1";
+  const aiMode = isAiInquiry(plan);
 
   return (
     <main className="flex-1">
@@ -33,12 +59,14 @@ export default async function ContactPage({
             Response within 24 hours
           </p>
           <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
-            Book your free QA audit
+            {aiMode
+              ? "Talk about an AI feature"
+              : "Book your free QA audit"}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Share your website, product context, and release goals. We&apos;ll
-            map risks and recommend the right monthly package — this is the same
-            form every blog post sends you to.
+            {aiMode
+              ? "Share the job-to-be-done, the data you already have, and the deadline. We will recommend a scoped sprint or an AI + QA pod — or tell you it is not a fit yet."
+              : "Share your website, product context, and release goals. We'll map risks and recommend the right monthly package — this is the same form every blog post sends you to."}
           </p>
         </div>
       </section>
@@ -52,7 +80,9 @@ export default async function ContactPage({
             <p className="mt-4 text-muted">
               Email{" "}
               <a
-                href={`mailto:${SITE_EMAIL}?subject=Free%20QA%20Audit`}
+                href={`mailto:${SITE_EMAIL}?subject=${encodeURIComponent(
+                  aiMode ? AI_CONSULT_LABEL : "Free QA Audit",
+                )}`}
                 className="font-semibold text-brand hover:text-brand-deep"
               >
                 {SITE_EMAIL}
@@ -70,9 +100,24 @@ export default async function ContactPage({
               </a>
             </p>
             <ul className="mt-8 space-y-3 text-sm text-muted">
-              <li>• Free audit — no retainer required to start the conversation</li>
-              <li>• Packages from $999 / $1,899 / $2,799 per month</li>
-              <li>• Serving startups and product teams worldwide</li>
+              {aiMode ? (
+                <>
+                  <li>
+                    • Selected: {planDisplayName(plan)} — no commitment to start
+                    the conversation
+                  </li>
+                  <li>• Scoped quote after a short discovery, not hourly drift</li>
+                  <li>• QA included so the feature can survive a release</li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    • Free audit — no retainer required to start the conversation
+                  </li>
+                  <li>• Packages from $999 / $1,899 / $2,799 per month</li>
+                  <li>• Serving startups and product teams worldwide</li>
+                </>
+              )}
             </ul>
           </div>
           <ContactForm plan={plan} source={source} sent={sent} />

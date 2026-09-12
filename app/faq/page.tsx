@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers about TestSync Lab pricing, retainers, free QA audits, tooling, and how remote QA collaboration works.",
+    "Answers about TestSync Lab pricing, retainers, free QA audits, AI development sprints, and how remote collaboration works.",
   alternates: { canonical: "/faq" },
 };
 
@@ -38,8 +38,8 @@ export default function FaqPage() {
             Frequently asked questions
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Straight answers on pricing, process, coverage, and how to start a
-            free QA audit with TestSync Lab.
+            Straight answers on pricing, process, coverage, AI sprints, and how
+            to start a free QA audit with TestSync Lab.
           </p>
         </div>
       </section>

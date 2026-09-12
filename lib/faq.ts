@@ -1,7 +1,7 @@
 export type FaqItem = {
   question: string;
   answer: string;
-  category: "Pricing" | "Process" | "Coverage" | "Getting Started";
+  category: "Pricing" | "Process" | "Coverage" | "Getting Started" | "AI";
 };
 
 export const faqs: FaqItem[] = [
@@ -73,8 +73,38 @@ export const faqs: FaqItem[] = [
   },
   {
     category: "Coverage",
+    question: "Do you work with companies in the US and Canada?",
+    answer:
+      "Yes — US and Canadian product teams are our primary market. Retainers are priced in USD, reporting is in English, and we use Slack, Jira, GitHub, or Linear. Coverage is remote and follow-the-sun: you close with a build, we verify on our morning. See QA for US teams or QA for Canadian teams for market-specific detail.",
+  },
+  {
+    category: "Process",
+    question: "Will you overlap with EST, PST, or Eastern Time standups?",
+    answer:
+      "Most clients prefer async notes they can read at 9am local plus a short weekly cadence. Live overlap can be scheduled. We do not claim a US office — the model is overnight verification and written evidence, not a body in your timezone eight hours a day.",
+  },
+  {
+    category: "Coverage",
     question: "Can you help if we already have some automation?",
     answer:
       "Absolutely. We can stabilize flaky suites, fill coverage gaps, and add API checks around your existing scripts instead of ripping everything out.",
+  },
+  {
+    category: "AI",
+    question: "Do you only do QA, or can you also build AI features?",
+    answer:
+      "QA retainers are the core offer. We also ship practical AI features now — copilots, RAG, and workflow automation — with an in-house AI engineer. Custom software and BPO stay on the later roadmap so we do not pretend to be a full agency yet.",
+  },
+  {
+    category: "AI",
+    question: "How is AI work priced compared with monthly QA retainers?",
+    answer:
+      "QA stays on clear monthly packages ($999 / $1,899 / $2,799). AI is scoped as a fixed-quote feature sprint or a custom AI + QA pod. You get a written scope before we start — not an open-ended experiment billed by the hour.",
+  },
+  {
+    category: "AI",
+    question: "Why buy AI from a QA lab instead of a specialist AI studio?",
+    answer:
+      "Because the feature has to survive a release. We build the slice and test the happy path, failure path, and obvious jailbreaks in the same engagement. Most AI demos skip that. If you only need testing, start with a free QA audit instead.",
   },
 ];

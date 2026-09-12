@@ -9,7 +9,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "QA Blog",
   description:
-    "SEO-ready QA playbooks for product teams — free QA audits, Playwright, retainers vs hiring, API testing, and release gates. Every article leads to a practical next step.",
+    "SEO-ready playbooks for product teams — free QA audits, Playwright, retainers vs hiring, and practical AI features. Every article leads to a next step.",
   keywords: [
     "QA blog",
     "software testing articles",

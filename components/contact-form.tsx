@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
-import { FREE_QA_AUDIT_LABEL } from "@/lib/cta";
+import { FREE_QA_AUDIT_LABEL, isAiInquiry, planDisplayName, AI_CONSULT_LABEL } from "@/lib/cta";
 import { submitContact } from "@/lib/actions/contact";
 import type { ContactState } from "@/lib/contact-state";
 import { sendLeadFromBrowser } from "@/lib/send-lead-client";
@@ -56,6 +56,7 @@ export function ContactForm({
   source = "",
   sent = false,
 }: ContactFormProps) {
+  const aiMode = isAiInquiry(plan);
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
     async (prev, formData) => {
       if (asString(formData.get("company_website"))) {
@@ -131,7 +132,7 @@ export function ContactForm({
 
       {plan !== "general" && plan !== "audit" ? (
         <p className="mb-5 rounded-xl border border-brand/20 bg-brand-soft/50 px-4 py-3 text-sm font-medium text-brand-deep">
-          Selected plan: <span className="font-bold capitalize">{plan}</span>
+          Selected: <span className="font-bold">{planDisplayName(plan)}</span>
         </p>
       ) : null}
 
@@ -214,14 +215,18 @@ export function ContactForm({
             htmlFor="message"
             className="mb-1.5 block text-sm font-semibold text-slate-700"
           >
-            What should we audit?
+            {aiMode ? "What should we build?" : "What should we audit?"}
           </label>
           <textarea
             id="message"
             name="message"
             required
             rows={5}
-            placeholder="Product, stack, next release date, and the journeys that must not break..."
+            placeholder={
+              aiMode
+                ? "The AI feature, data you already have, current stack, and what done looks like..."
+                : "Product, stack, next release date, and the journeys that must not break..."
+            }
             className={`${inputClassName} resize-y`}
           />
         </div>
@@ -230,7 +235,11 @@ export function ContactForm({
           disabled={pending}
           className="inline-flex w-full items-center justify-center rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep hover:shadow-2xl hover:shadow-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:cursor-wait disabled:opacity-70"
         >
-          {pending ? "Submitting…" : `Request ${FREE_QA_AUDIT_LABEL}`}
+          {pending
+            ? "Submitting…"
+            : aiMode
+              ? AI_CONSULT_LABEL
+              : `Request ${FREE_QA_AUDIT_LABEL}`}
         </button>
         <p className="text-center text-xs text-muted">
           Stays on this page. Goes to {SITE_EMAIL}. No commitment. Response
