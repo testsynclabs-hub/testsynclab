@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Reveal } from "@/components/reveal";
+import { outcomePillars } from "@/lib/home-content";
 import { futureRoadmap, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -74,6 +76,38 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-white py-16 sm:py-20"
+        aria-labelledby="about-outcomes-heading"
+      >
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <h2
+              id="about-outcomes-heading"
+              className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep"
+            >
+              What we optimize for
+            </h2>
+            <p className="mt-3 max-w-2xl text-muted">
+              The same principles that make enterprise testing partners useful —
+              delivered as affordable monthly retainers.
+            </p>
+          </Reveal>
+          <ul className="mt-10 grid gap-8 sm:grid-cols-2">
+            {outcomePillars.map((item, index) => (
+              <li key={item.title}>
+                <Reveal delayMs={index * 60}>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-muted">{item.detail}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
