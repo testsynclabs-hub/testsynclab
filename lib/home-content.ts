@@ -15,9 +15,9 @@ export const coverageStats = [
     detail: "$999 · $1,899 · $2,799 — scope you can budget against.",
   },
   {
-    value: "US · CA",
-    label: "Go-to markets",
-    detail: "Worldwide delivery — US and Canada first for speed-to-client.",
+    value: "Global",
+    label: "Remote delivery",
+    detail: "Timezone-friendly pods for product teams worldwide.",
   },
 ] as const;
 
