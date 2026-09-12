@@ -46,6 +46,7 @@ export const packages: PackagePlan[] = [
       "Playwright or Selenium automation start",
       "Regression suites ready for CI",
       "Priority bug triage support",
+      "Optional AI testing add-on (scoped separately)",
     ],
   },
   {
@@ -63,6 +64,7 @@ export const packages: PackagePlan[] = [
       "Release-gate checklist & sign-off support",
       "Named lead cadence",
       "Priority turnaround on critical paths",
+      "Optional AI testing add-on (scoped separately)",
     ],
   },
   {
@@ -80,6 +82,7 @@ export const packages: PackagePlan[] = [
       "Dedicated QA pod options",
       "Compliance-minded workflows",
       "Strategic quality roadmap",
+      "AI testing pods available on request",
     ],
   },
 ];

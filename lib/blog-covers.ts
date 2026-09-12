@@ -14,6 +14,11 @@ export const blogCovers: Record<string, { src: string; accent: string; bg: strin
     accent: "#38BDF8",
     bg: "#0B1220",
   },
+  "ai-testing-sprint-vs-retainer-addon": {
+    src: "/images/blog/ai-testing-sprint-vs-retainer-addon.svg",
+    accent: "#38BDF8",
+    bg: "#0B1220",
+  },
   "free-qa-audit-what-you-get": {
     "src": "/images/blog/free-qa-audit-what-you-get.svg",
     "accent": "#3B82F6",

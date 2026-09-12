@@ -103,8 +103,14 @@ export const faqs: FaqItem[] = [
   },
   {
     category: "AI",
+    question: "Should AI testing sit inside Basic, Growth, or Scale — or stay separate?",
+    answer:
+      "Keep it separate. Monthly QA packages stay predictable for product coverage. AI surfaces need discovery before a fair quote, so we sell an AI Testing Sprint or an AI + QA add-on (best beside Growth or Scale). We do not bury open-ended AI work inside Basic.",
+  },
+  {
+    category: "AI",
     question: "Can you also build AI features, or only test them?",
     answer:
-      "Testing is the default offer — that is what most US and Canadian buyers need first. If you also need a small feature built, we can scope build + test together. Custom software and BPO stay on the later roadmap.",
+      "Testing is the default offer — that is what most buyers need first. If you also need a small feature built, we can scope build + test together. Custom software and BPO stay on the later roadmap.",
   },
 ];

@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AiPackageGrid } from "@/components/ai-package-grid";
 import { Reveal } from "@/components/reveal";
 import {
   aiBuildNote,
   aiEngagementSteps,
   aiLanes,
   aiOffer,
+  aiPackagePolicy,
   aiPackages,
 } from "@/lib/ai";
 import { AI_CONSULT_LABEL, aiHref, auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
+import { faqs } from "@/lib/faq";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AI Testing",
+  title: "AI Testing for Chatbots, RAG & LLM Products",
   description:
-    "AI testing for chatbots, copilots, RAG, and LLM products. Hallucination checks, prompt regression, and release gates from TestSync Lab — for US, Canadian, and worldwide teams.",
+    "AI testing for chatbots, copilots, RAG, and LLM products. Hallucination checks, prompt regression, and release gates — scoped separately from monthly QA retainers.",
   keywords: [
     "AI testing services",
     "chatbot testing",
@@ -23,6 +26,8 @@ export const metadata: Metadata = {
     "prompt regression testing",
     "AI product QA",
     "hire AI QA",
+    "AI testing sprint",
+    "LLM release gates",
   ],
   alternates: { canonical: "/ai" },
   openGraph: {
@@ -32,6 +37,8 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/ai`,
   },
 };
+
+const aiFaqs = faqs.filter((item) => item.category === "AI");
 
 const aiJsonLd = {
   "@context": "https://schema.org",
@@ -47,6 +54,30 @@ const aiJsonLd = {
   description:
     "QA for AI features: chatbot testing, RAG faithfulness, LLM evals, prompt regression, and AI workflow quality.",
   url: `${SITE_URL}/ai`,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "AI testing packages",
+    itemListElement: aiPackages.map((plan) => ({
+      "@type": "Offer",
+      name: plan.name,
+      description: plan.description,
+      url: `${SITE_URL}/pricing#ai-testing`,
+    })),
+  },
+};
+
+const aiFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: aiFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+  url: `${SITE_URL}/ai`,
 };
 
 export default function AiPage() {
@@ -55,6 +86,10 @@ export default function AiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aiJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aiFaqJsonLd) }}
       />
 
       <section className="relative overflow-hidden border-b border-line py-16 sm:py-20">
@@ -174,44 +209,25 @@ export default function AiPage() {
               How we price AI testing
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-muted">
-              Start with a scoped sprint, or fold AI regression into a monthly
-              QA retainer. Clear quote — not an open-ended AI experiment.
+              {aiPackagePolicy.body}
+            </p>
+            <p className="mt-3 max-w-2xl text-base font-semibold text-brand-deep">
+              {aiPackagePolicy.tip}
             </p>
           </Reveal>
-          <ul className="mt-12 grid gap-5 md:grid-cols-2">
-            {aiPackages.map((plan) => (
-              <li key={plan.id}>
-                <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-7">
-                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
-                    {plan.name}
-                  </h3>
-                  <p className="mt-3 flex items-baseline gap-1">
-                    <span className="font-[family-name:var(--font-display)] text-4xl font-extrabold text-brand-deep">
-                      {plan.priceLabel}
-                    </span>
-                    <span className="text-sm text-muted">{plan.priceNote}</span>
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {plan.description}
-                  </p>
-                  <ul className="mt-5 flex-1 space-y-2.5 text-sm text-slate-700">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={plan.ctaHref}
-                    className="mt-7 inline-flex items-center justify-center rounded-xl bg-brand px-4 py-3 text-sm font-bold text-white hover:bg-brand-deep"
-                  >
-                    {plan.ctaLabel}
-                  </Link>
-                </article>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-12">
+            <AiPackageGrid sourceSuffix="ai-pricing" />
+          </div>
+          <p className="mt-8 text-sm text-muted">
+            Classic monthly QA packages stay on{" "}
+            <Link
+              href="/pricing"
+              className="font-semibold text-brand hover:text-brand-deep"
+            >
+              /pricing
+            </Link>
+            . AI testing is quoted after discovery.
+          </p>
 
           <aside className="mt-10 rounded-2xl border border-line bg-surface p-6 sm:p-7">
             <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
@@ -225,6 +241,45 @@ export default function AiPage() {
               {aiBuildNote.label} →
             </Link>
           </aside>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-surface py-16 sm:py-20"
+        aria-labelledby="ai-faq-heading"
+      >
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
+          <Reveal>
+            <h2
+              id="ai-faq-heading"
+              className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+            >
+              AI testing FAQ
+            </h2>
+            <p className="mt-4 text-lg text-muted">
+              Straight answers on packages, add-ons, and when to start.
+            </p>
+          </Reveal>
+          <ul className="mt-10 space-y-4">
+            {aiFaqs.map((item) => (
+              <li key={item.question}>
+                <details className="group rounded-2xl border border-line bg-white open:border-brand/30">
+                  <summary className="cursor-pointer list-none px-5 py-4 font-[family-name:var(--font-display)] text-base font-bold text-slate-900 [&::-webkit-details-marker]:hidden">
+                    {item.question}
+                  </summary>
+                  <p className="border-t border-line px-5 py-4 text-sm leading-relaxed text-muted">
+                    {item.answer}
+                  </p>
+                </details>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-sm text-muted">
+            More retainer questions:{" "}
+            <Link href="/faq" className="font-semibold text-brand hover:text-brand-deep">
+              full FAQ →
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -25,10 +25,10 @@ export function SiteFooter() {
             {SITE_NAME}
           </p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            {SITE_NAME} is a software quality assurance partner for US and
-            Canadian product teams. Two QA founders plus in-house AI
-            engineering. Affordable monthly retainers — and practical AI
-            features when you need them.
+            {SITE_NAME} is a software quality assurance partner for product
+            teams worldwide. Two QA founders plus in-house AI expertise.
+            Affordable monthly retainers — and practical AI testing for
+            chatbots and LLM products.
           </p>
           <p className="mt-4 text-sm text-slate-500">
             Later: {futureRoadmap.map((item) => item.title).join(" · ")}
