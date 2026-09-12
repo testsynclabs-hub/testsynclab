@@ -6,6 +6,7 @@ type ContactFormProps = {
   source?: string;
   sent?: boolean;
   error?: boolean;
+  deliveryError?: boolean;
 };
 
 export function ContactForm({
@@ -13,6 +14,7 @@ export function ContactForm({
   source = "",
   sent = false,
   error = false,
+  deliveryError = false,
 }: ContactFormProps) {
   return (
     <form
@@ -49,6 +51,15 @@ export function ContactForm({
           Please complete name, a valid email, and message before submitting.
         </p>
       ) : null}
+      {deliveryError ? (
+        <p
+          className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
+          role="alert"
+        >
+          We could not deliver your request by email. Please email us directly
+          at info@testsynclab.com or try again in a few minutes.
+        </p>
+      ) : null}
 
       {plan !== "general" ? (
         <p className="mb-5 rounded-xl border border-brand/20 bg-brand-soft/50 px-4 py-3 text-sm font-medium text-brand-deep">
@@ -60,57 +71,79 @@ export function ContactForm({
       ) : null}
 
       <div className="space-y-5">
-        <div>
-          <label
-            htmlFor="name"
-            className="mb-1.5 block text-sm font-semibold text-slate-700"
-          >
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            autoComplete="name"
-            placeholder="Alex Morgan"
-            className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-          />
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="name"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              autoComplete="name"
+              placeholder="Alex Morgan"
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="email"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Work email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="alex@company.com"
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
         </div>
-        <div>
-          <label
-            htmlFor="email"
-            className="mb-1.5 block text-sm font-semibold text-slate-700"
-          >
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder="alex@company.com"
-            className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-          />
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="company"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Company
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              autoComplete="organization"
+              placeholder="Acme Inc."
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="website"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Website or staging URL
+            </label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              inputMode="url"
+              autoComplete="url"
+              placeholder="https://app.yourproduct.com"
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
         </div>
-        <div>
-          <label
-            htmlFor="website"
-            className="mb-1.5 block text-sm font-semibold text-slate-700"
-          >
-            Website or staging URL
-          </label>
-          <input
-            id="website"
-            name="website"
-            type="text"
-            inputMode="url"
-            autoComplete="url"
-            placeholder="https://app.yourproduct.com"
-            className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-          />
-        </div>
+
         <div>
           <label
             htmlFor="message"
@@ -133,6 +166,9 @@ export function ContactForm({
         >
           Request {FREE_QA_AUDIT_LABEL}
         </button>
+        <p className="text-center text-xs text-muted">
+          No commitment. Response within 24 hours on business days.
+        </p>
       </div>
     </form>
   );

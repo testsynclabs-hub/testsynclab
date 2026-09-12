@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
+import Link from "next/link";
+import { Reveal } from "@/components/reveal";
+import { outcomePillars } from "@/lib/home-content";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { futureRoadmap, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -77,11 +80,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <FreeQaAuditCta
-        source="about-footer"
-        heading="Want to see if we are a fit?"
-        body="Book a free QA audit. Two QA partners, worldwide coverage, and a written plan before you pick a retainer."
-      />
+      <section
+        className="border-t border-line bg-white py-16 sm:py-20"
+        aria-labelledby="about-outcomes-heading"
+      >
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <h2
+              id="about-outcomes-heading"
+              className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep"
+            >
+              What we optimize for
+            </h2>
+            <p className="mt-3 max-w-2xl text-muted">
+              The same principles that make enterprise testing partners useful —
+              delivered as affordable monthly retainers.
+            </p>
+          </Reveal>
+          <ul className="mt-10 grid gap-8 sm:grid-cols-2">
+            {outcomePillars.map((item, index) => (
+              <li key={item.title}>
+                <Reveal delayMs={index * 60}>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-muted">{item.detail}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-surface py-14">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p className="text-lg text-muted">
+            Want to see if we&apos;re a fit? Book a free QA audit.
+          </p>
+          <Link
+            href={auditHref("about-footer")}
+            className="rounded-xl bg-brand px-6 py-3 text-center font-bold text-white hover:bg-brand-deep"
+          >
+            {FREE_QA_AUDIT_LABEL}
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

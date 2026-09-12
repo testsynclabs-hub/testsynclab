@@ -69,11 +69,21 @@ export default async function BlogPostPage({ params }: Props) {
             ← Blog
           </Link>
         </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {post.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand-deep"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
         <h1 className="mt-4 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
           {post.title}
         </h1>
         <p className="mt-4 text-sm text-muted">
-          {post.date} · {post.readingTime} · {post.tags.join(", ")}
+          {post.date} · {post.readingTime}
         </p>
         <p className="mt-6 text-lg leading-relaxed text-slate-700">
           {post.description}{" "}
