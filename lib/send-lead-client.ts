@@ -46,14 +46,25 @@ function isDeliveredResponse(
   ok: boolean,
   body: { success?: boolean | string; message?: string } | null,
 ) {
-  if (!ok || !body) return false;
-  const message = String(body.message || "");
+  if (!ok) return false;
+  const message = String(body?.message || "");
   if (isActivationMessage(message)) return false;
+  if (!body) return true;
   return (
     body.success === true ||
     body.success === "true" ||
-    message.toLowerCase().includes("success")
+    message.toLowerCase().includes("success") ||
+    message.length === 0
   );
+}
+
+async function readBodyWithTimeout(response: Response) {
+  return Promise.race([
+    response.json().catch(() => null),
+    new Promise<null>((resolve) => {
+      setTimeout(() => resolve(null), 800);
+    }),
+  ]) as Promise<{ success?: boolean | string; message?: string } | null>;
 }
 
 async function postJson(url: string, data: Record<string, string>) {
@@ -65,10 +76,7 @@ async function postJson(url: string, data: Record<string, string>) {
     },
     body: JSON.stringify(data),
   });
-  const body = (await response.json().catch(() => null)) as {
-    success?: boolean | string;
-    message?: string;
-  } | null;
+  const body = await readBodyWithTimeout(response);
   return { ok: response.ok, body };
 }
 
