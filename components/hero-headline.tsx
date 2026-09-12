@@ -33,7 +33,7 @@ export function HeroHeadline() {
   return (
     <h1
       id="hero-heading"
-      className="animate-fade-up delay-100 mt-6 max-w-xl font-[family-name:var(--font-display)] text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]"
+      className="animate-fade-up delay-100 mt-3 max-w-xl font-[family-name:var(--font-display)] text-[1.7rem] font-extrabold leading-[1.1] tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-[2.75rem] xl:text-[3.15rem]"
     >
       QA retainers that keep every release{" "}
       <span className="relative inline-grid align-baseline">

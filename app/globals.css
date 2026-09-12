@@ -115,12 +115,24 @@ body {
 
 .animate-marquee {
   width: max-content;
-  animation: marquee 22s linear infinite;
+  animation: marquee 18s linear infinite;
   will-change: transform;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@media (min-width: 768px) {
+  .animate-marquee {
+    animation-duration: 22s;
+  }
+}
+
+@media (min-width: 1280px) {
+  .animate-marquee {
+    animation-duration: 28s;
+  }
 }
 
 html {

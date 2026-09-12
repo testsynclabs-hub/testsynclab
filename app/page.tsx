@@ -24,7 +24,7 @@ export default function HomePage() {
       <StickyCta />
 
       <section
-        className="relative overflow-hidden bg-[#07111f] text-white"
+        className="relative flex min-h-[calc(100svh-4.5rem-5.25rem)] flex-col overflow-hidden bg-[#07111f] text-white md:min-h-[calc(100svh-4.5rem)]"
         aria-labelledby="hero-heading"
       >
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -32,32 +32,32 @@ export default function HomePage() {
           <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(rgba(148,163,184,0.28)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.28)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)]" />
         </div>
 
-        <div className="relative mx-auto grid min-h-[calc(100svh-4.5rem)] w-full max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
+        <div className="relative mx-auto grid w-full max-w-6xl flex-1 content-center items-center gap-6 px-5 py-6 sm:gap-8 sm:px-8 sm:py-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:py-10">
           <div className="max-w-2xl">
-            <p className="animate-fade-up font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+            <p className="animate-fade-up font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.4rem]">
               {SITE_NAME}
             </p>
             <HeroHeadline />
-            <p className="animate-fade-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+            <p className="animate-fade-up delay-200 mt-3 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-4 sm:text-lg lg:text-xl">
               Manual, API, Playwright automation, and release gates — monthly
               from $999, for product teams worldwide.
             </p>
-            <div className="animate-fade-up delay-300 mt-10 flex flex-wrap gap-3">
+            <div className="animate-fade-up delay-300 mt-6 flex flex-wrap gap-3 sm:mt-8">
               <Link
                 href={auditHref("home-hero")}
-                className="animate-cta-pulse inline-flex items-center justify-center rounded-full bg-brand px-7 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-bright"
+                className="animate-cta-pulse inline-flex items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-bright sm:px-7 sm:py-3.5 sm:text-base"
               >
                 {FREE_QA_AUDIT_LABEL}
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 py-4 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-5 py-3 text-sm font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/10 sm:px-7 sm:py-3.5 sm:text-base"
               >
                 See Packages
               </Link>
             </div>
 
-            <div className="animate-fade-up delay-300 mt-8 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <div className="animate-fade-up delay-300 mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 sm:mt-6">
               <div
                 className="flex items-center gap-0.5"
                 aria-label="Five-star quality focus"
@@ -66,33 +66,33 @@ export default function HomePage() {
                   <svg
                     key={i}
                     viewBox="0 0 20 20"
-                    className="h-4 w-4 fill-amber-400 text-amber-400"
+                    className="h-3.5 w-3.5 fill-amber-400 text-amber-400 sm:h-4 sm:w-4"
                     aria-hidden="true"
                   >
                     <path d="M10 1.5l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.9l-4.78 2.5.91-5.32L2.27 7.12l5.34-.78L10 1.5z" />
                   </svg>
                 ))}
               </div>
-              <span className="text-sm font-semibold text-white">
+              <span className="text-xs font-semibold text-white sm:text-sm">
                 Clear QA ownership
               </span>
               <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
               <Link
                 href="/pricing"
-                className="text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                className="text-xs font-medium text-sky-300 transition hover:text-sky-200 sm:text-sm"
               >
                 Fixed monthly packages →
               </Link>
             </div>
           </div>
 
-          <div className="animate-fade-in delay-200 relative lg:justify-self-end">
+          <div className="animate-fade-in delay-200 relative hidden min-[900px]:block lg:justify-self-end">
             <HeroVisual />
           </div>
         </div>
-      </section>
 
-      <TrustCarousel />
+        <TrustCarousel />
+      </section>
 
       <section
         id="impact"
