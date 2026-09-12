@@ -1,12 +1,14 @@
 export const SITE_URL = "https://testsynclab.com" as const;
-
 export const SITE_NAME = "TestSync Lab" as const;
+export const SITE_EMAIL = "info@testsynclab.com" as const;
+export const SITE_LINKEDIN =
+  "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
   "TestSync Lab | Enterprise Software Quality Assurance & Automation Services" as const;
 
 export const SITE_DESCRIPTION =
-  "Top-tier B2B SQA agency specializing in automated testing, API validation, performance testing, and continuous QA integration for web and mobile platforms." as const;
+  "Worldwide B2B SQA agency delivering affordable monthly QA retainers — manual testing, API validation, automation, and performance testing for product teams everywhere." as const;
 
 export const SITE_KEYWORDS = [
   "Software Quality Assurance",
@@ -14,18 +16,70 @@ export const SITE_KEYWORDS = [
   "Playwright Testing",
   "Selenium Automation",
   "API Testing Services",
-  "Software Testing Pakistan",
+  "Monthly QA Retainer",
+  "Software Testing Services",
   "TestSync Lab",
 ] as const;
 
-export const SITE_EMAIL = "info@testsynclab.com" as const;
+export const navLinks = [
+  { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+] as const;
 
-export const SITE_SERVICES = [
-  "Manual Testing",
-  "API Testing",
-  "Test Automation",
-  "Performance Testing",
-  "Continuous QA Integration",
+export const services = [
+  {
+    slug: "manual-testing",
+    title: "Manual Testing",
+    summary:
+      "Exploratory and structured cycles that catch usability gaps, edge cases, and business-logic defects before release.",
+    details:
+      "We design pragmatic test charters, execute regression and smoke suites, and deliver clear bug reports your engineers can act on immediately.",
+  },
+  {
+    slug: "api-testing",
+    title: "API Testing",
+    summary:
+      "Contract, schema, and integration validation across REST and GraphQL so backends stay reliable under change.",
+    details:
+      "From Postman collections to automated contract checks, we harden the integrations your UI depends on.",
+  },
+  {
+    slug: "automation",
+    title: "Test Automation",
+    summary:
+      "Stable Playwright and Selenium suites wired into CI/CD so every commit is verified without slowing delivery.",
+    details:
+      "We prioritize high-value paths, reduce flaky tests, and leave you with maintainable automation — not a brittle script pile.",
+  },
+  {
+    slug: "performance",
+    title: "Performance Testing",
+    summary:
+      "Load, stress, and soak testing that surfaces bottlenecks early and proves your product scales with confidence.",
+    details:
+      "JMeter-based spot checks and performance budgets keep p95 latency and error rates inside release gates.",
+  },
+] as const;
+
+export const futureRoadmap = [
+  {
+    title: "BPO Support",
+    description:
+      "CSR, sales assistance, and chat support pods for teams that need reliable customer operations.",
+  },
+  {
+    title: "AI Development",
+    description:
+      "Practical AI features and automation for product teams that need more than testing alone.",
+  },
+  {
+    title: "Custom Development",
+    description:
+      "On-demand engineering capacity when your roadmap needs an extra pair of hands.",
+  },
 ] as const;
 
 export const organizationJsonLd = {
@@ -48,21 +102,30 @@ export const organizationJsonLd = {
   knowsAbout: [...SITE_KEYWORDS],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Software Quality Assurance Services",
-    itemListElement: SITE_SERVICES.map((service) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service,
-        provider: {
-          "@type": "Organization",
-          name: SITE_NAME,
-        },
+    name: "Monthly QA Retainers",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Basic",
+        price: "999",
+        priceCurrency: "USD",
+        description: "Manual testing retainer",
       },
-    })),
+      {
+        "@type": "Offer",
+        name: "Growth",
+        price: "1899",
+        priceCurrency: "USD",
+        description: "Manual + API + automation retainer",
+      },
+      {
+        "@type": "Offer",
+        name: "QA Lead",
+        price: "2799",
+        priceCurrency: "USD",
+        description: "Full-stack QA with dedicated lead cadence",
+      },
+    ],
   },
-  sameAs: [
-    "https://www.linkedin.com/",
-    "https://twitter.com/",
-  ],
+  sameAs: [SITE_LINKEDIN],
 } as const;

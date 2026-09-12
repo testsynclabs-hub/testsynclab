@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import {
   organizationJsonLd,
   SITE_DESCRIPTION,
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   category: "technology",
   alternates: {
-    canonical: SITE_URL,
+    canonical: "/",
   },
   openGraph: {
     title: SITE_TITLE,
@@ -86,7 +88,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: JSON.stringify(organizationJsonLd),
           }}
         />
-        {children}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to main content
+        </a>
+        <SiteHeader />
+        <div id="main-content" className="flex flex-1 flex-col">
+          {children}
+        </div>
+        <SiteFooter />
       </body>
     </html>
   );
