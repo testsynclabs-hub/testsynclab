@@ -60,4 +60,9 @@ Keep Hostinger email / MX records for mailbox. DNS for web (A/CNAME) and email (
 Submit sitemap in Google Search Console.
 
 ## Lead form
-Forms post to a server action and email **info@testsynclab.com** via Hostinger SMTP (preferred) or Resend. If neither is configured, submission fails with a clear error — check Vercel function logs for the lead payload.
+The contact form emails **info@testsynclab.com** in this order:
+
+1. The visitor’s browser posts to FormSubmit (no Vercel secret). The **first** submit sends an activation email to `info@` — open it once. After that, every lead arrives in the inbox.
+2. If that path is blocked, the server tries Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`) then Resend (`RESEND_API_KEY`).
+
+Set SMTP on Vercel for a direct mailbox send. Check spam for the FormSubmit confirmation.

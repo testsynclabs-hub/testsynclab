@@ -4,8 +4,31 @@ import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
+const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
+
 function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function leadText(fields: {
+  name: string;
+  email: string;
+  company: string;
+  website: string;
+  plan: string;
+  source: string;
+  message: string;
+}) {
+  return [
+    `Name: ${fields.name}`,
+    `Email: ${fields.email}`,
+    `Company: ${fields.company || "—"}`,
+    `Website: ${fields.website || "—"}`,
+    `Plan: ${fields.plan}`,
+    `Source: ${fields.source || "direct"}`,
+    "",
+    fields.message,
+  ].join("\n");
 }
 
 async function sendViaSmtp(options: {
@@ -13,31 +36,52 @@ async function sendViaSmtp(options: {
   subject: string;
   text: string;
 }) {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const port = Number(process.env.SMTP_PORT || "465");
-
+  const host = process.env.SMTP_HOST?.trim();
+  const user = process.env.SMTP_USER?.trim();
+  const pass = process.env.SMTP_PASS?.trim();
   if (!host || !user || !pass) {
     return false;
   }
 
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
+  const preferredPort = Number(process.env.SMTP_PORT || "465");
+  const attempts = [
+    { port: preferredPort, secure: preferredPort === 465 },
+    { port: 587, secure: false },
+    { port: 465, secure: true },
+  ].filter(
+    (attempt, index, list) =>
+      list.findIndex((item) => item.port === attempt.port) === index,
+  );
 
-  await transporter.sendMail({
-    from: `"${SITE_NAME} Website" <${user}>`,
-    to: SITE_EMAIL,
-    replyTo: options.replyTo,
-    subject: options.subject,
-    text: options.text,
-  });
+  let lastError: unknown;
+  for (const attempt of attempts) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host,
+        port: attempt.port,
+        secure: attempt.secure,
+        requireTLS: !attempt.secure,
+        auth: { user, pass },
+        connectionTimeout: 8000,
+        greetingTimeout: 8000,
+        socketTimeout: 8000,
+      });
 
-  return true;
+      await transporter.sendMail({
+        from: `"${SITE_NAME} Website" <${user}>`,
+        to: LEAD_INBOX,
+        replyTo: options.replyTo,
+        subject: options.subject,
+        text: options.text,
+      });
+      return true;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  console.error("SMTP delivery failed", lastError);
+  return false;
 }
 
 async function sendViaResend(options: {
@@ -45,8 +89,12 @@ async function sendViaResend(options: {
   subject: string;
   text: string;
 }) {
-  const resendKey = process.env.RESEND_API_KEY;
+  const resendKey = process.env.RESEND_API_KEY?.trim();
   if (!resendKey) return false;
+
+  const from =
+    process.env.RESEND_FROM?.trim() ||
+    `${SITE_NAME} Website <onboarding@resend.dev>`;
 
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -55,8 +103,8 @@ async function sendViaResend(options: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: `${SITE_NAME} Website <onboarding@resend.dev>`,
-      to: [SITE_EMAIL],
+      from,
+      to: [LEAD_INBOX],
       reply_to: options.replyTo,
       subject: options.subject,
       text: options.text,
@@ -99,16 +147,15 @@ export async function submitContact(formData: FormData) {
   }
 
   const subject = `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`;
-  const text = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Company: ${company || "—"}`,
-    `Website: ${website || "—"}`,
-    `Plan: ${plan}`,
-    `Source: ${source || "direct"}`,
-    "",
+  const text = leadText({
+    name,
+    email,
+    company,
+    website,
+    plan,
+    source,
     message,
-  ].join("\n");
+  });
 
   let delivered = false;
 
@@ -127,10 +174,15 @@ export async function submitContact(formData: FormData) {
   }
 
   if (!delivered) {
-    console.error(
-      "Lead NOT emailed — configure SMTP_* (Hostinger) or RESEND_API_KEY on Vercel",
-      { name, email, company, website, plan, source, message },
-    );
+    console.error("Lead NOT emailed via SMTP/Resend", {
+      name,
+      email,
+      company,
+      website,
+      plan,
+      source,
+      message,
+    });
     const deliveryQuery = new URLSearchParams({ error: "delivery", plan });
     if (source) deliveryQuery.set("source", source);
     redirect(`/contact?${deliveryQuery.toString()}`);
