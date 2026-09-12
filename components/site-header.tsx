@@ -99,23 +99,6 @@ export function SiteHeader() {
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-line/80 bg-white/95 shadow-sm shadow-brand/5 backdrop-blur-xl"
     >
-      <div className="border-b border-line/70 bg-slate-950 text-slate-200">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-2 text-xs font-semibold sm:px-8 sm:text-sm">
-          <a
-            href={`mailto:${SITE_EMAIL}`}
-            className="truncate transition-colors hover:text-white"
-          >
-            {SITE_EMAIL}
-          </a>
-          <Link
-            href={auditHref("utility-bar")}
-            className="shrink-0 text-blue-300 transition-colors hover:text-white"
-          >
-            {FREE_QA_AUDIT_LABEL}
-          </Link>
-        </div>
-      </div>
-
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8 sm:py-3.5">
         <Link
           href="/"
