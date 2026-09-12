@@ -7,7 +7,7 @@ import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 export const metadata: Metadata = {
   title: "Pricing & Packages",
   description:
-    "Affordable monthly QA retainers: Basic $999, Growth $1,899, QA Lead $2,799, and custom Enterprise plans.",
+    "Affordable monthly QA retainers: Basic $999, Growth $1,899, Scale $2,799, and custom Enterprise plans.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -51,7 +51,7 @@ export default function PricingPage() {
       <FreeQaAuditCta
         source="pricing-footer"
         heading="Unsure which package fits?"
-        body="Book a free QA audit. We recommend Basic, Growth, QA Lead, or Enterprise from your actual release risk."
+        body="Book a free QA audit. We recommend Basic, Growth, Scale, or Enterprise from your actual release risk."
       />
     </main>
   );

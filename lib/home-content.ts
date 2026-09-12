@@ -184,6 +184,6 @@ export const auditSteps = [
   {
     step: "3",
     title: "Start testing",
-    detail: "Begin with Basic, Growth, or QA Lead — cancel-friendly monthly.",
+    detail: "Begin with Basic, Growth, or Scale — cancel-friendly monthly.",
   },
 ] as const;

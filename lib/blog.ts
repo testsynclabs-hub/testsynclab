@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
         heading: "The deliverable you can use even if you never hire us",
         paragraphs: [
           "You receive a concise audit note: critical user journeys, missing regression, API or data risks, and a 30-day test plan. Founders use it internally. Eng managers use it to justify a retainer or a hire.",
-          "When a monthly package makes sense, we map the work to Basic ($999), Growth ($1,899), or QA Lead ($2,799). If you need more than one pod, we point you to Enterprise instead of forcing a standard plan.",
+          "When a monthly package makes sense, we map the work to Basic ($999), Growth ($1,899), or Scale ($2,799). If you need more than one pod, we point you to Enterprise instead of forcing a standard plan.",
         ],
       },
       {
@@ -130,7 +130,7 @@ export const blogPosts: BlogPost[] = [
         heading: "When Selenium is still the right call",
         paragraphs: [
           "Keep Selenium if the existing investment is healthy, if you must target a specific grid, or if the org already has Selenium skills you do not want to throw away. Rewrites are expensive; stabilization is cheaper.",
-          "Our Growth and QA Lead retainers include this exact choice: we do not migrate you for sport. Book a free QA audit and we will say whether to keep, wrap, or replace what you have.",
+          "Our Growth and Scale retainers include this exact choice: we do not migrate you for sport. Book a free QA audit and we will say whether to keep, wrap, or replace what you have.",
         ],
       },
     ],
@@ -154,7 +154,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Bugs are not abstract",
         paragraphs: [
           "One checkout defect, one failed onboarding, or one broken invite link can cost more than a month of senior QA. The invoice is obvious. The churn, support load, and lost demo are not.",
-          "TestSync Lab prices retainers so founders can do this math in one sitting: Basic $999, Growth $1,899, QA Lead $2,799. Enterprise is custom when one pod is not enough.",
+          "TestSync Lab prices retainers so founders can do this math in one sitting: Basic $999, Growth $1,899, Scale $2,799. Enterprise is custom when one pod is not enough.",
         ],
       },
       {
@@ -167,7 +167,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How to pick a starting package",
         paragraphs: [
-          "If you only need human coverage and clear bugs, start Basic. If you ship weekly and want API plus automation, start Growth. If you need a named lead and release-gate cadence, start QA Lead.",
+          "If you only need human coverage and clear bugs, start Basic. If you ship weekly and want API plus automation, start Growth. If you need a named lead and release-gate cadence, start Scale.",
           "Unsure? Request a free QA audit. We will say which package matches the risk — including “none of these yet” if you only need a one-time pass.",
         ],
       },
@@ -205,7 +205,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "A path that does not lock you in",
         paragraphs: [
-          "Start with a retainer such as TestSync Lab Growth or QA Lead. If the collaboration works, you can embed the same people more deeply or hire internally with a real quality playbook already written.",
+          "Start with a retainer such as TestSync Lab Growth or Scale. If the collaboration works, you can embed the same people more deeply or hire internally with a real quality playbook already written.",
           "Book a free QA audit if you want a written recommendation before you open a req or a contract.",
         ],
       },
@@ -243,7 +243,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Sign-off that remote partners can honor",
         paragraphs: [
-          "Write exit criteria: smoke green, no open criticals, known issues listed, owner named. TestSync Lab uses this gate on QA Lead retainers so timezone handoffs stay explicit.",
+          "Write exit criteria: smoke green, no open criticals, known issues listed, owner named. TestSync Lab uses this gate on Scale retainers so timezone handoffs stay explicit.",
           "Want this checklist applied to your product? Request a free QA audit and we will tailor the first regression pack to your next release.",
         ],
       },
@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How we install this on a retainer",
         paragraphs: [
-          "Our Growth and QA Lead retainers include this path — automation that protects releases instead of slowing them down. We leave you with maintainable specs, not a brittle pile.",
+          "Our Growth and Scale retainers include this path — automation that protects releases instead of slowing them down. We leave you with maintainable specs, not a brittle pile.",
           "If CI is red and nobody trusts it, start with a free QA audit. We will tell you what to delete, what to fix, and what to add.",
         ],
       },
@@ -319,7 +319,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Then book the audit, not a six-month SOW",
         paragraphs: [
-          "A free QA audit is how we turn that one-pager into a scoped retainer. You see how we write bugs and how we think before you commit to Basic, Growth, or QA Lead.",
+          "A free QA audit is how we turn that one-pager into a scoped retainer. You see how we write bugs and how we think before you commit to Basic, Growth, or Scale.",
           "Send the brief through the contact form with your website URL. That is the fastest way to start.",
         ],
       },
@@ -351,7 +351,7 @@ export const blogPosts: BlogPost[] = [
         heading: "What we automate first",
         paragraphs: [
           "Login token flow, create/read/update on the core resource, permission denials, and webhook or email side effects. Those four buckets catch most “it works on my machine” debates.",
-          "That balance is built into our Growth package — manual insight plus API and automation where it pays off. QA Lead adds performance spot checks when latency is already a sales problem.",
+          "That balance is built into our Growth package — manual insight plus API and automation where it pays off. Scale adds performance spot checks when latency is already a sales problem.",
         ],
       },
       {
@@ -388,7 +388,7 @@ export const blogPosts: BlogPost[] = [
         heading: "A starter performance pass",
         paragraphs: [
           "Pick one journey. Script it in JMeter or an equivalent. Ramp to expected peak plus a margin. Watch error rate, p95, and the database. Repeat after the next infrastructure change.",
-          "TestSync Lab includes performance spot checks on the QA Lead retainer. Growth stays focused on functional and API risk until latency is a named problem.",
+          "TestSync Lab includes performance spot checks on the Scale retainer. Growth stays focused on functional and API risk until latency is a named problem.",
         ],
       },
       {
@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Install the gate with an audit",
         paragraphs: [
-          "A free QA audit can draft your first gate in one pass. From there, QA Lead retainers keep the cadence: named lead, sign-off, and a written go/no-go.",
+          "A free QA audit can draft your first gate in one pass. From there, Scale retainers keep the cadence: named lead, sign-off, and a written go/no-go.",
         ],
       },
     ],
@@ -462,7 +462,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Pair store reality with API checks",
         paragraphs: [
           "Most mobile defects are API or state bugs wearing a native UI. Keep contract tests on the backend. Use the device for permissions, gestures, and store-specific flows.",
-          "A monthly retainer can own the matrix so your engineers stay on features. Basic covers structured manual passes. Growth adds API automation. QA Lead adds release-gate cadence around store submissions.",
+          "A monthly retainer can own the matrix so your engineers stay on features. Basic covers structured manual passes. Growth adds API automation. Scale adds release-gate cadence around store submissions.",
         ],
       },
       {
@@ -498,7 +498,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Why retainers win for teams that ship weekly",
         paragraphs: [
           "Monthly retainers win when you ship continuously. You get reserved capacity, faster context, and predictable cost. Typical US/EU boutique retainers often sit well above $3k–$8k for senior coverage.",
-          "TestSync Lab positions intentionally lower: Basic $999, Growth $1,899, QA Lead $2,799 — senior execution without enterprise markup.",
+          "TestSync Lab positions intentionally lower: Basic $999, Growth $1,899, Scale $2,799 — senior execution without enterprise markup.",
         ],
       },
       {
@@ -541,7 +541,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Pick a starting package from the audit",
         paragraphs: [
-          "Book a free TestSync Lab audit and we will tell you whether Basic, Growth, or QA Lead is the right starting point.",
+          "Book a free TestSync Lab audit and we will tell you whether Basic, Growth, or Scale is the right starting point.",
         ],
       },
     ],
@@ -571,7 +571,7 @@ export const blogPosts: BlogPost[] = [
         heading: "The winning layered pattern",
         paragraphs: [
           "Manual exploration for risk discovery, API checks for logic, and thin UI automation for critical regressions.",
-          "TestSync Lab’s Basic package is intentionally manual-first for teams that need judgment now. Growth and QA Lead add automation once paths stabilize.",
+          "TestSync Lab’s Basic package is intentionally manual-first for teams that need judgment now. Growth and Scale add automation once paths stabilize.",
         ],
       },
       {

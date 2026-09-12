@@ -3,7 +3,7 @@
 Website alone rarely closes B2B deals in week 1. Use this outbound + conversion loop daily.
 
 ## Offer (say this everywhere)
-Free QA audit in 24h → recommend Basic ($999) / Growth ($1,899) / QA Lead ($2,799).
+Free QA audit in 24h → recommend Basic ($999) / Growth ($1,899) / Scale ($2,799).
 
 ## Today (Day 1) — do in order
 1. Finish LinkedIn invites (you + partner = up to 100).

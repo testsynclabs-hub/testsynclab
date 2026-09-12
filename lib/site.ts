@@ -210,7 +210,7 @@ export const organizationJsonLd = {
       },
       {
         "@type": "Offer",
-        name: "QA Lead",
+        name: "Scale",
         price: "2799",
         priceCurrency: "USD",
         description: "Full-stack QA with dedicated lead cadence",

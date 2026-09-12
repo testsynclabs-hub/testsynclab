@@ -15,7 +15,7 @@ export const faqs: FaqItem[] = [
     category: "Getting Started",
     question: "What is included in the free QA audit?",
     answer:
-      "A practical risk review of your product context, release timeline, and likely quality gaps — plus a recommended package (Basic, Growth, or QA Lead). No retainer required to start the conversation.",
+      "A practical risk review of your product context, release timeline, and likely quality gaps — plus a recommended package (Basic, Growth, or Scale). No retainer required to start the conversation.",
   },
   {
     category: "Pricing",
@@ -27,7 +27,7 @@ export const faqs: FaqItem[] = [
     category: "Pricing",
     question: "What do $999, $1,899, and $2,799 actually include?",
     answer:
-      "Basic ($999) focuses on manual exploratory and regression QA. Growth ($1,899) adds API validation and automation start. QA Lead ($2,799) adds performance spot checks, release-gate support, and a named lead cadence. Enterprise is custom for multi-pod needs.",
+      "Basic ($999) focuses on manual exploratory and regression QA. Growth ($1,899) adds API validation and automation start. Scale ($2,799) adds performance spot checks, release-gate support, and a named lead cadence. Enterprise is custom for multi-pod needs.",
   },
   {
     category: "Pricing",

@@ -197,7 +197,7 @@ export default function BlogPage() {
       <FreeQaAuditCta
         source="blog-index-footer"
         heading="Ready to turn reading into a test plan?"
-        body="Book a free QA audit. We will map risks on your product and recommend Basic, Growth, QA Lead — or no retainer yet."
+        body="Book a free QA audit. We will map risks on your product and recommend Basic, Growth, Scale — or no retainer yet."
       />
     </main>
   );

@@ -1,4 +1,4 @@
-export type PackageId = "basic" | "growth" | "qa-lead" | "enterprise";
+export type PackageId = "basic" | "growth" | "scale" | "enterprise";
 
 export type PackagePlan = {
   id: PackageId;
@@ -49,19 +49,19 @@ export const packages: PackagePlan[] = [
     ],
   },
   {
-    id: "qa-lead",
-    name: "QA Lead",
+    id: "scale",
+    name: "Scale",
     priceLabel: "$2,799",
     priceNote: "per month",
     description:
-      "Full-stack QA with a named lead cadence — release gates, reporting, and performance spot checks included.",
-    ctaLabel: "Get QA Lead",
-    ctaHref: "/contact?plan=qa-lead&source=pricing-card",
+      "Full-stack QA for faster release trains — gates, reporting, performance spot checks, and a named lead cadence.",
+    ctaLabel: "Choose Scale",
+    ctaHref: "/contact?plan=scale&source=pricing-card",
     features: [
       "Everything in Growth",
       "Performance spot checks (JMeter)",
       "Release-gate checklist & sign-off support",
-      "Named QA lead cadence",
+      "Named lead cadence",
       "Priority turnaround on critical paths",
     ],
   },

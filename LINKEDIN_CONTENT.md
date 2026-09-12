@@ -50,7 +50,7 @@ They need senior testing coverage before the next release.
 TestSync Lab monthly retainers:
 • Basic — $999
 • Growth — $1,899
-• QA Lead — $2,799
+• Scale — $2,799
 
 Free QA audit (24h response) → https://www.testsynclab.com/contact
 
