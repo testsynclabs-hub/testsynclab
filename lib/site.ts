@@ -5,19 +5,19 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "TestSync Lab | Enterprise Software Quality Assurance & Automation Services" as const;
+  "TestSync Lab | Affordable Monthly QA Retainers from $999" as const;
 
 export const SITE_DESCRIPTION =
-  "Worldwide B2B SQA agency delivering affordable monthly QA retainers — manual testing, API validation, automation, and performance testing for product teams everywhere." as const;
+  "Hire senior software QA without full-time overhead. Monthly retainers for manual testing, API validation, Playwright automation, and performance checks — serving product teams in the US, Canada, and worldwide." as const;
 
 export const SITE_KEYWORDS = [
-  "Software Quality Assurance",
-  "QA Automation Agency",
-  "Playwright Testing",
-  "Selenium Automation",
-  "API Testing Services",
-  "Monthly QA Retainer",
-  "Software Testing Services",
+  "hire QA agency",
+  "monthly QA retainer",
+  "software testing services",
+  "Playwright testing company",
+  "API testing services",
+  "outsourced QA for startups",
+  "QA automation agency",
   "TestSync Lab",
 ] as const;
 

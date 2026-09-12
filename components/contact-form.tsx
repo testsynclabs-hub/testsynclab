@@ -33,8 +33,8 @@ export function ContactForm({
           className="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800"
           role="status"
         >
-          Thank you — your message was received. We&apos;ll reply at
-          info@testsynclab.com shortly.
+          Thank you — request received. We reply within 24 hours at
+          info@testsynclab.com.
         </p>
       ) : null}
       {error ? (
@@ -53,53 +53,90 @@ export function ContactForm({
       ) : null}
 
       <div className="space-y-5">
-        <div>
-          <label
-            htmlFor="name"
-            className="mb-1.5 block text-sm font-semibold text-slate-700"
-          >
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            autoComplete="name"
-            placeholder="Alex Morgan"
-            className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-          />
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="name"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              autoComplete="name"
+              placeholder="Alex Morgan"
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="email"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Work email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="alex@company.com"
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
         </div>
-        <div>
-          <label
-            htmlFor="email"
-            className="mb-1.5 block text-sm font-semibold text-slate-700"
-          >
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder="alex@company.com"
-            className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-          />
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="company"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Company
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              autoComplete="organization"
+              placeholder="Acme Inc."
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="website"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Product / website URL
+            </label>
+            <input
+              id="website"
+              name="website"
+              type="url"
+              placeholder="https://yourproduct.com"
+              className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+            />
+          </div>
         </div>
+
         <div>
           <label
             htmlFor="message"
             className="mb-1.5 block text-sm font-semibold text-slate-700"
           >
-            Message
+            What should we audit?
           </label>
           <textarea
             id="message"
             name="message"
             required
             rows={5}
-            placeholder="Tell us about your product, stack, and release timeline..."
+            placeholder="App type (web/mobile), release date, known quality risks, timezone..."
             className="w-full resize-y rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
           />
         </div>
@@ -107,8 +144,11 @@ export function ContactForm({
           type="submit"
           className="inline-flex w-full items-center justify-center rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep hover:shadow-2xl hover:shadow-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
-          Submit Request
+          Book Free QA Audit
         </button>
+        <p className="text-center text-xs text-muted">
+          No commitment. Response within 24 hours on business days.
+        </p>
       </div>
     </form>
   );

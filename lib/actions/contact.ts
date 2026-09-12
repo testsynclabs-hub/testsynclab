@@ -15,6 +15,8 @@ export async function submitContact(formData: FormData) {
 
   const name = asString(formData.get("name"));
   const email = asString(formData.get("email"));
+  const company = asString(formData.get("company"));
+  const website = asString(formData.get("website"));
   const message = asString(formData.get("message"));
   const plan = asString(formData.get("plan")) || "general";
 
@@ -31,10 +33,22 @@ export async function submitContact(formData: FormData) {
     to: SITE_EMAIL,
     from: email,
     name,
+    company,
+    website,
     plan,
     message,
     receivedAt: new Date().toISOString(),
   };
+
+  const text = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Company: ${company || "—"}`,
+    `Website: ${website || "—"}`,
+    `Plan: ${plan}`,
+    "",
+    message,
+  ].join("\n");
 
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
@@ -49,12 +63,11 @@ export async function submitContact(formData: FormData) {
           from: "TestSync Lab Website <onboarding@resend.dev>",
           to: [SITE_EMAIL],
           reply_to: email,
-          subject: `New lead (${plan}): ${name}`,
-          text: `Name: ${name}\nEmail: ${email}\nPlan: ${plan}\n\n${message}`,
+          subject: `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`,
+          text,
         }),
       });
     } catch {
-      // Still acknowledge the lead UX; configure Resend for production delivery.
       console.error("Resend delivery failed", payload);
     }
   } else {
