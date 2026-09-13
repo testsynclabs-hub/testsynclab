@@ -10,7 +10,11 @@ function Stars({ rating }: { rating: number }) {
         const fill = Math.min(1, Math.max(0, rating - index));
         return (
           <span key={index} className="relative inline-block h-4 w-4">
-            <svg viewBox="0 0 20 20" className="absolute inset-0 h-full w-full text-slate-200" aria-hidden>
+            <svg
+              viewBox="0 0 20 20"
+              className="absolute inset-0 h-full w-full text-slate-200"
+              aria-hidden
+            >
               <path
                 fill="currentColor"
                 d="M10 1.5l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.9l-4.78 2.5.91-5.32L2.27 7.12l5.34-.78L10 1.5z"
@@ -36,17 +40,21 @@ function Stars({ rating }: { rating: number }) {
 
 export function ReviewsCarousel() {
   const [index, setIndex] = useState(0);
+  const multi = reviews.length > 1;
 
   useEffect(() => {
+    if (!multi) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
     const timer = window.setInterval(() => {
       setIndex((value) => (value + 1) % reviews.length);
     }, 6000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [multi]);
 
-  const active = reviews[index];
+  const active = reviews[index] ?? reviews[0];
+  if (!active) return null;
+
   const prev = () => setIndex((value) => (value - 1 + reviews.length) % reviews.length);
   const next = () => setIndex((value) => (value + 1) % reviews.length);
 
@@ -67,8 +75,8 @@ export function ReviewsCarousel() {
             What teams say after working with us
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            Straight feedback from product and engineering partners on monthly
-            QA retainers.
+            Real feedback from product and engineering partners. More reviews
+            land here as engagements grow.
           </p>
         </div>
 
@@ -102,66 +110,70 @@ export function ReviewsCarousel() {
             </div>
           </article>
 
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={prev}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-brand-deep transition hover:border-brand/40 hover:bg-brand-soft"
-              aria-label="Previous review"
-            >
-              ←
-            </button>
-            <div className="flex items-center gap-2" role="tablist" aria-label="Reviews">
-              {reviews.map((review, reviewIndex) => (
+          {multi ? (
+            <>
+              <div className="mt-8 flex items-center justify-center gap-4">
                 <button
-                  key={review.id}
                   type="button"
-                  role="tab"
-                  aria-selected={reviewIndex === index}
-                  aria-label={`Review from ${review.company}`}
-                  onClick={() => setIndex(reviewIndex)}
-                  className={`h-2.5 rounded-full transition-all ${
-                    reviewIndex === index
-                      ? "w-7 bg-brand"
-                      : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={next}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-brand-deep transition hover:border-brand/40 hover:bg-brand-soft"
-              aria-label="Next review"
-            >
-              →
-            </button>
-          </div>
+                  onClick={prev}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-brand-deep transition hover:border-brand/40 hover:bg-brand-soft"
+                  aria-label="Previous review"
+                >
+                  ←
+                </button>
+                <div className="flex items-center gap-2" role="tablist" aria-label="Reviews">
+                  {reviews.map((review, reviewIndex) => (
+                    <button
+                      key={review.id}
+                      type="button"
+                      role="tab"
+                      aria-selected={reviewIndex === index}
+                      aria-label={`Review from ${review.company}`}
+                      onClick={() => setIndex(reviewIndex)}
+                      className={`h-2.5 rounded-full transition-all ${
+                        reviewIndex === index
+                          ? "w-7 bg-brand"
+                          : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={next}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-brand-deep transition hover:border-brand/40 hover:bg-brand-soft"
+                  aria-label="Next review"
+                >
+                  →
+                </button>
+              </div>
 
-          <ul className="mt-10 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4">
-            {reviews
-              .filter((review) => review.id !== active.id)
-              .slice(0, 4)
-              .map((review) => (
-                <li key={review.id}>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setIndex(reviews.findIndex((item) => item.id === review.id))
-                    }
-                    className="h-full w-full rounded-xl border border-line bg-white p-4 text-left transition hover:border-brand/30 hover:bg-brand-soft/40"
-                  >
-                    <Stars rating={review.rating} />
-                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-600">
-                      {review.quote}
-                    </p>
-                    <p className="mt-3 text-sm font-bold text-slate-900">
-                      {review.company}
-                    </p>
-                  </button>
-                </li>
-              ))}
-          </ul>
+              <ul className="mt-10 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4">
+                {reviews
+                  .filter((review) => review.id !== active.id)
+                  .slice(0, 4)
+                  .map((review) => (
+                    <li key={review.id}>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setIndex(reviews.findIndex((item) => item.id === review.id))
+                        }
+                        className="h-full w-full rounded-xl border border-line bg-white p-4 text-left transition hover:border-brand/30 hover:bg-brand-soft/40"
+                      >
+                        <Stars rating={review.rating} />
+                        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-600">
+                          {review.quote}
+                        </p>
+                        <p className="mt-3 text-sm font-bold text-slate-900">
+                          {review.company}
+                        </p>
+                      </button>
+                    </li>
+                  ))}
+              </ul>
+            </>
+          ) : null}
         </div>
       </div>
     </section>
