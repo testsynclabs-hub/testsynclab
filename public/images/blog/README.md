@@ -1,11 +1,7 @@
-# Blog cover images
+# Blog covers (Testlio-style)
 
-Branded 1200×630 SVG covers for each post (TestSync Lab style).
-
-## Regenerate after adding a post
+Illustration-first 1200×630 SVGs matched to each post topic.
 
 ```bash
-npx tsx scripts/generate-blog-covers.ts
+npm run generate:blog-covers
 ```
-
-Then commit `public/images/blog/<slug>.svg` and `lib/blog-covers.ts`.

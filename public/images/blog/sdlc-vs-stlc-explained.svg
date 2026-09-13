@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SDLC vs STLC Explained for Engineers and QA Hires">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#831843"/>
-      <stop offset="100%" stop-color="#500724"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
-      <stop offset="0%" stop-color="#F472B6" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#F472B6" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="140" cy="520" r="180" fill="#F472B6" opacity="0.08"/>
-  <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
-  <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
-  <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">SDLC vs STLC Explained for</text>
-  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Engineers and QA Hires</text>
-  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">SDLC vs STLC explained with a US SaaS lens — phases,…</text>
-  <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <rect x="820" y="170" width="150" height="260" rx="24" fill="#F472B6" opacity="0.22" stroke="#F472B6" stroke-width="6"/>
-  <rect x="1000" y="170" width="150" height="260" rx="24" fill="#fff" opacity="0.10" stroke="#fff" stroke-width="6"/>
-  <circle cx="895" cy="270" r="26" fill="#F472B6"/>
-  <circle cx="1075" cy="270" r="26" fill="#fff" opacity="0.45"/>
-  <path d="M960 310 H990" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0.45"/>
+  <rect width="1200" height="630" fill="#1D4ED8"/>
+  <circle cx="160" cy="520" r="200" fill="#BFDBFE" opacity="0.12"/>
+  <circle cx="1100" cy="-20" r="180" fill="#FFFFFF" opacity="0.06"/>
+  
+  <g transform="translate(64 56) scale(0.1015625)">
+    <rect width="512" height="512" rx="112" fill="#1D4ED8"/>
+    <path d="M156 210c28-48 92-72 148-58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+    <path d="M356 302c-28 48-92 72-148 58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+    <path d="M188 268l52 52 112-128" fill="none" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="136" y="92" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">TestSync Lab</text>
+  
+  <g transform="translate(620 90)">
+    <rect x="40" y="40" width="200" height="360" rx="36" fill="#FFFFFF" opacity="0.12" stroke="#DBEAFE" stroke-width="8"/>
+    <rect x="280" y="40" width="200" height="360" rx="36" fill="#BFDBFE" opacity="0.35" stroke="#FFFFFF" stroke-width="8"/>
+    <circle cx="140" cy="160" r="42" fill="#DBEAFE"/>
+    <circle cx="380" cy="160" r="42" fill="#FFFFFF" opacity="0.7"/>
+    <path d="M210 240 H310" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.55"/>
+    <text x="140" y="320" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">A</text>
+    <text x="380" y="320" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">B</text>
+  </g>
+  <text x="72" y="470" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Pick the model that fits</text>
+  <text x="72" y="514" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">your team</text>
 </svg>

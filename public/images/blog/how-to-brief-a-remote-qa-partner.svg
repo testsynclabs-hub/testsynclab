@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="How to Brief a Remote QA Partner in One Page">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1E3A8A"/>
-      <stop offset="100%" stop-color="#0F172A"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
-      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#818CF8" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="140" cy="520" r="180" fill="#818CF8" opacity="0.08"/>
-  <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
-  <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
-  <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">How to Brief a Remote QA</text>
-  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Partner in One Page</text>
-  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">The one-page brief that makes remote QA work: access,…</text>
-  <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <circle cx="940" cy="250" r="42" fill="#818CF8" opacity="0.55"/>
-  <circle cx="1040" cy="250" r="42" fill="#A5B4FC" opacity="0.45"/>
-  <path d="M880 390c20-60 80-60 100-60s80 0 100 60" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
+  <rect width="1200" height="630" fill="#1E3A8A"/>
+  <circle cx="160" cy="520" r="200" fill="#93C5FD" opacity="0.12"/>
+  <circle cx="1100" cy="-20" r="180" fill="#FFFFFF" opacity="0.06"/>
+  
+  <g transform="translate(64 56) scale(0.1015625)">
+    <rect width="512" height="512" rx="112" fill="#1D4ED8"/>
+    <path d="M156 210c28-48 92-72 148-58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+    <path d="M356 302c-28 48-92 72-148 58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+    <path d="M188 268l52 52 112-128" fill="none" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="136" y="92" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">TestSync Lab</text>
+  
+  <g transform="translate(680 120)">
+    <circle cx="140" cy="140" r="70" fill="#93C5FD" opacity="0.85"/>
+    <circle cx="300" cy="140" r="70" fill="#BFDBFE" opacity="0.75"/>
+    <circle cx="220" cy="200" r="70" fill="#FFFFFF" opacity="0.35"/>
+    <path d="M60 360 C120 260, 180 260, 220 260 S320 260, 380 360" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+  </g>
+  <text x="72" y="470" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Senior QA without the hiring</text>
+  <text x="72" y="514" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">delay</text>
 </svg>
