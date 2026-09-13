@@ -1,3 +1,4 @@
+import { growthBlogPosts } from "@/lib/blog-growth-posts";
 import { seoBlogPosts } from "@/lib/blog-seo-posts";
 
 export type BlogSection = {
@@ -17,6 +18,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...growthBlogPosts,
   ...seoBlogPosts,
   {
     slug: "ai-testing-sprint-vs-retainer-addon",

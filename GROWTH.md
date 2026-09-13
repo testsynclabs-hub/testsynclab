@@ -36,8 +36,10 @@ US/CA SaaS teams ship chatbots and copilots fast. Offer **AI testing** (golden
 sets, hallucination/jailbreak checks, RAG faithfulness) beside QA retainers.
 Build/sprint is optional secondary — do not lead with “we also develop AI.”
 Outbound angle: “We QA the AI feature you already shipped.”
-1. [Google Search Console](https://search.google.com/search-console) → add `testsynclab.com` → DNS or HTML-file verify → submit `https://testsynclab.com/sitemap.xml`.
-2. Do **not** create a Google Business Profile with a fake US/Canada street address. That is a trust and policy risk. Remote + honest timezone copy ranks cleaner than a fake NAP.
+1. [Google Search Console](https://search.google.com/search-console) → add **both** `https://www.testsynclab.com` (primary) and `https://testsynclab.com` → verify → set **www as preferred** → submit `https://www.testsynclab.com/sitemap.xml`.
+2. Use **URL Inspection** on the homepage and click **Request indexing** (fixes “No information is available for this page” after deploy).
+3. [Bing Webmaster Tools](https://www.bing.com/webmasters) → Import from Google or add site → submit the same sitemap.
+4. Do **not** create a Google Business Profile with a fake US/Canada street address. That is a trust and policy risk. Remote + honest timezone copy ranks cleaner than a fake NAP.
 3. After the site is live with the new pages, request indexing on `/`, `/qa-services-usa`, `/qa-services-canada`, `/outsourced-qa`, `/pricing`, `/contact`.
 
 ## What closes deals faster than SEO
