@@ -1,3 +1,5 @@
+import { seoBlogPosts } from "@/lib/blog-seo-posts";
+
 export type BlogSection = {
   heading: string;
   paragraphs: string[];
@@ -15,6 +17,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...seoBlogPosts,
   {
     slug: "ai-testing-sprint-vs-retainer-addon",
     title: "AI Testing Sprint vs Retainer Add-on: What to Buy First",

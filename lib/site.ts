@@ -33,6 +33,13 @@ export const SITE_KEYWORDS = [
   "RAG testing",
   "AI testing sprint",
   "prompt regression testing",
+  "verification vs validation in software testing",
+  "severity vs priority in software testing",
+  "smoke testing vs sanity testing",
+  "regression testing meaning",
+  "software testing interview questions 2 years experience",
+  "SDLC vs STLC",
+  "load testing vs stress testing",
 ] as const;
 
 /** Flat links for footer / sitemap-style lists */
