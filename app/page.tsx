@@ -1,7 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { CapabilityExplorer } from "@/components/capability-explorer";
+import {
+  AuditSamplePreview,
+  CaseStudiesSection,
+} from "@/components/case-studies";
 import { FaqCta, FaqList } from "@/components/faq-list";
+import { FoundersTeaser, TrustSignals } from "@/components/founders";
 import { HeroHeadline } from "@/components/hero-headline";
 import { HeroVisual } from "@/components/hero-visual";
 import { PackageGrid } from "@/components/package-grid";
@@ -86,23 +91,8 @@ export default function HomePage() {
             </div>
 
             <div className="animate-fade-up delay-300 mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 sm:mt-6">
-              <div
-                className="flex items-center gap-0.5"
-                aria-label="Five-star quality focus"
-              >
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <svg
-                    key={i}
-                    viewBox="0 0 20 20"
-                    className="h-3.5 w-3.5 fill-amber-400 text-amber-400 sm:h-4 sm:w-4"
-                    aria-hidden="true"
-                  >
-                    <path d="M10 1.5l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.9l-4.78 2.5.91-5.32L2.27 7.12l5.34-.78L10 1.5z" />
-                  </svg>
-                ))}
-              </div>
               <span className="text-xs font-semibold text-white sm:text-sm">
-                Clear QA ownership
+                24h audit reply · Month-to-month · NDA-ready
               </span>
               <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
               <Link
@@ -124,6 +114,10 @@ export default function HomePage() {
           <div className="animate-fade-in delay-200 relative hidden min-[900px]:block lg:justify-self-end">
             <HeroVisual />
           </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-8 sm:px-8 sm:pb-10">
+          <TrustSignals />
         </div>
 
         <TrustCarousel />
@@ -281,6 +275,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <AuditSamplePreview source="home-audit-sample" />
+
       <section
         className="border-t border-line bg-gradient-to-b from-background to-white py-20 sm:py-24"
         aria-labelledby="services-preview-heading"
@@ -410,6 +406,10 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <CaseStudiesSection />
+
+      <FoundersTeaser />
 
       <ReviewsCarousel />
 

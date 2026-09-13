@@ -8,6 +8,8 @@ export type LeadFields = {
   email: string;
   company: string;
   website: string;
+  role: string;
+  releaseDate: string;
   plan: string;
   source: string;
   message: string;
@@ -26,6 +28,8 @@ function payload(fields: LeadFields) {
     _honey: "",
     company: fields.company || "—",
     website: fields.website || "—",
+    role: fields.role || "—",
+    release_date: fields.releaseDate || "—",
     plan: fields.plan,
     source: fields.source || "direct",
     message: fields.message,

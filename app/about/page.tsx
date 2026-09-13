@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FoundersGrid } from "@/components/founders";
 import { Reveal } from "@/components/reveal";
+import { TrustSignalsLight } from "@/components/founders";
 import { outcomePillars } from "@/lib/home-content";
 import {
   AI_CONSULT_LABEL,
@@ -8,12 +10,12 @@ import {
   auditHref,
   FREE_QA_AUDIT_LABEL,
 } from "@/lib/cta";
-import { futureRoadmap, SITE_LINKEDIN, SITE_NAME, team } from "@/lib/site";
+import { futureRoadmap, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "TestSync Lab is a worldwide QA agency founded by two QA partners, with AI testing for chatbots and LLM products — plus optional AI build when needed.",
+    "Meet the TestSync Lab founding QA partners. Hands-on monthly QA retainers, AI testing for chatbots and LLM products, and a free QA audit.",
   alternates: { canonical: "/about" },
 };
 
@@ -26,31 +28,29 @@ export default function AboutPage() {
             About {SITE_NAME}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Two QA founders. AI testing for modern products. Quality first —
-            including the chatbots and LLM features your customers already use.
+            Two founding QA partners. Hands-on delivery. Quality first — including
+            the chatbots and LLM features your customers already use.
           </p>
         </div>
       </section>
 
       <section className="py-16 sm:py-20">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-2">
-          <div>
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="max-w-3xl">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-slate-900">
               Who we are
             </h2>
             <p className="mt-4 leading-relaxed text-muted">
-              {SITE_NAME} started as a focused software quality assurance
-              agency. Both founders are hands-on QA practitioners — which means
-              strategy and execution stay close, reporting stays clear, and you
-              always know who owns quality outcomes.
+              {SITE_NAME} is a focused software quality assurance agency. Both
+              founders stay hands-on — strategy and execution stay close,
+              reporting stays clear, and you always know who owns quality
+              outcomes.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
               AI testing is live now — chatbots, RAG, copilots, and LLM
               workflows — so AI features get the same release bar as the rest of
-              the product. Optional build support exists when you need a slice
-              shipped and tested together. We work with clients worldwide.
-              Timezones are a feature when handoffs are structured: your day ends
-              with a build; our day starts with verification.
+              the product. We work with clients worldwide with structured
+              handoffs across timezones.
             </p>
             <a
               href={SITE_LINKEDIN}
@@ -61,21 +61,27 @@ export default function AboutPage() {
               Follow us on LinkedIn →
             </a>
           </div>
-          <div>
+
+          <div className="mt-12">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-slate-900">
-              The team
+              Meet the partners
             </h2>
-            <ul className="mt-6 space-y-4">
-              {team.map((item) => (
-                <li
-                  key={item.title + item.detail}
-                  className="rounded-xl border border-line bg-white p-4"
-                >
-                  <p className="font-bold text-brand-deep">{item.title}</p>
-                  <p className="mt-1 text-sm text-muted">{item.detail}</p>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-3 max-w-2xl text-muted">
+              You work with the people who run the engagement — not a rotating
+              bench.
+            </p>
+            <div className="mt-8">
+              <FoundersGrid />
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-slate-900">
+              How we engage
+            </h2>
+            <div className="mt-6">
+              <TrustSignalsLight />
+            </div>
           </div>
         </div>
       </section>

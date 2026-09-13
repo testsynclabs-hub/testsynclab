@@ -10,20 +10,26 @@ function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function leadText(fields: {
+type LeadFields = {
   name: string;
   email: string;
   company: string;
   website: string;
+  role: string;
+  releaseDate: string;
   plan: string;
   source: string;
   message: string;
-}) {
+};
+
+function leadText(fields: LeadFields) {
   return [
     `Name: ${fields.name}`,
     `Email: ${fields.email}`,
     `Company: ${fields.company || "—"}`,
     `Website: ${fields.website || "—"}`,
+    `Role: ${fields.role || "—"}`,
+    `Next release: ${fields.releaseDate || "—"}`,
     `Plan: ${fields.plan}`,
     `Source: ${fields.source || "direct"}`,
     "",
@@ -31,15 +37,7 @@ function leadText(fields: {
   ].join("\n");
 }
 
-function leadHtml(fields: {
-  name: string;
-  email: string;
-  company: string;
-  website: string;
-  plan: string;
-  source: string;
-  message: string;
-}) {
+function leadHtml(fields: LeadFields) {
   const row = (label: string, value: string) =>
     `<tr><td style="padding:8px 12px;color:#64748b;font:600 13px/1.4 ui-sans-serif,system-ui">${label}</td><td style="padding:8px 12px;color:#0f172a;font:400 13px/1.4 ui-sans-serif,system-ui">${value}</td></tr>`;
 
@@ -55,6 +53,8 @@ function leadHtml(fields: {
         ${row("Email", fields.email)}
         ${row("Company", fields.company || "—")}
         ${row("Website", fields.website || "—")}
+        ${row("Role", fields.role || "—")}
+        ${row("Next release", fields.releaseDate || "—")}
         ${row("Plan", fields.plan)}
         ${row("Source", fields.source || "direct")}
       </table>
@@ -214,6 +214,8 @@ export async function submitContact(
   const email = asString(formData.get("email"));
   const company = asString(formData.get("company"));
   const website = asString(formData.get("website"));
+  const role = asString(formData.get("role"));
+  const releaseDate = asString(formData.get("releaseDate"));
   const message = asString(formData.get("message"));
   const plan = asString(formData.get("plan")) || "audit";
   const source = asString(formData.get("source"));
@@ -223,7 +225,17 @@ export async function submitContact(
     return { status: "validation" };
   }
 
-  const fields = { name, email, company, website, plan, source, message };
+  const fields: LeadFields = {
+    name,
+    email,
+    company,
+    website,
+    role,
+    releaseDate,
+    plan,
+    source,
+    message,
+  };
   const subject = `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`;
   const text = leadText(fields);
   const html = leadHtml(fields);
@@ -239,6 +251,15 @@ export async function submitContact(
     }
   }
 
-  console.error("Lead NOT emailed", { name, email, company, website, plan, source });
+  console.error("Lead NOT emailed", {
+    name,
+    email,
+    company,
+    website,
+    role,
+    releaseDate,
+    plan,
+    source,
+  });
   return { status: "delivery" };
 }
