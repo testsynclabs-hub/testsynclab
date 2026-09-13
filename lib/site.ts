@@ -175,6 +175,11 @@ export const primaryNav: PrimaryNavItem[] = [
         label: "Contact",
         description: "Book a free QA audit or ask about AI testing.",
       },
+      {
+        href: "/become-a-tester",
+        label: "Become a tester",
+        description: "Apply, freelance with us, or request a CV review.",
+      },
     ],
   },
 ] as const;
