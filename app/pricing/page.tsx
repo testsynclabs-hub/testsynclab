@@ -8,19 +8,20 @@ import { aiPackagePolicy, aiPackages } from "@/lib/ai";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pricing & Packages",
+  title: "QA Testing Pricing | Monthly Retainers from $999",
   description:
-    "Monthly QA retainers: Basic $999, Growth $1,899, Scale $2,799. AI testing stays separate as a scoped sprint or Growth/Scale add-on.",
+    "QA testing pricing for SaaS teams: Basic $999, Growth $1,899, Scale $2,799. Clear monthly retainers for manual, API, and Playwright QA. AI testing scoped separately.",
   keywords: [
+    "QA testing pricing",
     "QA retainer pricing",
     "monthly QA packages",
     "outsourced QA cost",
+    "software testing company pricing",
     "AI testing pricing",
-    "chatbot QA cost",
   ],
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: `Pricing & Packages | ${SITE_NAME}`,
+    title: `QA Testing Pricing | ${SITE_NAME}`,
     description:
       "Clear monthly QA packages from $999. AI testing quoted as a sprint or retainer add-on.",
     url: `${SITE_URL}/pricing`,
@@ -83,11 +84,11 @@ export default function PricingPage() {
       <section className="border-b border-line bg-gradient-to-br from-white via-sky-50 to-blue-100 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <h1 className="font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
-            Simple monthly packages
+            QA testing pricing — clear monthly retainers
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            No hourly meters. Clear scope. Built for startups and product teams
-            that want senior QA without enterprise pricing.
+            No hourly meters. Senior QA for SaaS teams from $999/mo. Built for
+            startups that want release confidence without enterprise pricing.
           </p>
           <Link
             href={auditHref("pricing-hero")}

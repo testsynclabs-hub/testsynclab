@@ -155,6 +155,50 @@ export default async function BlogPostPage({ params }: Props) {
             body="Share your website or staging URL on the contact form. Every article on this blog is built to get you a concrete quality plan, not a newsletter."
           />
 
+          <nav
+            aria-label="Related services"
+            className="mt-10 rounded-2xl border border-line bg-surface p-6"
+          >
+            <p className="font-[family-name:var(--font-display)] text-base font-bold text-slate-900">
+              Explore related services
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+              <li>
+                <Link href="/services" className="text-brand hover:text-brand-deep">
+                  All QA services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/playwright-automation"
+                  className="text-brand hover:text-brand-deep"
+                >
+                  Playwright automation
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/api-testing" className="text-brand hover:text-brand-deep">
+                  API testing
+                </Link>
+              </li>
+              <li>
+                <Link href="/qa-services-usa" className="text-brand hover:text-brand-deep">
+                  QA for US teams
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-brand hover:text-brand-deep">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/outsourced-qa" className="text-brand hover:text-brand-deep">
+                  Outsourced QA
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           {related.length > 0 ? (
             <aside className="mt-14">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">

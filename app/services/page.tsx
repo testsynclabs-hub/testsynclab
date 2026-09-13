@@ -8,9 +8,17 @@ import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "QA Services",
+  title: "Software Testing & QA Services | Manual, API, Playwright",
   description:
-    "Manual testing, API validation, Playwright/Selenium automation, performance, and AI testing for chatbots and LLM products.",
+    "Remote software testing services for SaaS: manual QA, API testing, Playwright automation, and performance checks. Monthly retainers from $999 — free QA audit.",
+  keywords: [
+    "software testing services",
+    "QA services",
+    "manual testing services",
+    "API testing services",
+    "Playwright automation services",
+    "performance testing services",
+  ],
   alternates: { canonical: "/services" },
 };
 
@@ -27,13 +35,33 @@ export default function ServicesPage() {
             Retainer-ready coverage
           </p>
           <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
-            QA Services
+            Software testing & QA services for SaaS teams
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Practical quality engineering for web and mobile products — scoped
-            to your release cadence. Delivered remotely for product teams
-            worldwide.
+            Manual, API, Playwright automation, and performance QA under clear
+            monthly retainers — plus a dedicated AI testing lane when you ship
+            chatbots or LLM features.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+            <Link href="/services/manual-testing" className="text-brand hover:text-brand-deep">
+              Manual testing →
+            </Link>
+            <Link href="/services/api-testing" className="text-brand hover:text-brand-deep">
+              API testing →
+            </Link>
+            <Link
+              href="/services/playwright-automation"
+              className="text-brand hover:text-brand-deep"
+            >
+              Playwright automation →
+            </Link>
+            <Link
+              href="/services/performance-testing"
+              className="text-brand hover:text-brand-deep"
+            >
+              Performance testing →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -87,6 +115,18 @@ export default function ServicesPage() {
                   <p className="mt-3 text-base leading-relaxed text-slate-700">
                     {service.details}
                   </p>
+                  <Link
+                    href={
+                      service.slug === "automation"
+                        ? "/services/playwright-automation"
+                        : service.slug === "performance"
+                          ? "/services/performance-testing"
+                          : `/services/${service.slug}`
+                    }
+                    className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    Open {service.title} page →
+                  </Link>
                 </article>
               </Reveal>
             ))}
