@@ -81,7 +81,24 @@ export function ServiceLandingPage({ landing }: { landing: ServiceLanding }) {
 
       <section className="border-b border-line bg-gradient-to-br from-white via-sky-50 to-blue-100 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand">
+          <nav aria-label="Breadcrumb" className="text-sm text-muted">
+            <ol className="flex flex-wrap items-center gap-1.5">
+              <li>
+                <Link href="/" className="hover:text-brand">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/services" className="hover:text-brand">
+                  Services
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="font-semibold text-slate-700">{landing.title}</li>
+            </ol>
+          </nav>
+          <p className="mt-4 text-sm font-bold uppercase tracking-[0.14em] text-brand">
             {landing.eyebrow}
           </p>
           <h1 className="mt-3 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
