@@ -1,6 +1,9 @@
 /**
- * Testlio-style blog covers: bold color fields + content-specific illustration.
- * Title lives under the card (like Testlio) — cover is the visual metaphor.
+ * DEPRECATED — do not run.
+ *
+ * Blog covers are now unique editorial PNGs in `public/images/blog/{slug}.png`
+ * (registered in `lib/blog-covers.ts`). This script regenerates old template SVGs
+ * and would fight that workflow.
  *
  *   npx tsx scripts/generate-blog-covers.ts
  */

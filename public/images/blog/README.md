@@ -1,7 +1,7 @@
-# Blog covers (Testlio-style)
+# Blog covers
 
-Illustration-first 1200×630 SVGs matched to each post topic.
+Unique 16:9 editorial PNG covers (one per post), named `{slug}.png`.
 
-```bash
-npm run generate:blog-covers
-```
+Register each cover in `lib/blog-covers.ts`.
+
+Do **not** run `npm run generate:blog-covers` — that script regenerates the old template SVGs and would overwrite the realistic PNG workflow.

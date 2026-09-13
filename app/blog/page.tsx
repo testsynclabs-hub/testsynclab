@@ -32,7 +32,7 @@ const blogJsonLd = {
     url: `${SITE_URL}/blog/${post.slug}`,
     datePublished: post.date,
     description: post.description,
-    image: `${SITE_URL}/images/blog/${post.slug}.svg`,
+    image: `${SITE_URL}/images/blog/${post.slug}.png`,
   })),
 };
 

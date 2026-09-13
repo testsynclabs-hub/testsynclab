@@ -42,7 +42,6 @@ export function BlogCoverImage({
           className="h-full w-full object-cover"
           sizes={sizes}
           priority={priority}
-          unoptimized
         />
         {!badgeOutside ? (
           <span className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/70 bg-black/25 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
