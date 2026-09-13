@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Pre-Launch QA">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="The Pre-Launch QA Checklist for SaaS Teams">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#020617"/>
+      <stop offset="0%" stop-color="#14532D"/>
+      <stop offset="100%" stop-color="#052E16"/>
     </linearGradient>
-    <radialGradient id="glow" cx="80%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#4ADE80" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="110" cy="520" r="180" fill="#38BDF8" opacity="0.08"/>
+  <circle cx="140" cy="520" r="180" fill="#4ADE80" opacity="0.08"/>
   <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
   <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
   <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="220" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800">Pre-Launch QA</text>
-  <text x="72" y="280" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500" opacity="0.78">Ship with a clear gate</text>
+  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">The Pre-Launch QA Checklist</text>
+  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">for SaaS Teams</text>
+  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">A practical launch checklist covering smoke, payments,…</text>
   <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <path d="M980 420 L1000 160 L1020 420 Z" fill="#38BDF8" opacity="0.55"/>
-        <circle cx="1000" cy="150" r="28" fill="#fff"/>
-        <path d="M940 300 L980 260 M1060 300 L1020 260" stroke="#38BDF8" stroke-width="12" stroke-linecap="round"/>
-        <rect x="860" y="430" width="280" height="18" rx="8" fill="#fff" opacity="0.2"/>
+  <rect x="860" y="160" width="250" height="300" rx="28" fill="#000" opacity="0.25" stroke="#4ADE80" stroke-width="5"/>
+  <path d="M910 240 l28 28 58-70" fill="none" stroke="#86EFAC" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="900" y="320" width="170" height="16" rx="8" fill="#fff" opacity="0.35"/>
+  <rect x="900" y="360" width="140" height="16" rx="8" fill="#fff" opacity="0.25"/>
+  <rect x="900" y="400" width="155" height="16" rx="8" fill="#fff" opacity="0.2"/>
 </svg>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SaaS Performance">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SaaS Performance Testing: When p95 Latency Becomes a Sales Problem">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7F1D1D"/>
-      <stop offset="100%" stop-color="#020617"/>
+      <stop offset="0%" stop-color="#164E63"/>
+      <stop offset="100%" stop-color="#083344"/>
     </linearGradient>
-    <radialGradient id="glow" cx="80%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#F87171" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#F87171" stop-opacity="0"/>
+    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="110" cy="520" r="180" fill="#F87171" opacity="0.08"/>
+  <circle cx="140" cy="520" r="180" fill="#22D3EE" opacity="0.08"/>
   <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
   <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
   <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="220" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800">SaaS Performance</text>
-  <text x="72" y="280" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500" opacity="0.78">Protect p95 latency</text>
+  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">SaaS Performance Testing:</text>
+  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">When p95 Latency Becomes…</text>
+  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">How to add JMeter-style load checks without a six-month…</text>
   <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <path d="M820 400 C900 400 920 220 1000 220 C1080 220 1100 400 1180 400" fill="none" stroke="#F87171" stroke-width="16" stroke-linecap="round"/>
-        <circle cx="1000" cy="220" r="18" fill="#fff"/>
-        <rect x="820" y="430" width="360" height="12" rx="6" fill="#fff" opacity="0.2"/>
-        <text x="820" y="200" fill="#fff" font-size="36" font-family="Arial,sans-serif" font-weight="800" opacity="0.85">p95</text>
+  <rect x="840" y="180" width="280" height="240" rx="24" fill="#000" opacity="0.25" stroke="#22D3EE" stroke-width="5"/>
+  <path d="M880 360 L940 300 L990 320 L1050 230 L1100 260" fill="none" stroke="#67E8F9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1100" cy="260" r="12" fill="#22D3EE"/>
 </svg>

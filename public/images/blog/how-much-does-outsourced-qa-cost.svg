@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Outsourced QA Cost">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="How Much Does Outsourced QA Cost in 2026?">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#365314"/>
-      <stop offset="100%" stop-color="#020617"/>
+      <stop offset="0%" stop-color="#0C4A6E"/>
+      <stop offset="100%" stop-color="#082F49"/>
     </linearGradient>
-    <radialGradient id="glow" cx="80%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#A3E635" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#A3E635" stop-opacity="0"/>
+    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="110" cy="520" r="180" fill="#A3E635" opacity="0.08"/>
+  <circle cx="140" cy="520" r="180" fill="#38BDF8" opacity="0.08"/>
   <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
   <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
   <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="220" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800">Outsourced QA Cost</text>
-  <text x="72" y="280" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500" opacity="0.78">Real monthly ranges</text>
+  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">How Much Does Outsourced QA</text>
+  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Cost in 2026?</text>
+  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">Realistic pricing ranges for hourly QA, project testing, and…</text>
   <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <circle cx="1000" cy="280" r="120" fill="#A3E635" opacity="0.2" stroke="#A3E635" stroke-width="12"/>
-        <text x="1000" y="300" text-anchor="middle" fill="#fff" font-size="72" font-family="Arial,sans-serif" font-weight="800">$</text>
-        <rect x="820" y="430" width="80" height="14" rx="6" fill="#fff" opacity="0.25"/>
-        <rect x="920" y="430" width="120" height="14" rx="6" fill="#A3E635" opacity="0.7"/>
-        <rect x="1060" y="430" width="100" height="14" rx="6" fill="#fff" opacity="0.2"/>
+  <circle cx="980" cy="300" r="110" fill="#000" opacity="0.25" stroke="#38BDF8" stroke-width="8"/>
+  <text x="980" y="325" text-anchor="middle" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="800">$</text>
 </svg>

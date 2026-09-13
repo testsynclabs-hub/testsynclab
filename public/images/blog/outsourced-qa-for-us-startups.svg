@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Outsourced QA for US startups">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Outsourced QA for US Startups: What to Buy Before You Hire">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0B1F4B"/>
-      <stop offset="100%" stop-color="#020617"/>
+      <stop offset="0%" stop-color="#365314"/>
+      <stop offset="100%" stop-color="#1A2E05"/>
     </linearGradient>
-    <radialGradient id="glow" cx="80%" cy="28%" r="50%">
-      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#A3E635" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#A3E635" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="140" cy="520" r="180" fill="#A3E635" opacity="0.08"/>
+  <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
   <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
   <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="220" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800">Outsourced QA, US Teams</text>
-  <text x="72" y="280" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="500" opacity="0.78">Buy coverage before you hire</text>
+  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Outsourced QA for US</text>
+  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Startups: What to Buy…</text>
+  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">When a US SaaS team should outsource QA vs hire in-house —…</text>
   <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <rect x="900" y="180" width="180" height="120" rx="16" fill="#1D4ED8"/>
-  <text x="990" y="250" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">US</text>
+  <circle cx="940" cy="250" r="42" fill="#A3E635" opacity="0.55"/>
+  <circle cx="1040" cy="250" r="42" fill="#BEF264" opacity="0.45"/>
+  <path d="M880 390c20-60 80-60 100-60s80 0 100 60" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
 </svg>
