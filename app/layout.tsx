@@ -10,6 +10,7 @@ import {
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
+  websiteJsonLd,
 } from "@/lib/site";
 import "./globals.css";
 
@@ -38,6 +39,17 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
   applicationName: SITE_NAME,
   category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/logo-icon-1024.png", type: "image/png", sizes: "1024x1024" },
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
@@ -50,7 +62,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Remote QA retainers worldwide from $999`,
+        alt: `${SITE_NAME} — Best remote QA retainers for USA startups from $999`,
       },
     ],
   },
@@ -84,6 +96,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
         />
         <a

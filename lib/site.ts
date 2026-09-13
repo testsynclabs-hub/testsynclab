@@ -1,14 +1,15 @@
-export const SITE_URL = "https://testsynclab.com" as const;
+/** Canonical host must match the live www URL (apex 308s to www). */
+export const SITE_URL = "https://www.testsynclab.com" as const;
 export const SITE_NAME = "TestSync Lab" as const;
 export const SITE_EMAIL = "info@testsynclab.com" as const;
 export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "Remote QA Retainers from $999 | TestSync Lab — Worldwide" as const;
+  "Best Remote QA Services from $999 | TestSync Lab — USA & Worldwide" as const;
 
 export const SITE_DESCRIPTION =
-  "Hire senior software QA for product teams worldwide. Monthly retainers from $999 for manual testing, API validation, and Playwright automation — remote delivery for startups and SaaS teams." as const;
+  "Top remote QA company for US SaaS startups: affordable monthly retainers from $999 for manual testing, API checks, Playwright automation, and AI testing. Free QA audit — senior SQA without a full-time hire." as const;
 
 export const SITE_KEYWORDS = [
   "hire QA agency",
@@ -40,6 +41,17 @@ export const SITE_KEYWORDS = [
   "software testing interview questions 2 years experience",
   "SDLC vs STLC",
   "load testing vs stress testing",
+  "best QA company USA",
+  "best QA services for startups",
+  "affordable outsourced QA",
+  "cheap QA outsourcing",
+  "hire QA testers USA",
+  "top QA agency",
+  "why software testing is important",
+  "what is SQA",
+  "benefits of software quality assurance",
+  "Playwright vs Selenium",
+  "how to choose a QA agency",
 ] as const;
 
 /** Flat links for footer / sitemap-style lists */
@@ -252,6 +264,9 @@ export const organizationJsonLd = {
   areaServed: [
     { "@type": "Country", name: "United States" },
     { "@type": "Country", name: "Canada" },
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "Australia" },
+    "Worldwide",
   ],
   knowsAbout: [...SITE_KEYWORDS],
   hasOfferCatalog: {
@@ -288,4 +303,26 @@ export const organizationJsonLd = {
     ],
   },
   sameAs: [SITE_LINKEDIN],
+} as const;
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/brand/logo-icon-1024.png`,
+    },
+  },
+  inLanguage: "en-US",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/blog?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 } as const;
