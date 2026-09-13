@@ -6,6 +6,7 @@ import { HeroHeadline } from "@/components/hero-headline";
 import { HeroVisual } from "@/components/hero-visual";
 import { PackageGrid } from "@/components/package-grid";
 import { Reveal } from "@/components/reveal";
+import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { StickyCta } from "@/components/sticky-cta";
 import { TrustCarousel } from "@/components/trust-carousel";
 import { AiServiceBanner } from "@/components/ai-service-banner";
@@ -391,6 +392,8 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <ReviewsCarousel />
 
       <section
         className="border-t border-line bg-white py-20 sm:py-24"
