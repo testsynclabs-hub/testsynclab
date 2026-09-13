@@ -52,6 +52,38 @@ export function SiteFooter() {
             ))}
             <li>
               <Link
+                href="/services/manual-testing"
+                className="transition-colors hover:text-blue-300"
+              >
+                Manual testing
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/api-testing"
+                className="transition-colors hover:text-blue-300"
+              >
+                API testing
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/playwright-automation"
+                className="transition-colors hover:text-blue-300"
+              >
+                Playwright automation
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/performance-testing"
+                className="transition-colors hover:text-blue-300"
+              >
+                Performance testing
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/qa-services-usa"
                 className="transition-colors hover:text-blue-300"
               >

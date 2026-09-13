@@ -1,5 +1,7 @@
+import { getBlogCover } from "@/lib/blog-covers";
 import { growthBlogPosts } from "@/lib/blog-growth-posts";
 import { seoBlogPosts } from "@/lib/blog-seo-posts";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export type BlogSection = {
   heading: string;
@@ -824,7 +826,7 @@ export function getRelatedPosts(slug: string, limit = 3) {
 }
 
 export function blogPostingJsonLd(post: BlogPost, url: string) {
-  const cover = `/images/blog/${post.slug}.svg`;
+  const cover = getBlogCover(post.slug).src;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -833,17 +835,17 @@ export function blogPostingJsonLd(post: BlogPost, url: string) {
     datePublished: post.date,
     dateModified: post.date,
     keywords: post.keywords.join(", "),
-    image: [`https://testsynclab.com${cover}`],
+    image: [`${SITE_URL}${cover}`],
     author: {
       "@type": "Organization",
-      name: "TestSync Lab",
+      name: SITE_NAME,
     },
     publisher: {
       "@type": "Organization",
-      name: "TestSync Lab",
+      name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: "https://testsynclab.com/brand/logo-icon-1024.png",
+        url: `${SITE_URL}/brand/logo-icon-1024.png`,
       },
     },
     mainEntityOfPage: url,

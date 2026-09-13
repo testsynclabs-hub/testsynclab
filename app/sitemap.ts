@@ -8,6 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/services",
+    "/services/manual-testing",
+    "/services/api-testing",
+    "/services/playwright-automation",
+    "/services/performance-testing",
     "/ai",
     "/qa-services-usa",
     "/qa-services-canada",
@@ -34,9 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
               path === "/ai" ||
               path === "/qa-services-usa" ||
               path === "/qa-services-canada" ||
-              path === "/outsourced-qa"
+              path === "/outsourced-qa" ||
+              path.startsWith("/services/")
             ? 0.9
-            : 0.7,
+            : path === "/services"
+              ? 0.85
+              : 0.7,
   }));
 
   const posts = blogPosts.map((post) => ({

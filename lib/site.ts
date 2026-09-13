@@ -6,10 +6,10 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "Best Remote QA Services from $999 | TestSync Lab — USA & Worldwide" as const;
+  "Remote QA Services for US SaaS Teams from $999 | TestSync Lab" as const;
 
 export const SITE_DESCRIPTION =
-  "Top remote QA company for US SaaS startups: affordable monthly retainers from $999 for manual testing, API checks, Playwright automation, and AI testing. Free QA audit — senior SQA without a full-time hire." as const;
+  "Hire a remote QA company for US and worldwide SaaS startups. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA. Free audit — senior SQA without a full-time hire." as const;
 
 export const SITE_KEYWORDS = [
   "hire QA agency",
@@ -91,22 +91,22 @@ export const primaryNav: PrimaryNavItem[] = [
         description: "Manual, API, automation, and performance under one retainer.",
       },
       {
-        href: "/services#manual-testing",
+        href: "/services/manual-testing",
         label: "Manual testing",
         description: "Exploratory and regression coverage before every release.",
       },
       {
-        href: "/services#api-testing",
+        href: "/services/api-testing",
         label: "API testing",
         description: "Contract and integration checks that protect your backend.",
       },
       {
-        href: "/services#automation",
-        label: "Test automation",
-        description: "Playwright / Selenium suites wired into CI.",
+        href: "/services/playwright-automation",
+        label: "Playwright automation",
+        description: "Playwright suites wired into CI for critical paths.",
       },
       {
-        href: "/services#performance",
+        href: "/services/performance-testing",
         label: "Performance testing",
         description: "Load signals and release gates for traffic spikes.",
       },
@@ -320,9 +320,4 @@ export const websiteJsonLd = {
     },
   },
   inLanguage: "en-US",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${SITE_URL}/blog?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
 } as const;

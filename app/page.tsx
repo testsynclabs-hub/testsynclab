@@ -19,6 +19,7 @@ import {
   workflowTools,
 } from "@/lib/home-content";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
+import { faqs } from "@/lib/faq";
 import { services, SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
 import { markets, outsourcedQa } from "@/lib/markets";
 
@@ -28,9 +29,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const homeFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.slice(0, 6).map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
 export default function HomePage() {
   return (
     <main className="flex-1 pb-24 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
+      />
       <StickyCta />
 
       <section
