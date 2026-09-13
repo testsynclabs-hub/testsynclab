@@ -98,6 +98,66 @@ export const blogCovers: Record<string, { src: string; accent: string; bg: strin
     "src": "/images/blog/qa-checklist-before-launch.svg",
     "accent": "#38BDF8",
     "bg": "#0F172A"
+  },
+  "verification-vs-validation-in-software-testing": {
+    src: "/images/blog/verification-vs-validation-in-software-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "severity-vs-priority-in-software-testing": {
+    src: "/images/blog/severity-vs-priority-in-software-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "smoke-testing-vs-sanity-testing": {
+    src: "/images/blog/smoke-testing-vs-sanity-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "regression-testing-meaning-and-examples": {
+    src: "/images/blog/regression-testing-meaning-and-examples.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "black-box-vs-white-box-testing": {
+    src: "/images/blog/black-box-vs-white-box-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "sdlc-vs-stlc-explained": {
+    src: "/images/blog/sdlc-vs-stlc-explained.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "bug-life-cycle-in-software-testing": {
+    src: "/images/blog/bug-life-cycle-in-software-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "functional-vs-non-functional-testing": {
+    src: "/images/blog/functional-vs-non-functional-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "manual-testing-vs-automation-testing": {
+    src: "/images/blog/manual-testing-vs-automation-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "load-testing-vs-stress-testing": {
+    src: "/images/blog/load-testing-vs-stress-testing.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "chatbot-and-llm-testing-checklist": {
+    src: "/images/blog/chatbot-and-llm-testing-checklist.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
+  },
+  "software-testing-interview-questions-2-years-experience": {
+    src: "/images/blog/software-testing-interview-questions-2-years-experience.svg",
+    accent: "#3B82F6",
+    bg: "#0B1F4B",
   }
 } as const;
 
