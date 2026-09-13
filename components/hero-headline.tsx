@@ -35,7 +35,7 @@ export function HeroHeadline() {
       id="hero-heading"
       className="animate-fade-up delay-100 mt-3 max-w-xl font-[family-name:var(--font-display)] text-[1.7rem] font-extrabold leading-[1.1] tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-[2.75rem] xl:text-[3.15rem]"
     >
-      QA retainers for US SaaS teams — every release stays{" "}
+      QA retainers for SaaS teams worldwide — every release stays{" "}
       <span className="relative inline-grid align-baseline">
         {rotatingWords.map((word, wordIndex) => (
           <span

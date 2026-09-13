@@ -46,7 +46,8 @@ export const trustSignals = [
     detail: "Least-privilege staging access and clear handling of your product data.",
   },
   {
-    title: "US / CA friendly",
-    detail: "English reporting, Slack/Jira handoffs, timezone-aware delivery.",
+    title: "Global-ready handoffs",
+    detail:
+      "English reporting, Slack/Jira workflows, and timezone-aware delivery for teams worldwide.",
   },
 ] as const;

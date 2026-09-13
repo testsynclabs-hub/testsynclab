@@ -129,8 +129,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:text-sm">
           <p>
-            © {year} {SITE_NAME}. Remote QA for US, Canadian, and worldwide
-            teams.
+            © {year} {SITE_NAME}. Remote QA for product teams worldwide.
           </p>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-4 gap-y-1">

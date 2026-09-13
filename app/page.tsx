@@ -13,7 +13,6 @@ import { PackageGrid } from "@/components/package-grid";
 import { Reveal } from "@/components/reveal";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { StickyCta } from "@/components/sticky-cta";
-import { TrustCarousel } from "@/components/trust-carousel";
 import { AiServiceBanner } from "@/components/ai-service-banner";
 import {
   auditSteps,
@@ -65,7 +64,7 @@ export default function HomePage() {
           <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(rgba(148,163,184,0.28)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.28)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)]" />
         </div>
 
-        <div className="relative mx-auto grid w-full max-w-6xl flex-1 content-center items-center gap-6 px-5 py-6 sm:gap-8 sm:px-8 sm:py-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:py-10">
+        <div className="relative mx-auto grid w-full max-w-6xl flex-1 content-start items-center gap-6 px-5 pb-6 pt-10 sm:gap-8 sm:px-8 sm:pb-8 sm:pt-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:content-center lg:pt-16">
           <div className="max-w-2xl">
             <p className="animate-fade-up font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.4rem]">
               {SITE_NAME}
@@ -73,7 +72,7 @@ export default function HomePage() {
             <HeroHeadline />
             <p className="animate-fade-up delay-200 mt-3 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-4 sm:text-lg lg:text-xl">
               Manual, API, Playwright automation, and release gates — monthly
-              from $999, for product teams in the US, Canada, and worldwide.
+              from $999, for product teams worldwide.
             </p>
             <div className="animate-fade-up delay-300 mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap">
               <Link
@@ -124,11 +123,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl px-5 pb-8 sm:px-8 sm:pb-10">
+        <div className="relative mx-auto mt-auto w-full max-w-6xl px-5 pb-10 pt-10 sm:px-8 sm:pb-14 sm:pt-14">
           <TrustSignals />
         </div>
-
-        <TrustCarousel />
       </section>
 
       <section
