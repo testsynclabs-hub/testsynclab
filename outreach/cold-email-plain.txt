@@ -1,0 +1,29 @@
+Subject options (pick one):
+1) Quick QA audit for {{company}} before your next release?
+2) Free release-risk map for {{product_or_ai_surface}}
+3) Remote QA retainer — worth a 10-min look?
+
+---
+
+Hi {{first_name}},
+
+I saw {{company}} is shipping {{product_or_ai_surface}} quickly. Most teams we talk to don’t lack engineers — they lack a senior QA loop before Friday releases.
+
+TestSync Lab runs remote monthly QA for SaaS and AI product teams:
+- Manual + API + Playwright under one retainer
+- Optional AI testing sprint for chatbots / RAG / LLM flows
+- Clear bug reports your engineers can paste into Jira
+
+If useful, I can send a free QA audit — a short risk map for your next release. No deck. No retainer required to start.
+
+Book here: https://testsynclab.com/contact?plan=audit&source=cold-email
+
+Or reply with your staging URL + next release date — I’ll tell you if we’re a fit.
+
+Best,
+{{sender_name}}
+TestSync Lab
+info@testsynclab.com | https://testsynclab.com
+Packages: Basic $999 · Growth $1,899 · Scale $2,799
+
+Reply “stop” and we won’t email again.
