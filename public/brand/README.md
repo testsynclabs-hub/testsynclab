@@ -12,7 +12,7 @@ Use these files for website, LinkedIn, Facebook, Instagram, and WhatsApp.
 | `cover-linkedin.png` | LinkedIn company **cover / banner** |
 
 Also:
-- Website favicon: generated from `app/icon.tsx` + `app/apple-icon.tsx`
+- Website favicon: static `app/icon.png` + `app/apple-icon.png` (from `logo-mark.svg` — do not replace with generated OG icons)
 - Schema / OG logo: `logo-icon-1024.png`
 
 ## Recommended uploads
