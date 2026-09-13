@@ -158,7 +158,57 @@ export const blogCovers: Record<string, { src: string; accent: string; bg: strin
     src: "/images/blog/software-testing-interview-questions-2-years-experience.svg",
     accent: "#3B82F6",
     bg: "#0B1F4B",
-  }
+  },
+  "best-qa-company-for-startups-usa": {
+    src: "/images/blog/best-qa-company-for-startups-usa.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "affordable-outsourced-qa-services": {
+    src: "/images/blog/affordable-outsourced-qa-services.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "why-software-testing-is-important": {
+    src: "/images/blog/why-software-testing-is-important.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "what-is-sqa-and-why-it-matters": {
+    src: "/images/blog/what-is-sqa-and-why-it-matters.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "hire-qa-testers-usa-vs-qa-retainer": {
+    src: "/images/blog/hire-qa-testers-usa-vs-qa-retainer.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "top-qa-services-for-saas-companies": {
+    src: "/images/blog/top-qa-services-for-saas-companies.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "cheap-qa-outsourcing-what-you-get": {
+    src: "/images/blog/cheap-qa-outsourcing-what-you-get.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "playwright-vs-selenium-for-saas-teams": {
+    src: "/images/blog/playwright-vs-selenium-for-saas-teams.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "benefits-of-software-quality-assurance": {
+    src: "/images/blog/benefits-of-software-quality-assurance.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "how-to-choose-a-qa-agency": {
+    src: "/images/blog/how-to-choose-a-qa-agency.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
 } as const;
 
 export function getBlogCover(slug: string) {
