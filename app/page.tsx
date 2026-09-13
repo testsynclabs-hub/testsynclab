@@ -6,7 +6,7 @@ import {
   CaseStudiesSection,
 } from "@/components/case-studies";
 import { FaqCta, FaqList } from "@/components/faq-list";
-import { FoundersTeaser, TrustSignals } from "@/components/founders";
+import { TrustSignals } from "@/components/founders";
 import { HeroHeadline } from "@/components/hero-headline";
 import { HeroVisual } from "@/components/hero-visual";
 import { PackageGrid } from "@/components/package-grid";
@@ -413,8 +413,6 @@ export default function HomePage() {
       </section>
 
       <CaseStudiesSection />
-
-      <FoundersTeaser />
 
       <ReviewsCarousel />
 
