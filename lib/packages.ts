@@ -6,6 +6,8 @@ export type PackagePlan = {
   priceLabel: string;
   priceNote: string;
   description: string;
+  capacity: string;
+  notIncluded: string;
   featured?: boolean;
   ctaLabel: string;
   ctaHref: string;
@@ -20,9 +22,12 @@ export const packages: PackagePlan[] = [
     priceNote: "per month",
     description:
       "Hands-on manual QA for teams that need reliable coverage without building an in-house test function yet.",
+    capacity: "~40 focused QA hours / month · 1–2 release cycles",
+    notIncluded: "Heavy automation builds, load campaigns, or multi-app pods",
     ctaLabel: "Start with Basic",
     ctaHref: "/contact?plan=basic&source=pricing-card",
     features: [
+      "~40 QA hours reserved each month",
       "Manual exploratory & regression testing",
       "Clear bug reports and test notes",
       "Weekly status summary",
@@ -37,10 +42,13 @@ export const packages: PackagePlan[] = [
     priceNote: "per month",
     description:
       "Scale quality with API checks and automation so releases move faster with fewer surprises.",
+    capacity: "~80 QA hours / month · weekly release support",
+    notIncluded: "Dedicated full-time pod or multi-brand portfolios",
     featured: true,
     ctaLabel: "Choose Growth",
     ctaHref: "/contact?plan=growth&source=pricing-card",
     features: [
+      "~80 QA hours reserved each month",
       "Everything in Basic",
       "API / contract validation",
       "Playwright or Selenium automation start",
@@ -56,9 +64,12 @@ export const packages: PackagePlan[] = [
     priceNote: "per month",
     description:
       "Full-stack QA for faster release trains — gates, reporting, performance spot checks, and a named lead cadence.",
+    capacity: "~120 QA hours / month · named lead cadence",
+    notIncluded: "24/7 follow-the-sun staffing (available as Enterprise)",
     ctaLabel: "Choose Scale",
     ctaHref: "/contact?plan=scale&source=pricing-card",
     features: [
+      "~120 QA hours reserved each month",
       "Everything in Growth",
       "Performance spot checks (JMeter)",
       "Release-gate checklist & sign-off support",
@@ -74,6 +85,8 @@ export const packages: PackagePlan[] = [
     priceNote: "let’s discuss",
     description:
       "Need more than one pod, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
+    capacity: "Dedicated capacity · custom SLA",
+    notIncluded: "Scoped only after discovery — no surprise line items",
     ctaLabel: "Talk to us",
     ctaHref: "/contact?plan=enterprise&source=pricing-card",
     features: [
@@ -86,3 +99,21 @@ export const packages: PackagePlan[] = [
     ],
   },
 ];
+
+export const pricingComparePoints = [
+  {
+    title: "vs hiring full-time QA",
+    detail:
+      "A mid-level US hire often lands $90k–$130k+ fully loaded before tools and ramp. A retainer starts coverage this month.",
+  },
+  {
+    title: "Month-to-month flexibility",
+    detail:
+      "Pause or resize when the roadmap shifts. No annual trap while you validate product-market fit.",
+  },
+  {
+    title: "Senior hands, not a ticket farm",
+    detail:
+      "Founding partners stay close to execution — strategy and bug quality don’t get lost in a bench.",
+  },
+] as const;

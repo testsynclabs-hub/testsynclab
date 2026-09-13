@@ -74,6 +74,8 @@ export function ContactForm({
         email: asString(formData.get("email")),
         company: asString(formData.get("company")),
         website: asString(formData.get("website")),
+        role: asString(formData.get("role")),
+        releaseDate: asString(formData.get("releaseDate")),
         plan: asString(formData.get("plan")) || plan,
         source: asString(formData.get("source")) || source,
         message: asString(formData.get("message")),
@@ -221,6 +223,40 @@ export function ContactForm({
           </div>
         </div>
 
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="role"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Your role
+            </label>
+            <input
+              id="role"
+              name="role"
+              type="text"
+              autoComplete="organization-title"
+              placeholder="Founder, PM, Eng lead…"
+              className={inputClassName}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="releaseDate"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Next release date
+            </label>
+            <input
+              id="releaseDate"
+              name="releaseDate"
+              type="text"
+              placeholder="e.g. Oct 3 or this sprint"
+              className={inputClassName}
+            />
+          </div>
+        </div>
+
         <div>
           <label
             htmlFor="message"
@@ -235,8 +271,8 @@ export function ContactForm({
             rows={5}
             placeholder={
               aiMode
-                ? "Chatbot / RAG / agent, stack, next release date, and failure modes that worry you..."
-                : "Product, stack, next release date, and the journeys that must not break..."
+                ? "Chatbot / RAG / agent, stack, and failure modes that worry you..."
+                : "Product, stack, and the journeys that must not break..."
             }
             className={`${inputClassName} resize-y`}
           />

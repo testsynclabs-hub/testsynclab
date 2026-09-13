@@ -25,6 +25,9 @@ The contact form stays on `/contact` and shows an on-page “Form submitted” m
 
 Optional fallbacks: `RESEND_API_KEY` (https://resend.com) or `BREVO_API_KEY` (https://www.brevo.com). Without at least one of these, the form shows an on-page error and a `mailto:` link — it will not send visitors to a third-party site.
 
+### Optional booking calendar
+Set `NEXT_PUBLIC_BOOKING_URL` to your Cal.com / Calendly (or similar) public link. Contact and “Book a call” buttons open that URL. If unset, they fall back to the `/contact` form.
+
 ### Google Analytics 4 (free)
 Site code already loads GA when the env var is present (`components/analytics.tsx`). Live tracking only starts after you add the Measurement ID on Vercel.
 

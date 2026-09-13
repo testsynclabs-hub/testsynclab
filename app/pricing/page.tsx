@@ -5,6 +5,7 @@ import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { PackageGrid } from "@/components/package-grid";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { aiPackagePolicy, aiPackages } from "@/lib/ai";
+import { pricingComparePoints } from "@/lib/packages";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -111,6 +112,39 @@ export default function PricingPage() {
             </Link>
             .
           </p>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-white py-16 sm:py-20"
+        aria-labelledby="pricing-compare-heading"
+      >
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <h2
+            id="pricing-compare-heading"
+            className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep"
+          >
+            Why retainers beat waiting to hire
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            Coverage this month — without a six-figure headcount bet or a long
+            lock-in.
+          </p>
+          <ul className="mt-10 grid gap-6 md:grid-cols-3">
+            {pricingComparePoints.map((item) => (
+              <li
+                key={item.title}
+                className="border-t border-brand/25 pt-5"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.detail}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
