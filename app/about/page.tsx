@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FoundersGrid } from "@/components/founders";
 import { Reveal } from "@/components/reveal";
 import { TrustSignalsLight } from "@/components/founders";
 import { outcomePillars } from "@/lib/home-content";
@@ -15,7 +14,7 @@ import { futureRoadmap, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the TestSync Lab founding QA partners. Hands-on monthly QA retainers, AI testing for chatbots and LLM products, and a free QA audit.",
+    "About TestSync Lab — hands-on monthly QA retainers, AI testing for chatbots and LLM products, and a free QA audit.",
   alternates: { canonical: "/about" },
 };
 
@@ -28,8 +27,8 @@ export default function AboutPage() {
             About {SITE_NAME}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Two founding QA partners. Hands-on delivery. Quality first — including
-            the chatbots and LLM features your customers already use.
+            Hands-on QA delivery. Quality first — including the chatbots and LLM
+            features your customers already use.
           </p>
         </div>
       </section>
@@ -41,10 +40,9 @@ export default function AboutPage() {
               Who we are
             </h2>
             <p className="mt-4 leading-relaxed text-muted">
-              {SITE_NAME} is a focused software quality assurance agency. Both
-              founders stay hands-on — strategy and execution stay close,
-              reporting stays clear, and you always know who owns quality
-              outcomes.
+              {SITE_NAME} is a focused software quality assurance agency.
+              Strategy and execution stay close, reporting stays clear, and you
+              always know who owns quality outcomes.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
               AI testing is live now — chatbots, RAG, copilots, and LLM
@@ -60,19 +58,6 @@ export default function AboutPage() {
             >
               Follow us on LinkedIn →
             </a>
-          </div>
-
-          <div className="mt-12">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-slate-900">
-              Meet the partners
-            </h2>
-            <p className="mt-3 max-w-2xl text-muted">
-              You work with the people who run the engagement — not a rotating
-              bench.
-            </p>
-            <div className="mt-8">
-              <FoundersGrid />
-            </div>
           </div>
 
           <div className="mt-14">
