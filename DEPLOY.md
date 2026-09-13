@@ -26,12 +26,20 @@ The contact form stays on `/contact` and shows an on-page “Form submitted” m
 Optional fallbacks: `RESEND_API_KEY` (https://resend.com) or `BREVO_API_KEY` (https://www.brevo.com). Without at least one of these, the form shows an on-page error and a `mailto:` link — it will not send visitors to a third-party site.
 
 ### Google Analytics 4 (free)
-1. Create a GA4 property at https://analytics.google.com for `testsynclab.com`.
-2. Copy Measurement ID (`G-XXXXXXXXXX`).
-3. Set `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` on Vercel.
-4. Redeploy. Traffic sources appear under **Reports → Acquisition**.
+Site code already loads GA when the env var is present (`components/analytics.tsx`). Live tracking only starts after you add the Measurement ID on Vercel.
 
-4. Deploy. Note the `*.vercel.app` URL.
+1. Open https://analytics.google.com → **Admin** → **Create** → **Property**.
+2. Property name: `TestSync Lab`, timezone/currency as you prefer.
+3. Platform: **Web** → Website URL `https://testsynclab.com` → Create stream.
+4. Copy the **Measurement ID** (`G-XXXXXXXXXX`).
+5. Vercel → Project → **Settings** → **Environment Variables**:
+   - Name: `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+   - Value: `G-XXXXXXXXXX`
+   - Environments: Production (+ Preview if you want)
+6. **Redeploy** Production (env vars apply on the next build).
+7. Open the live site, click around, then in GA check **Reports → Realtime** (can take 1–2 minutes).
+
+Optional conversion: successful contact submits send a `generate_lead` event (plan + source). Mark it as a key event in GA → Admin → Events if you want funnel reporting.
 
 ## 3) Connect testsynclab.com (Hostinger DNS)
 In Vercel → Project → Settings → Domains → add:

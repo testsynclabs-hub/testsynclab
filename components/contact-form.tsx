@@ -2,7 +2,13 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
-import { FREE_QA_AUDIT_LABEL, isAiInquiry, planDisplayName, AI_CONSULT_LABEL } from "@/lib/cta";
+import { trackLeadSubmit } from "@/lib/analytics";
+import {
+  AI_CONSULT_LABEL,
+  FREE_QA_AUDIT_LABEL,
+  isAiInquiry,
+  planDisplayName,
+} from "@/lib/cta";
 import { submitContact } from "@/lib/actions/contact";
 import type { ContactState } from "@/lib/contact-state";
 import { sendLeadFromBrowser } from "@/lib/send-lead-client";
@@ -75,13 +81,18 @@ export function ContactForm({
 
       try {
         if (await sendLeadFromBrowser(fields)) {
+          trackLeadSubmit({ plan: fields.plan, source: fields.source });
           return { status: "success" };
         }
       } catch {
         // Fall through to the server action (SMTP / Resend / Brevo).
       }
 
-      return submitContact(prev, formData);
+      const result = await submitContact(prev, formData);
+      if (result.status === "success") {
+        trackLeadSubmit({ plan: fields.plan, source: fields.source });
+      }
+      return result;
     },
     sent ? { status: "success" } : initialContactState,
   );
