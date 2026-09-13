@@ -1,7 +1,7 @@
 /**
  * DEPRECATED — do not run.
  *
- * Blog covers are now unique editorial PNGs in `public/images/blog/{slug}.png`
+ * Blog covers are unique editorial JPGs in `public/images/blog/{slug}.jpg`
  * (registered in `lib/blog-covers.ts`). This script regenerates old template SVGs
  * and would fight that workflow.
  *
