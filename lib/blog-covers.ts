@@ -209,6 +209,21 @@ export const blogCovers: Record<string, { src: string; accent: string; bg: strin
     accent: "#2563EB",
     bg: "#0B1F4B",
   },
+  "qa-staff-augmentation-vs-qa-retainer": {
+    src: "/images/blog/qa-staff-augmentation-vs-qa-retainer.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "how-much-does-a-qa-agency-cost-usa": {
+    src: "/images/blog/how-much-does-a-qa-agency-cost-usa.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
+  "continuous-testing-for-saas-ci-cd": {
+    src: "/images/blog/continuous-testing-for-saas-ci-cd.svg",
+    accent: "#2563EB",
+    bg: "#0B1F4B",
+  },
 } as const;
 
 export function getBlogCover(slug: string) {
