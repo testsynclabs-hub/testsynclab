@@ -1,12 +1,30 @@
 import Link from "next/link";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
-import {
-  navLinks,
-  SITE_EMAIL,
-  SITE_LINKEDIN,
-  SITE_NAME,
-  futureRoadmap,
-} from "@/lib/site";
+import { SITE_EMAIL, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
+
+const serviceLinks = [
+  { href: "/services", label: "All services" },
+  { href: "/services/manual-testing", label: "Manual testing" },
+  { href: "/services/api-testing", label: "API testing" },
+  { href: "/services/playwright-automation", label: "Playwright automation" },
+  { href: "/services/performance-testing", label: "Performance testing" },
+  { href: "/ai", label: "AI testing" },
+] as const;
+
+const companyLinks = [
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+  { href: "/become-a-tester", label: "Become a tester" },
+] as const;
+
+const marketLinks = [
+  { href: "/qa-services-usa", label: "QA for US teams" },
+  { href: "/qa-services-canada", label: "QA for Canadian teams" },
+  { href: "/outsourced-qa", label: "Outsourced QA" },
+] as const;
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -19,28 +37,46 @@ export function SiteFooter() {
       <h2 id="footer-heading" className="sr-only">
         Company information
       </h2>
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-8 sm:py-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-        <div className="lg:col-span-2">
-          <p className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
+
+      <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-10 sm:px-8 sm:py-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <div className="md:col-span-2 lg:col-span-1">
+          <p className="font-[family-name:var(--font-display)] text-lg font-bold text-white">
             {SITE_NAME}
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            {SITE_NAME} is a software quality assurance partner for product
-            teams worldwide. Two QA founders plus in-house AI expertise.
-            Affordable monthly retainers — and practical AI testing for
-            chatbots and LLM products.
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
+            Remote QA retainers for SaaS teams — manual, API, Playwright, and AI
+            testing from $999/mo.
           </p>
-          <p className="mt-4 text-sm text-slate-500">
-            Later: {futureRoadmap.map((item) => item.title).join(" · ")}
-          </p>
+          <a
+            href={`mailto:${SITE_EMAIL}`}
+            className="mt-4 inline-block text-sm font-medium text-white transition-colors hover:text-blue-300"
+          >
+            {SITE_EMAIL}
+          </a>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <Link
+              href={auditHref("footer-contact")}
+              className="inline-flex rounded-lg bg-brand px-3.5 py-2 text-sm font-bold text-white hover:bg-brand-bright"
+            >
+              {FREE_QA_AUDIT_LABEL}
+            </Link>
+            <a
+              href={SITE_LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-colors hover:border-blue-400/40 hover:bg-white/10"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
 
-        <div>
-          <h3 className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[0.14em] text-blue-300">
-            Explore
+        <nav aria-label="Services">
+          <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
+            Services
           </h3>
           <ul className="mt-3 space-y-2 text-sm">
-            {navLinks.map((link) => (
+            {serviceLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -50,136 +86,67 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href="/services/manual-testing"
-                className="transition-colors hover:text-blue-300"
-              >
-                Manual testing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/api-testing"
-                className="transition-colors hover:text-blue-300"
-              >
-                API testing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/playwright-automation"
-                className="transition-colors hover:text-blue-300"
-              >
-                Playwright automation
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/performance-testing"
-                className="transition-colors hover:text-blue-300"
-              >
-                Performance testing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/qa-services-usa"
-                className="transition-colors hover:text-blue-300"
-              >
-                QA for US teams
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/qa-services-canada"
-                className="transition-colors hover:text-blue-300"
-              >
-                QA for Canadian teams
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/outsourced-qa"
-                className="transition-colors hover:text-blue-300"
-              >
-                Outsourced QA
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/become-a-tester"
-                className="transition-colors hover:text-blue-300"
-              >
-                Become a tester
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={auditHref("footer-nav")}
-                className="transition-colors hover:text-blue-300"
-              >
-                {FREE_QA_AUDIT_LABEL}
-              </Link>
-            </li>
           </ul>
-        </div>
+        </nav>
 
-        <div className="space-y-6">
-          <div>
-            <h3 className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[0.14em] text-blue-300">
-              Contact
-            </h3>
-            <a
-              href={`mailto:${SITE_EMAIL}`}
-              className="mt-3 inline-block text-base font-medium text-white transition-colors hover:text-blue-300"
-            >
-              {SITE_EMAIL}
-            </a>
-            <Link
-              href={auditHref("footer-contact")}
-              className="mt-4 inline-flex rounded-lg bg-brand px-3.5 py-2 text-sm font-bold text-white hover:bg-brand-bright"
-            >
-              {FREE_QA_AUDIT_LABEL}
-            </Link>
-          </div>
-          <div>
-            <h3 className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[0.14em] text-blue-300">
-              Follow Us
-            </h3>
-            <a
-              href={SITE_LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/40 hover:bg-white/10"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
+        <nav aria-label="Company">
+          <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
+            Company
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm">
+            {companyLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="transition-colors hover:text-blue-300"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Markets">
+          <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
+            Markets
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm">
+            {marketLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="transition-colors hover:text-blue-300"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:text-sm">
           <p>
-            © {year} {SITE_NAME}. All rights reserved. Serving US, Canadian, and
-            worldwide product teams.
+            © {year} {SITE_NAME}. Remote QA for US, Canadian, and worldwide
+            teams.
           </p>
           <nav aria-label="Legal">
-            <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            <ul className="flex flex-wrap gap-x-4 gap-y-1">
               <li>
                 <Link href="/privacy" className="hover:text-blue-300">
-                  Privacy Policy
+                  Privacy
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="hover:text-blue-300">
-                  Terms of Service
+                  Terms
                 </Link>
               </li>
               <li>
                 <Link href="/cookies" className="hover:text-blue-300">
-                  Cookie Policy
+                  Cookies
                 </Link>
               </li>
             </ul>
