@@ -108,6 +108,14 @@ export function SiteFooter() {
             </li>
             <li>
               <Link
+                href="/become-a-tester"
+                className="transition-colors hover:text-blue-300"
+              >
+                Become a tester
+              </Link>
+            </li>
+            <li>
+              <Link
                 href={auditHref("footer-nav")}
                 className="transition-colors hover:text-blue-300"
               >
