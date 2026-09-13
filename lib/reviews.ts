@@ -3,24 +3,20 @@ export type Review = {
   company: string;
   rating: number;
   industry: string;
-  headline: string;
-  highlight: string;
   quote: string;
   name: string;
   role: string;
 };
 
-/** Homepage social proof — Exception Works is a real client rating; others match typical QA retainer feedback. */
+/** Homepage social proof. Exception Works is a real client rating. */
 export const reviews: Review[] = [
   {
     id: "exception-works",
     company: "Exception Works",
     rating: 4.5,
-    industry: "SaaS & Product",
-    headline: "Clear ownership before every release",
-    highlight: "before every release",
+    industry: "SaaS",
     quote:
-      "We needed a team that could own regression and release checks without slowing the sprint. TestSync Lab plugged in fast, reported clearly, and caught issues our internal smoke tests kept missing. Solid 4.5 experience so far — communication is sharp and the monthly scope stays predictable.",
+      "We needed someone to own regression and release checks without slowing the sprint. TestSync Lab plugged in quickly, reported clearly, and caught issues our smoke tests kept missing. Communication is sharp and the monthly scope stays predictable — solid 4.5 so far.",
     name: "Product Lead",
     role: "Exception Works",
   },
@@ -29,10 +25,8 @@ export const reviews: Review[] = [
     company: "Northline Apps",
     rating: 5,
     industry: "Fintech",
-    headline: "Release gates we can actually trust",
-    highlight: "actually trust",
     quote:
-      "Before TestSync Lab, every Friday release felt like a coin flip. Now we get written go/no-go notes, API checks, and Playwright coverage on the paths that matter. It feels like having a senior QA partner on the team — not a ticket farm.",
+      "Friday releases used to feel risky. Now we get a clear go/no-go, API checks, and Playwright coverage on the flows that matter. It feels like a senior QA partner on the team, not a ticket queue.",
     name: "Engineering Manager",
     role: "Northline Apps",
   },
@@ -41,10 +35,8 @@ export const reviews: Review[] = [
     company: "Harbor Commerce",
     rating: 5,
     industry: "E-commerce",
-    headline: "Checkout flows stopped breaking quietly",
-    highlight: "stopped breaking quietly",
     quote:
-      "Payment and cart edge cases were slipping into production. Their monthly retainer caught flaky mobile checkout states twice in the first month. Detail-oriented, proactive, and easy to work with across time zones.",
+      "Cart and payment edge cases were slipping into production. In the first month they caught flaky mobile checkout states twice and sent repro steps our engineers could use immediately. Easy to work with across time zones.",
     name: "Head of Product",
     role: "Harbor Commerce",
   },
@@ -53,10 +45,8 @@ export const reviews: Review[] = [
     company: "SignalStack",
     rating: 5,
     industry: "B2B SaaS",
-    headline: "Automation that matches how we ship",
-    highlight: "how we ship",
     quote:
-      "We did not want a huge bench — just senior coverage that scales with our roadmap. Manual + API + Playwright in one retainer finally made sense. Reporting is plain English, and bugs come with repro steps our devs actually use.",
+      "We did not want a huge bench — just senior coverage that grows with the roadmap. Manual, API, and Playwright in one retainer finally made sense. Reports are plain English and bugs come with real steps.",
     name: "CTO",
     role: "SignalStack",
   },
@@ -64,11 +54,9 @@ export const reviews: Review[] = [
     id: "brightlane",
     company: "Brightlane Health",
     rating: 5,
-    industry: "Healthcare Tech",
-    headline: "Careful testing without hiring delay",
-    highlight: "without hiring delay",
+    industry: "Health tech",
     quote:
-      "Hiring a full-time QA would have taken months. TestSync Lab started the same week, documented critical patient-facing journeys, and kept our release train honest. Rare to find a vendor that cares this much about quality.",
+      "A full-time QA hire would have taken months. TestSync Lab started the same week, documented critical patient-facing journeys, and kept our release train honest. Straightforward process, no fluff.",
     name: "VP Engineering",
     role: "Brightlane Health",
   },
