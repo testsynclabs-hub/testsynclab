@@ -1,7 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { CapabilityExplorer } from "@/components/capability-explorer";
+import {
+  AuditSamplePreview,
+  CaseStudiesSection,
+} from "@/components/case-studies";
 import { FaqCta, FaqList } from "@/components/faq-list";
+import { FoundersTeaser, TrustSignals } from "@/components/founders";
 import { HeroHeadline } from "@/components/hero-headline";
 import { HeroVisual } from "@/components/hero-visual";
 import { PackageGrid } from "@/components/package-grid";
@@ -102,7 +107,7 @@ export default function HomePage() {
                 ))}
               </div>
               <span className="text-xs font-semibold text-slate-200 sm:text-sm">
-                Clear QA ownership
+                Clear QA ownership · 24h audit reply
               </span>
               <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
               <Link
@@ -117,6 +122,10 @@ export default function HomePage() {
           <div className="animate-fade-in delay-200 relative hidden min-[900px]:block lg:justify-self-end">
             <HeroVisual />
           </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-8 sm:px-8 sm:pb-10">
+          <TrustSignals />
         </div>
 
         <TrustCarousel />
@@ -274,6 +283,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <AuditSamplePreview source="home-audit-sample" />
+
       <section
         className="border-t border-line bg-gradient-to-b from-background to-white py-14 sm:py-20"
         aria-labelledby="services-preview-heading"
@@ -403,6 +414,10 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <CaseStudiesSection />
+
+      <FoundersTeaser />
 
       <ReviewsCarousel />
 

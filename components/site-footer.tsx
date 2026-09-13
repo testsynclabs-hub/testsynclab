@@ -17,6 +17,7 @@ const companyLinks = [
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
+  { href: "/become-a-tester", label: "Become a tester" },
 ] as const;
 
 const marketLinks = [

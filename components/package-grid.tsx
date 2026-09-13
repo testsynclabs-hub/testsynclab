@@ -42,6 +42,9 @@ export function PackageGrid({
             <p className="mt-3 text-sm leading-relaxed text-muted">
               {plan.description}
             </p>
+            <p className="mt-4 rounded-xl bg-brand-soft/60 px-3 py-2 text-xs font-semibold leading-relaxed text-brand-deep">
+              Capacity: {plan.capacity}
+            </p>
             <ul className="mt-5 flex-1 space-y-2.5 text-sm text-slate-700">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex gap-2">
@@ -50,6 +53,9 @@ export function PackageGrid({
                 </li>
               ))}
             </ul>
+            <p className="mt-4 text-xs leading-relaxed text-slate-500">
+              Not included: {plan.notIncluded}
+            </p>
             <Link
               href={plan.ctaHref}
               className={`mt-7 inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 ${

@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Release Gates That Work With Remote QA Partners">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#422006"/>
-      <stop offset="100%" stop-color="#1C1917"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="82%" cy="28%" r="52%">
-      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="140" cy="520" r="180" fill="#FBBF24" opacity="0.08"/>
-  <circle cx="1180" cy="40" r="120" fill="#fff" opacity="0.05"/>
-  <rect x="72" y="72" width="92" height="34" rx="17" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
-  <text x="118" y="95" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BLOG</text>
-  <text x="72" y="200" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Release Gates That Work With</text>
-  <text x="72" y="264" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">Remote QA Partners</text>
-  <text x="72" y="352" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" opacity="0.78">Simple release-gate habits that keep quality high when your…</text>
-  <text x="72" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" opacity="0.55">TestSync Lab</text>
-  <rect x="900" y="160" width="40" height="300" rx="10" fill="#FBBF24" opacity="0.55"/>
-  <rect x="1040" y="160" width="40" height="300" rx="10" fill="#FBBF24" opacity="0.55"/>
-  <rect x="900" y="160" width="180" height="36" rx="10" fill="#FDE68A" opacity="0.7"/>
-  <path d="M970 280 h80" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+  <rect width="1200" height="630" fill="#312E81"/>
+  <circle cx="160" cy="520" r="200" fill="#C4B5FD" opacity="0.12"/>
+  <circle cx="1100" cy="-20" r="180" fill="#FFFFFF" opacity="0.06"/>
+  
+  <g transform="translate(64 56) scale(0.1015625)">
+    <rect width="512" height="512" rx="112" fill="#1D4ED8"/>
+    <path d="M156 210c28-48 92-72 148-58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+    <path d="M356 302c-28 48-92 72-148 58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+    <path d="M188 268l52 52 112-128" fill="none" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="136" y="92" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">TestSync Lab</text>
+  
+  <g transform="translate(700 80)">
+    <rect x="60" y="40" width="60" height="420" rx="16" fill="#C4B5FD" opacity="0.7"/>
+    <rect x="300" y="40" width="60" height="420" rx="16" fill="#C4B5FD" opacity="0.7"/>
+    <rect x="60" y="40" width="300" height="50" rx="16" fill="#DDD6FE"/>
+    <path d="M150 220 H270" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="210" cy="220" r="24" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  <text x="72" y="470" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Release gates remote teams</text>
+  <text x="72" y="514" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">can trust</text>
 </svg>
