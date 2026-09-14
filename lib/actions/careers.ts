@@ -347,7 +347,7 @@ export async function submitCareer(
     cvName: cv.name.slice(0, 120),
   };
 
-  const subject = `Become a tester (${interest}): ${name}`;
+  const subject = `[TestSync Lab] New tester applied: ${name} (${interest})`;
   const text = careerText(fields);
   const html = careerHtml(fields);
 
@@ -370,11 +370,37 @@ export async function submitCareer(
     }
   }
 
+  // If the CV was too large for server attach, still try a details-only ping
+  // so info@ knows someone applied.
+  if (attachment || cv.size > CV_SERVER_SAFE_BYTES) {
+    const pingSubject = `[TestSync Lab] New tester applied (details): ${name}`;
+    const pingText = `${text}\n\nNote: CV may need to be requested if attachment was too large for server mail (${cv.name}, ${cv.size} bytes).`;
+    for (const send of senders) {
+      try {
+        if (
+          await send({
+            replyTo: email,
+            subject: pingSubject,
+            text: pingText,
+            html: careerHtml(fields),
+          })
+        ) {
+          return { status: "success" };
+        }
+      } catch (error) {
+        console.error("Careers details-only email failed", error);
+      }
+    }
+  }
+
   console.error("Careers lead NOT emailed", {
     name,
     email,
     interest,
     cv: cv.name,
   });
-  return { status: "delivery" };
+  return {
+    status: "delivery",
+    message: `We could not reach ${LEAD_INBOX}. Please try again or email your CV directly.`,
+  };
 }

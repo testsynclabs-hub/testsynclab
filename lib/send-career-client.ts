@@ -29,15 +29,13 @@ function isDeliveredResponse(
   ok: boolean,
   body: { success?: boolean | string; message?: string } | null,
 ) {
-  if (!ok) return false;
+  if (!ok || !body) return false;
   const message = String(body?.message || "");
   if (isActivationMessage(message)) return false;
-  if (!body) return true;
   return (
     body.success === true ||
     body.success === "true" ||
-    message.toLowerCase().includes("success") ||
-    message.length === 0
+    message.toLowerCase().includes("success")
   );
 }
 
@@ -47,9 +45,10 @@ async function postFormData(url: string, data: FormData) {
     headers: { Accept: "application/json" },
     body: data,
   });
+  // CV uploads can be slow — wait for a real JSON body before claiming success.
   const body = (await Promise.race([
     response.json().catch(() => null),
-    new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
+    new Promise<null>((resolve) => setTimeout(() => resolve(null), 12000)),
   ])) as { success?: boolean | string; message?: string } | null;
   return { ok: response.ok, body };
 }
@@ -61,7 +60,7 @@ function buildFormData(fields: CareerLeadFields, cv?: File | null) {
   data.set("_replyto", fields.email);
   data.set(
     "_subject",
-    `Become a tester: ${fields.name} (${fields.interest})`,
+    `[TestSync Lab] New tester applied: ${fields.name} (${fields.interest})`,
   );
   data.set("_template", "table");
   data.set("_captcha", "false");
@@ -75,6 +74,7 @@ function buildFormData(fields: CareerLeadFields, cv?: File | null) {
   data.set("source", fields.source || "become-a-tester");
   data.set("note", fields.note);
   data.set("from_name", SITE_NAME);
+  // Deliver to the business inbox (FormSubmit activated address).
   data.set("_cc", SITE_EMAIL);
   if (cv) data.set("cv", cv, cv.name);
   return data;
@@ -85,14 +85,15 @@ export async function sendCareerFromBrowser(
   fields: CareerLeadFields,
   cv?: File | null,
 ) {
+  // Prefer direct inbox address so applications land in info@.
   const primary = await postFormData(
-    `https://formsubmit.co/ajax/${FORMSUBMIT_FORM_ID}`,
+    `https://formsubmit.co/ajax/${encodeURIComponent(SITE_EMAIL)}`,
     buildFormData(fields, cv),
   );
   if (isDeliveredResponse(primary.ok, primary.body)) return true;
 
   const fallback = await postFormData(
-    `https://formsubmit.co/ajax/${encodeURIComponent(SITE_EMAIL)}`,
+    `https://formsubmit.co/ajax/${FORMSUBMIT_FORM_ID}`,
     buildFormData(fields, cv),
   );
   return isDeliveredResponse(fallback.ok, fallback.body);

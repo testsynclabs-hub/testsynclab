@@ -4,7 +4,7 @@ import { useActionState, useState } from "react";
 import Link from "next/link";
 import { trackLeadSubmit } from "@/lib/analytics";
 import { submitCareer } from "@/lib/actions/careers";
-import type { CareerState } from "@/lib/career-state";
+import type { CareerFormValues, CareerState } from "@/lib/career-state";
 import {
   careerInterests,
   careerSkillOptions,
@@ -16,6 +16,18 @@ import {
 import { sendCareerFromBrowser } from "@/lib/send-career-client";
 import { SITE_EMAIL } from "@/lib/site";
 
+const emptyValues: CareerFormValues = {
+  name: "",
+  email: "",
+  phone: "",
+  location: "",
+  experience: "1-2",
+  interest: "join-team",
+  linkedin: "",
+  note: "",
+  skills: [],
+};
+
 const initialState: CareerState = { status: "idle" };
 
 const fieldClass =
@@ -23,6 +35,20 @@ const fieldClass =
 
 function asText(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function readValues(formData: FormData): CareerFormValues {
+  return {
+    name: asText(formData.get("name")),
+    email: asText(formData.get("email")),
+    phone: asText(formData.get("phone")),
+    location: asText(formData.get("location")),
+    experience: asText(formData.get("experience")) || "1-2",
+    interest: asText(formData.get("interest")) || "join-team",
+    linkedin: asText(formData.get("linkedin")),
+    note: asText(formData.get("note")),
+    skills: formData.getAll("skills").map(asText).filter(Boolean),
+  };
 }
 
 function SuccessPanel() {
@@ -39,10 +65,9 @@ function SuccessPanel() {
         Application received
       </h2>
       <p className="mt-3 max-w-md text-base leading-relaxed text-emerald-900/80">
-        Thanks — we received your details and CV. Next step if there is a fit:{" "}
-        <span className="font-semibold">initial call</span>, then final
-        interview, then selected or rejected. Replies go to your email on
-        business days ({SITE_EMAIL}).
+        Thanks — your details and CV were sent to{" "}
+        <span className="font-semibold">{SITE_EMAIL}</span>. Next step if there
+        is a fit: initial call → final interview → selected or rejected.
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <Link
@@ -67,8 +92,26 @@ type CareersFormProps = {
 };
 
 export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
+  const [values, setValues] = useState<CareerFormValues>(emptyValues);
+  const [cvFile, setCvFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
   const [fileLabel, setFileLabel] = useState("No file chosen");
+
+  const updateField = <K extends keyof CareerFormValues>(
+    key: K,
+    value: CareerFormValues[K],
+  ) => {
+    setValues((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const toggleSkill = (skill: string, checked: boolean) => {
+    setValues((prev) => ({
+      ...prev,
+      skills: checked
+        ? Array.from(new Set([...prev.skills, skill]))
+        : prev.skills.filter((item) => item !== skill),
+    }));
+  };
 
   const [state, formAction, pending] = useActionState<CareerState, FormData>(
     async (_prev, formData) => {
@@ -76,13 +119,25 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         return { status: "success" };
       }
 
+      const nextValues = readValues(formData);
+      setValues(nextValues);
+
       const cvEntry = formData.get("cv");
-      const cv = cvEntry instanceof File && cvEntry.size > 0 ? cvEntry : null;
+      const uploaded =
+        cvEntry instanceof File && cvEntry.size > 0 ? cvEntry : null;
+      const cv = uploaded || cvFile;
+
+      if (uploaded) {
+        setCvFile(uploaded);
+        setFileLabel(`${uploaded.name} (${formatMb(uploaded.size)})`);
+      }
+
       if (!cv) {
         setFileError("Please attach your CV (PDF or Word, up to 10 MB).");
         return {
           status: "validation",
           message: "Please attach your CV (PDF or Word, up to 10 MB).",
+          values: nextValues,
         };
       }
       if (!isAllowedCvFile(cv) || cv.size > CV_MAX_BYTES) {
@@ -90,26 +145,21 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         return {
           status: "validation",
           message: "CV must be PDF or Word (.doc/.docx) and under 10 MB.",
+          values: nextValues,
         };
       }
       setFileError(null);
 
-      const skills = formData
-        .getAll("skills")
-        .map(asText)
-        .filter(Boolean)
-        .join(", ");
-
       const fields = {
-        name: asText(formData.get("name")),
-        email: asText(formData.get("email")),
-        phone: asText(formData.get("phone")),
-        location: asText(formData.get("location")),
-        experience: asText(formData.get("experience")),
-        skills,
-        linkedin: asText(formData.get("linkedin")),
-        interest: asText(formData.get("interest")) || "join-team",
-        note: asText(formData.get("note")) || "—",
+        name: nextValues.name,
+        email: nextValues.email,
+        phone: nextValues.phone,
+        location: nextValues.location,
+        experience: nextValues.experience,
+        skills: nextValues.skills.join(", "),
+        linkedin: nextValues.linkedin,
+        interest: nextValues.interest || "join-team",
+        note: nextValues.note || "—",
         source: asText(formData.get("source")) || source,
       };
 
@@ -117,6 +167,7 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         return {
           status: "validation",
           message: "Please fill name, email, and city / timezone.",
+          values: nextValues,
         };
       }
 
@@ -138,8 +189,9 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
       const result = await submitCareer(_prev, serverData);
       if (result.status === "success") {
         trackLeadSubmit({ plan: "careers", source: fields.source });
+        return result;
       }
-      return result;
+      return { ...result, values: nextValues };
     },
     initialState,
   );
@@ -147,6 +199,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
   if (state.status === "success") {
     return <SuccessPanel />;
   }
+
+  const draft = values;
 
   return (
     <form
@@ -182,7 +236,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
           className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
           role="alert"
         >
-          We could not send that just now. Email your CV to{" "}
+          We could not email {SITE_EMAIL} just now. Your answers are still on
+          this form — try Submit again, or email your CV to{" "}
           <a className="font-semibold underline" href={`mailto:${SITE_EMAIL}`}>
             {SITE_EMAIL}
           </a>{" "}
@@ -204,6 +259,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               autoComplete="name"
               placeholder="Your name"
               className={fieldClass}
+              value={draft.name}
+              onChange={(event) => updateField("name", event.target.value)}
             />
           </div>
           <div>
@@ -218,6 +275,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               autoComplete="email"
               placeholder="you@email.com"
               className={fieldClass}
+              value={draft.email}
+              onChange={(event) => updateField("email", event.target.value)}
             />
           </div>
         </div>
@@ -234,6 +293,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               autoComplete="tel"
               placeholder="+92 …"
               className={fieldClass}
+              value={draft.phone}
+              onChange={(event) => updateField("phone", event.target.value)}
             />
           </div>
           <div>
@@ -247,6 +308,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               required
               placeholder="Lahore · PKT"
               className={fieldClass}
+              value={draft.location}
+              onChange={(event) => updateField("location", event.target.value)}
             />
           </div>
         </div>
@@ -261,7 +324,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               name="experience"
               required
               className={fieldClass}
-              defaultValue="1-2"
+              value={draft.experience}
+              onChange={(event) => updateField("experience", event.target.value)}
             >
               <option value="0-1">0–1 years</option>
               <option value="1-2">1–2 years</option>
@@ -279,7 +343,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               name="interest"
               required
               className={fieldClass}
-              defaultValue="join-team"
+              value={draft.interest}
+              onChange={(event) => updateField("interest", event.target.value)}
             >
               {careerInterests.map((item) => (
                 <option key={item.value} value={item.value}>
@@ -304,6 +369,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
                   type="checkbox"
                   name="skills"
                   value={skill}
+                  checked={draft.skills.includes(skill)}
+                  onChange={(event) => toggleSkill(skill, event.target.checked)}
                   className="h-4 w-4 rounded border-slate-300 text-brand focus:ring-brand"
                 />
                 {skill}
@@ -324,6 +391,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
             inputMode="url"
             placeholder="linkedin.com/in/… or portfolio link"
             className={fieldClass}
+            value={draft.linkedin}
+            onChange={(event) => updateField("linkedin", event.target.value)}
           />
         </div>
 
@@ -338,6 +407,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
             rows={3}
             placeholder="Tools, products tested, notice period…"
             className={`${fieldClass} resize-y`}
+            value={draft.note}
+            onChange={(event) => updateField("note", event.target.value)}
           />
         </div>
 
@@ -349,12 +420,12 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
             id="cv"
             name="cv"
             type="file"
-            required
             accept={CV_ACCEPT}
             className="block w-full text-sm text-slate-600 file:mr-4 file:rounded-lg file:border-0 file:bg-brand file:px-4 file:py-2.5 file:text-sm file:font-bold file:text-white hover:file:bg-brand-deep"
             onChange={(event) => {
               const file = event.target.files?.[0];
               if (!file) {
+                setCvFile(null);
                 setFileLabel("No file chosen");
                 setFileError(null);
                 return;
@@ -366,15 +437,18 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
                     : "CV must be PDF or Word (.doc/.docx) and under 10 MB.",
                 );
                 event.target.value = "";
+                setCvFile(null);
                 setFileLabel("No file chosen");
                 return;
               }
               setFileError(null);
+              setCvFile(file);
               setFileLabel(`${file.name} (${formatMb(file.size)})`);
             }}
           />
           <p className="mt-2 text-xs text-slate-500">
             {fileLabel}. Max {formatMb(CV_MAX_BYTES)}. PDF, DOC, or DOCX only.
+            {cvFile ? " File kept if submit fails — you can retry without re-picking." : null}
           </p>
         </div>
 
@@ -386,7 +460,8 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
           {pending ? "Submitting…" : "Submit application"}
         </button>
         <p className="text-center text-xs text-slate-500">
-          Process: Apply → Initial call → Final interview → Selected or rejected.
+          Applications go to {SITE_EMAIL}. Process: Apply → Initial call → Final
+          interview → Selected or rejected.
         </p>
       </div>
     </form>
