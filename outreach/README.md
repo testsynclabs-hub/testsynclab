@@ -9,9 +9,14 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 | `purple-cow-marketing.md` | Purple Cow strategy for **how we work** (overnight engineer-ready bugs) |
 | `linkedin-posts-purple-cow-work.txt` | Ready LinkedIn posts for that hook |
 | `email-setup-via-gmail.md` | Fix “via gmail.com”, SPF/DKIM, Gmail signature header/footer |
+| `HOW-TO-HEADER-FOOTER.md` | Copy HTML header+footer into Gmail (cold mail + signature) |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
 | `cold-email-template.html` | Short HTML: purple-cow hook + header/footer + Unsubscribe |
 | `cold-email-plain.txt` | Short plain-text first touch (preferred for cold starts) |
+
+**Live paste URLs (after deploy):**
+- Full email: `/email/cold-outreach.html`
+- Signature: `/email/gmail-signature.html`
 
 ## Send cadence
 
