@@ -22,6 +22,10 @@ Or reply with staging URL + next release window — I’ll say if we’re a fit.
 {{sender_name}}
 TestSync Lab · info@testsynclab.com
 https://www.testsynclab.com
-Retainers from $999/mo · ~40 QA hours/week
+Retainers from $999/mo · Lahore, Pakistan
 
-Unsubscribe: reply “stop” or https://www.testsynclab.com/contact?source=unsubscribe
+---
+Privacy: https://www.testsynclab.com/privacy
+Terms: https://www.testsynclab.com/terms
+Unsubscribe: https://www.testsynclab.com/unsubscribe
+Or reply “stop” and we won’t email again.
