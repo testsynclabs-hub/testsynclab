@@ -15,46 +15,41 @@ export const CV_MIME_TYPES = [
 
 export const CV_EXTENSIONS = [".pdf", ".doc", ".docx"] as const;
 
-export type CareerInterest =
-  | "join-team"
-  | "freelance"
-  | "cv-review"
-  | "open-to-both";
+export type CareerInterest = "join-team" | "freelance";
 
 export const careerInterests: {
   value: CareerInterest;
   label: string;
-  hint: string;
 }[] = [
-  {
-    value: "join-team",
-    label: "Join as a tester",
-    hint: "You want a role when we open capacity.",
-  },
-  {
-    value: "freelance",
-    label: "Freelance / contract",
-    hint: "Project or surge coverage work.",
-  },
-  {
-    value: "cv-review",
-    label: "CV review only",
-    hint: "Feedback on your QA resume — no hire assumed.",
-  },
-  {
-    value: "open-to-both",
-    label: "Open to hire or review",
-    hint: "We’ll reply with the best next step.",
-  },
+  { value: "join-team", label: "Join the team (full-time / retainer)" },
+  { value: "freelance", label: "Freelance / contract" },
 ];
 
 export const careerSkillOptions = [
   "Manual / exploratory",
   "API testing",
-  "Playwright / UI automation",
+  "Playwright / automation",
   "Mobile QA",
-  "Performance basics",
   "AI / chatbot QA",
+] as const;
+
+export const hiringProcessSteps = [
+  {
+    title: "Apply",
+    detail: "Short form + CV. We review on business days.",
+  },
+  {
+    title: "Initial call",
+    detail: "15–20 min fit call — experience, tools, and availability.",
+  },
+  {
+    title: "Final interview",
+    detail: "Deeper QA discussion / practical check with the team.",
+  },
+  {
+    title: "Selected or rejected",
+    detail: "Clear yes/no with next steps — we do not leave you hanging.",
+  },
 ] as const;
 
 export function isAllowedCvFile(file: File) {
@@ -67,5 +62,7 @@ export function isAllowedCvFile(file: File) {
 }
 
 export function formatMb(bytes: number) {
-  return `${(bytes / (1024 * 1024)).toFixed(bytes >= 10 * 1024 * 1024 ? 0 : 1)} MB`;
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }

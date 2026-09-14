@@ -37,6 +37,7 @@ function isAllowedCv(file: File) {
 function careerText(fields: {
   name: string;
   email: string;
+  phone: string;
   location: string;
   experience: string;
   skills: string;
@@ -49,6 +50,7 @@ function careerText(fields: {
   return [
     `Name: ${fields.name}`,
     `Email: ${fields.email}`,
+    `Phone / WhatsApp: ${fields.phone || "—"}`,
     `Location / timezone: ${fields.location || "—"}`,
     `Experience: ${fields.experience || "—"}`,
     `Skills: ${fields.skills || "—"}`,
@@ -64,6 +66,7 @@ function careerText(fields: {
 function careerHtml(fields: {
   name: string;
   email: string;
+  phone: string;
   location: string;
   experience: string;
   skills: string;
@@ -86,6 +89,7 @@ function careerHtml(fields: {
       <table width="100%" cellpadding="0" cellspacing="0">
         ${row("Name", fields.name)}
         ${row("Email", fields.email)}
+        ${row("Phone", fields.phone || "—")}
         ${row("Location", fields.location || "—")}
         ${row("Experience", fields.experience || "—")}
         ${row("Skills", fields.skills || "—")}
@@ -275,23 +279,27 @@ export async function submitCareer(
 
   const name = clampText(asString(formData.get("name")), 120);
   const email = clampText(asString(formData.get("email")), 254);
+  const phone = clampText(asString(formData.get("phone")), 40);
   const location = clampText(asString(formData.get("location")), 160);
   const experience = clampText(asString(formData.get("experience")), 160);
   const skills = clampText(asString(formData.get("skills")), 500);
   const linkedin = clampText(asString(formData.get("linkedin")), 300);
   const interest = clampText(
-    asString(formData.get("interest")) || "open-to-both",
+    asString(formData.get("interest")) || "join-team",
     40,
   );
-  const note = clampText(asString(formData.get("note")), 5000);
+  const note = clampText(asString(formData.get("note")) || "—", 5000);
   const source = sanitizeSource(
     asString(formData.get("source")) || "become-a-tester",
   );
   const cvEntry = formData.get("cv");
   const cv = cvEntry instanceof File && cvEntry.size > 0 ? cvEntry : null;
 
-  if (!name || !email || !note || !isValidEmail(email)) {
-    return { status: "validation" };
+  if (!name || !email || !location || !isValidEmail(email)) {
+    return {
+      status: "validation",
+      message: "Please fill name, email, and city / timezone.",
+    };
   }
   if (!cv) {
     return {
@@ -328,6 +336,7 @@ export async function submitCareer(
   const fields = {
     name,
     email,
+    phone,
     location,
     experience,
     skills,

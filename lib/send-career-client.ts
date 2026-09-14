@@ -6,6 +6,7 @@ const FORMSUBMIT_FORM_ID = "d034c3ad4f74e1083b1ac982b58fcaf8";
 export type CareerLeadFields = {
   name: string;
   email: string;
+  phone: string;
   location: string;
   experience: string;
   skills: string;
@@ -66,6 +67,7 @@ function buildFormData(fields: CareerLeadFields, cv?: File | null) {
   data.set("_captcha", "false");
   data.set("_honey", "");
   data.set("location", fields.location || "—");
+  data.set("phone", fields.phone || "—");
   data.set("experience", fields.experience || "—");
   data.set("skills", fields.skills || "—");
   data.set("linkedin", fields.linkedin || "—");
