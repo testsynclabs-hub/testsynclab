@@ -68,13 +68,11 @@ export default async function ContactPage({
               ? "Share the AI surface (chatbot, RAG, agent), the stack, and the next release date. We will recommend an AI testing sprint or an AI add-on to your QA retainer — or tell you it is not a fit yet."
               : "Share your website, product context, and release goals. We'll map risks and recommend the right monthly package — this is the same form every blog post sends you to."}
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <BookingCta
-              source="contact-hero"
-              className="inline-flex items-center justify-center rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-deep"
-              label="Book a 20-min audit call"
-            />
-          </div>
+          <BookingCta
+            source="contact-hero"
+            className="mt-6 inline-flex items-center justify-center rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-deep"
+            label="Book a 20-min audit call"
+          />
         </div>
       </section>
 
@@ -82,7 +80,7 @@ export default async function ContactPage({
         <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-slate-900">
-              Prefer a call or email?
+              Prefer email?
             </h2>
             <p className="mt-4 text-muted">
               Email{" "}
@@ -108,10 +106,6 @@ export default async function ContactPage({
             </p>
             <div className="mt-6">
               <BookingCta source="contact-sidebar" />
-              <p className="mt-2 text-xs text-muted">
-                Calendar link uses your booking URL when set — otherwise this
-                page&apos;s form.
-              </p>
             </div>
             <ul className="mt-8 space-y-3 text-sm text-muted">
               {aiMode ? (

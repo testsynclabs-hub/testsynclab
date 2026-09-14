@@ -1,7 +1,7 @@
 /**
- * Optional Cal.com / Calendly (or similar) URL.
+ * Optional Calendly / Cal.com (or similar) URL.
  * Set NEXT_PUBLIC_BOOKING_URL on Vercel, then redeploy.
- * When empty, UI falls back to the contact form / mailto.
+ * When empty, “Book a call” CTAs are hidden — contact form + email remain.
  */
 export function getBookingUrl(source = "site") {
   const base = process.env.NEXT_PUBLIC_BOOKING_URL?.trim();
@@ -17,5 +17,3 @@ export function getBookingUrl(source = "site") {
     return base;
   }
 }
-
-export const BOOKING_FALLBACK_HREF = "/contact?plan=audit&source=book-call";
