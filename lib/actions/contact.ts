@@ -2,6 +2,15 @@
 
 import nodemailer from "nodemailer";
 import type { ContactState } from "@/lib/contact-state";
+import {
+  clampText,
+  clientKey,
+  escapeHtml,
+  isValidEmail,
+  rateLimit,
+  sanitizePlan,
+  sanitizeSource,
+} from "@/lib/security";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
@@ -39,12 +48,12 @@ function leadText(fields: LeadFields) {
 
 function leadHtml(fields: LeadFields) {
   const row = (label: string, value: string) =>
-    `<tr><td style="padding:8px 12px;color:#64748b;font:600 13px/1.4 ui-sans-serif,system-ui">${label}</td><td style="padding:8px 12px;color:#0f172a;font:400 13px/1.4 ui-sans-serif,system-ui">${value}</td></tr>`;
+    `<tr><td style="padding:8px 12px;color:#64748b;font:600 13px/1.4 ui-sans-serif,system-ui">${label}</td><td style="padding:8px 12px;color:#0f172a;font:400 13px/1.4 ui-sans-serif,system-ui">${escapeHtml(value)}</td></tr>`;
 
   return `<!doctype html><html><body style="margin:0;background:#f8fafc;padding:24px">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;border-radius:16px">
     <tr><td style="padding:20px 24px;border-bottom:1px solid #e2e8f0">
-      <div style="font:800 18px/1.2 ui-sans-serif,system-ui;color:#1e3a8a">${SITE_NAME} website lead</div>
+      <div style="font:800 18px/1.2 ui-sans-serif,system-ui;color:#1e3a8a">${escapeHtml(SITE_NAME)} website lead</div>
       <div style="margin-top:6px;font:500 13px/1.4 ui-sans-serif,system-ui;color:#64748b">New form submission</div>
     </td></tr>
     <tr><td style="padding:8px 12px">
@@ -61,7 +70,7 @@ function leadHtml(fields: LeadFields) {
     </td></tr>
     <tr><td style="padding:16px 24px 24px">
       <div style="font:600 13px/1.4 ui-sans-serif,system-ui;color:#64748b;margin-bottom:8px">Message</div>
-      <div style="white-space:pre-wrap;font:400 14px/1.6 ui-sans-serif,system-ui;color:#0f172a">${fields.message}</div>
+      <div style="white-space:pre-wrap;font:400 14px/1.6 ui-sans-serif,system-ui;color:#0f172a">${escapeHtml(fields.message)}</div>
     </td></tr>
   </table>
   </body></html>`;
@@ -210,18 +219,25 @@ export async function submitContact(
     return { status: "success" };
   }
 
-  const name = asString(formData.get("name"));
-  const email = asString(formData.get("email"));
-  const company = asString(formData.get("company"));
-  const website = asString(formData.get("website"));
-  const role = asString(formData.get("role"));
-  const releaseDate = asString(formData.get("releaseDate"));
-  const message = asString(formData.get("message"));
-  const plan = asString(formData.get("plan")) || "audit";
-  const source = asString(formData.get("source"));
+  const limited = rateLimit(await clientKey("contact"), 8, 60 * 60 * 1000);
+  if (!limited.ok) {
+    return {
+      status: "rate_limited",
+      message: "Too many submissions from this network. Please try again later.",
+    };
+  }
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!name || !email || !message || !emailPattern.test(email)) {
+  const name = clampText(asString(formData.get("name")), 120);
+  const email = clampText(asString(formData.get("email")), 254);
+  const company = clampText(asString(formData.get("company")), 160);
+  const website = clampText(asString(formData.get("website")), 300);
+  const role = clampText(asString(formData.get("role")), 120);
+  const releaseDate = clampText(asString(formData.get("releaseDate")), 80);
+  const message = clampText(asString(formData.get("message")), 5000);
+  const plan = sanitizePlan(asString(formData.get("plan")) || "audit");
+  const source = sanitizeSource(asString(formData.get("source")));
+
+  if (!name || !email || !message || !isValidEmail(email)) {
     return { status: "validation" };
   }
 

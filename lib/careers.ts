@@ -62,9 +62,8 @@ export function isAllowedCvFile(file: File) {
   const extOk = CV_EXTENSIONS.some((ext) => name.endsWith(ext));
   const mimeOk =
     !file.type ||
-    (CV_MIME_TYPES as readonly string[]).includes(file.type) ||
-    file.type === "application/octet-stream";
-  return extOk && mimeOk;
+    (CV_MIME_TYPES as readonly string[]).includes(file.type);
+  return extOk && mimeOk && file.size > 0 && file.size <= CV_MAX_BYTES;
 }
 
 export function formatMb(bytes: number) {

@@ -14,7 +14,6 @@ export const maxDuration = 30;
 type ContactSearch = {
   plan?: string;
   source?: string;
-  sent?: string;
 };
 
 export async function generateMetadata({
@@ -50,7 +49,6 @@ export default async function ContactPage({
   const params = await searchParams;
   const plan = params.plan || "audit";
   const source = params.source || "contact-page";
-  const sent = params.sent === "1";
   const aiMode = isAiInquiry(plan);
 
   return (
@@ -136,7 +134,7 @@ export default async function ContactPage({
               )}
             </ul>
           </div>
-          <ContactForm plan={plan} source={source} sent={sent} />
+          <ContactForm plan={plan} source={source} />
         </div>
       </section>
 

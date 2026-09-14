@@ -8,6 +8,15 @@ import {
   CV_MIME_TYPES,
   CV_SERVER_SAFE_BYTES,
 } from "@/lib/careers";
+import {
+  clampText,
+  clientKey,
+  escapeHtml,
+  isValidEmail,
+  looksLikeAllowedCv,
+  rateLimit,
+  sanitizeSource,
+} from "@/lib/security";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
@@ -21,8 +30,7 @@ function isAllowedCv(file: File) {
   const extOk = CV_EXTENSIONS.some((ext) => name.endsWith(ext));
   const mimeOk =
     !file.type ||
-    (CV_MIME_TYPES as readonly string[]).includes(file.type) ||
-    file.type === "application/octet-stream";
+    (CV_MIME_TYPES as readonly string[]).includes(file.type);
   return extOk && mimeOk && file.size > 0 && file.size <= CV_MAX_BYTES;
 }
 
@@ -66,12 +74,12 @@ function careerHtml(fields: {
   cvName: string;
 }) {
   const row = (label: string, value: string) =>
-    `<tr><td style="padding:8px 12px;color:#64748b;font:600 13px/1.4 ui-sans-serif,system-ui">${label}</td><td style="padding:8px 12px;color:#0f172a;font:400 13px/1.4 ui-sans-serif,system-ui">${value}</td></tr>`;
+    `<tr><td style="padding:8px 12px;color:#64748b;font:600 13px/1.4 ui-sans-serif,system-ui">${label}</td><td style="padding:8px 12px;color:#0f172a;font:400 13px/1.4 ui-sans-serif,system-ui">${escapeHtml(value)}</td></tr>`;
 
   return `<!doctype html><html><body style="margin:0;background:#f8fafc;padding:24px">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;border-radius:16px">
     <tr><td style="padding:20px 24px;border-bottom:1px solid #e2e8f0">
-      <div style="font:800 18px/1.2 ui-sans-serif,system-ui;color:#1e3a8a">${SITE_NAME} — Become a tester</div>
+      <div style="font:800 18px/1.2 ui-sans-serif,system-ui;color:#1e3a8a">${escapeHtml(SITE_NAME)} — Become a tester</div>
       <div style="margin-top:6px;font:500 13px/1.4 ui-sans-serif,system-ui;color:#64748b">Talent / CV submission</div>
     </td></tr>
     <tr><td style="padding:8px 12px">
@@ -89,7 +97,7 @@ function careerHtml(fields: {
     </td></tr>
     <tr><td style="padding:16px 24px 24px">
       <div style="font:600 13px/1.4 ui-sans-serif,system-ui;color:#64748b;margin-bottom:8px">Note</div>
-      <div style="white-space:pre-wrap;font:400 14px/1.6 ui-sans-serif,system-ui;color:#0f172a">${fields.note}</div>
+      <div style="white-space:pre-wrap;font:400 14px/1.6 ui-sans-serif,system-ui;color:#0f172a">${escapeHtml(fields.note)}</div>
     </td></tr>
   </table>
   </body></html>`;
@@ -257,20 +265,32 @@ export async function submitCareer(
   const honeypot = asString(formData.get("company_website"));
   if (honeypot) return { status: "success" };
 
-  const name = asString(formData.get("name"));
-  const email = asString(formData.get("email"));
-  const location = asString(formData.get("location"));
-  const experience = asString(formData.get("experience"));
-  const skills = asString(formData.get("skills"));
-  const linkedin = asString(formData.get("linkedin"));
-  const interest = asString(formData.get("interest")) || "open-to-both";
-  const note = asString(formData.get("note"));
-  const source = asString(formData.get("source")) || "become-a-tester";
+  const limited = rateLimit(await clientKey("career"), 6, 60 * 60 * 1000);
+  if (!limited.ok) {
+    return {
+      status: "delivery",
+      message: "Too many submissions from this network. Please try again later.",
+    };
+  }
+
+  const name = clampText(asString(formData.get("name")), 120);
+  const email = clampText(asString(formData.get("email")), 254);
+  const location = clampText(asString(formData.get("location")), 160);
+  const experience = clampText(asString(formData.get("experience")), 160);
+  const skills = clampText(asString(formData.get("skills")), 500);
+  const linkedin = clampText(asString(formData.get("linkedin")), 300);
+  const interest = clampText(
+    asString(formData.get("interest")) || "open-to-both",
+    40,
+  );
+  const note = clampText(asString(formData.get("note")), 5000);
+  const source = sanitizeSource(
+    asString(formData.get("source")) || "become-a-tester",
+  );
   const cvEntry = formData.get("cv");
   const cv = cvEntry instanceof File && cvEntry.size > 0 ? cvEntry : null;
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!name || !email || !note || !emailPattern.test(email)) {
+  if (!name || !email || !note || !isValidEmail(email)) {
     return { status: "validation" };
   }
   if (!cv) {
@@ -292,8 +312,14 @@ export async function submitCareer(
 
   if (cv.size <= CV_SERVER_SAFE_BYTES) {
     const buffer = Buffer.from(await cv.arrayBuffer());
+    if (!looksLikeAllowedCv(buffer, cv.name)) {
+      return {
+        status: "validation",
+        message: "CV file content does not look like a PDF or Word document.",
+      };
+    }
     attachment = {
-      filename: cv.name.replace(/[^\w.\- ()[\]]+/g, "_"),
+      filename: cv.name.replace(/[^\w.\- ()[\]]+/g, "_").slice(0, 120),
       content: buffer,
       contentType: cv.type || "application/octet-stream",
     };
@@ -309,7 +335,7 @@ export async function submitCareer(
     interest,
     source,
     note,
-    cvName: cv.name,
+    cvName: cv.name.slice(0, 120),
   };
 
   const subject = `Become a tester (${interest}): ${name}`;

@@ -1,3 +1,4 @@
 export type ContactState = {
-  status: "idle" | "success" | "validation" | "delivery";
+  status: "idle" | "success" | "validation" | "delivery" | "rate_limited";
+  message?: string;
 };

@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
-
-const securityHeaders = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-];
+import { securityHeaders } from "./lib/security-headers";
 
 /** HTML/docs: always revalidate so deploys show without a hard refresh. */
 const htmlCacheHeaders = [
@@ -22,11 +18,12 @@ const htmlCacheHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   async headers() {
     return [
       {
         source: "/:path*",
-        headers: securityHeaders,
+        headers: [...securityHeaders],
       },
       {
         // Fingerprinted build assets can stay cached forever.

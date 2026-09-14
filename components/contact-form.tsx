@@ -23,7 +23,6 @@ const initialContactState: ContactState = { status: "idle" };
 type ContactFormProps = {
   plan?: string;
   source?: string;
-  sent?: boolean;
 };
 
 const inputClassName =
@@ -60,7 +59,6 @@ function SuccessCard() {
 export function ContactForm({
   plan = "audit",
   source = "",
-  sent = false,
 }: ContactFormProps) {
   const aiMode = isAiInquiry(plan);
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
@@ -96,7 +94,7 @@ export function ContactForm({
       }
       return result;
     },
-    sent ? { status: "success" } : initialContactState,
+    initialContactState,
   );
 
   if (state.status === "success") {
@@ -128,6 +126,15 @@ export function ContactForm({
         >
           Please complete name, a valid work email, and a short message before
           submitting.
+        </p>
+      ) : null}
+      {state.status === "rate_limited" ? (
+        <p
+          className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-950"
+          role="alert"
+        >
+          {state.message ||
+            "Too many submissions from this network. Please try again later."}
         </p>
       ) : null}
       {state.status === "delivery" ? (
