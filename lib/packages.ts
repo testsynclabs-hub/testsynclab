@@ -16,7 +16,7 @@ export type PackagePlan = {
 
 /** Shared across Basic / Growth / Scale — price buys depth, not a thinner clock. */
 export const WEEKLY_QA_CAPACITY =
-  "~40 QA hours / week · US business calendar" as const;
+  "~40 QA hours / week · your region's calendar" as const;
 
 export const packages: PackagePlan[] = [
   {
@@ -35,7 +35,7 @@ export const packages: PackagePlan[] = [
       "Manual exploratory & regression testing",
       "Clear bug reports and test notes",
       "Weekly status summary",
-      "US weekends & holidays observed",
+      "Weekends & holidays match your region",
       "Email / Slack support window",
     ],
   },
@@ -89,7 +89,7 @@ export const packages: PackagePlan[] = [
     priceNote: "let’s discuss",
     description:
       "Need more than one pod, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
-    capacity: "Dedicated pods · custom SLA · US business calendar",
+    capacity: "Dedicated pods · custom SLA · your region's calendar",
     notIncluded: "Scoped only after discovery — no surprise line items",
     ctaLabel: "Talk to us",
     ctaHref: "/contact?plan=enterprise&source=pricing-card",
@@ -97,7 +97,7 @@ export const packages: PackagePlan[] = [
       "Multi-app / multi-squad capacity",
       "Custom SLAs and reporting",
       "Dedicated QA pod options",
-      "US weekends & holidays observed by default",
+      "Weekends & holidays match your region",
       "Compliance-minded workflows",
       "Strategic quality roadmap",
       "AI testing pods available on request",
@@ -112,9 +112,9 @@ export const pricingComparePoints = [
       "Package price is not linked to hour caps. You choose depth of service; weekly capacity stays ~40 hours across Basic, Growth, and Scale.",
   },
   {
-    title: "US business calendar",
+    title: "Your region's calendar",
     detail:
-      "We observe US weekends and US holidays so your planning stays predictable — not a surprise offline day on a different regional calendar.",
+      "We align offs to the client's market — weekends and public holidays for where your team sits — so planning stays predictable.",
   },
   {
     title: "vs hiring full-time QA",

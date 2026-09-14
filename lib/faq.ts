@@ -27,7 +27,7 @@ export const faqs: FaqItem[] = [
     category: "Pricing",
     question: "What do $999, $1,899, and $2,799 actually include?",
     answer:
-      "All three include ~40 QA hours every week on the US business calendar. Price buys depth, not a thinner clock: Basic is manual exploratory and regression QA; Growth adds API validation and automation start; Scale adds performance spot checks, release-gate support, and a named lead cadence. Enterprise is custom for multi-pod needs.",
+      "All three include ~40 QA hours every week, with weekends and holidays aligned to your region's calendar. Price buys depth, not a thinner clock: Basic is manual exploratory and regression QA; Growth adds API validation and automation start; Scale adds performance spot checks, release-gate support, and a named lead cadence. Enterprise is custom for multi-pod needs.",
   },
   {
     category: "Pricing",
@@ -39,7 +39,7 @@ export const faqs: FaqItem[] = [
     category: "Pricing",
     question: "Which holidays and weekends do you observe?",
     answer:
-      "We follow the US business calendar: US weekends and US federal holidays are off by default so your planning stays predictable. Live overlap can still be scheduled when a release needs it.",
+      "We follow the client's regional calendar. If your team is in Australia, we align to Australian offs; if you are in Dubai or Saudi Arabia, we align to that market's weekends and public holidays. Confirmed at kickoff so planning stays predictable. Live overlap can still be scheduled when a release needs it.",
   },
   {
     category: "Pricing",

@@ -11,7 +11,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "QA Testing Pricing | Monthly Retainers from $999",
   description:
-    "QA testing pricing for SaaS teams: Basic $999, Growth $1,899, Scale $2,799 — each with ~40 QA hours/week on the US business calendar. Price buys depth, not fewer hours. AI testing scoped separately.",
+    "QA testing pricing for SaaS teams: Basic $999, Growth $1,899, Scale $2,799 — each with ~40 QA hours/week on your region's calendar. Price buys depth, not fewer hours. AI testing scoped separately.",
   keywords: [
     "QA testing pricing",
     "QA retainer pricing",
@@ -41,7 +41,7 @@ const pricingOfferJsonLd = {
       price: "999",
       priceCurrency: "USD",
       description:
-        "Monthly manual QA with ~40 focused hours per week on the US business calendar.",
+        "Monthly manual QA with ~40 focused hours per week on your region's calendar.",
       url: `${SITE_URL}/pricing`,
     },
     {
@@ -92,7 +92,8 @@ export default function PricingPage() {
           <p className="mt-4 max-w-2xl text-lg text-muted">
             Basic, Growth, and Scale each include about 40 QA hours every week.
             Package price is not linked to hour caps — you pay for depth of
-            work, not a thinner clock. We follow the US business calendar.
+            work, not a thinner clock. Weekends and holidays follow your
+            region's calendar.
           </p>
           <Link
             href={auditHref("pricing-hero")}
@@ -132,7 +133,7 @@ export default function PricingPage() {
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
             Coverage this month — without a six-figure headcount bet or a long
-            lock-in. Clear weekly capacity and a US business calendar.
+            lock-in. Clear weekly capacity, aligned to your region's calendar.
           </p>
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {pricingComparePoints.map((item) => (

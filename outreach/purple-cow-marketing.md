@@ -77,7 +77,7 @@ Purple cows spread by **forwarding**, not by ads.
 2. Engineer-ready bugs (show the template)
 3. Free audit in 24h (speed to clarity)
 4. Same lab for AI + classic QA (when the post is about chatbots/RAG)
-5. US business calendar (predictable offs — supporting detail, not the cow)
+5. Client-region calendar (offs match their market — supporting detail, not the cow)
 
 ---
 
