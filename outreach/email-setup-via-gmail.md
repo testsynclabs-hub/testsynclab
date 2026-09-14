@@ -58,7 +58,13 @@ Move mail fully to Google Workspace, update MX + SPF + DKIM + DMARC per Google�
 | **HTML template** (`cold-email-template.html`) | Built-in | Built-in + Unsubscribe link | Paste as HTML (ESP) or “Insert HTML” extensions — Gmail plain compose won’t inject this automatically. |
 | **ESP** (e.g. Instantly, MailerLite) | Template | Template + one-click unsub | Best for volume; still keep 10–15/day for cold. |
 
-### Suggested Gmail signature (plain)
+### Suggested Gmail signature
+
+Prefer the HTML signature (Alibaba-style footer):  
+https://www.testsynclab.com/email/gmail-signature.html  
+(see `HOW-TO-HEADER-FOOTER.md`)
+
+Plain fallback:
 
 ```
 {{Your Name}}
@@ -66,7 +72,8 @@ TestSync Lab · Remote QA
 info@testsynclab.com · https://www.testsynclab.com
 Retainers from $999/mo
 
-Unsubscribe: reply “stop”
+Unsubscribe: https://www.testsynclab.com/unsubscribe
+Or reply “stop”
 ```
 
 Optional: add logo image in signature → https://www.testsynclab.com/brand/logo-icon-1024.png
