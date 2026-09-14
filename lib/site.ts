@@ -12,6 +12,14 @@ export const SITE_DESCRIPTION =
   "Hire a remote QA company for SaaS startups worldwide. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA. Free audit — senior SQA without a full-time hire." as const;
 
 export const SITE_KEYWORDS = [
+  "best QA company",
+  "QA agency",
+  "QA agency Lahore",
+  "software testing company",
+  "testing company",
+  "QA company Lahore",
+  "software testing company Pakistan",
+  "TestSync Lab",
   "hire QA agency",
   "monthly QA retainer",
   "software testing services",
@@ -27,7 +35,6 @@ export const SITE_KEYWORDS = [
   "QA Testing Blog",
   "Regression Testing",
   "Remote QA Partner",
-  "TestSync Lab",
   "AI testing services",
   "chatbot testing",
   "LLM QA",
@@ -156,6 +163,26 @@ export const primaryNav: PrimaryNavItem[] = [
         description: "QA founders with AI testing and optional AI build.",
       },
       {
+        href: "/best-qa-company",
+        label: "Best QA company",
+        description: "How to choose a QA partner — and when we fit.",
+      },
+      {
+        href: "/qa-agency",
+        label: "QA agency",
+        description: "Remote monthly retainers for product teams.",
+      },
+      {
+        href: "/qa-agency-lahore",
+        label: "QA agency Lahore",
+        description: "Lahore-based testing company for local and global teams.",
+      },
+      {
+        href: "/software-testing-company",
+        label: "Testing company",
+        description: "Manual, API, and Playwright software testing.",
+      },
+      {
         href: "/qa-services-usa",
         label: "QA for US teams",
         description: "Remote retainers for United States product teams.",
@@ -254,6 +281,7 @@ export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService"],
   name: SITE_NAME,
+  alternateName: ["TestSync", "Test Sync Lab"],
   legalName: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/brand/logo-icon-1024.png`,
@@ -266,7 +294,15 @@ export const organizationJsonLd = {
     email: SITE_EMAIL,
     availableLanguage: ["English"],
   },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lahore",
+    addressRegion: "Punjab",
+    addressCountry: "PK",
+  },
   areaServed: [
+    { "@type": "City", name: "Lahore" },
+    { "@type": "Country", name: "Pakistan" },
     { "@type": "Country", name: "United States" },
     { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United Kingdom" },

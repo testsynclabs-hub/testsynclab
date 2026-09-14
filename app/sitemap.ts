@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/qa-services-usa",
     "/qa-services-canada",
     "/outsourced-qa",
+    "/best-qa-company",
+    "/qa-agency",
+    "/software-testing-company",
+    "/qa-agency-lahore",
     "/pricing",
     "/about",
     "/contact",
@@ -40,6 +44,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
               path === "/qa-services-usa" ||
               path === "/qa-services-canada" ||
               path === "/outsourced-qa" ||
+              path === "/best-qa-company" ||
+              path === "/qa-agency" ||
+              path === "/software-testing-company" ||
+              path === "/qa-agency-lahore" ||
               path.startsWith("/services/")
             ? 0.9
             : path === "/services"
