@@ -12,6 +12,7 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 | `HOW-TO-HEADER-FOOTER.md` | Copy HTML header+footer into Gmail (cold mail + signature) |
 | `calendly-setup.md` | Free Calendly/Cal.com → set `NEXT_PUBLIC_BOOKING_URL` on Vercel |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
+| `leads-25-us-ca-au.csv` | **25 ready sends** — USA / Canada / Australia, public founder/hello emails only |
 | `cold-email-template.html` | Short HTML: purple-cow hook + Alibaba-style footer + Unsubscribe |
 | `cold-email-plain.txt` | Short plain-text first touch (preferred for cold starts) |
 
