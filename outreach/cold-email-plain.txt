@@ -1,29 +1,27 @@
 Subject options (pick one):
-1) Quick QA audit for {{company}} before your next release?
-2) Free release-risk map for {{product_or_ai_surface}}
-3) Remote QA retainer — worth a 10-min look?
+1) You close with a build — we send engineer-ready bugs by morning
+2) Overnight QA handoff for {{company}}?
+3) Free QA audit before your next {{product_or_ai_surface}} release
 
 ---
 
 Hi {{first_name}},
 
-I saw {{company}} is shipping {{product_or_ai_surface}} quickly. Most teams we talk to don’t lack engineers — they lack a senior QA loop before Friday releases.
+Most QA notes say “please check.” Ours don’t.
 
-TestSync Lab runs remote monthly QA for SaaS and AI product teams:
-- Manual + API + Playwright under one retainer
-- Optional AI testing sprint for chatbots / RAG / LLM flows
-- Clear bug reports your engineers can paste into Jira
+You close with a build. We start verification on our morning. You wake up to engineer-ready bugs — steps, severity, evidence — ready for Jira.
 
-If useful, I can send a free QA audit — a short risk map for your next release. No deck. No retainer required to start.
+That’s how TestSync Lab runs remote monthly QA for SaaS / AI teams (manual, API, Playwright; AI testing optional).
 
-Book here: https://testsynclab.com/contact?plan=audit&source=cold-email
+If useful: free QA audit → short release-risk map. No deck.
 
-Or reply with your staging URL + next release date — I’ll tell you if we’re a fit.
+https://www.testsynclab.com/contact?plan=audit&source=cold-email
 
-Best,
+Or reply with staging URL + next release window — I’ll say if we’re a fit.
+
 {{sender_name}}
-TestSync Lab
-info@testsynclab.com | https://testsynclab.com
-Packages: Basic $999 · Growth $1,899 · Scale $2,799
+TestSync Lab · info@testsynclab.com
+https://www.testsynclab.com
+Retainers from $999/mo · ~40 QA hours/week
 
-Reply “stop” and we won’t email again.
+Unsubscribe: reply “stop” or https://www.testsynclab.com/contact?source=unsubscribe

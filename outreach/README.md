@@ -8,9 +8,10 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 |------|---------|
 | `purple-cow-marketing.md` | Purple Cow strategy for **how we work** (overnight engineer-ready bugs) |
 | `linkedin-posts-purple-cow-work.txt` | Ready LinkedIn posts for that hook |
+| `email-setup-via-gmail.md` | Fix “via gmail.com”, SPF/DKIM, Gmail signature header/footer |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
-| `cold-email-template.html` | HTML version for ESP / paste into Gmail |
-| `cold-email-plain.txt` | Plain-text version (preferred for cold starts) |
+| `cold-email-template.html` | Short HTML: purple-cow hook + header/footer + Unsubscribe |
+| `cold-email-plain.txt` | Short plain-text first touch (preferred for cold starts) |
 
 ## Send cadence
 
@@ -34,14 +35,16 @@ Do **not** invent personal founder Gmail addresses. Use the CSV `contact_email_o
 
 ## Which template
 
-1. Start with **`cold-email-plain.txt`** for first touches (higher deliverability, less “marketing” feel).
-2. Use **`cold-email-template.html`** when the ESP requires HTML or for a short follow-up with the audit CTA button.
-3. Pick one subject line from the options in the plain template; do not A/B more than two variants at this volume.
+1. Start with **`cold-email-plain.txt`** for first touches (higher deliverability, purple-cow first line).
+2. Use **`cold-email-template.html`** when you want logo header + Unsubscribe link (ESP / HTML paste).
+3. Fix **via gmail.com** before scaling sends — see `email-setup-via-gmail.md`.
+4. Pick one subject line from the plain template; do not A/B more than two variants at this volume.
 
 ## Compliance (CAN-SPAM and good practice)
 
-- Include a clear physical/business identity and **testsynclab.com** link in every message (already in the templates).
-- Every email must offer an easy opt-out: reply **stop** (already in the templates). Honor stop requests immediately — no further mail to that address.
+- Include a clear business identity and **www.testsynclab.com** link (in templates).
+- Every email must offer opt-out: reply **stop** and/or **Unsubscribe** mailto (in templates). Honor immediately.
+- Do **not** dump full package tables in cold first touches — soft “from $999/mo” in the footer only.
 - Honest subject lines; no deceptive “Re:” / “Fwd:” prefixes.
 - One commercial pitch per thread; if they ask for info, reply helpfully without adding new cold leads to the same chain.
 
