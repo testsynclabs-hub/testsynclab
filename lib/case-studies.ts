@@ -55,6 +55,6 @@ export const auditSampleSections = [
   {
     title: "Package fit",
     detail:
-      "Clear Basic / Growth / Scale recommendation with hours-style capacity and what’s out of scope.",
+      "Clear Basic / Growth / Scale recommendation — same ~40h/week capacity, depth by package, and what’s out of scope.",
   },
 ] as const;

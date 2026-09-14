@@ -27,7 +27,19 @@ export const faqs: FaqItem[] = [
     category: "Pricing",
     question: "What do $999, $1,899, and $2,799 actually include?",
     answer:
-      "Basic ($999) focuses on manual exploratory and regression QA. Growth ($1,899) adds API validation and automation start. Scale ($2,799) adds performance spot checks, release-gate support, and a named lead cadence. Enterprise is custom for multi-pod needs.",
+      "All three include ~40 QA hours every week on the US business calendar. Price buys depth, not a thinner clock: Basic is manual exploratory and regression QA; Growth adds API validation and automation start; Scale adds performance spot checks, release-gate support, and a named lead cadence. Enterprise is custom for multi-pod needs.",
+  },
+  {
+    category: "Pricing",
+    question: "Is weekly capacity the same on every package?",
+    answer:
+      "Yes for Basic, Growth, and Scale — about 40 QA hours per week. Package price is not linked to hour caps. You pay for how deep the work goes (manual → API/automation → gates and named lead), not for fewer hours on a cheaper plan.",
+  },
+  {
+    category: "Pricing",
+    question: "Which holidays and weekends do you observe?",
+    answer:
+      "We follow the US business calendar: US weekends and US federal holidays are off by default so your planning stays predictable. Live overlap can still be scheduled when a release needs it.",
   },
   {
     category: "Pricing",

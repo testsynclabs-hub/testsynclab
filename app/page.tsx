@@ -378,7 +378,8 @@ export default function HomePage() {
                 Monthly Packages
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted">
-                $999 · $1,899 · $2,799 — clear scope, no hourly surprises.
+                $999 · $1,899 · $2,799 — ~40 QA hours every week on each plan.
+                Price buys depth, not a thinner clock.
               </p>
             </div>
           </Reveal>

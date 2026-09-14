@@ -14,6 +14,10 @@ export type PackagePlan = {
   features: string[];
 };
 
+/** Shared across Basic / Growth / Scale — price buys depth, not a thinner clock. */
+export const WEEKLY_QA_CAPACITY =
+  "~40 QA hours / week · US business calendar" as const;
+
 export const packages: PackagePlan[] = [
   {
     id: "basic",
@@ -21,18 +25,18 @@ export const packages: PackagePlan[] = [
     priceLabel: "$999",
     priceNote: "per month",
     description:
-      "Hands-on manual QA for teams that need reliable coverage without building an in-house test function yet.",
-    capacity: "~40 focused QA hours / month · 1–2 release cycles",
+      "Hands-on manual QA with full weekly capacity — reliable coverage without building an in-house test function yet.",
+    capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "Heavy automation builds, load campaigns, or multi-app pods",
     ctaLabel: "Start with Basic",
     ctaHref: "/contact?plan=basic&source=pricing-card",
     features: [
-      "~40 QA hours reserved each month",
+      "~40 QA hours every week (same capacity as higher plans)",
       "Manual exploratory & regression testing",
       "Clear bug reports and test notes",
       "Weekly status summary",
+      "US weekends & holidays observed",
       "Email / Slack support window",
-      "Ideal for early product teams",
     ],
   },
   {
@@ -41,14 +45,14 @@ export const packages: PackagePlan[] = [
     priceLabel: "$1,899",
     priceNote: "per month",
     description:
-      "Scale quality with API checks and automation so releases move faster with fewer surprises.",
-    capacity: "~80 QA hours / month · weekly release support",
+      "Same ~40 hours a week — plus API checks and automation so releases move faster with fewer surprises.",
+    capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "Dedicated full-time pod or multi-brand portfolios",
     featured: true,
     ctaLabel: "Choose Growth",
     ctaHref: "/contact?plan=growth&source=pricing-card",
     features: [
-      "~80 QA hours reserved each month",
+      "~40 QA hours every week (same capacity as Basic & Scale)",
       "Everything in Basic",
       "API / contract validation",
       "Playwright or Selenium automation start",
@@ -63,13 +67,13 @@ export const packages: PackagePlan[] = [
     priceLabel: "$2,799",
     priceNote: "per month",
     description:
-      "Full-stack QA for faster release trains — gates, reporting, performance spot checks, and a named lead cadence.",
-    capacity: "~120 QA hours / month · named lead cadence",
+      "Same weekly capacity, deeper stack — gates, reporting, performance spot checks, and a named lead cadence.",
+    capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "24/7 follow-the-sun staffing (available as Enterprise)",
     ctaLabel: "Choose Scale",
     ctaHref: "/contact?plan=scale&source=pricing-card",
     features: [
-      "~120 QA hours reserved each month",
+      "~40 QA hours every week (same capacity as Basic & Growth)",
       "Everything in Growth",
       "Performance spot checks (JMeter)",
       "Release-gate checklist & sign-off support",
@@ -85,7 +89,7 @@ export const packages: PackagePlan[] = [
     priceNote: "let’s discuss",
     description:
       "Need more than one pod, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
-    capacity: "Dedicated capacity · custom SLA",
+    capacity: "Dedicated pods · custom SLA · US business calendar",
     notIncluded: "Scoped only after discovery — no surprise line items",
     ctaLabel: "Talk to us",
     ctaHref: "/contact?plan=enterprise&source=pricing-card",
@@ -93,6 +97,7 @@ export const packages: PackagePlan[] = [
       "Multi-app / multi-squad capacity",
       "Custom SLAs and reporting",
       "Dedicated QA pod options",
+      "US weekends & holidays observed by default",
       "Compliance-minded workflows",
       "Strategic quality roadmap",
       "AI testing pods available on request",
@@ -100,20 +105,25 @@ export const packages: PackagePlan[] = [
   },
 ];
 
+export const pricingRemarkablePoint = {
+  title: "The purple cow: same hours, different depth",
+  body: "Most QA shops shrink the clock when you pick a cheaper package. We don’t. Basic, Growth, and Scale each include ~40 QA hours a week. Price buys how deep the work goes — manual coverage, then API and automation, then release gates and a named lead — not a thinner week. That is remarkable on purpose: easy to explain, hard to ignore, worth telling a founder friend about.",
+} as const;
+
 export const pricingComparePoints = [
+  {
+    title: "Same ~40 hours every week",
+    detail:
+      "Package price is not linked to hour caps. You choose depth of service; weekly capacity stays ~40 hours across Basic, Growth, and Scale.",
+  },
+  {
+    title: "US business calendar",
+    detail:
+      "We observe US weekends and US holidays so your planning stays predictable — not a surprise offline day on a different regional calendar.",
+  },
   {
     title: "vs hiring full-time QA",
     detail:
       "A mid-level US hire often lands $90k–$130k+ fully loaded before tools and ramp. A retainer starts coverage this month.",
-  },
-  {
-    title: "Month-to-month flexibility",
-    detail:
-      "Pause or resize when the roadmap shifts. No annual trap while you validate product-market fit.",
-  },
-  {
-    title: "Senior hands, not a ticket farm",
-    detail:
-      "Founding partners stay close to execution — strategy and bug quality don’t get lost in a bench.",
   },
 ] as const;

@@ -5,13 +5,16 @@ import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { PackageGrid } from "@/components/package-grid";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { aiPackagePolicy, aiPackages } from "@/lib/ai";
-import { pricingComparePoints } from "@/lib/packages";
+import {
+  pricingComparePoints,
+  pricingRemarkablePoint,
+} from "@/lib/packages";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "QA Testing Pricing | Monthly Retainers from $999",
   description:
-    "QA testing pricing for SaaS teams: Basic $999, Growth $1,899, Scale $2,799. Clear monthly retainers for manual, API, and Playwright QA. AI testing scoped separately.",
+    "QA testing pricing for SaaS teams: Basic $999, Growth $1,899, Scale $2,799 — each with ~40 QA hours/week on the US business calendar. Price buys depth, not fewer hours. AI testing scoped separately.",
   keywords: [
     "QA testing pricing",
     "QA retainer pricing",
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `QA Testing Pricing | ${SITE_NAME}`,
     description:
-      "Clear monthly QA packages from $999. AI testing quoted as a sprint or retainer add-on.",
+      "Basic, Growth, and Scale each include ~40 QA hours/week. Price buys depth — not fewer hours. AI testing scoped separately.",
     url: `${SITE_URL}/pricing`,
   },
 };
@@ -40,7 +43,8 @@ const pricingOfferJsonLd = {
       name: "Basic QA retainer",
       price: "999",
       priceCurrency: "USD",
-      description: "Monthly manual exploratory and regression QA.",
+      description:
+        "Monthly manual QA with ~40 focused hours per week on the US business calendar.",
       url: `${SITE_URL}/pricing`,
     },
     {
@@ -48,7 +52,8 @@ const pricingOfferJsonLd = {
       name: "Growth QA retainer",
       price: "1899",
       priceCurrency: "USD",
-      description: "Monthly QA with API checks and automation start.",
+      description:
+        "Same ~40 QA hours/week plus API checks and automation start.",
       url: `${SITE_URL}/pricing`,
     },
     {
@@ -57,7 +62,7 @@ const pricingOfferJsonLd = {
       price: "2799",
       priceCurrency: "USD",
       description:
-        "Full-stack monthly QA with performance spot checks and release gates.",
+        "Same ~40 QA hours/week with performance spot checks, release gates, and named lead cadence.",
       url: `${SITE_URL}/pricing`,
     },
     ...aiPackages.map((plan) => ({
@@ -85,11 +90,12 @@ export default function PricingPage() {
       <section className="border-b border-line bg-gradient-to-br from-white via-sky-50 to-blue-100 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <h1 className="font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
-            QA testing pricing — clear monthly retainers
+            QA testing pricing — ~40 hours a week on every package
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            No hourly meters. Senior QA for SaaS teams from $999/mo. Built for
-            startups that want release confidence without enterprise pricing.
+            Basic, Growth, and Scale each include about 40 QA hours every week.
+            Package price is not linked to hour caps — you pay for depth of
+            work, not a thinner clock. We follow the US business calendar.
           </p>
           <Link
             href={auditHref("pricing-hero")}
@@ -117,6 +123,23 @@ export default function PricingPage() {
       </section>
 
       <section
+        className="border-t border-line bg-gradient-to-br from-sky-50 via-white to-blue-50 py-16 sm:py-20"
+        aria-labelledby="pricing-remarkable-heading"
+      >
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <h2
+            id="pricing-remarkable-heading"
+            className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+          >
+            {pricingRemarkablePoint.title}
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+            {pricingRemarkablePoint.body}
+          </p>
+        </div>
+      </section>
+
+      <section
         className="border-t border-line bg-white py-16 sm:py-20"
         aria-labelledby="pricing-compare-heading"
       >
@@ -125,11 +148,11 @@ export default function PricingPage() {
             id="pricing-compare-heading"
             className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep"
           >
-            Why retainers beat waiting to hire
+            Built to be talked about
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Coverage this month — without a six-figure headcount bet or a long
-            lock-in.
+            Remarkable on purpose — clear capacity, US calendar, and coverage
+            this month without a six-figure hire bet.
           </p>
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {pricingComparePoints.map((item) => (

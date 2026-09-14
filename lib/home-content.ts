@@ -10,9 +10,9 @@ export const coverageStats = [
     detail: "Manual, API, automation, and performance under one retainer.",
   },
   {
-    value: "3",
-    label: "Clear packages",
-    detail: "$999 · $1,899 · $2,799 — scope you can budget against.",
+    value: "~40h",
+    label: "Every week",
+    detail: "Same weekly capacity on Basic, Growth, and Scale — price buys depth.",
   },
   {
     value: "Global",
