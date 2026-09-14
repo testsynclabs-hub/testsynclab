@@ -6,6 +6,9 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 
 | File | Purpose |
 |------|---------|
+| `seo-launch-actions.md` | **Do this first:** GSC Request indexing URLs, Lahore GBP checklist, outbound minimums |
+| `linkedin-posts-rank-landings.txt` | Ready LinkedIn posts for best QA / agency / Lahore landings |
+| `directory-profiles.txt` | Clutch / GoodFirms / DesignRush blurbs + submit order |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
 | `cold-email-template.html` | HTML version for ESP / paste into Gmail |
 | `cold-email-plain.txt` | Plain-text version (preferred for cold starts) |

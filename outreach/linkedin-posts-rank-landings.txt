@@ -1,0 +1,82 @@
+# LinkedIn — ready-to-post (rank landings)
+
+Post from **personal** profiles first (higher reach), then share to the company page:
+https://www.linkedin.com/company/testsync-lab/
+
+Replace [Name] if you tag a teammate. Do not add fake client logos or invented case metrics.
+
+---
+
+## Post A — Best QA company (primary)
+
+Looking for a best QA company for SaaS without hiring a full-time SQA team?
+
+We built a clear page for that search — what “best” means for startups in practice: reproducible bugs, monthly retainers, and a free audit in 24h.
+
+TestSync Lab — remote QA from $999/mo (manual, API, Playwright, AI testing).
+
+https://www.testsynclab.com/best-qa-company
+
+If you know a founder shipping weekly and drowning in regressions, send them our way.
+
+#QA #SoftwareTesting #SaaS #Startup
+
+---
+
+## Post B — QA agency
+
+Most “QA agencies” sell vague hours. We sell packages:
+
+• Basic $999 — manual coverage  
+• Growth $1,899 — manual + API + automation  
+• Scale $2,799 — full-stack cadence  
+
+Page: https://www.testsynclab.com/qa-agency
+
+Free QA audit → https://www.testsynclab.com/contact
+
+#QualityAssurance #OutsourcedQA #Playwright
+
+---
+
+## Post C — Software testing company
+
+If your search was “software testing company” and you got 10 agencies with no pricing — same.
+
+We publish retainers, English engineer-ready bugs, and Slack/Jira handoffs for teams worldwide.
+
+https://www.testsynclab.com/software-testing-company
+
+#SoftwareTesting #SQA #ProductEngineering
+
+---
+
+## Post D — Lahore (local + diaspora)
+
+TestSync Lab is a QA agency based in Lahore — serving Pakistan teams and SaaS clients worldwide.
+
+If you are hiring local SQA talent or need a Lahore-based testing partner with clear USD packages:
+
+https://www.testsynclab.com/qa-agency-lahore
+
+Careers / CV: https://www.testsynclab.com/become-a-tester
+
+#Lahore #PakistanTech #QAJobs #SoftwareTesting
+
+---
+
+## Comment reply snippets (use under founder posts)
+
+1. “Solid ship cadence — the usual break is regression debt. We do monthly QA retainers from $999 if you ever want a second set of eyes: testsynclab.com/contact”
+2. “If AI features are in the mix, we also run AI testing (golden sets / jailbreak / RAG checks) beside classic QA: testsynclab.com/ai”
+
+---
+
+## Company page week plan
+
+| Day | Action |
+|-----|--------|
+| Mon | Post A |
+| Wed | Post B or C |
+| Fri | Post D + one blog link from /blog |
+| Daily | 5 thoughtful comments on US/CA founder posts (morning their TZ) |

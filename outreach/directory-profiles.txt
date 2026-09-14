@@ -1,0 +1,85 @@
+# Directory & review-site profiles (copy-paste)
+
+Create **one honest profile** per site. Never buy reviews. Never invent clients or star ratings.
+
+Brand assets:
+- Logo: https://www.testsynclab.com/brand/logo-icon-1024.png
+- Cover: https://www.testsynclab.com/brand/cover-linkedin.png
+- Website: https://www.testsynclab.com
+- Primary landing for listings: https://www.testsynclab.com/best-qa-company
+- Lahore landing: https://www.testsynclab.com/qa-agency-lahore
+- Contact: info@testsynclab.com
+
+---
+
+## Short company blurb (≤500 chars)
+
+TestSync Lab is a remote QA company for SaaS teams. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA. Based in Lahore, Pakistan, we deliver English reporting and Slack/Jira handoffs to product teams worldwide. Free audit in 24 hours on business days.
+
+---
+
+## Longer blurb (≤1500 chars)
+
+TestSync Lab helps SaaS startups and scale-ups ship with confidence without hiring a full-time SQA team on day one. We offer clear monthly packages — Basic ($999), Growth ($1,899), and Scale ($2,799) — covering exploratory and regression testing, API checks, Playwright automation, performance signals, and optional AI testing for chatbots, RAG, and LLM features.
+
+We operate from Lahore, Pakistan, and serve clients worldwide (US, Canada, UK, Australia, and beyond). Bugs are written for engineers: environment, severity, steps, and evidence. Handoffs fit async product teams — Slack, Jira, or GitHub.
+
+Start with a free QA audit: https://www.testsynclab.com/contact
+
+---
+
+## Services to tick (when forms ask)
+
+- Manual / functional testing
+- API testing
+- Test automation (Playwright)
+- Performance testing
+- QA consulting / process
+- AI / LLM testing (if listed)
+
+## Locations
+
+- Headquarters: Lahore, Punjab, Pakistan
+- Service area: Worldwide (remote)
+- Do **not** claim a US office address
+
+## Pricing note (if asked)
+
+Starting at USD $999/month. Custom AI testing sprints available. Details: https://www.testsynclab.com/pricing
+
+---
+
+## Submit these directories (priority order)
+
+| Priority | Site | Notes |
+|----------|------|--------|
+| 1 | https://clutch.co/profile/create | Strong for B2B SaaS buyer research |
+| 2 | https://www.goodfirms.co/ | Similar to Clutch; use same blurb |
+| 3 | https://www.designrush.com/agency/register | Pick Software Testing / QA category |
+| 4 | https://www.trustpilot.com/ | Only if you will reply to real reviews |
+| 5 | https://www.sortlist.com/ | Agency marketplace |
+| 6 | https://www.upcity.com/ | US-heavy; still useful for brand |
+| 7 | Crunchbase / LinkedIn Company | Keep website + Lahore location consistent |
+
+After each listing goes live, add the public profile URL to the website `sameAs` list in `lib/site.ts` (ask the agent or open a PR) so Google sees consistent entity signals.
+
+---
+
+## Clutch-specific tips
+
+- Company name: TestSync Lab
+- Tagline: Remote QA retainers for SaaS from $999
+- Min. project size: $999
+- Hourly rate: leave blank or “N/A — monthly retainers”
+- Employees: honest headcount
+- Founded: real year
+- Focus: QA / software testing (not full custom software shop unless true)
+- Clients: only name companies that gave written permission
+
+---
+
+## After publish
+
+1. Share the Clutch/GoodFirms URL once on LinkedIn (Post A comment or new short post).
+2. Ask 1–2 real clients for a review **only after** a completed engagement — never fabricate.
+3. Ping GSC again only if you add major new URLs; do not spam Request indexing daily.

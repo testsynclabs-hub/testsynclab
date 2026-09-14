@@ -37,10 +37,12 @@ sets, hallucination/jailbreak checks, RAG faithfulness) beside QA retainers.
 Build/sprint is optional secondary — do not lead with “we also develop AI.”
 Outbound angle: “We QA the AI feature you already shipped.”
 1. [Google Search Console](https://search.google.com/search-console) → add **both** `https://www.testsynclab.com` (primary) and `https://testsynclab.com` → verify → set **www as preferred** → submit `https://www.testsynclab.com/sitemap.xml`.
-2. Use **URL Inspection** on the homepage and click **Request indexing** (fixes “No information is available for this page” after deploy).
+2. Use **URL Inspection** → **Request indexing** on these live money pages (copy-paste list in `outreach/seo-launch-actions.md`):
+   - `/` · `/best-qa-company` · `/qa-agency` · `/software-testing-company` · `/qa-agency-lahore`
+   - Also useful: `/qa-services-usa`, `/qa-services-canada`, `/outsourced-qa`, `/pricing`, `/contact`
 3. [Bing Webmaster Tools](https://www.bing.com/webmasters) → Import from Google or add site → submit the same sitemap.
-4. Do **not** create a Google Business Profile with a fake US/Canada street address. That is a trust and policy risk. Remote + honest timezone copy ranks cleaner than a fake NAP.
-3. After the site is live with the new pages, request indexing on `/`, `/qa-services-usa`, `/qa-services-canada`, `/outsourced-qa`, `/pricing`, `/contact`.
+4. **Google Business Profile (Lahore only):** claim a real Lahore profile at [business.google.com](https://business.google.com/). Website field → `https://www.testsynclab.com/qa-agency-lahore`. Do **not** invent a US/Canada street address.
+5. Outbound kit (LinkedIn posts, Clutch/directory blurbs): `outreach/linkedin-posts-rank-landings.txt` + `outreach/directory-profiles.txt`.
 
 ## What closes deals faster than SEO
 1. Referrals
@@ -50,8 +52,9 @@ Outbound angle: “We QA the AI feature you already shipped.”
 5. Indexed geo pages (helps inbound after week 4–8)
 
 ## Website conversion / SEO shipped
-- Homepage and meta aimed at US + Canada buyers
-- Dedicated landings: US, Canada, Outsourced QA (unique copy + FAQ schema)
-- USD packages, follow-the-sun positioning (no fake local office)
+- Homepage and meta aimed at global SaaS buyers (US/CA still priority markets)
+- Dedicated landings: US, Canada, Outsourced QA, **best QA company**, **QA agency**, **software testing company**, **QA agency Lahore**
+- USD packages, follow-the-sun positioning (no fake US office; honest Lahore base)
 - Free audit 3-step + sticky mobile CTA
 - Sitemap includes the new money pages
+- Owner actions after deploy: `outreach/seo-launch-actions.md`
