@@ -31,7 +31,7 @@ export const packages: PackagePlan[] = [
     ctaLabel: "Start with Basic",
     ctaHref: "/contact?plan=basic&source=pricing-card",
     features: [
-      "~40 QA hours every week (same capacity as higher plans)",
+      "~40 QA hours every week",
       "Manual exploratory & regression testing",
       "Clear bug reports and test notes",
       "Weekly status summary",
@@ -52,7 +52,7 @@ export const packages: PackagePlan[] = [
     ctaLabel: "Choose Growth",
     ctaHref: "/contact?plan=growth&source=pricing-card",
     features: [
-      "~40 QA hours every week (same capacity as Basic & Scale)",
+      "~40 QA hours every week",
       "Everything in Basic",
       "API / contract validation",
       "Playwright or Selenium automation start",
@@ -73,7 +73,7 @@ export const packages: PackagePlan[] = [
     ctaLabel: "Choose Scale",
     ctaHref: "/contact?plan=scale&source=pricing-card",
     features: [
-      "~40 QA hours every week (same capacity as Basic & Growth)",
+      "~40 QA hours every week",
       "Everything in Growth",
       "Performance spot checks (JMeter)",
       "Release-gate checklist & sign-off support",

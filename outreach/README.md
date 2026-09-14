@@ -6,6 +6,8 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 
 | File | Purpose |
 |------|---------|
+| `purple-cow-marketing.md` | Purple Cow strategy for **how we work** (overnight engineer-ready bugs) |
+| `linkedin-posts-purple-cow-work.txt` | Ready LinkedIn posts for that hook |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
 | `cold-email-template.html` | HTML version for ESP / paste into Gmail |
 | `cold-email-plain.txt` | Plain-text version (preferred for cold starts) |
