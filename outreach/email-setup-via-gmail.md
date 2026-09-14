@@ -1,97 +1,100 @@
-# Fix “via gmail.com” + header/footer on outbound email
+# Fix “via gmail.com” (official From look)
 
-## Why Gmail shows `via gmail.com`
+## Why you see it
 
-You send as `info@testsynclab.com`, but the message is actually relayed by **Gmail**. Recipients see:
+Screenshot case:
 
-`TestSync Lab <info@testsynclab.com> via gmail.com`
+`Testsync Lab <info@testsynclab.com> via gmail.com`
 
-That happens when SPF/DKIM do **not** authorize Google to send for your domain.
+Meaning: **From** is your domain, but the mail was **relayed by Gmail** (`smtp.gmail.com`) without domain auth that aligns with `testsynclab.com`.
 
-**Current DNS (as of last check):**
-- MX → ImprovMX
-- SPF → `v=spf1 include:spf.improvmx.com ~all` only  
-- No Google SPF · no visible Google DKIM · no DMARC
+**Live DNS right now:**
+- MX → ImprovMX ✅
+- SPF → `v=spf1 include:spf.improvmx.com ~all` only ❌ (Google not allowed)
+- DKIM → none for Google / ImprovMX ❌
+- DMARC → none ❌
 
-So Google is not on your allow-list → “via gmail.com” (and weaker trust).
-
-An agent **cannot** change your DNS or Gmail settings. You (or whoever owns the domain DNS) must.
+An agent **cannot** change your DNS or Gmail SMTP. You must do this in the domain DNS panel + Gmail.
 
 ---
 
-## Fix (pick one path)
+## Best free-friendly fix (recommended for you)
 
-### Path A — Keep sending from Gmail / Google (recommended if you live in Gmail)
+You already use **ImprovMX** for MX. Free ImprovMX = receive only. To **send** as the domain without “via gmail.com”, use **ImprovMX SMTP** (Premium).
 
-1. DNS → edit SPF TXT on `testsynclab.com` to:
+### Steps
+
+1. ImprovMX → upgrade to Premium (SMTP unlock).
+2. ImprovMX → copy SMTP host / port / username / password for `info@testsynclab.com`.
+3. Gmail → ⚙️ Settings → See all settings → **Accounts** → **Send mail as** → edit `info@testsynclab.com`:
+   - SMTP server = **ImprovMX** (not `smtp.gmail.com`)
+   - Port usually **587** (TLS) or whatever ImprovMX shows
+   - Username / password = ImprovMX SMTP credentials
+   - Treat as alias: **OFF** (recommended)
+4. Keep SPF as ImprovMX (already set):
+
+```
+v=spf1 include:spf.improvmx.com ~all
+```
+
+5. If ImprovMX shows a **DKIM** TXT/CNAME, add it in DNS.
+6. Add soft DMARC:
+
+```
+Type: TXT
+Name: _dmarc
+Value: v=DMARC1; p=none; rua=mailto:info@testsynclab.com
+```
+
+7. Wait 15 min–24h → send a new test to yourself.  
+   “via gmail.com” should be gone → looks like a normal official `info@testsynclab.com` send.
+
+---
+
+## Alternate: keep sending via Gmail SMTP (weaker / incomplete on free Gmail)
+
+Only if you stay on `smtp.gmail.com`:
+
+1. Edit SPF TXT on `testsynclab.com` to:
 
 ```
 v=spf1 include:_spf.google.com include:spf.improvmx.com ~all
 ```
 
-2. Google Admin (Workspace) **or** Gmail “Send mail as” setup → enable **DKIM** for `testsynclab.com` → publish the TXT record Google gives you.
-3. Add DMARC (start soft):
+2. Add the same soft DMARC record above.
 
-```
-_dmarc.testsynclab.com  TXT  v=DMARC1; p=none; rua=mailto:info@testsynclab.com
-```
+3. **DKIM for custom domain** normally needs **Google Workspace Admin** (paid). Free Gmail “Send mail as” usually still signs as Google, so **“via gmail.com” often remains** even after SPF.
 
-4. Wait DNS propagate (often 15 min–24h). Send yourself a test. “via gmail.com” should disappear when SPF+DKIM pass as `testsynclab.com`.
-
-### Path B — Send through ImprovMX SMTP (matches your MX)
-
-1. ImprovMX dashboard → SMTP credentials for `info@…`
-2. In Gmail: Settings → Accounts → Send mail as → SMTP server = ImprovMX (not Google).
-3. Keep SPF as ImprovMX (already set). Add DKIM if ImprovMX provides it.
-
-### Path C — Google Workspace on the domain
-
-Move mail fully to Google Workspace, update MX + SPF + DKIM + DMARC per Google’s wizard. Cleanest long-term if the team lives in Gmail.
+So: SPF help is good for deliverability, but **ImprovMX SMTP (or Workspace / ESP)** is what actually removes the “via” badge reliably.
 
 ---
 
-## Header / footer — can they “auto set”?
+## Other clean options
 
-| Method | Header | Footer | Notes |
-|--------|--------|--------|--------|
-| **Gmail Signature** | Logo + name | Soft CTA + unsubscribe | Auto on every compose from that account. Best for plain cold mail. |
-| **HTML template** (`cold-email-template.html`) | Built-in | Built-in + Unsubscribe link | Paste as HTML (ESP) or “Insert HTML” extensions — Gmail plain compose won’t inject this automatically. |
-| **ESP** (e.g. Instantly, MailerLite) | Template | Template + one-click unsub | Best for volume; still keep 10–15/day for cold. |
+| Path | Removes “via gmail.com”? | Cost note |
+|------|--------------------------|-----------|
+| ImprovMX Premium SMTP | Yes (domain-aligned send) | ~$9/mo typical |
+| Google Workspace | Yes (MX+SPF+DKIM Google) | Paid seats |
+| ESP (Instantly / Resend / etc.) | Yes after domain auth | Varies |
 
-### Suggested Gmail signature
+---
 
-Prefer the HTML signature (Alibaba-style footer):  
+## After fix — verify
+
+1. Send a **new** test (old emails keep old headers).
+2. Open mail → ⋮ → **Show original**.
+3. Check:
+   - `SPF: PASS` with `testsynclab.com`
+   - `DKIM: PASS` aligned to your domain (or ImprovMX)
+   - No “via gmail.com” in the Gmail UI From line
+
+---
+
+## Also: footer / Unsubscribe in your latest test
+
+Your latest screenshot is **plain text body only** (no signature).  
+After DNS/SMTP fix, also paste the live signature once:
+
 https://www.testsynclab.com/email/gmail-signature.html  
-(see `HOW-TO-HEADER-FOOTER.md`)
 
-Plain fallback:
-
-```
-{{Your Name}}
-TestSync Lab · Remote QA
-info@testsynclab.com · https://www.testsynclab.com
-Retainers from $999/mo
-
-Unsubscribe: https://www.testsynclab.com/unsubscribe
-Or reply “stop”
-```
-
-Optional: add logo image in signature → https://www.testsynclab.com/brand/logo-icon-1024.png
-
----
-
-## Packages in the cold email?
-
-**No full Basic / Growth / Scale table in the first touch.**  
-It kills the purple-cow first line and feels like a brochure.
-
-Footer only: `Retainers from $999/mo · ~40 QA hours/week`  
-Packages after they reply or on the audit call.
-
----
-
-## After DNS fix — verify
-
-1. Send test to yourself (Gmail + another inbox).
-2. Open original → check SPF/DKIM = PASS for `testsynclab.com`.
-3. Confirm “via gmail.com” is gone.
+Or full card: https://www.testsynclab.com/email/cold-outreach.html
