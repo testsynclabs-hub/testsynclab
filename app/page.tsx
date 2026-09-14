@@ -25,7 +25,7 @@ import {
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { faqs } from "@/lib/faq";
 import { services, SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
-import { markets, outsourcedQa } from "@/lib/markets";
+import { markets, outsourcedQa, qaAgency } from "@/lib/markets";
 
 export const metadata: Metadata = {
   title: { absolute: SITE_TITLE },
@@ -71,8 +71,9 @@ export default function HomePage() {
             </p>
             <HeroHeadline />
             <p className="animate-fade-up delay-200 mt-3 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-4 sm:text-lg lg:text-xl">
-              Manual, API, Playwright automation, and release gates — monthly
-              from $999, for product teams worldwide.
+              {SITE_NAME} is a remote QA agency for SaaS teams — manual, API,
+              Playwright automation, and release gates, monthly from $999,
+              worldwide.
             </p>
             <div className="animate-fade-up delay-300 mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap">
               <Link
@@ -498,10 +499,26 @@ export default function HomePage() {
               </p>
             </div>
           </Reveal>
-          <ul className="mt-12 grid gap-8 md:grid-cols-3">
+          <ul className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <li>
+              <Reveal>
+                <article className="h-full border-t border-brand/25 pt-5">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {qaAgency.navLabel}
+                  </h3>
+                  <p className="mt-2 text-muted">{qaAgency.navDescription}</p>
+                  <Link
+                    href={qaAgency.path}
+                    className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    About our QA agency →
+                  </Link>
+                </article>
+              </Reveal>
+            </li>
             {markets.map((market, index) => (
               <li key={market.path}>
-                <Reveal delayMs={index * 60}>
+                <Reveal delayMs={(index + 1) * 60}>
                   <article className="h-full border-t border-brand/25 pt-5">
                     <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
                       {market.navLabel}
@@ -518,7 +535,7 @@ export default function HomePage() {
               </li>
             ))}
             <li>
-              <Reveal delayMs={120}>
+              <Reveal delayMs={180}>
                 <article className="h-full border-t border-brand/25 pt-5">
                   <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
                     {outsourcedQa.navLabel}

@@ -103,22 +103,23 @@ export const rankLandings: RankLanding[] = [
     path: "/qa-agency",
     navLabel: "QA agency",
     navDescription: "Hire a remote QA agency on a monthly retainer.",
-    eyebrow: "QA agency",
-    h1: "QA agency for product teams — monthly retainers, not staffing chaos",
-    title: "QA Agency | Hire Remote Software Testers from $999/mo | TestSync Lab",
+    eyebrow: "TestSync Lab QA agency",
+    h1: "TestSync Lab is a remote QA agency for SaaS product teams",
+    title: "TestSync Lab QA Agency | Hire Remote Software Testers from $999/mo",
     description:
-      "Hire a QA agency for SaaS and startups. TestSync Lab provides remote software testing retainers from $999/mo — manual QA, API testing, Playwright automation, and release gates. Free audit.",
+      "TestSync Lab is a remote QA agency for SaaS and startups. Monthly software testing retainers from $999 cover manual QA, API testing, Playwright automation, and release gates. Free audit.",
     keywords: [
+      "TestSync Lab",
+      "TestSync Lab QA agency",
       "QA agency",
       "hire QA agency",
       "software testing agency",
       "QA testing agency",
       "outsourced QA agency",
       "remote QA agency",
-      "TestSync Lab QA agency",
     ],
     intro:
-      "A modern QA agency should feel like coverage you can budget — not a rotating staff-aug queue. TestSync Lab runs as a remote QA agency: named capacity, USD retainers, and practical release gates for web and mobile SaaS.",
+      "TestSync Lab is a remote QA agency — not a generic IT shop. You get named capacity, USD monthly retainers, and practical release gates for web and mobile SaaS. Coverage you can budget, without a rotating staff-aug queue.",
     highlights: [
       {
         title: "Agency model, product mindset",

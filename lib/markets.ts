@@ -241,7 +241,86 @@ export const outsourcedQa = {
   ],
 } as const;
 
+export const qaAgency = {
+  path: "/qa-agency",
+  navLabel: "QA agency",
+  navDescription: "Who TestSync Lab is — a remote QA agency for SaaS teams.",
+  eyebrow: "TestSync Lab QA agency",
+  h1: "TestSync Lab is a remote QA agency for SaaS teams",
+  title: "TestSync Lab QA Agency | Remote Software Testing Retainers from $999",
+  description:
+    "TestSync Lab is a remote software QA agency for SaaS startups and product teams. Monthly testing retainers from $999 cover manual QA, API testing, Playwright automation, and AI product QA worldwide.",
+  keywords: [
+    "TestSync Lab",
+    "TestSync Lab QA agency",
+    "QA agency",
+    "remote QA agency",
+    "software QA agency",
+    "hire QA agency for SaaS",
+    "software testing agency",
+    "QA testing company",
+  ],
+  intro:
+    "TestSync Lab is not a generic IT shop. We are a focused remote QA agency: named testers, month-to-month retainers, and clear release reporting for SaaS teams that ship every week. You get senior exploratory testing, API checks, Playwright automation, and optional AI product QA — without waiting on a full-time hire.",
+  highlights: [
+    {
+      title: "A real QA agency model, not ticket dumping",
+      detail:
+        "You work with a small named pod. Strategy and execution stay close — risk maps, reproducible bugs, and weekly cadence instead of a black-box bench.",
+    },
+    {
+      title: "Built for SaaS release trains",
+      detail:
+        "Manual + API + Playwright + performance gates under one retainer. Packages start at $999/mo so finance can budget quality like any other vendor.",
+    },
+    {
+      title: "Global buyers, English delivery",
+      detail:
+        "USD pricing, Slack/Jira/GitHub workflows, and follow-the-sun verification for US, Canadian, UK, and worldwide product teams.",
+    },
+  ],
+  pains: [
+    {
+      title: "“Agency” that only sells junior hours",
+      detail:
+        "Busy sprints should not explode your invoice. Retainers reserve senior capacity so coverage does not stop when the release gets hard.",
+    },
+    {
+      title: "Website looks fine — nobody knows who you are",
+      detail:
+        "Buyers need a clear entity: who TestSync Lab is, what we test, and how to start. This page + About + LinkedIn are that public footprint.",
+    },
+    {
+      title: "Hiring is too slow for the next launch",
+      detail:
+        "A free QA audit maps risk this week. Most retainers start in days, not after a three-month recruiting cycle.",
+    },
+  ],
+  faqs: [
+    {
+      question: "Is TestSync Lab a real QA agency or only a website?",
+      answer:
+        "TestSync Lab is a remote software QA agency. We deliver monthly retainers for manual testing, API testing, Playwright automation, performance checks, and AI product QA. You can review services, pricing, About, and book a free audit at testsynclab.com.",
+    },
+    {
+      question: "Where does TestSync Lab work from?",
+      answer:
+        "We deliver remotely for product teams worldwide, with strong focus on US and Canadian SaaS buyers. Engagements run in English over Slack, Jira, and GitHub — not a walk-in storefront model.",
+    },
+    {
+      question: "How do I hire TestSync Lab?",
+      answer:
+        "Start with a free QA audit. We return a practical risk map and recommend Basic ($999), Growth ($1,899), Scale ($2,799), or a scoped AI testing sprint. Month-to-month — no annual lock-in required.",
+    },
+  ],
+} as const;
+
 export const marketNavChildren = [
+  {
+    href: "/qa-agency",
+    label: "QA agency overview",
+    description: "Who TestSync Lab is as a remote QA agency.",
+  },
   {
     href: "/qa-services-usa",
     label: "QA for US teams",

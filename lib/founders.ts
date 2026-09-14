@@ -10,24 +10,16 @@ export type Founder = {
 };
 
 /**
- * Update names / personal LinkedIn URLs when ready.
- * Company page is the default profile link until personal URLs are set.
+ * Public people cards — only ship real names.
+ * Add a second founder when a personal LinkedIn is ready.
  */
 export const founders: Founder[] = [
   {
     name: "Abid",
     initials: "AB",
     role: "Founding QA Partner",
-    bio: "Hands-on exploratory and release QA. Owns risk mapping, bug clarity, and the weekly quality cadence with your team.",
+    bio: "Hands-on exploratory and release QA. Owns risk mapping, bug clarity, and the weekly quality cadence with your product team.",
     focus: ["Manual & exploratory", "Release gates", "Client communication"],
-    linkedIn: SITE_LINKEDIN,
-  },
-  {
-    name: "Co-founder",
-    initials: "QA",
-    role: "Founding QA Partner",
-    bio: "Automation, API, and performance depth so coverage compounds every month — without a brittle script pile.",
-    focus: ["Playwright / API", "CI regression", "Performance spot-checks"],
     linkedIn: SITE_LINKEDIN,
   },
 ];

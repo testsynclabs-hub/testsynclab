@@ -123,11 +123,11 @@ export function FoundersTeaser() {
               id="founders-heading"
               className="mt-3 font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
             >
-              Meet the partners
+              Who leads delivery
             </h2>
             <p className="mt-4 text-lg text-muted">
-              Two founding QA partners — not a black-box bench. Strategy and
-              execution stay close.
+              You work with a founding QA partner — not a rotating anonymous
+              bench. Strategy and execution stay close.
             </p>
           </div>
           <Link

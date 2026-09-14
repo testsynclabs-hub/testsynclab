@@ -6,12 +6,24 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "Remote QA Services for SaaS Teams from $999 | TestSync Lab" as const;
+  "TestSync Lab | Remote QA Agency for SaaS Teams from $999" as const;
 
 export const SITE_DESCRIPTION =
-  "Hire a remote QA company for SaaS startups worldwide. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA. Free audit — senior SQA without a full-time hire." as const;
+  "TestSync Lab is a remote QA agency for SaaS teams worldwide. Hire monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA — free audit, senior SQA without a full-time hire." as const;
+
+export const SITE_TAGLINE =
+  "Remote QA agency for SaaS teams that ship every week." as const;
+
+export const SITE_ALTERNATE_NAMES = [
+  "TestSync Lab QA",
+  "TestSync Lab QA Agency",
+  "Test Sync Lab",
+] as const;
 
 export const SITE_KEYWORDS = [
+  "TestSync Lab",
+  "TestSync Lab QA agency",
+  "TestSync Lab QA",
   "best QA company",
   "QA agency",
   "QA agency Lahore",
@@ -19,8 +31,9 @@ export const SITE_KEYWORDS = [
   "testing company",
   "QA company Lahore",
   "software testing company Pakistan",
-  "TestSync Lab",
   "hire QA agency",
+  "remote QA agency",
+  "software QA agency",
   "monthly QA retainer",
   "software testing services",
   "Playwright testing company",
@@ -198,6 +211,11 @@ export const primaryNav: PrimaryNavItem[] = [
         description: "Senior coverage without a hiring cycle.",
       },
       {
+        href: "/qa-agency",
+        label: "QA agency overview",
+        description: "What TestSync Lab is — remote QA retainers for SaaS.",
+      },
+      {
         href: "/contact",
         label: "Contact",
         description: "Book a free QA audit or ask about AI testing.",
@@ -281,18 +299,25 @@ export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService"],
   name: SITE_NAME,
-  alternateName: ["TestSync", "Test Sync Lab"],
   legalName: SITE_NAME,
+  alternateName: ["TestSync", "Test Sync Lab", ...SITE_ALTERNATE_NAMES],
+  slogan: SITE_TAGLINE,
   url: SITE_URL,
   logo: `${SITE_URL}/brand/logo-icon-1024.png`,
   image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
   email: SITE_EMAIL,
+  brand: {
+    "@type": "Brand",
+    name: SITE_NAME,
+    slogan: SITE_TAGLINE,
+  },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
     email: SITE_EMAIL,
     availableLanguage: ["English"],
+    url: `${SITE_URL}/contact`,
   },
   address: {
     "@type": "PostalAddress",
@@ -308,6 +333,14 @@ export const organizationJsonLd = {
     { "@type": "Country", name: "United Kingdom" },
     { "@type": "Country", name: "Australia" },
     "Worldwide",
+  ],
+  serviceType: [
+    "Software quality assurance",
+    "Manual testing",
+    "API testing",
+    "Test automation",
+    "Performance testing",
+    "AI product QA",
   ],
   knowsAbout: [...SITE_KEYWORDS],
   hasOfferCatalog: {
@@ -344,6 +377,7 @@ export const organizationJsonLd = {
     ],
   },
   sameAs: [SITE_LINKEDIN],
+  mainEntityOfPage: `${SITE_URL}/qa-agency`,
 } as const;
 
 export const websiteJsonLd = {
