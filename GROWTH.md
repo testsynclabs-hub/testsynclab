@@ -3,7 +3,9 @@
 Website SEO compounds in 30–90 days. **First clients still come from outbound.** Run both.
 
 ## Offer (say this everywhere)
+**Purple cow (the work):** You close with a build. We start verification on our morning. You wake up to engineer-ready bugs — steps, severity, evidence.
 Free QA audit in 24h → recommend Basic ($999) / Growth ($1,899) / Scale ($2,799).
+Full playbook: `outreach/purple-cow-marketing.md` · posts: `outreach/linkedin-posts-purple-cow-work.txt`.
 Serve **worldwide**. Push hardest where deals close faster: **US and Canadian**
 founders, CTOs, VP Eng, Head of Product. Do not refuse good leads from UK, EU,
 or elsewhere — just prioritize outbound lists toward US/CA first.
@@ -14,9 +16,7 @@ or elsewhere — just prioritize outbound lists toward US/CA first.
 3. Message 20 warm contacts (ex-colleagues, managers, founders):
 
 ```
-Hey [Name] — we launched TestSync Lab (monthly QA retainers from $999 for US/Canada teams).
-If you know a team struggling with release quality, happy to do a free audit this week.
-Link: https://www.testsynclab.com/contact
+Hey [Name] — we launched TestSync Lab. Simple pitch: you close with a build, we verify on our morning, you wake up to engineer-ready bugs. Monthly QA from $999. Free audit this week if useful: https://www.testsynclab.com/contact
 ```
 
 4. Comment thoughtfully on 10 posts from startup founders / CTOs / eng managers (US/CA morning).

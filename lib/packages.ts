@@ -105,11 +105,6 @@ export const packages: PackagePlan[] = [
   },
 ];
 
-export const pricingRemarkablePoint = {
-  title: "The purple cow: same hours, different depth",
-  body: "Most QA shops shrink the clock when you pick a cheaper package. We don’t. Basic, Growth, and Scale each include ~40 QA hours a week. Price buys how deep the work goes — manual coverage, then API and automation, then release gates and a named lead — not a thinner week. That is remarkable on purpose: easy to explain, hard to ignore, worth telling a founder friend about.",
-} as const;
-
 export const pricingComparePoints = [
   {
     title: "Same ~40 hours every week",

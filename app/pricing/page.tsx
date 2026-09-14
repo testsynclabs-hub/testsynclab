@@ -5,10 +5,7 @@ import { FreeQaAuditCta } from "@/components/free-qa-audit-cta";
 import { PackageGrid } from "@/components/package-grid";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { aiPackagePolicy, aiPackages } from "@/lib/ai";
-import {
-  pricingComparePoints,
-  pricingRemarkablePoint,
-} from "@/lib/packages";
+import { pricingComparePoints } from "@/lib/packages";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -123,23 +120,6 @@ export default function PricingPage() {
       </section>
 
       <section
-        className="border-t border-line bg-gradient-to-br from-sky-50 via-white to-blue-50 py-16 sm:py-20"
-        aria-labelledby="pricing-remarkable-heading"
-      >
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <h2
-            id="pricing-remarkable-heading"
-            className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
-          >
-            {pricingRemarkablePoint.title}
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
-            {pricingRemarkablePoint.body}
-          </p>
-        </div>
-      </section>
-
-      <section
         className="border-t border-line bg-white py-16 sm:py-20"
         aria-labelledby="pricing-compare-heading"
       >
@@ -148,11 +128,11 @@ export default function PricingPage() {
             id="pricing-compare-heading"
             className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep"
           >
-            Built to be talked about
+            Why retainers beat waiting to hire
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Remarkable on purpose — clear capacity, US calendar, and coverage
-            this month without a six-figure hire bet.
+            Coverage this month — without a six-figure headcount bet or a long
+            lock-in. Clear weekly capacity and a US business calendar.
           </p>
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {pricingComparePoints.map((item) => (
