@@ -1,273 +1,152 @@
-import { redirect } from "next/navigation";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { CapabilityExplorer } from "@/components/capability-explorer";
+import {
+  AuditSamplePreview,
+  CaseStudiesSection,
+} from "@/components/case-studies";
+import { FaqCta, FaqList } from "@/components/faq-list";
+import { TrustSignals } from "@/components/founders";
+import { HeroHeadline } from "@/components/hero-headline";
+import { HeroVisual } from "@/components/hero-visual";
+import { PackageGrid } from "@/components/package-grid";
+import { Reveal } from "@/components/reveal";
+import { ReviewsCarousel } from "@/components/reviews-carousel";
+import { StickyCta } from "@/components/sticky-cta";
+import { AiServiceBanner } from "@/components/ai-service-banner";
+import {
+  auditSteps,
+  coverageStats,
+  engagementSteps,
+  industries,
+  outcomePillars,
+  workflowTools,
+} from "@/lib/home-content";
+import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
+import { faqs } from "@/lib/faq";
+import { services, SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
+import { markets, outsourcedQa, qaAgency } from "@/lib/markets";
 
-const services = [
-  {
-    title: "Manual Testing",
-    description:
-      "Exploratory and structured test cycles that catch usability gaps, edge cases, and business-logic defects before release.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-7 w-7">
-        <path
-          d="M9 11l3 3L22 4"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "API Testing",
-    description:
-      "Contract, schema, and integration validation across REST and GraphQL services so your backends stay reliable under load.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-7 w-7">
-        <path
-          d="M4 7h6M14 7h6M4 17h6M14 17h6M10 7v10M14 7v10"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="2" />
-        <circle cx="17" cy="7" r="2" stroke="currentColor" strokeWidth="2" />
-        <circle cx="7" cy="17" r="2" stroke="currentColor" strokeWidth="2" />
-        <circle cx="17" cy="17" r="2" stroke="currentColor" strokeWidth="2" />
-      </svg>
-    ),
-  },
-  {
-    title: "Automation",
-    description:
-      "Stable end-to-end suites wired into CI/CD so every commit is verified without slowing your delivery cadence.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-7 w-7">
-        <rect
-          x="3"
-          y="4"
-          width="18"
-          height="14"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="M8 21h8M12 18v3"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path d="M8 10h2v4H8zM14 8h2v6h-2z" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
-    title: "Performance",
-    description:
-      "Load, stress, and soak testing that surfaces bottlenecks early and proves your product scales with confidence.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-7 w-7">
-        <path
-          d="M3 17l5-5 4 4 8-8"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M14 8h6v6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-] as const;
+export const metadata: Metadata = {
+  title: { absolute: SITE_TITLE },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+};
 
-const impactStats = [
-  {
-    value: "99.9%",
-    label: "Bug-Free Deployments",
-    detail: "Release confidence backed by rigorous regression coverage.",
-  },
-  {
-    value: "40%",
-    label: "Faster Testing Cycles",
-    detail: "Lean automation that shortens feedback loops in CI/CD.",
-  },
-  {
-    value: "24/7",
-    label: "Robust Automation",
-    detail: "Always-on suites that protect quality between releases.",
-  },
-] as const;
+const homeFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.slice(0, 6).map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
-const techStack = [
-  { name: "Python", mark: "Py" },
-  { name: "Playwright", mark: "Pw" },
-  { name: "Selenium", mark: "Se" },
-  { name: "Postman", mark: "Pm" },
-  { name: "JMeter", mark: "Jm" },
-] as const;
-
-async function submitContact(formData: FormData) {
-  "use server";
-
-  const name = String(formData.get("name") ?? "").trim();
-  const email = String(formData.get("email") ?? "").trim();
-  const message = String(formData.get("message") ?? "").trim();
-
-  if (!name || !email || !message) {
-    redirect("/?error=1#contact");
-  }
-
-  // Lead capture ready for email/CRM wiring
-  void { name, email, message };
-  redirect("/?sent=1#contact");
-}
-
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ sent?: string; error?: string }>;
-}) {
-  const params = await searchParams;
-  const sent = params.sent === "1";
-  const error = params.error === "1";
-
+export default function HomePage() {
   return (
-    <div className="flex min-h-full flex-col">
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+    <main className="flex-1 pb-24 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
+      />
+      <StickyCta />
+
+      <section
+        className="relative flex min-h-[calc(100svh-4.5rem-5.25rem)] flex-col overflow-hidden bg-[#07111f] text-white md:min-h-[calc(100svh-4.5rem)]"
+        aria-labelledby="hero-heading"
       >
-        Skip to main content
-      </a>
-
-      {/* Sticky glassmorphism header */}
-      <header className="sticky top-0 z-50 border-b border-white/40 bg-white/70 shadow-sm shadow-brand/5 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8 sm:py-4">
-          <a
-            href="#top"
-            className="font-[family-name:var(--font-display)] text-lg font-bold tracking-tight text-brand sm:text-xl"
-          >
-            TestSync Lab
-          </a>
-          <nav
-            aria-label="Primary"
-            className="flex items-center gap-4 text-sm font-semibold text-slate-600 sm:gap-6"
-          >
-            <a
-              href="#services"
-              className="hidden transition-colors hover:text-brand sm:inline"
-            >
-              Services
-            </a>
-            <a
-              href="#tech"
-              className="hidden transition-colors hover:text-brand sm:inline"
-            >
-              Tech Stack
-            </a>
-            <a
-              href="#contact"
-              className="hidden transition-colors hover:text-brand md:inline"
-            >
-              Contact
-            </a>
-            <a
-              href="#contact"
-              className="rounded-lg bg-brand px-3.5 py-2 text-white shadow-md shadow-brand/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-deep hover:shadow-lg hover:shadow-brand/30"
-            >
-              Get Audit
-            </a>
-          </nav>
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_12%_18%,rgba(37,99,235,0.38),transparent_55%),radial-gradient(ellipse_70%_50%_at_88%_12%,rgba(14,165,233,0.22),transparent_50%),radial-gradient(ellipse_at_bottom,rgba(2,6,23,0.95),transparent_55%)]" />
+          <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(rgba(148,163,184,0.28)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.28)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)]" />
         </div>
-      </header>
 
-      <main id="main-content" className="flex-1">
-        {/* Premium Hero */}
-        <section
-          id="top"
-          className="relative min-h-[100svh] overflow-hidden"
-          aria-labelledby="hero-heading"
-        >
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <div className="absolute inset-0 bg-gradient-to-br from-white via-sky-50 to-blue-100" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(37,99,235,0.18),_transparent_55%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(191,219,254,0.65),_transparent_50%)]" />
-            <div
-              className="absolute inset-0 opacity-[0.35]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px)",
-                backgroundSize: "48px 48px",
-              }}
-            />
-            <div className="absolute -right-24 top-24 h-80 w-80 rounded-full bg-brand/15 blur-3xl" />
-            <div className="absolute -left-20 bottom-10 h-72 w-72 rounded-full bg-sky-300/30 blur-3xl" />
-          </div>
-
-          <div className="relative mx-auto flex min-h-[calc(100svh-4.5rem)] w-full max-w-6xl flex-col justify-center px-5 pb-20 pt-16 sm:px-8 sm:pt-20">
-            <div className="max-w-3xl">
-              <p className="animate-fade-up font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
-                TestSync Lab
-              </p>
-              <h1
-                id="hero-heading"
-                className="animate-fade-up delay-100 mt-5 font-[family-name:var(--font-display)] text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
+        <div className="relative mx-auto grid w-full max-w-6xl flex-1 content-start items-center gap-6 px-5 pb-6 pt-10 sm:gap-8 sm:px-8 sm:pb-8 sm:pt-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:content-center lg:pt-16">
+          <div className="max-w-2xl">
+            <p className="animate-fade-up font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.4rem]">
+              {SITE_NAME}
+            </p>
+            <HeroHeadline />
+            <p className="animate-fade-up delay-200 mt-3 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-4 sm:text-lg lg:text-xl">
+              {SITE_NAME} is a remote QA agency for SaaS teams — manual, API,
+              Playwright automation, and release gates, monthly from $999,
+              worldwide.
+            </p>
+            <div className="animate-fade-up delay-300 mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap">
+              <Link
+                href={auditHref("home-hero")}
+                className="animate-cta-pulse inline-flex w-full items-center justify-center rounded-full bg-brand px-5 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-bright sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
               >
-                Software Quality Assurance &amp; Testing
-              </h1>
-              <p className="animate-fade-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-                Quality You Can Trust. Software That Performs.
-              </p>
-              <div className="animate-fade-up delay-300 mt-10">
-                <a
-                  href="#contact"
-                  className="animate-cta-pulse inline-flex items-center justify-center rounded-xl bg-brand px-7 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-                >
-                  Get a Free QA Audit
-                </a>
-              </div>
+                {FREE_QA_AUDIT_LABEL}
+              </Link>
+              <Link
+                href="/pricing"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/25 bg-white/5 px-5 py-3.5 text-sm font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/10 sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
+              >
+                See Packages
+              </Link>
+            </div>
+
+            <div className="animate-fade-up delay-300 mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-6">
+              <span className="text-xs font-semibold text-slate-200 sm:text-sm">
+                24h audit reply · Month-to-month · NDA-ready
+              </span>
+              <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
+              <Link
+                href="/pricing"
+                className="text-xs font-medium text-sky-300 transition hover:text-sky-200 sm:text-sm"
+              >
+                Fixed monthly packages →
+              </Link>
+              <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
+              <Link
+                href="/services"
+                className="text-xs font-medium text-sky-300 transition hover:text-sky-200 sm:text-sm"
+              >
+                View all services →
+              </Link>
             </div>
           </div>
-        </section>
 
-        {/* Why Choose Us / Impact */}
-        <section
-          id="impact"
-          className="border-t border-line bg-surface py-20 sm:py-24"
-          aria-labelledby="impact-heading"
-        >
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <div className="animate-fade-in delay-200 relative hidden min-[900px]:block lg:justify-self-end">
+            <HeroVisual />
+          </div>
+        </div>
+
+        <div className="relative mx-auto mt-auto w-full max-w-6xl px-5 pb-10 pt-10 sm:px-8 sm:pb-14 sm:pt-14">
+          <TrustSignals />
+        </div>
+      </section>
+
+      <section
+        id="impact"
+        className="border-t border-line bg-surface py-14 sm:py-20"
+        aria-labelledby="impact-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
             <div className="mx-auto max-w-2xl text-center">
               <h2
                 id="impact-heading"
                 className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
               >
-                Why Choose Us / Our Impact
+                Coverage and depth without hiring delay
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted">
-                Measurable quality outcomes trusted by product and engineering
-                teams shipping under pressure.
+                Clear offer. Fast response. Senior QA partners — not a bloated
+                bench.
               </p>
             </div>
-
-            <ul className="mt-12 grid gap-5 sm:grid-cols-3">
-              {impactStats.map((stat) => (
-                <li key={stat.label}>
-                  <article className="h-full rounded-2xl border border-line bg-gradient-to-b from-white to-sky-50/80 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand/30 hover:shadow-2xl hover:shadow-brand/10">
-                    <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+          </Reveal>
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {coverageStats.map((stat, index) => (
+              <li key={stat.label}>
+                <Reveal delayMs={index * 80}>
+                  <article className="h-full border-l-2 border-brand/30 pl-5">
+                    <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold text-brand">
                       {stat.value}
                     </p>
                     <h3 className="mt-3 font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
@@ -277,329 +156,459 @@ export default async function Home({
                       {stat.detail}
                     </p>
                   </article>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-        {/* Services */}
-        <section
-          id="services"
-          className="border-t border-line bg-gradient-to-b from-background to-white py-20 sm:py-24"
-          aria-labelledby="services-heading"
-        >
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <section
+        className="border-t border-line bg-white py-14 sm:py-20"
+        aria-labelledby="engagement-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
             <div className="max-w-2xl">
               <h2
-                id="services-heading"
+                id="engagement-heading"
                 className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
               >
-                QA Services Built for Delivery Teams
+                How we run with your team
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-muted">
-                From first feature to production release, we harden quality at
-                every layer of your stack.
+              <p className="mt-4 text-lg text-muted">
+                From first audit to compounding release quality — transparent
+                every step.
               </p>
             </div>
-
-            <ul className="mt-12 grid gap-5 sm:grid-cols-2">
-              {services.map((service) => (
-                <li key={service.title}>
-                  <article className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand/35 hover:shadow-2xl hover:shadow-brand/15 sm:p-7">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-brand/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-deep">
-                      {service.icon}
+          </Reveal>
+          <ol className="mt-12 grid gap-8 md:grid-cols-2">
+            {engagementSteps.map((item, index) => (
+              <li key={item.step}>
+                <Reveal delayMs={index * 70}>
+                  <div className="flex gap-4">
+                    <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-brand/30">
+                      {item.step}
+                    </span>
+                    <div>
+                      <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-muted">{item.detail}</p>
                     </div>
-                    <h3 className="mt-5 font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                  </div>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-gradient-to-b from-sky-50/80 to-white py-14 sm:py-20"
+        aria-labelledby="capabilities-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="capabilities-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Validation for demanding releases
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                Explore the lanes we cover — then pick the retainer depth that
+                matches your roadmap.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal className="mt-12" delayMs={100}>
+            <CapabilityExplorer />
+          </Reveal>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-white py-14 sm:py-20"
+        aria-labelledby="audit-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="audit-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Free QA audit in 3 steps
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                Low-friction path from first message to first test cycle.
+              </p>
+            </div>
+          </Reveal>
+          <ol className="mt-12 grid gap-8 md:grid-cols-3">
+            {auditSteps.map((item, index) => (
+              <li key={item.step}>
+                <Reveal delayMs={index * 80}>
+                  <p className="font-[family-name:var(--font-display)] text-sm font-bold text-brand">
+                    Step {item.step}
+                  </p>
+                  <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-muted">{item.detail}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+          <Reveal className="mt-10">
+            <Link
+              href={auditHref("home-audit-steps")}
+              className="inline-flex rounded-xl bg-brand px-6 py-3.5 font-bold text-white transition hover:bg-brand-deep"
+            >
+              {FREE_QA_AUDIT_LABEL}
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <AuditSamplePreview source="home-audit-sample" />
+
+      <section
+        className="border-t border-line bg-gradient-to-b from-background to-white py-14 sm:py-20"
+        aria-labelledby="services-preview-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-2xl">
+                <h2
+                  id="services-preview-heading"
+                  className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+                >
+                  QA Services
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed text-muted">
+                  Manual, API, automation, and performance — scoped to how you
+                  ship.
+                </p>
+              </div>
+              <Link
+                href="/services"
+                className="text-sm font-bold text-brand hover:text-brand-deep"
+              >
+                All services →
+              </Link>
+            </div>
+          </Reveal>
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2">
+            {services.map((service, index) => (
+              <li key={service.slug}>
+                <Reveal delayMs={index * 60}>
+                  <article className="h-full border-t border-brand/25 pt-5">
+                    <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
                       {service.title}
                     </h3>
                     <p className="mt-2 text-base leading-relaxed text-muted">
-                      {service.description}
+                      {service.summary}
                     </p>
+                    <Link
+                      href={`/services#${service.slug}`}
+                      className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                    >
+                      Learn more →
+                    </Link>
                   </article>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+          <Reveal className="mt-12">
+            <AiServiceBanner source="home-services" />
+          </Reveal>
+        </div>
+      </section>
 
-        {/* Tech Stack */}
-        <section
-          id="tech"
-          className="border-t border-line bg-surface py-20 sm:py-24"
-          aria-labelledby="tech-heading"
-        >
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <section
+        className="border-t border-line bg-brand-deep py-14 sm:py-20"
+        aria-labelledby="outcomes-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
             <div className="max-w-2xl">
               <h2
-                id="tech-heading"
-                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+                id="outcomes-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
               >
-                Core Testing Stack
+                Built to help you move faster
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-muted">
-                Industry-standard tools we use to deliver reliable, repeatable
-                quality signals.
+              <p className="mt-4 text-lg text-blue-100">
+                Flexibility without overhead. Confidence without second-guessing.
+                Visibility from kickoff to release.
               </p>
             </div>
+          </Reveal>
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2">
+            {outcomePillars.map((item, index) => (
+              <li key={item.title}>
+                <Reveal delayMs={index * 70}>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-blue-100">{item.detail}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-            <ul className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-              {techStack.map((tool) => (
-                <li key={tool.name}>
-                  <div className="group flex items-center gap-3 rounded-full border border-brand/20 bg-gradient-to-r from-white to-brand-soft/60 px-5 py-3 shadow-[0_0_20px_rgba(37,99,235,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-brand/40 hover:shadow-2xl hover:shadow-brand/25">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand font-[family-name:var(--font-display)] text-xs font-bold text-white shadow-md shadow-brand/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-deep">
+      <section
+        className="border-t border-line bg-surface py-14 sm:py-20"
+        aria-labelledby="packages-preview-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2
+                id="packages-preview-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Monthly Packages
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted">
+                $999 · $1,899 · $2,799 — ~40 QA hours every week on each plan.
+                Price buys depth, not a thinner clock.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal>
+            <PackageGrid />
+          </Reveal>
+          <p className="mt-10 text-center text-sm text-muted">
+            Shipping a chatbot or RAG feature? AI testing stays separate —{" "}
+            <Link
+              href="/pricing#ai-testing"
+              className="font-semibold text-brand hover:text-brand-deep"
+            >
+              see AI testing options
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/ai"
+              className="font-semibold text-brand hover:text-brand-deep"
+            >
+              explore the AI lane
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      <CaseStudiesSection />
+
+      <ReviewsCarousel />
+
+      <section
+        className="border-t border-line bg-white py-14 sm:py-20"
+        aria-labelledby="workflows-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="workflows-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Fits the tools you already use
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                We plug into your issue tracker, chat, and CI — so QA doesn&apos;t
+                live in a side channel.
+              </p>
+            </div>
+          </Reveal>
+          <ul className="mt-12 flex flex-wrap gap-3">
+            {workflowTools.map((tool, index) => (
+              <li key={tool.name}>
+                <Reveal delayMs={index * 40}>
+                  <div className="flex items-center gap-3 rounded-full border border-brand/15 bg-sky-50/70 px-4 py-2.5 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:bg-white">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand font-[family-name:var(--font-display)] text-xs font-bold text-white">
                       {tool.mark}
                     </span>
-                    <span className="pr-1 font-[family-name:var(--font-display)] text-base font-semibold text-slate-900">
+                    <span className="font-[family-name:var(--font-display)] text-sm font-semibold text-slate-900">
                       {tool.name}
                     </span>
                   </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-        {/* Lead Capture / Contact */}
-        <section
-          id="contact"
-          className="border-t border-line bg-gradient-to-b from-sky-50 to-white py-20 sm:py-24"
-          aria-labelledby="contact-heading"
-        >
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-            <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
-              <div>
-                <h2
-                  id="contact-heading"
-                  className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
-                >
-                  Start Your Free QA Audit
-                </h2>
-                <p className="mt-4 text-lg leading-relaxed text-muted">
-                  Share your product context and release goals. Our team will
-                  respond with a practical quality assessment plan.
-                </p>
-                <p className="mt-6 text-sm text-muted">
-                  Prefer email?{" "}
-                  <a
-                    href="mailto:info@testsynclab.com"
-                    className="font-semibold text-brand hover:text-brand-deep"
-                  >
-                    info@testsynclab.com
-                  </a>
-                </p>
-              </div>
-
-              <form
-                action={submitContact}
-                className="rounded-2xl border border-line bg-white p-6 shadow-xl shadow-brand/10 sm:p-8"
-              >
-                {sent ? (
-                  <p
-                    className="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800"
-                    role="status"
-                  >
-                    Thank you — your message was received. We&apos;ll be in touch
-                    shortly.
-                  </p>
-                ) : null}
-                {error ? (
-                  <p
-                    className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
-                    role="alert"
-                  >
-                    Please complete all fields before submitting.
-                  </p>
-                ) : null}
-
-                <div className="space-y-5">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="mb-1.5 block text-sm font-semibold text-slate-700"
-                    >
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      autoComplete="name"
-                      placeholder="Alex Morgan"
-                      className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="mb-1.5 block text-sm font-semibold text-slate-700"
-                    >
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      autoComplete="email"
-                      placeholder="alex@company.com"
-                      className="w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="mb-1.5 block text-sm font-semibold text-slate-700"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      placeholder="Tell us about your product, stack, and release timeline..."
-                      className="w-full resize-y rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="inline-flex w-full items-center justify-center rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-deep hover:shadow-2xl hover:shadow-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-                  >
-                    Submit Request
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Comprehensive footer */}
-      <footer
-        className="border-t border-line bg-slate-950 text-slate-300"
-        aria-labelledby="footer-heading"
+      <section
+        className="border-t border-line bg-gradient-to-b from-sky-50/60 to-background py-14 sm:py-20"
+        aria-labelledby="industries-heading"
       >
-        <h2 id="footer-heading" className="sr-only">
-          Company information
-        </h2>
-        <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-            <div className="lg:col-span-2">
-              <p className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
-                TestSync Lab
-              </p>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-                TestSync Lab is a software quality assurance partner for
-                product and engineering teams that need dependable release
-                confidence. We combine disciplined manual testing, API
-                validation, automation engineering, and performance analysis to
-                reduce production risk, accelerate delivery cycles, and help
-                organizations ship software that performs under real-world
-                conditions.
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="industries-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Built for product teams shipping weekly
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                Same retainer model — tailored risk focus by product type.
               </p>
             </div>
+          </Reveal>
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2">
+            {industries.map((item, index) => (
+              <li key={item.title}>
+                <Reveal delayMs={index * 60}>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-muted">{item.detail}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[0.14em] text-blue-300">
-                  Contact
-                </h3>
-                <a
-                  href="mailto:info@testsynclab.com"
-                  className="mt-3 inline-block text-base font-medium text-white transition-colors hover:text-blue-300"
-                >
-                  info@testsynclab.com
-                </a>
-              </div>
-
-              <div>
-                <h3 className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[0.14em] text-blue-300">
-                  Follow Us
-                </h3>
-                <ul className="mt-3 flex flex-wrap gap-3">
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/40 hover:bg-white/10"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        className="h-4 w-4 text-blue-300"
-                      >
-                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.8-2.05 4.06 0 4.8 2.67 4.8 6.15V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.5V23h-4V8.5z" />
-                      </svg>
-                      LinkedIn
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://twitter.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/40 hover:bg-white/10"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        className="h-4 w-4 text-blue-300"
-                      >
-                        <path d="M18.244 2H21.5l-7.5 8.57L22.5 22h-6.59l-5.16-6.74L5.1 22H1.84l8.03-9.17L1.5 2h6.75l4.66 6.17L18.244 2zm-1.16 18h1.82L7.02 3.94H5.07L17.084 20z" />
-                      </svg>
-                      X / Twitter
-                    </a>
-                  </li>
-                </ul>
-              </div>
+      <section
+        className="border-t border-line bg-surface py-14 sm:py-20"
+        aria-labelledby="markets-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="markets-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Remote QA for product teams shipping weekly
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                USD retainers, English reporting, Slack/Jira, and follow-the-sun
+                verification — so releases stay covered wherever your team sits.
+              </p>
             </div>
+          </Reveal>
+          <ul className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <li>
+              <Reveal>
+                <article className="h-full border-t border-brand/25 pt-5">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {qaAgency.navLabel}
+                  </h3>
+                  <p className="mt-2 text-muted">{qaAgency.navDescription}</p>
+                  <Link
+                    href={qaAgency.path}
+                    className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    About our QA agency →
+                  </Link>
+                </article>
+              </Reveal>
+            </li>
+            {markets.map((market, index) => (
+              <li key={market.path}>
+                <Reveal delayMs={(index + 1) * 60}>
+                  <article className="h-full border-t border-brand/25 pt-5">
+                    <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                      {market.navLabel}
+                    </h3>
+                    <p className="mt-2 text-muted">{market.navDescription}</p>
+                    <Link
+                      href={market.path}
+                      className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                    >
+                      {market.eyebrow} QA services →
+                    </Link>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+            <li>
+              <Reveal delayMs={180}>
+                <article className="h-full border-t border-brand/25 pt-5">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                    {outsourcedQa.navLabel}
+                  </h3>
+                  <p className="mt-2 text-muted">{outsourcedQa.navDescription}</p>
+                  <Link
+                    href={outsourcedQa.path}
+                    className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                  >
+                    How outsourced QA works →
+                  </Link>
+                </article>
+              </Reveal>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-white py-14 sm:py-20"
+        aria-labelledby="faq-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <h2
+                id="faq-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                FAQ
+              </h2>
+              <Link
+                href="/faq"
+                className="text-sm font-bold text-brand hover:text-brand-deep"
+              >
+                View all FAQs →
+              </Link>
+            </div>
+          </Reveal>
+          <div className="mx-auto mt-10 max-w-3xl">
+            <FaqList showCategories={false} limit={6} />
+            <FaqCta />
           </div>
         </div>
+      </section>
 
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-            <p>
-              © {new Date().getFullYear()} TestSync Lab. All rights reserved.
+      <section className="border-t border-line bg-brand-deep py-12 sm:py-16">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center sm:px-8">
+          <div className="max-w-xl">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Need QA this sprint?
+            </h2>
+            <p className="mt-3 text-lg text-blue-100">
+              Book a free audit today. We&apos;ll tell you exactly what to test
+              before your next release. Or email{" "}
+              <a
+                href={`mailto:${SITE_EMAIL}`}
+                className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+              >
+                {SITE_EMAIL}
+              </a>
+              .
             </p>
-            <nav aria-label="Legal">
-              <ul className="flex flex-wrap gap-x-5 gap-y-2">
-                <li>
-                  <a
-                    href="/privacy"
-                    className="transition-colors hover:text-blue-300"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/terms"
-                    className="transition-colors hover:text-blue-300"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/cookies"
-                    className="transition-colors hover:text-blue-300"
-                  >
-                    Cookie Policy
-                  </a>
-                </li>
-              </ul>
-            </nav>
           </div>
+          <Link
+            href={auditHref("home-footer")}
+            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-brand-deep transition duration-200 hover:bg-brand-soft"
+          >
+            {FREE_QA_AUDIT_LABEL}
+          </Link>
         </div>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }

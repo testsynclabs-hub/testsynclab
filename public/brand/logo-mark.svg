@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="TestSync Lab">
+  <rect width="512" height="512" rx="112" fill="#1D4ED8"/>
+  <!-- Sync arcs -->
+  <path d="M156 210c28-48 92-72 148-58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+  <path d="M356 302c-28 48-92 72-148 58" fill="none" stroke="#93C5FD" stroke-width="28" stroke-linecap="round"/>
+  <!-- Check / quality mark -->
+  <path d="M188 268l52 52 112-128" fill="none" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
