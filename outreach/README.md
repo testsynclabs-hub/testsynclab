@@ -13,6 +13,8 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 | `calendly-setup.md` | Free Calendly/Cal.com → set `NEXT_PUBLIC_BOOKING_URL` on Vercel |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
 | `leads-25-us-ca-au.csv` | **25 ready sends** — USA / Canada / Australia, public founder/hello emails only |
+| `leads-25-whitelabel-agencies.csv` | **25 agency partnership leads** — software houses (US/CA/AU/PK); public hello/info/contact/sales only |
+| `whitelabel-agency-email-plain.txt` | Plain-text white-label partnership first touch (agency owners/PMs) |
 | `cold-email-template.html` | Short HTML: purple-cow hook + Alibaba-style footer + Unsubscribe |
 | `cold-email-plain.txt` | Short plain-text first touch (preferred for cold starts) |
 

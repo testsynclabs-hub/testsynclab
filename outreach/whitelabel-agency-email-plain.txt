@@ -1,0 +1,24 @@
+Subject (pick this one):
+You keep the client — we handle QA under your delivery
+
+---
+
+Hi {{first_name}},
+
+Quick partnership note for {{company}}.
+
+TestSync Lab is a remote QA team (retainers from $999/mo). We work white-label with software houses and product agencies: you stay the face of the client relationship; we run verification (manual, API, Playwright) and send engineer-ready bugs — steps, severity, evidence — your PMs can drop into the sprint.
+
+Pitch in one line: you keep the client; we handle QA under your delivery.
+
+If that would help on a current client build or retainer, reply and we can do a short intro (NDA-friendly). No deck required.
+
+{{sender_name}}
+TestSync Lab · info@testsynclab.com
+https://www.testsynclab.com
+White-label QA retainers from $999/mo
+
+---
+Privacy: https://www.testsynclab.com/privacy
+Unsubscribe: https://www.testsynclab.com/unsubscribe
+Or reply “stop” and we won’t email again.
