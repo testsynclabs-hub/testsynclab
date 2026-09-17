@@ -79,19 +79,23 @@ export function ContactForm({
         message: asString(formData.get("message")),
       };
 
+      // Prefer server SMTP / Resend / Brevo so inbox mail has no FormSubmit “Sponsor” ad.
+      const result = await submitContact(prev, formData);
+      if (result.status === "success") {
+        trackLeadSubmit({ plan: fields.plan, source: fields.source });
+        return result;
+      }
+
+      // Fallback only if server mail is not configured / fails.
       try {
         if (await sendLeadFromBrowser(fields)) {
           trackLeadSubmit({ plan: fields.plan, source: fields.source });
           return { status: "success" };
         }
       } catch {
-        // Fall through to the server action (SMTP / Resend / Brevo).
+        // Fall through to server error message.
       }
 
-      const result = await submitContact(prev, formData);
-      if (result.status === "success") {
-        trackLeadSubmit({ plan: fields.plan, source: fields.source });
-      }
       return result;
     },
     initialContactState,
