@@ -1,4 +1,4 @@
-import { SITE_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 // Same activated FormSubmit inbox used by the contact form (public form id).
 const FORMSUBMIT_FORM_ID = "d034c3ad4f74e1083b1ac982b58fcaf8";
@@ -75,7 +75,6 @@ function appendCv(data: FormData, cv: File) {
   data.set("cv", cv, cv.name);
 }
 
-/** AJAX endpoint — reliable for text fields, often drops file attachments. */
 async function postAjax(url: string, data: FormData) {
   const response = await fetch(url, {
     method: "POST",
@@ -91,8 +90,12 @@ async function postAjax(url: string, data: FormData) {
 
 /**
  * Classic FormSubmit multipart POST (not /ajax/).
- * This path is what FormSubmit documents for file uploads — AJAX frequently
- * accepts the request but never attaches the file (you only see cv_filename).
+ *
+ * Important: do NOT set `_next` back to testsynclab.com. FormSubmit redirects
+ * the browser to `_next` after upload; that full navigation was causing
+ * intermittent DNS_PROBE_FINISHED_NXDOMAIN on first hit (refresh then worked).
+ * Stay on FormSubmit's own thank-you response instead — our React UI already
+ * shows "Application received" without needing a redirect home.
  */
 async function postClassicWithAttachment(
   endpoint: string,
@@ -102,103 +105,22 @@ async function postClassicWithAttachment(
   const data = new FormData();
   appendCareerFields(data, fields);
   appendCv(data, cv);
-  // Keep the iframe/browser on-site after FormSubmit processes the upload.
-  data.set("_next", `${SITE_URL}/become-a-tester?applied=1`);
+  // Disable FormSubmit redirect back to our domain.
+  data.set("_next", "https://formsubmit.co/thank-you-page");
 
   const response = await fetch(endpoint, {
     method: "POST",
     body: data,
-    redirect: "follow",
+    // Don't follow redirects into a top-level navigation of our site.
+    redirect: "manual",
   });
 
-  // Classic endpoint returns HTML (thank-you / redirect). Treat 2xx as delivered.
-  return response.ok || response.type === "opaqueredirect";
-}
-
-/**
- * Hidden-iframe classic submit — another multipart path when fetch is blocked.
- */
-function postClassicIframeWithAttachment(
-  endpoint: string,
-  fields: CareerLeadFields,
-  cv: File,
-): Promise<boolean> {
-  if (typeof document === "undefined") return Promise.resolve(false);
-
-  return new Promise((resolve) => {
-    const iframeName = `careers_fs_${Date.now()}`;
-    const iframe = document.createElement("iframe");
-    iframe.name = iframeName;
-    iframe.title = "careers-upload";
-    iframe.setAttribute("aria-hidden", "true");
-    iframe.style.cssText =
-      "position:absolute;width:0;height:0;border:0;visibility:hidden";
-    document.body.appendChild(iframe);
-
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.enctype = "multipart/form-data";
-    form.action = endpoint;
-    form.target = iframeName;
-    form.style.display = "none";
-
-    const addHidden = (name: string, value: string) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = name;
-      input.value = value;
-      form.appendChild(input);
-    };
-
-    addHidden("name", fields.name);
-    addHidden("email", fields.email);
-    addHidden("_replyto", fields.email);
-    addHidden(
-      "_subject",
-      `[TestSync Lab] New tester applied: ${fields.name} (${fields.interest})`,
-    );
-    addHidden("_template", "table");
-    addHidden("_captcha", "false");
-    addHidden("location", fields.location || "—");
-    addHidden("phone", fields.phone || "—");
-    addHidden("experience", fields.experience || "—");
-    addHidden("skills", fields.skills || "—");
-    addHidden("linkedin", fields.linkedin || "—");
-    addHidden("interest", fields.interest);
-    addHidden("source", fields.source || "become-a-tester");
-    addHidden("note", fields.note);
-    addHidden("from_name", SITE_NAME);
-    addHidden("_cc", SITE_EMAIL);
-    addHidden("_next", `${SITE_URL}/become-a-tester?applied=1`);
-
-    const fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.name = "attachment";
-    const transfer = new DataTransfer();
-    transfer.items.add(cv);
-    fileInput.files = transfer.files;
-    form.appendChild(fileInput);
-
-    document.body.appendChild(form);
-
-    let settled = false;
-    const finish = (ok: boolean) => {
-      if (settled) return;
-      settled = true;
-      form.remove();
-      iframe.remove();
-      resolve(ok);
-    };
-
-    iframe.addEventListener("load", () => finish(true), { once: true });
-    window.setTimeout(() => finish(true), 10000);
-
-    try {
-      form.submit();
-    } catch {
-      finish(false);
-    }
-  });
+  // 2xx, or opaque/manual redirect from FormSubmit = accepted.
+  return (
+    response.ok ||
+    response.type === "opaqueredirect" ||
+    (response.status >= 300 && response.status < 400)
+  );
 }
 
 /** Browser multipart post so CV files can reach FormSubmit. */
@@ -218,14 +140,7 @@ export async function sendCareerFromBrowser(
           return { ok: true, cvAttached: true };
         }
       } catch {
-        // try iframe / next endpoint
-      }
-      try {
-        if (await postClassicIframeWithAttachment(endpoint, fields, cv)) {
-          return { ok: true, cvAttached: true };
-        }
-      } catch {
-        // continue
+        // try next endpoint / AJAX fallback
       }
     }
   }
@@ -234,7 +149,6 @@ export async function sendCareerFromBrowser(
   const ajaxData = new FormData();
   appendCareerFields(ajaxData, fields);
   if (cv) {
-    // Keep metadata so inbox still shows which file was attempted.
     ajaxData.set("cv_filename", cv.name);
     ajaxData.set("cv_size_bytes", String(cv.size));
     ajaxData.set(
