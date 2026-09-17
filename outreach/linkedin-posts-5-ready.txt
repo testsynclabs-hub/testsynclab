@@ -2,6 +2,13 @@
 
 Post from personal profile (Abid / Hamid). 1 post / day max. Soft CTA. No fake clients/reviews.
 
+Images (attach with each post):
+1. `outreach/linkedin-assets/linkedin-post-1-engineer-ready-bugs.png`
+2. `outreach/linkedin-assets/linkedin-post-2-friday-release.png`
+3. `outreach/linkedin-assets/linkedin-post-3-whitelabel.png`
+4. `outreach/linkedin-assets/linkedin-post-4-5-flows.png`
+5. `outreach/linkedin-assets/linkedin-post-5-retainers.png`
+
 ## Images (attach with each post)
 
 | Post | Image file |
