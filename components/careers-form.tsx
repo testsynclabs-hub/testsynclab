@@ -198,20 +198,21 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
           return { ...serverResult, values: nextValues };
         }
 
-        // Also push multipart to FormSubmit (helps when SMTP is unset / CV is large).
-        let formSubmitOk = false;
+        // Also push multipart to FormSubmit classic endpoint (AJAX drops files).
+        let browserResult = { ok: false, cvAttached: false };
         try {
-          formSubmitOk = await sendCareerFromBrowser(fields, cv);
+          browserResult = await sendCareerFromBrowser(fields, cv);
         } catch {
-          formSubmitOk = false;
+          browserResult = { ok: false, cvAttached: false };
         }
 
-        if (serverResult.status === "success" || formSubmitOk) {
+        if (serverResult.status === "success" || browserResult.ok) {
           trackLeadSubmit({ plan: "careers", source: fields.source });
           return {
             status: "success",
-            // Only trust server attachment confirmation — FormSubmit often strips files.
-            cvAttached: Boolean(serverResult.cvAttached),
+            cvAttached: Boolean(
+              serverResult.cvAttached || browserResult.cvAttached,
+            ),
             values: nextValues,
           };
         }
@@ -219,11 +220,12 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         return { ...serverResult, values: nextValues };
       } catch {
         try {
-          if (await sendCareerFromBrowser(fields, cv)) {
+          const browserResult = await sendCareerFromBrowser(fields, cv);
+          if (browserResult.ok) {
             trackLeadSubmit({ plan: "careers", source: fields.source });
             return {
               status: "success",
-              cvAttached: false,
+              cvAttached: browserResult.cvAttached,
               values: nextValues,
             };
           }
