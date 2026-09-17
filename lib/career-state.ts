@@ -14,4 +14,6 @@ export type CareerState = {
   status: "idle" | "success" | "validation" | "delivery";
   message?: string;
   values?: CareerFormValues;
+  /** True when the CV file itself was emailed (not just the form fields). */
+  cvAttached?: boolean;
 };

@@ -48,7 +48,7 @@ async function postFormData(url: string, data: FormData) {
   // CV uploads can be slow — wait for a real JSON body before claiming success.
   const body = (await Promise.race([
     response.json().catch(() => null),
-    new Promise<null>((resolve) => setTimeout(() => resolve(null), 12000)),
+    new Promise<null>((resolve) => setTimeout(() => resolve(null), 20000)),
   ])) as { success?: boolean | string; message?: string } | null;
   return { ok: response.ok, body };
 }
@@ -76,7 +76,15 @@ function buildFormData(fields: CareerLeadFields, cv?: File | null) {
   data.set("from_name", SITE_NAME);
   // Deliver to the business inbox (FormSubmit activated address).
   data.set("_cc", SITE_EMAIL);
-  if (cv) data.set("cv", cv, cv.name);
+
+  if (cv) {
+    // FormSubmit docs / community commonly expect the file field as "attachment".
+    // Send under both names for better delivery odds.
+    data.set("attachment", cv, cv.name);
+    data.set("cv", cv, cv.name);
+    data.set("cv_filename", cv.name);
+    data.set("cv_size_bytes", String(cv.size));
+  }
   return data;
 }
 

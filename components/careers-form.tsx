@@ -51,7 +51,7 @@ function readValues(formData: FormData): CareerFormValues {
   };
 }
 
-function SuccessPanel() {
+function SuccessPanel({ cvAttached }: { cvAttached?: boolean }) {
   return (
     <div
       className="flex min-h-[420px] flex-col items-center justify-center rounded-2xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-8 text-center shadow-xl shadow-emerald-900/5 sm:p-10"
@@ -65,9 +65,21 @@ function SuccessPanel() {
         Application received
       </h2>
       <p className="mt-3 max-w-md text-base leading-relaxed text-emerald-900/80">
-        Thanks — your details and CV were sent to{" "}
-        <span className="font-semibold">{SITE_EMAIL}</span>. Next step if there
-        is a fit: initial call → final interview → selected or rejected.
+        {cvAttached === false ? (
+          <>
+            Thanks — your details were sent to{" "}
+            <span className="font-semibold">{SITE_EMAIL}</span>. Please also
+            email your CV to the same address with subject “Become a tester —
+            CV” so we have the file.
+          </>
+        ) : (
+          <>
+            Thanks — your details and CV were sent to{" "}
+            <span className="font-semibold">{SITE_EMAIL}</span>. Next step if
+            there is a fit: initial call → final interview → selected or
+            rejected.
+          </>
+        )}
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <Link
@@ -171,33 +183,66 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         };
       }
 
-      try {
-        if (await sendCareerFromBrowser(fields, cv)) {
-          trackLeadSubmit({ plan: "careers", source: fields.source });
-          return { status: "success" };
-        }
-      } catch {
-        // Fall through to server providers.
-      }
-
       const serverData = new FormData();
       for (const [key, value] of Object.entries(fields)) {
         serverData.set(key, value);
       }
       serverData.set("cv", cv, cv.name);
 
-      const result = await submitCareer(_prev, serverData);
-      if (result.status === "success") {
-        trackLeadSubmit({ plan: "careers", source: fields.source });
-        return result;
+      // Prefer server SMTP/Resend/Brevo so the CV is a real email attachment.
+      // FormSubmit AJAX often returns success while dropping the file.
+      try {
+        const serverResult = await submitCareer(_prev, serverData);
+        if (serverResult.status === "success" && serverResult.cvAttached) {
+          trackLeadSubmit({ plan: "careers", source: fields.source });
+          return { ...serverResult, values: nextValues };
+        }
+
+        // Also push multipart to FormSubmit (helps when SMTP is unset / CV is large).
+        let formSubmitOk = false;
+        try {
+          formSubmitOk = await sendCareerFromBrowser(fields, cv);
+        } catch {
+          formSubmitOk = false;
+        }
+
+        if (serverResult.status === "success" || formSubmitOk) {
+          trackLeadSubmit({ plan: "careers", source: fields.source });
+          return {
+            status: "success",
+            // Only trust server attachment confirmation — FormSubmit often strips files.
+            cvAttached: Boolean(serverResult.cvAttached),
+            values: nextValues,
+          };
+        }
+
+        return { ...serverResult, values: nextValues };
+      } catch {
+        try {
+          if (await sendCareerFromBrowser(fields, cv)) {
+            trackLeadSubmit({ plan: "careers", source: fields.source });
+            return {
+              status: "success",
+              cvAttached: false,
+              values: nextValues,
+            };
+          }
+        } catch {
+          // Fall through.
+        }
       }
-      return { ...result, values: nextValues };
+
+      return {
+        status: "delivery",
+        message: `We could not email ${SITE_EMAIL} with your CV. Please email the file to ${SITE_EMAIL} with subject “Become a tester — CV”.`,
+        values: nextValues,
+      };
     },
     initialState,
   );
 
   if (state.status === "success") {
-    return <SuccessPanel />;
+    return <SuccessPanel cvAttached={state.cvAttached} />;
   }
 
   const draft = values;

@@ -352,44 +352,46 @@ export async function submitCareer(
   const html = careerHtml(fields);
 
   const senders = [sendViaSmtp, sendViaResend, sendViaBrevo];
-  for (const send of senders) {
-    try {
-      if (
-        await send({
-          replyTo: email,
-          subject,
-          text,
-          html,
-          attachment,
-        })
-      ) {
-        return { status: "success" };
-      }
-    } catch (error) {
-      console.error("Careers email attempt failed", error);
-    }
-  }
 
-  // If the CV was too large for server attach, still try a details-only ping
-  // so info@ knows someone applied.
-  if (attachment || cv.size > CV_SERVER_SAFE_BYTES) {
-    const pingSubject = `[TestSync Lab] New tester applied (details): ${name}`;
-    const pingText = `${text}\n\nNote: CV may need to be requested if attachment was too large for server mail (${cv.name}, ${cv.size} bytes).`;
+  // Prefer a real mail provider with the CV attached.
+  if (attachment) {
     for (const send of senders) {
       try {
         if (
           await send({
             replyTo: email,
-            subject: pingSubject,
-            text: pingText,
-            html: careerHtml(fields),
+            subject,
+            text,
+            html,
+            attachment,
           })
         ) {
-          return { status: "success" };
+          return { status: "success", cvAttached: true };
         }
       } catch (error) {
-        console.error("Careers details-only email failed", error);
+        console.error("Careers email attempt failed", error);
       }
+    }
+  }
+
+  // Details-only fallback (large CV or providers down). Caller may still try
+  // FormSubmit in the browser for the file.
+  const pingSubject = `[TestSync Lab] New tester applied (details): ${name}`;
+  const pingText = `${text}\n\nNote: CV file was not attached via server mail (${cv.name}, ${cv.size} bytes). Ask applicant to resend CV if missing.`;
+  for (const send of senders) {
+    try {
+      if (
+        await send({
+          replyTo: email,
+          subject: pingSubject,
+          text: pingText,
+          html: careerHtml(fields),
+        })
+      ) {
+        return { status: "success", cvAttached: false };
+      }
+    } catch (error) {
+      console.error("Careers details-only email failed", error);
     }
   }
 
