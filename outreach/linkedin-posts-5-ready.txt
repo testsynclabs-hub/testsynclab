@@ -2,6 +2,16 @@
 
 Post from personal profile (Abid / Hamid). 1 post / day max. Soft CTA. No fake clients/reviews.
 
+## Images (attach with each post)
+
+| Post | Image file |
+|------|------------|
+| 1 | `outreach/linkedin-images/linkedin-post-1-engineer-ready-bugs.png` |
+| 2 | `outreach/linkedin-images/linkedin-post-2-release-chaos.png` |
+| 3 | `outreach/linkedin-images/linkedin-post-3-whitelabel-handshake.png` |
+| 4 | `outreach/linkedin-images/linkedin-post-4-release-checklist.png` |
+| 5 | `outreach/linkedin-images/linkedin-post-5-remote-qa-available.png` |
+
 ---
 
 ## Post 1 — Hook (best opener)
