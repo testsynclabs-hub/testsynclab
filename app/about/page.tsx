@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import {
-  FoundersGrid,
-  TrustSignalsLight,
-} from "@/components/founders";
+import { TrustSignalsLight } from "@/components/founders";
 import { outcomePillars } from "@/lib/home-content";
 import {
   AI_CONSULT_LABEL,
@@ -111,18 +108,6 @@ export default function AboutPage() {
             >
               Follow us on LinkedIn →
             </a>
-          </div>
-
-          <div className="mt-14">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-slate-900">
-              Leadership
-            </h2>
-            <p className="mt-3 max-w-2xl text-muted">
-              Public faces stay honest — we only list people we can stand behind.
-            </p>
-            <div className="mt-6 max-w-xl">
-              <FoundersGrid />
-            </div>
           </div>
 
           <div className="mt-14">

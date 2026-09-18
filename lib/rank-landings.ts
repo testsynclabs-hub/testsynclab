@@ -141,7 +141,7 @@ export const rankLandings: RankLanding[] = [
       {
         title: "Agencies that sell seniors, deliver juniors",
         detail:
-          "Ask who does the work. Our founders stay close to delivery so strategy and execution do not drift apart.",
+          "Ask who does the work. Delivery stays close to strategy so execution does not drift apart.",
       },
       {
         title: "Hourly drift on busy weeks",

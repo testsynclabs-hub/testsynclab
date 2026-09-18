@@ -1,5 +1,3 @@
-import { SITE_LINKEDIN } from "@/lib/site";
-
 export type Founder = {
   name: string;
   initials: string;
@@ -10,19 +8,10 @@ export type Founder = {
 };
 
 /**
- * Public people cards — only ship real names.
- * Add a second founder when a personal LinkedIn is ready.
+ * Public people cards — only ship when a personal LinkedIn is ready.
+ * Keep empty so the site stays brand-first (no personal names).
  */
-export const founders: Founder[] = [
-  {
-    name: "Abid",
-    initials: "AB",
-    role: "Founding QA Partner",
-    bio: "Hands-on exploratory and release QA. Owns risk mapping, bug clarity, and the weekly quality cadence with your product team.",
-    focus: ["Manual & exploratory", "Release gates", "Client communication"],
-    linkedIn: SITE_LINKEDIN,
-  },
-];
+export const founders: Founder[] = [];
 
 export const trustSignals = [
   {

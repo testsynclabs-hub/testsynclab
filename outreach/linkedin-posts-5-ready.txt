@@ -1,6 +1,6 @@
 # LinkedIn — 5 ready posts (TestSync Lab)
 
-Post from personal profile (Abid / Hamid). 1 post / day max. Soft CTA. No fake clients/reviews.
+Post from a personal LinkedIn profile. 1 post / day max. Soft CTA. No fake clients/reviews.
 
 Images (attach with each post):
 1. `outreach/linkedin-assets/linkedin-post-1-engineer-ready-bugs.png`
