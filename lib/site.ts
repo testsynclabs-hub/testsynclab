@@ -1,31 +1,298 @@
-export const SITE_URL = "https://testsynclab.com" as const;
-
+/** Canonical host must match the live www URL (apex 308s to www). */
+export const SITE_URL = "https://www.testsynclab.com" as const;
 export const SITE_NAME = "TestSync Lab" as const;
+export const SITE_EMAIL = "info@testsynclab.com" as const;
+export const SITE_LINKEDIN =
+  "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "TestSync Lab | Enterprise Software Quality Assurance & Automation Services" as const;
+  "TestSync Lab | Remote QA Agency for SaaS Teams from $999" as const;
 
 export const SITE_DESCRIPTION =
-  "Top-tier B2B SQA agency specializing in automated testing, API validation, performance testing, and continuous QA integration for web and mobile platforms." as const;
+  "TestSync Lab is a remote QA agency for SaaS teams worldwide. Hire monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA — free audit, senior SQA without a full-time hire." as const;
 
-export const SITE_KEYWORDS = [
-  "Software Quality Assurance",
-  "QA Automation Agency",
-  "Playwright Testing",
-  "Selenium Automation",
-  "API Testing Services",
-  "Software Testing Pakistan",
-  "TestSync Lab",
+export const SITE_TAGLINE =
+  "Remote QA agency for SaaS teams that ship every week." as const;
+
+export const SITE_ALTERNATE_NAMES = [
+  "TestSync Lab QA",
+  "TestSync Lab QA Agency",
+  "Test Sync Lab",
 ] as const;
 
-export const SITE_EMAIL = "info@testsynclab.com" as const;
+export const SITE_KEYWORDS = [
+  "TestSync Lab",
+  "TestSync Lab QA agency",
+  "TestSync Lab QA",
+  "best QA company",
+  "QA agency",
+  "QA agency Lahore",
+  "software testing company",
+  "testing company",
+  "QA company Lahore",
+  "software testing company Pakistan",
+  "hire QA agency",
+  "remote QA agency",
+  "software QA agency",
+  "monthly QA retainer",
+  "software testing services",
+  "Playwright testing company",
+  "API testing services",
+  "outsourced QA for startups",
+  "QA automation agency",
+  "QA services USA",
+  "QA services Canada",
+  "outsourced QA United States",
+  "hire remote QA team",
+  "Free QA Audit",
+  "QA Testing Blog",
+  "Regression Testing",
+  "Remote QA Partner",
+  "AI testing services",
+  "chatbot testing",
+  "LLM QA",
+  "RAG testing",
+  "AI testing sprint",
+  "prompt regression testing",
+  "verification vs validation in software testing",
+  "severity vs priority in software testing",
+  "smoke testing vs sanity testing",
+  "regression testing meaning",
+  "software testing interview questions 2 years experience",
+  "SDLC vs STLC",
+  "load testing vs stress testing",
+  "best QA company USA",
+  "best QA services for startups",
+  "affordable outsourced QA",
+  "cheap QA outsourcing",
+  "hire QA testers USA",
+  "top QA agency",
+  "why software testing is important",
+  "what is SQA",
+  "benefits of software quality assurance",
+  "Playwright vs Selenium",
+  "how to choose a QA agency",
+] as const;
 
-export const SITE_SERVICES = [
-  "Manual Testing",
-  "API Testing",
-  "Test Automation",
-  "Performance Testing",
-  "Continuous QA Integration",
+/** Flat links for footer / sitemap-style lists */
+export const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/ai", label: "AI testing" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export type NavChild = {
+  href: string;
+  label: string;
+  description?: string;
+};
+
+export type PrimaryNavItem =
+  | { type: "link"; href: string; label: string }
+  | { type: "menu"; id: string; label: string; href?: string; children: NavChild[] };
+
+/** Testlio-style primary navigation with dropdowns */
+export const primaryNav: PrimaryNavItem[] = [
+  { type: "link", href: "/", label: "Home" },
+  {
+    type: "menu",
+    id: "services",
+    label: "Services",
+    href: "/services",
+    children: [
+      {
+        href: "/services",
+        label: "All services",
+        description: "Manual, API, automation, and performance under one retainer.",
+      },
+      {
+        href: "/services/manual-testing",
+        label: "Manual testing",
+        description: "Exploratory and regression coverage before every release.",
+      },
+      {
+        href: "/services/api-testing",
+        label: "API testing",
+        description: "Contract and integration checks that protect your backend.",
+      },
+      {
+        href: "/services/playwright-automation",
+        label: "Playwright automation",
+        description: "Playwright suites wired into CI for critical paths.",
+      },
+      {
+        href: "/services/performance-testing",
+        label: "Performance testing",
+        description: "Load signals and release gates for traffic spikes.",
+      },
+      {
+        href: "/ai",
+        label: "AI testing",
+        description: "Chatbots, RAG, LLM evals, and AI product QA.",
+      },
+    ],
+  },
+  { type: "link", href: "/pricing", label: "Pricing" },
+  {
+    type: "menu",
+    id: "resources",
+    label: "Resources",
+    children: [
+      {
+        href: "/blog",
+        label: "Blog",
+        description: "Practical QA guides for product and engineering teams.",
+      },
+      {
+        href: "/faq",
+        label: "FAQ",
+        description: "Retainers, timelines, and how engagements work.",
+      },
+      {
+        href: "/ai",
+        label: "AI testing guide",
+        description: "Chatbots, RAG, LLM evals — and how we price the lane.",
+      },
+      {
+        href: "/blog/ai-testing-sprint-vs-retainer-addon",
+        label: "AI sprint vs add-on",
+        description: "When to buy a sprint vs fold AI into Growth or Scale.",
+      },
+    ],
+  },
+  {
+    type: "menu",
+    id: "company",
+    label: "Company",
+    children: [
+      {
+        href: "/about",
+        label: "About us",
+        description: "Hands-on QA with AI testing and optional AI build.",
+      },
+      {
+        href: "/best-qa-company",
+        label: "Best QA company",
+        description: "How to choose a QA partner — and when we fit.",
+      },
+      {
+        href: "/qa-agency",
+        label: "QA agency",
+        description: "Remote monthly retainers for product teams.",
+      },
+      {
+        href: "/qa-agency-lahore",
+        label: "QA agency Lahore",
+        description: "Lahore-based testing company for local and global teams.",
+      },
+      {
+        href: "/software-testing-company",
+        label: "Testing company",
+        description: "Manual, API, and Playwright software testing.",
+      },
+      {
+        href: "/qa-services-usa",
+        label: "QA for US teams",
+        description: "Remote retainers for United States product teams.",
+      },
+      {
+        href: "/qa-services-canada",
+        label: "QA for Canadian teams",
+        description: "USD packages and ET/PT-friendly handoffs.",
+      },
+      {
+        href: "/outsourced-qa",
+        label: "Outsourced QA",
+        description: "Senior coverage without a hiring cycle.",
+      },
+      {
+        href: "/qa-agency",
+        label: "QA agency overview",
+        description: "What TestSync Lab is — remote QA retainers for SaaS.",
+      },
+      {
+        href: "/contact",
+        label: "Contact",
+        description: "Book a free QA audit or ask about AI testing.",
+      },
+      {
+        href: "/become-a-tester",
+        label: "Become a tester",
+        description: "Apply, freelance with us, or request a CV review.",
+      },
+    ],
+  },
+] as const;
+
+export const services = [
+  {
+    slug: "manual-testing",
+    title: "Manual Testing",
+    summary:
+      "Exploratory and structured cycles that catch usability gaps, edge cases, and business-logic defects before release.",
+    details:
+      "We design pragmatic test charters, execute regression and smoke suites, and deliver clear bug reports your engineers can act on immediately.",
+  },
+  {
+    slug: "api-testing",
+    title: "API Testing",
+    summary:
+      "Contract, schema, and integration validation across REST and GraphQL so backends stay reliable under change.",
+    details:
+      "From Postman collections to automated contract checks, we harden the integrations your UI depends on.",
+  },
+  {
+    slug: "automation",
+    title: "Test Automation",
+    summary:
+      "Stable Playwright and Selenium suites wired into CI/CD so every commit is verified without slowing delivery.",
+    details:
+      "We prioritize high-value paths, reduce flaky tests, and leave you with maintainable automation — not a brittle script pile.",
+  },
+  {
+    slug: "performance",
+    title: "Performance Testing",
+    summary:
+      "Load, stress, and soak testing that surfaces bottlenecks early and proves your product scales with confidence.",
+    details:
+      "JMeter-based spot checks and performance budgets keep p95 latency and error rates inside release gates.",
+  },
+] as const;
+
+export const futureRoadmap = [
+  {
+    title: "BPO Support",
+    description:
+      "CSR, sales assistance, and chat support pods for teams that need reliable customer operations.",
+  },
+  {
+    title: "Custom Development",
+    description:
+      "On-demand engineering capacity when your roadmap needs an extra pair of hands beyond QA and AI.",
+  },
+] as const;
+
+export const team = [
+  {
+    title: "Founding QA partner",
+    detail:
+      "Hands-on manual, exploratory, and release quality — strategy stays next to execution.",
+  },
+  {
+    title: "Founding QA partner",
+    detail:
+      "Automation, API, and performance cadence so coverage compounds month over month.",
+  },
+  {
+    title: "In-house AI engineer",
+    detail:
+      "Supports AI testing on chatbots and LLM products — plus optional build sprints when you need a feature and the QA gate together.",
+  },
 ] as const;
 
 export const organizationJsonLd = {
@@ -33,36 +300,99 @@ export const organizationJsonLd = {
   "@type": ["Organization", "ProfessionalService"],
   name: SITE_NAME,
   legalName: SITE_NAME,
+  alternateName: ["TestSync", "Test Sync Lab", ...SITE_ALTERNATE_NAMES],
+  slogan: SITE_TAGLINE,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.svg`,
+  logo: `${SITE_URL}/brand/logo-icon-1024.png`,
   image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
   email: SITE_EMAIL,
+  brand: {
+    "@type": "Brand",
+    name: SITE_NAME,
+    slogan: SITE_TAGLINE,
+  },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
     email: SITE_EMAIL,
     availableLanguage: ["English"],
+    url: `${SITE_URL}/contact`,
   },
-  areaServed: "Worldwide",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lahore",
+    addressRegion: "Punjab",
+    addressCountry: "PK",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lahore" },
+    { "@type": "Country", name: "Pakistan" },
+    { "@type": "Country", name: "United States" },
+    { "@type": "Country", name: "Canada" },
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "Australia" },
+    "Worldwide",
+  ],
+  serviceType: [
+    "Software quality assurance",
+    "Manual testing",
+    "API testing",
+    "Test automation",
+    "Performance testing",
+    "AI product QA",
+  ],
   knowsAbout: [...SITE_KEYWORDS],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Software Quality Assurance Services",
-    itemListElement: SITE_SERVICES.map((service) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service,
-        provider: {
-          "@type": "Organization",
-          name: SITE_NAME,
-        },
+    name: "Monthly QA Retainers",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Basic",
+        price: "999",
+        priceCurrency: "USD",
+        description: "Manual testing retainer",
       },
-    })),
+      {
+        "@type": "Offer",
+        name: "Growth",
+        price: "1899",
+        priceCurrency: "USD",
+        description: "Manual + API + automation retainer",
+      },
+      {
+        "@type": "Offer",
+        name: "Scale",
+        price: "2799",
+        priceCurrency: "USD",
+        description: "Full-stack QA with dedicated lead cadence",
+      },
+      {
+        "@type": "Offer",
+        name: "AI Testing Sprint",
+        description:
+          "Scoped QA for chatbots, RAG, and LLM products — golden sets, jailbreak checks, and release gates",
+      },
+    ],
   },
-  sameAs: [
-    "https://www.linkedin.com/",
-    "https://twitter.com/",
-  ],
+  sameAs: [SITE_LINKEDIN],
+  mainEntityOfPage: `${SITE_URL}/qa-agency`,
+} as const;
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/brand/logo-icon-1024.png`,
+    },
+  },
+  inLanguage: "en-US",
 } as const;

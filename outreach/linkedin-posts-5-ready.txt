@@ -1,0 +1,133 @@
+# LinkedIn — 5 ready posts (TestSync Lab)
+
+Post from a personal LinkedIn profile. 1 post / day max. Soft CTA. No fake clients/reviews.
+
+Images (attach with each post):
+1. `outreach/linkedin-assets/linkedin-post-1-engineer-ready-bugs.png`
+2. `outreach/linkedin-assets/linkedin-post-2-friday-release.png`
+3. `outreach/linkedin-assets/linkedin-post-3-whitelabel.png`
+4. `outreach/linkedin-assets/linkedin-post-4-5-flows.png`
+5. `outreach/linkedin-assets/linkedin-post-5-retainers.png`
+
+## Images (attach with each post)
+
+| Post | Image file |
+|------|------------|
+| 1 | `outreach/linkedin-images/linkedin-post-1-engineer-ready-bugs.png` |
+| 2 | `outreach/linkedin-images/linkedin-post-2-release-chaos.png` |
+| 3 | `outreach/linkedin-images/linkedin-post-3-whitelabel-handshake.png` |
+| 4 | `outreach/linkedin-images/linkedin-post-4-release-checklist.png` |
+| 5 | `outreach/linkedin-images/linkedin-post-5-remote-qa-available.png` |
+
+---
+
+## Post 1 — Hook (best opener)
+
+Most QA notes say:
+
+“Please check.”
+
+Ours say:
+
+• what broke  
+• how bad it is  
+• exact steps  
+• expected vs actual  
+• evidence  
+
+You close with a build.  
+We start verification on our morning.  
+You wake up to engineer-ready bugs.
+
+That’s remote QA done like an engineering handoff — not a ticket dump.
+
+If useful: free QA audit → https://www.testsynclab.com/contact
+
+#QA #SaaS #SoftwareTesting
+
+---
+
+## Post 2 — Founder pain
+
+Shipping fast is not the hard part.
+
+The hard part is waking up to:
+
+“prod is weird”  
+“can someone check?”  
+“works on my machine”
+
+What you actually need before Friday release:
+
+a short risk map + bugs your engineers can paste into Jira.
+
+That’s what TestSync Lab sends.
+
+Manual · API · Playwright · optional AI testing  
+Retainers from $999/mo
+
+→ https://www.testsynclab.com
+
+#Startups #ProductEngineering #QA
+
+---
+
+## Post 3 — White-label (agencies)
+
+Software agencies: you keep the client.
+
+We handle QA under your delivery.
+
+• Your brand stays on the relationship  
+• We run verification (manual + API + Playwright)  
+• You get engineer-ready bugs your PMs can drop into the sprint  
+
+No “please check.”  
+No extra hiring.  
+No deck required.
+
+White-label QA retainers from $999/mo  
+Partnership note → info@testsynclab.com
+
+#AgencyLife #WhiteLabel #QA
+
+---
+
+## Post 4 — Practical tip (authority)
+
+Before your next release, test these 5 flows first:
+
+1. Auth / login / logout / password reset  
+2. Checkout / payment / failed payment  
+3. Core create → edit → delete path  
+4. Role permissions (what each user should NOT see)  
+5. Mobile Safari + one Android browser  
+
+If any of these are flaky, don’t ship “and hope.”
+
+Need a second set of eyes this week?  
+Free QA audit → https://www.testsynclab.com/contact
+
+#ReleaseManagement #SaaS #Testing
+
+---
+
+## Post 5 — Soft CTA / availability
+
+We’re taking on a few remote QA retainers for SaaS / AI product teams.
+
+Best fit if you:
+• ship weekly or biweekly  
+• don’t want a full-time QA hire yet  
+• want clear bugs, not vague tickets  
+
+What you get:
+overnight-style verification + engineer-ready reports + optional Playwright coverage.
+
+Reply “AUDIT” or book here:  
+https://www.testsynclab.com/contact
+
+TestSync Lab · Remote QA  
+www.testsynclab.com
+
+#RemoteWork #QATesting #B2B
