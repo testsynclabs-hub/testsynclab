@@ -173,7 +173,7 @@ export const primaryNav: PrimaryNavItem[] = [
       {
         href: "/about",
         label: "About us",
-        description: "QA founders with AI testing and optional AI build.",
+        description: "Hands-on QA with AI testing and optional AI build.",
       },
       {
         href: "/best-qa-company",
