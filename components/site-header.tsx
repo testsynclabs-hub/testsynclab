@@ -275,7 +275,7 @@ export function SiteHeader() {
                     <Chevron open={expanded} />
                   </button>
                   {expanded ? (
-                    <ul className="mt-1 space-y-1 border-l border-brand/20 py-1 pl-3">
+                    <ul className="mt-1 max-h-[50vh] space-y-1 overflow-y-auto overscroll-contain border-l border-brand/20 py-1 pl-3">
                       {item.children.map((child) => (
                         <li key={child.href + child.label}>
                           <Link
