@@ -189,6 +189,11 @@ export const primaryNav: PrimaryNavItem[] = [
         description: "Retainer vs full-time hire for SaaS teams.",
       },
       {
+        href: "/qa-retainer-vs-hiring",
+        label: "Retainer vs hiring",
+        description: "Cost and fit: monthly QA vs a full-time seat.",
+      },
+      {
         href: "/qa-agency",
         label: "QA agency",
         description: "Remote monthly retainers for product teams.",

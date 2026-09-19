@@ -7,6 +7,7 @@ const BLOG_PATH_LINKS: { path: string; label: string }[] = [
   { path: "/pricing", label: "pricing" },
   { path: "/best-qa-company", label: "best QA company" },
   { path: "/hire-qa-testers", label: "hire QA testers" },
+  { path: "/qa-retainer-vs-hiring", label: "QA retainer vs hiring" },
   { path: "/qa-agency", label: "QA agency" },
   { path: "/qa-agency-lahore", label: "QA agency Lahore" },
   { path: "/software-testing-company", label: "software testing company" },
@@ -56,6 +57,7 @@ export function linkifyBlogParagraph(text: string): ReactNode[] {
 export const blogRelatedServiceLinks = [
   { href: "/best-qa-company", label: "Best QA company" },
   { href: "/hire-qa-testers", label: "Hire QA testers" },
+  { href: "/qa-retainer-vs-hiring", label: "Retainer vs hiring" },
   { href: "/qa-agency", label: "QA agency" },
   { href: "/qa-services-usa", label: "QA for US teams" },
   { href: "/outsourced-qa", label: "Outsourced QA" },
