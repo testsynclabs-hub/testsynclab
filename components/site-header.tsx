@@ -179,7 +179,7 @@ export function SiteHeader() {
                     onMouseEnter={() => openDesktopMenu(item.id)}
                     onMouseLeave={scheduleCloseDesktopMenu}
                   >
-                    <div className="w-[22rem] rounded-2xl border border-line bg-white p-2 shadow-xl shadow-brand/10">
+                    <div className="max-h-[min(70vh,28rem)] w-[22rem] overflow-y-auto overscroll-contain rounded-2xl border border-line bg-white p-2 shadow-xl shadow-brand/10 [scrollbar-gutter:stable]">
                       {item.children.map((child) => (
                         <Link
                           key={child.href + child.label}
