@@ -24,7 +24,10 @@ export const SITE_KEYWORDS = [
   "TestSync Lab",
   "TestSync Lab QA agency",
   "TestSync Lab QA",
+  "hire QA testers",
+  "hire QA testers USA",
   "best QA company",
+  "best QA company USA",
   "QA agency",
   "QA agency Lahore",
   "software testing company",
@@ -179,6 +182,11 @@ export const primaryNav: PrimaryNavItem[] = [
         href: "/best-qa-company",
         label: "Best QA company",
         description: "How to choose a QA partner — and when we fit.",
+      },
+      {
+        href: "/hire-qa-testers",
+        label: "Hire QA testers",
+        description: "Retainer vs full-time hire for SaaS teams.",
       },
       {
         href: "/qa-agency",

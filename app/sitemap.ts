@@ -5,6 +5,21 @@ import { SITE_URL } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
+  const highPriority = new Set([
+    "/blog",
+    "/contact",
+    "/pricing",
+    "/ai",
+    "/qa-services-usa",
+    "/qa-services-canada",
+    "/outsourced-qa",
+    "/best-qa-company",
+    "/hire-qa-testers",
+    "/qa-agency",
+    "/software-testing-company",
+    "/qa-agency-lahore",
+  ]);
+
   const staticRoutes = [
     "",
     "/services",
@@ -17,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/qa-services-canada",
     "/outsourced-qa",
     "/best-qa-company",
+    "/hire-qa-testers",
     "/qa-agency",
     "/software-testing-company",
     "/qa-agency-lahore",
@@ -29,7 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
     "/cookies",
-    "/unsubscribe",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified,
@@ -38,21 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       path === ""
         ? 1
-        : path === "/blog" || path === "/contact"
+        : highPriority.has(path) || path.startsWith("/services/")
           ? 0.9
-          : path === "/pricing" ||
-              path === "/ai" ||
-              path === "/qa-services-usa" ||
-              path === "/qa-services-canada" ||
-              path === "/outsourced-qa" ||
-              path === "/best-qa-company" ||
-              path === "/qa-agency" ||
-              path === "/software-testing-company" ||
-              path === "/qa-agency-lahore" ||
-              path.startsWith("/services/")
-            ? 0.9
-            : path === "/services"
-              ? 0.85
+          : path === "/services"
+            ? 0.85
+            : path === "/privacy" || path === "/terms" || path === "/cookies"
+              ? 0.3
               : 0.7,
   }));
 

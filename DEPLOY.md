@@ -42,7 +42,7 @@ Site code already loads GA when the env var is present (`components/analytics.ts
 6. **Redeploy** Production (env vars apply on the next build).
 7. Open the live site, click around, then in GA check **Reports → Realtime** (can take 1–2 minutes).
 
-Optional conversion: successful contact submits send a `generate_lead` event (plan + source). Mark it as a key event in GA → Admin → Events if you want funnel reporting.
+Optional conversion: successful contact submits send a `generate_lead` event (plan, source, currency, value). **Mark `generate_lead` as a Key Event** in GA4 → Admin → Events → `generate_lead` → Mark as key event. Careers uses a separate `job_application` event so hiring does not inflate sales leads.
 
 ## 3) Connect testsynclab.com (Hostinger DNS)
 In Vercel → Project → Settings → Domains → add:

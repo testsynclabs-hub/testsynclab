@@ -11,6 +11,10 @@ import {
   getPost,
   getRelatedPosts,
 } from "@/lib/blog";
+import {
+  blogRelatedServiceLinks,
+  linkifyBlogParagraph,
+} from "@/lib/blog-links";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 type Props = {
@@ -133,7 +137,9 @@ export default async function BlogPostPage({ params }: Props) {
                 </h2>
                 <div className="mt-4 space-y-4 text-lg leading-relaxed text-slate-700">
                   {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                    <p key={paragraph.slice(0, 48)}>
+                      {linkifyBlogParagraph(paragraph)}
+                    </p>
                   ))}
                 </div>
                 {index === 1 ? (
@@ -163,39 +169,13 @@ export default async function BlogPostPage({ params }: Props) {
               Explore related services
             </p>
             <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
-              <li>
-                <Link href="/services" className="text-brand hover:text-brand-deep">
-                  All QA services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/playwright-automation"
-                  className="text-brand hover:text-brand-deep"
-                >
-                  Playwright automation
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/api-testing" className="text-brand hover:text-brand-deep">
-                  API testing
-                </Link>
-              </li>
-              <li>
-                <Link href="/qa-services-usa" className="text-brand hover:text-brand-deep">
-                  QA for US teams
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-brand hover:text-brand-deep">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/outsourced-qa" className="text-brand hover:text-brand-deep">
-                  Outsourced QA
-                </Link>
-              </li>
+              {blogRelatedServiceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-brand hover:text-brand-deep">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 

@@ -2,7 +2,7 @@
 
 import { useActionState, useState } from "react";
 import Link from "next/link";
-import { trackLeadSubmit } from "@/lib/analytics";
+import { trackCareerSubmit } from "@/lib/analytics";
 import { submitCareer } from "@/lib/actions/careers";
 import type { CareerFormValues, CareerState } from "@/lib/career-state";
 import {
@@ -194,7 +194,7 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
       try {
         const serverResult = await submitCareer(_prev, serverData);
         if (serverResult.status === "success" && serverResult.cvAttached) {
-          trackLeadSubmit({ plan: "careers", source: fields.source });
+          trackCareerSubmit({ source: fields.source });
           return { ...serverResult, values: nextValues };
         }
 
@@ -207,7 +207,7 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         }
 
         if (serverResult.status === "success" || browserResult.ok) {
-          trackLeadSubmit({ plan: "careers", source: fields.source });
+          trackCareerSubmit({ source: fields.source });
           return {
             status: "success",
             cvAttached: Boolean(
@@ -222,7 +222,7 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
         try {
           const browserResult = await sendCareerFromBrowser(fields, cv);
           if (browserResult.ok) {
-            trackLeadSubmit({ plan: "careers", source: fields.source });
+            trackCareerSubmit({ source: fields.source });
             return {
               status: "success",
               cvAttached: browserResult.cvAttached,

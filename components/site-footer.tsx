@@ -22,6 +22,7 @@ const companyLinks = [
 
 const marketLinks = [
   { href: "/best-qa-company", label: "Best QA company" },
+  { href: "/hire-qa-testers", label: "Hire QA testers" },
   { href: "/qa-agency", label: "QA agency" },
   { href: "/software-testing-company", label: "Testing company" },
   { href: "/qa-agency-lahore", label: "QA agency Lahore" },

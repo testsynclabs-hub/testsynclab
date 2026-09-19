@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { trackCtaClick } from "@/lib/analytics";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 
 type Variant = "banner" | "card" | "compact";
@@ -17,12 +20,19 @@ export function FreeQaAuditCta({
   body = "Share your product, stack, and next release. We map risks and a practical test plan — then you decide if a monthly retainer fits.",
 }: FreeQaAuditCtaProps) {
   const href = auditHref(source);
+  const onAuditClick = () => {
+    trackCtaClick({ source, label: "free_qa_audit" });
+  };
 
   if (variant === "compact") {
     return (
       <p className="mt-8 text-sm text-muted">
         Need release confidence?{" "}
-        <Link href={href} className="font-bold text-brand hover:text-brand-deep">
+        <Link
+          href={href}
+          onClick={onAuditClick}
+          className="font-bold text-brand hover:text-brand-deep"
+        >
           {FREE_QA_AUDIT_LABEL} →
         </Link>
       </p>
@@ -39,6 +49,7 @@ export function FreeQaAuditCta({
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href={href}
+            onClick={onAuditClick}
             className="inline-flex items-center justify-center rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-deep"
           >
             {FREE_QA_AUDIT_LABEL}
@@ -65,6 +76,7 @@ export function FreeQaAuditCta({
         </div>
         <Link
           href={href}
+          onClick={onAuditClick}
           className="inline-flex shrink-0 items-center justify-center rounded-xl bg-white px-6 py-3.5 text-base font-bold text-brand-deep transition duration-200 hover:bg-brand-soft"
         >
           {FREE_QA_AUDIT_LABEL}
