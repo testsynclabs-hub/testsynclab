@@ -35,9 +35,9 @@ export function sanitizePlan(value: string) {
 }
 
 export function sanitizeSource(value: string) {
-  const source = value.trim().toLowerCase().slice(0, 80);
+  const source = value.trim().toLowerCase().slice(0, 160);
   if (!source) return "direct";
-  if (/^[a-z0-9][a-z0-9_./:-]{0,79}$/.test(source)) return source;
+  if (/^[a-z0-9][a-z0-9_./:-]{0,159}$/.test(source)) return source;
   return "direct";
 }
 

@@ -500,7 +500,7 @@ export default function HomePage() {
               </p>
             </div>
           </Reveal>
-          <ul className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <li>
               <Reveal>
                 <article className="h-full border-t border-brand/25 pt-5">

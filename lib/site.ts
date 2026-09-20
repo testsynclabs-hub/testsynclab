@@ -45,6 +45,10 @@ export const SITE_KEYWORDS = [
   "QA automation agency",
   "QA services USA",
   "QA services Canada",
+  "QA services UK",
+  "QA services Australia",
+  "hire QA testers London",
+  "hire QA testers Sydney",
   "outsourced QA United States",
   "hire remote QA team",
   "Free QA Audit",
@@ -217,6 +221,16 @@ export const primaryNav: PrimaryNavItem[] = [
         href: "/qa-services-canada",
         label: "QA for Canadian teams",
         description: "USD packages and ET/PT-friendly handoffs.",
+      },
+      {
+        href: "/qa-services-uk",
+        label: "QA for UK teams",
+        description: "USD retainers with UK-hour overlap.",
+      },
+      {
+        href: "/qa-services-australia",
+        label: "QA for Australian teams",
+        description: "USD packages and AEST-friendly handoffs.",
       },
       {
         href: "/outsourced-qa",
