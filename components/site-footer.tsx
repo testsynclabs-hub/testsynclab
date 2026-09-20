@@ -29,6 +29,8 @@ const marketLinks = [
   { href: "/qa-agency-lahore", label: "QA agency Lahore" },
   { href: "/qa-services-usa", label: "QA for US teams" },
   { href: "/qa-services-canada", label: "QA for Canadian teams" },
+  { href: "/qa-services-uk", label: "QA for UK teams" },
+  { href: "/qa-services-australia", label: "QA for Australian teams" },
   { href: "/outsourced-qa", label: "Outsourced QA" },
 ] as const;
 

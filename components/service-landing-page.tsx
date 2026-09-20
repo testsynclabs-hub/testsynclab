@@ -32,7 +32,13 @@ export function ServiceLandingPage({ landing }: { landing: ServiceLanding }) {
           name: SITE_NAME,
           url: SITE_URL,
         },
-        areaServed: ["United States", "Canada", "Worldwide"],
+        areaServed: [
+          "United States",
+          "United Kingdom",
+          "Canada",
+          "Australia",
+          "Worldwide",
+        ],
         url: `${SITE_URL}${landing.path}`,
       },
       {

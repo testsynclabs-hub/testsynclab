@@ -21,9 +21,33 @@ Do **not** run Meta, Display, Performance Max, or YouTube first. Search only.
 8. Bid: **Manual CPC** or Maximize clicks with **$8 max CPC**.  
    Do **not** use Maximize conversions until you have ~15 real leads.
 
+## Region lock (required — click fraud)
+
+One country per campaign. Never “worldwide”.
+
+Google Ads → Locations:
+- Target: **United States**
+- Location options: **Presence: People in or regularly in your targeted locations**
+  - Do **not** use “People interested in your targeted locations”
+- Exclude (US campaign): Pakistan, India, Bangladesh, Nigeria, Vietnam, Indonesia, Philippines
+- Languages: English
+- Networks: Search **on**. Display, Search partners, Performance Max: **off**
+
+UK / Canada / Australia: duplicate the campaign later, change location + final URL. Do not mix countries in one campaign.
+
 ## Final URL (ads click here — not the homepage)
 
+US (run this first):
 `https://www.testsynclab.com/qa-services-usa?utm_source=google&utm_medium=cpc&utm_campaign=usa-search`
+
+UK (only after US works):
+`https://www.testsynclab.com/qa-services-uk?utm_source=google&utm_medium=cpc&utm_campaign=uk-search`
+
+Canada:
+`https://www.testsynclab.com/qa-services-canada?utm_source=google&utm_medium=cpc&utm_campaign=ca-search`
+
+Australia:
+`https://www.testsynclab.com/qa-services-australia?utm_source=google&utm_medium=cpc&utm_campaign=au-search`
 
 ## Campaign setup
 

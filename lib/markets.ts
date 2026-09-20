@@ -18,6 +18,8 @@ export type MarketPage = {
   pains: { title: string; detail: string }[];
   faqs: MarketFaq[];
   countryName: string;
+  ogLocale: string;
+  hreflang: string;
 };
 
 export const markets: MarketPage[] = [
@@ -93,6 +95,8 @@ export const markets: MarketPage[] = [
       },
     ],
     countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
   },
   {
     slug: "canada",
@@ -166,8 +170,172 @@ export const markets: MarketPage[] = [
       },
     ],
     countryName: "Canada",
+    ogLocale: "en_CA",
+    hreflang: "en-CA",
+  },
+  {
+    slug: "uk",
+    path: "/qa-services-uk",
+    navLabel: "QA for UK teams",
+    navDescription: "Remote QA retainers for UK SaaS — USD pricing, UK-hour overlap.",
+    eyebrow: "United Kingdom",
+    h1: "Remote QA services for UK product teams",
+    title: "QA Services UK | Remote Testing Retainers from $999",
+    description:
+      "Hire a remote software QA partner for UK startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira cadence and a free audit in 24 hours.",
+    keywords: [
+      "QA services UK",
+      "outsourced QA United Kingdom",
+      "hire QA testers London",
+      "software testing company UK",
+      "remote QA for UK startups",
+      "Playwright testing UK",
+    ],
+    intro:
+      "UK product teams in London, Manchester, Edinburgh, and remote-first companies hit the same release pressure as US peers — with a tighter hiring market. TestSync Lab gives you senior QA on a monthly USD retainer, with afternoon overlap into UK working hours and a follow-the-sun cycle on evening deploys.",
+    highlights: [
+      {
+        title: "UK-hour overlap, not a black box",
+        detail:
+          "Pakistan afternoon lines up with UK morning/midday for standups or Slack. Evening UK deploys are verified on our next working morning with reproducible bugs.",
+      },
+      {
+        title: "Clear USD packages",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. Finance can budget quality like any other vendor. Say if you need a UK-style invoice format before kickoff.",
+      },
+      {
+        title: "GDPR-minded access",
+        detail:
+          "Least-privilege staging, no unnecessary production data, NDA/terms before kickoff. Share a staging URL on the audit form — that is enough to start.",
+      },
+    ],
+    pains: [
+      {
+        title: "London QA hires are slow and expensive",
+        detail:
+          "A full-time UK tester plus recruiting is months of runway. A remote retainer covers critical paths this month, then you decide whether to hire.",
+      },
+      {
+        title: "You need engineer-ready bugs, not a ticket dump",
+        detail:
+          "We write severity, steps, environment, and evidence in Slack or Jira — the bar UK B2B buyers actually ask for.",
+      },
+      {
+        title: "Agencies that only sell junior hours",
+        detail:
+          "Busy sprints should not explode the invoice. A retainer reserves senior capacity so coverage does not stop when the release gets hard.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with UK companies if the team is remote?",
+        answer:
+          "Yes. Most retainers are built for English-speaking product teams. We invoice in USD, report in English, and use Slack/Jira. Coverage is remote — we do not pretend to sit in a UK office.",
+      },
+      {
+        question: "What overlap do you have with UK hours?",
+        answer:
+          "UK morning and midday overlap our afternoon for live questions. Default delivery is still follow-the-sun: you ship in your afternoon, we verify on our morning and drop bugs before your next working block.",
+      },
+      {
+        question: "Is $999 enough for a UK SaaS release train?",
+        answer:
+          "Basic is manual exploratory and regression for early products. Weekly shippers with APIs and CI usually fit Growth ($1,899) or Scale ($2,799). A free QA audit will say which — or if you need Enterprise.",
+      },
+    ],
+    countryName: "United Kingdom",
+    ogLocale: "en_GB",
+    hreflang: "en-GB",
+  },
+  {
+    slug: "australia",
+    path: "/qa-services-australia",
+    navLabel: "QA for Australian teams",
+    navDescription: "Remote QA retainers for AU SaaS — USD pricing, AEST-friendly handoffs.",
+    eyebrow: "Australia",
+    h1: "Remote QA services for Australian product teams",
+    title: "QA Services Australia | Remote Testing from $999",
+    description:
+      "Hire a remote software QA partner for Australian startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira cadence and a free audit in 24 hours.",
+    keywords: [
+      "QA services Australia",
+      "outsourced QA Australia",
+      "hire QA testers Sydney",
+      "software testing company Australia",
+      "remote QA for Australian startups",
+      "Playwright testing Melbourne",
+    ],
+    intro:
+      "Australian SaaS teams in Sydney, Melbourne, Brisbane, and Perth face US-style release pressure with a smaller local QA pool. TestSync Lab is a remote QA lab: senior testers, USD monthly retainers, and a cadence that catches overnight deploys before your next standup.",
+    highlights: [
+      {
+        title: "AEST-friendly verification",
+        detail:
+          "You close the AU day with a build. We start verification on our morning and drop engineer-ready bugs in Slack or Jira for your next working block.",
+      },
+      {
+        title: "USD retainers, no hourly drift",
+        detail:
+          "Same public pricing: $999 / $1,899 / $2,799. No surprise test-hour invoices after a busy sprint. Ask if finance needs a custom invoice format.",
+      },
+      {
+        title: "Fits AU engineering tools",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI — we work in the channels you already use. No extra portal to log into.",
+      },
+    ],
+    pains: [
+      {
+        title: "QA talent is scarce outside the biggest cities",
+        detail:
+          "Waiting on a Sydney or Melbourne full-time hire delays the next launch. A remote retainer starts in days, not hiring cycles.",
+      },
+      {
+        title: "Long shipping of bugs across timezones",
+        detail:
+          "Vague offshore dumps waste your morning. We write repro, severity, and evidence so engineers can fix on the first pass.",
+      },
+      {
+        title: "You still do Friday QA yourselves",
+        detail:
+          "Common in early AU SaaS. A retainer replaces heroics with a named cycle so launches are not gated on whoever is awake.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can Australian companies pay in USD?",
+        answer:
+          "Yes. Public retainers are priced in USD. If your finance team needs a custom invoice format, say so on the audit form and we will confirm before kickoff.",
+      },
+      {
+        question: "How do you handle the Australia timezone gap?",
+        answer:
+          "Most AU clients use async Slack plus a weekly cadence. The default model is follow-the-sun: you ship at the end of your day, we verify on our morning. Short live overlap can be scheduled when needed.",
+      },
+      {
+        question: "Is this only for Sydney SaaS?",
+        answer:
+          "No. Basic ($999) fits early products anywhere in Australia. Growth and Scale fit teams with APIs, CI, and a weekly release train in any AU city.",
+      },
+    ],
+    countryName: "Australia",
+    ogLocale: "en_AU",
+    hreflang: "en-AU",
   },
 ];
+
+export function getMarket(slug: string) {
+  return markets.find((market) => market.slug === slug);
+}
+
+export const marketLanguageAlternates = {
+  "en-US": "/qa-services-usa",
+  "en-CA": "/qa-services-canada",
+  "en-GB": "/qa-services-uk",
+  "en-AU": "/qa-services-australia",
+  "x-default": "/qa-services-usa",
+} as const;
 
 export const outsourcedQa = {
   path: "/outsourced-qa",
@@ -177,7 +345,7 @@ export const outsourcedQa = {
   h1: "Outsourced QA that product teams can actually run with",
   title: "Outsourced QA for Startups | Monthly Testing Retainers from $999",
   description:
-    "Outsource software QA without losing visibility. TestSync Lab monthly retainers cover manual testing, API validation, and Playwright automation for US and Canadian product teams from $999.",
+    "Outsource software QA without losing visibility. TestSync Lab monthly retainers cover manual testing, API validation, and Playwright automation for US, UK, Canadian, and Australian product teams from $999.",
   keywords: [
     "outsourced QA",
     "outsource software testing",
@@ -200,9 +368,9 @@ export const outsourcedQa = {
         "We do not throw 40 junior testers at a checklist. Senior exploratory work, then automation on paths that matter, with a package you can upgrade.",
     },
     {
-      title: "Built for US and Canadian buyers",
+      title: "Built for US, UK, Canadian, and Australian buyers",
       detail:
-        "USD pricing, English reporting, GitHub/Jira/Slack, follow-the-sun verification. Read the US and Canada pages if you want market-specific detail.",
+        "USD pricing, English reporting, GitHub/Jira/Slack, follow-the-sun verification. Open the matching market page if you want timezone-specific detail.",
     },
   ],
   pains: [
@@ -330,6 +498,16 @@ export const marketNavChildren = [
     href: "/qa-services-canada",
     label: "QA for Canadian teams",
     description: "USD packages and ET/PT-friendly handoffs.",
+  },
+  {
+    href: "/qa-services-uk",
+    label: "QA for UK teams",
+    description: "USD retainers with UK-hour overlap.",
+  },
+  {
+    href: "/qa-services-australia",
+    label: "QA for Australian teams",
+    description: "USD packages and AEST-friendly handoffs.",
   },
   {
     href: "/outsourced-qa",

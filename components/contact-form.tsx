@@ -11,6 +11,7 @@ import { submitContact } from "@/lib/actions/contact";
 import type { ContactState } from "@/lib/contact-state";
 import { sendLeadFromBrowser } from "@/lib/send-lead-client";
 import { SITE_EMAIL } from "@/lib/site";
+import { readAdsAttribution } from "@/components/ads-utm";
 
 function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
@@ -56,6 +57,11 @@ export function ContactForm({
         source: asString(formData.get("source")) || source,
         message: asString(formData.get("message")),
       };
+      const ads = readAdsAttribution();
+      if (ads) {
+        fields.source = `${fields.source || "direct"}/${ads}`.slice(0, 160);
+        formData.set("source", fields.source);
+      }
 
       // Prefer server SMTP / Resend / Brevo so inbox mail has no FormSubmit “Sponsor” ad.
       const result = await submitContact(prev, formData);
