@@ -14,6 +14,8 @@ import { Reveal } from "@/components/reveal";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { StickyCta } from "@/components/sticky-cta";
 import { AiServiceBanner } from "@/components/ai-service-banner";
+import { ExpertiseSwitcher } from "@/components/expertise-switcher";
+import { ServiceTiles } from "@/components/service-tiles";
 import {
   auditSteps,
   coverageStats,
@@ -21,10 +23,12 @@ import {
   industries,
   outcomePillars,
   workflowTools,
+  engagementModels,
+  serviceTiles,
 } from "@/lib/home-content";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { faqs } from "@/lib/faq";
-import { services, SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
+import { SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
 import { markets, outsourcedQa, qaAgency } from "@/lib/markets";
 
 export const metadata: Metadata = {
@@ -164,6 +168,31 @@ export default function HomePage() {
       </section>
 
       <section
+        className="border-t border-line bg-surface py-14 sm:py-20"
+        aria-labelledby="expertise-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2
+                id="expertise-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Tools we use. Products we know.
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                The stack that shows up in your repo — and the product types we
+                actually test. Not a 20-industry logo wall.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal className="mt-10" delayMs={80}>
+            <ExpertiseSwitcher />
+          </Reveal>
+        </div>
+      </section>
+
+      <section
         className="border-t border-line bg-white py-14 sm:py-20"
         aria-labelledby="engagement-heading"
       >
@@ -201,6 +230,48 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-surface py-14 sm:py-20"
+        aria-labelledby="models-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2
+                id="models-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Engagement models
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                Three ways to buy — retainers, an AI sprint, or an enterprise
+                pod. No ownership-model theater.
+              </p>
+            </div>
+          </Reveal>
+          <ul className="mt-12 grid gap-6 md:grid-cols-3">
+            {engagementModels.map((model, index) => (
+              <li key={model.title}>
+                <Reveal delayMs={index * 70}>
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm">
+                    <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
+                      {model.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-muted">{model.detail}</p>
+                    <Link
+                      href={model.href}
+                      className="mt-5 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+                    >
+                      {model.cta} →
+                    </Link>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -302,28 +373,9 @@ export default function HomePage() {
               </Link>
             </div>
           </Reveal>
-          <ul className="mt-12 grid gap-8 sm:grid-cols-2">
-            {services.map((service, index) => (
-              <li key={service.slug}>
-                <Reveal delayMs={index * 60}>
-                  <article className="h-full border-t border-brand/25 pt-5">
-                    <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2 text-base leading-relaxed text-muted">
-                      {service.summary}
-                    </p>
-                    <Link
-                      href={`/services#${service.slug}`}
-                      className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
-                    >
-                      Learn more →
-                    </Link>
-                  </article>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          <Reveal>
+            <ServiceTiles tiles={serviceTiles} />
+          </Reveal>
           <Reveal className="mt-12">
             <AiServiceBanner source="home-services" />
           </Reveal>
