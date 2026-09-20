@@ -1,8 +1,6 @@
 "use client";
 
 import { useActionState } from "react";
-import Link from "next/link";
-import { trackLeadSubmit } from "@/lib/analytics";
 import {
   AI_CONSULT_LABEL,
   FREE_QA_AUDIT_LABEL,
@@ -28,32 +26,12 @@ type ContactFormProps = {
 const inputClassName =
   "w-full rounded-xl border border-line bg-slate-50/80 px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20";
 
-function SuccessCard() {
-  return (
-    <div
-      className="flex min-h-[420px] flex-col items-center justify-center rounded-2xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-8 text-center shadow-xl shadow-emerald-900/5 sm:p-10"
-      role="status"
-      aria-live="polite"
-    >
-      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500 text-3xl text-white shadow-lg shadow-emerald-500/30">
-        ✓
-      </span>
-      <h2 className="mt-6 font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-emerald-950">
-        Form submitted
-      </h2>
-      <p className="mt-3 max-w-md text-base leading-relaxed text-emerald-900/80">
-        Thank you — we received your request at{" "}
-        <span className="font-semibold">{SITE_EMAIL}</span>. A TestSync Lab
-        partner will reply within 24 hours on business days.
-      </p>
-      <Link
-        href="/"
-        className="mt-8 inline-flex items-center justify-center rounded-xl bg-brand px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-deep"
-      >
-        Back to home
-      </Link>
-    </div>
-  );
+function thanksUrl(plan: string, source: string) {
+  const params = new URLSearchParams({
+    plan: plan || "audit",
+    source: source || "direct",
+  });
+  return `/contact/thanks?${params.toString()}`;
 }
 
 export function ContactForm({
@@ -82,14 +60,14 @@ export function ContactForm({
       // Prefer server SMTP / Resend / Brevo so inbox mail has no FormSubmit “Sponsor” ad.
       const result = await submitContact(prev, formData);
       if (result.status === "success") {
-        trackLeadSubmit({ plan: fields.plan, source: fields.source });
+        window.location.assign(thanksUrl(fields.plan, fields.source));
         return result;
       }
 
       // Fallback only if server mail is not configured / fails.
       try {
         if (await sendLeadFromBrowser(fields)) {
-          trackLeadSubmit({ plan: fields.plan, source: fields.source });
+          window.location.assign(thanksUrl(fields.plan, fields.source));
           return { status: "success" };
         }
       } catch {
@@ -102,7 +80,11 @@ export function ContactForm({
   );
 
   if (state.status === "success") {
-    return <SuccessCard />;
+    return (
+      <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-8 text-center text-sm font-medium text-emerald-900">
+        Sending you to confirmation…
+      </p>
+    );
   }
 
   return (
