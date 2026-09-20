@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
 import { Analytics } from "@/components/analytics";
+import { GoogleAdsTag } from "@/components/google-ads";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -120,6 +121,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </div>
         <SiteFooter />
         <Analytics />
+        <GoogleAdsTag />
       </body>
     </html>
   );
