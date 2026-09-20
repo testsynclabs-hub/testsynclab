@@ -128,6 +128,94 @@ export const workflowTools = [
   { name: "Postman", mark: "Pm" },
 ] as const;
 
+/** QA tools we actually run — not a staffing logo wall. */
+export const qaToolStack = [
+  { name: "Playwright", group: "Automation" },
+  { name: "Selenium", group: "Automation" },
+  { name: "Postman", group: "API" },
+  { name: "JMeter", group: "Performance" },
+  { name: "GitHub", group: "CI" },
+  { name: "Jira", group: "Workflow" },
+  { name: "Slack", group: "Workflow" },
+  { name: "Linear", group: "Workflow" },
+] as const;
+
+export const productDomains = [
+  { name: "SaaS & B2B" },
+  { name: "Marketplaces" },
+  { name: "Fintech-lite" },
+  { name: "Mobile & web" },
+  { name: "AI products" },
+  { name: "Early-stage startups" },
+] as const;
+
+export const engagementModels = [
+  {
+    title: "Monthly retainer",
+    detail:
+      "Basic, Growth, or Scale — ~40 QA hours every week, month-to-month. The default for teams that ship weekly.",
+    href: "/pricing",
+    cta: "See packages",
+  },
+  {
+    title: "AI testing sprint",
+    detail:
+      "Scoped QA for chatbots, RAG, and LLM features — golden set, jailbreak checks, then optional add-on.",
+    href: "/ai",
+    cta: "AI testing lane",
+  },
+  {
+    title: "Enterprise pod",
+    detail:
+      "Multi-app coverage, custom SLAs, extra capacity. Scoped after the free audit — no surprise line items.",
+    href: "/contact?plan=enterprise&source=home-engagement",
+    cta: "Talk scope",
+  },
+] as const;
+
+export const serviceTiles = [
+  {
+    title: "Exploratory testing",
+    href: "/services/manual-testing",
+    icon: "search",
+  },
+  {
+    title: "Test automation",
+    href: "/services/playwright-automation",
+    icon: "automation",
+  },
+  {
+    title: "API testing",
+    href: "/services/api-testing",
+    icon: "api",
+  },
+  {
+    title: "Mobile & web",
+    href: "/services/manual-testing",
+    icon: "devices",
+  },
+  {
+    title: "AI testing",
+    href: "/ai",
+    icon: "spark",
+  },
+  {
+    title: "Performance / load",
+    href: "/services/performance-testing",
+    icon: "gauge",
+  },
+  {
+    title: "Release / UAT",
+    href: "/services",
+    icon: "release",
+  },
+  {
+    title: "Accessibility basics",
+    href: "/services",
+    icon: "a11y",
+  },
+] as const;
+
 export const industries = [
   {
     title: "SaaS & B2B products",
