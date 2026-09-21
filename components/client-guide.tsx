@@ -19,6 +19,29 @@ export function QaPlainSpeak() {
   );
 }
 
+export function WantGet({
+  want,
+  get,
+  className = "",
+}: {
+  want: string;
+  get: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+        You want
+      </p>
+      <p className="mt-1 text-sm text-muted">{want}</p>
+      <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+        You get
+      </p>
+      <p className="mt-1 text-sm font-semibold text-brand-deep">{get}</p>
+    </div>
+  );
+}
+
 export function NeedChooser({
   needs,
 }: {
@@ -39,14 +62,7 @@ export function NeedChooser({
             <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
               {need.title}
             </h3>
-            <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
-              You want
-            </p>
-            <p className="mt-1 flex-1 text-sm text-muted">{need.plain}</p>
-            <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
-              You get
-            </p>
-            <p className="mt-1 text-sm font-semibold text-brand-deep">{need.fit}</p>
+            <WantGet className="mt-3 flex-1" want={need.plain} get={need.fit} />
             <Link
               href={need.href}
               className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"

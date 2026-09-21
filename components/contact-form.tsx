@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import {
   AI_CONSULT_LABEL,
   isAiInquiry,
@@ -11,7 +11,8 @@ import type { ContactState } from "@/lib/contact-state";
 import { sendLeadFromBrowser } from "@/lib/send-lead-client";
 import { SITE_EMAIL } from "@/lib/site";
 import { readAdsAttribution } from "@/components/ads-utm";
-import { productNeedOptions, toolOptions } from "@/lib/client-guide";
+import { explainNeed, productNeedOptions, toolOptions } from "@/lib/client-guide";
+import { WantGet } from "@/components/client-guide";
 
 function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
@@ -44,6 +45,8 @@ export function ContactForm({
   tool = "not-sure",
 }: ContactFormProps) {
   const aiMode = isAiInquiry(plan);
+  const [selectedNeed, setSelectedNeed] = useState(need);
+  const needHint = explainNeed(selectedNeed);
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
     async (prev, formData) => {
       if (asString(formData.get("company_website"))) {
@@ -273,7 +276,8 @@ export function ContactForm({
             <select
               id="need"
               name="need"
-              defaultValue={need}
+              value={selectedNeed}
+              onChange={(event) => setSelectedNeed(event.target.value)}
               className={inputClassName}
             >
               {productNeedOptions.map((option) => (
@@ -304,6 +308,14 @@ export function ContactForm({
             </select>
           </div>
         </div>
+
+        {!aiMode ? (
+          <WantGet
+            className="rounded-xl border border-brand/15 bg-brand-soft/40 px-4 py-3"
+            want={needHint.plain}
+            get={needHint.fit}
+          />
+        ) : null}
 
         <div>
           <label

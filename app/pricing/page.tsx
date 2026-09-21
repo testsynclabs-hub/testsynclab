@@ -133,18 +133,28 @@ export default function PricingPage() {
             If you only know this, pick this
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            No QA vocabulary required. We confirm the fit on the free audit.
+            Same pattern as the homepage cards — you want this, you get that.
+            We confirm the fit on the free audit.
           </p>
           <ul className="mt-10 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white">
             {packageNeedMap.map((row) => (
               <li
-                key={row.ifYouHave}
-                className="flex flex-col gap-2 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+                key={row.id}
+                className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-start sm:justify-between"
               >
-                <p className="font-medium text-slate-800">{row.ifYouHave}</p>
+                <div className="max-w-xl">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                    You want
+                  </p>
+                  <p className="mt-1 font-medium text-slate-800">{row.youWant}</p>
+                  <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                    You get
+                  </p>
+                  <p className="mt-1 text-sm text-muted">{row.youGet}</p>
+                </div>
                 <Link
                   href={row.href}
-                  className="text-sm font-bold text-brand hover:text-brand-deep"
+                  className="shrink-0 text-sm font-bold text-brand hover:text-brand-deep"
                 >
                   {row.pick} →
                 </Link>

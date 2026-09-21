@@ -42,6 +42,18 @@ export function PackageGrid({
             <p className="mt-3 text-sm leading-relaxed text-muted">
               {plan.description}
             </p>
+            <div className="mt-4 rounded-xl border border-brand/15 bg-brand-soft/40 px-3 py-3">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                You want
+              </p>
+              <p className="mt-1 text-sm text-slate-700">{plan.youWant}</p>
+              <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                You get
+              </p>
+              <p className="mt-1 text-sm font-semibold text-brand-deep">
+                {plan.youGet}
+              </p>
+            </div>
             <p className="mt-4 rounded-xl bg-brand-soft/60 px-3 py-2 text-xs font-semibold leading-relaxed text-brand-deep">
               Capacity: {plan.capacity}
             </p>

@@ -6,6 +6,8 @@ export type PackagePlan = {
   priceLabel: string;
   priceNote: string;
   description: string;
+  youWant: string;
+  youGet: string;
   capacity: string;
   notIncluded: string;
   featured?: boolean;
@@ -26,6 +28,9 @@ export const packages: PackagePlan[] = [
     priceNote: "per month",
     description:
       "Hands-on manual QA for web, ecommerce (Shopify/Magento), mobile, and apps — including happy-path and negative checks.",
+    youWant:
+      "Shopify, Magento, web, or mobile journeys that real people must finish.",
+    youGet: "Manual tests + bugs with steps. ~40h/week. $999/mo.",
     capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "Heavy automation builds, load campaigns, or multi-app pods",
     ctaLabel: "Start with Basic",
@@ -33,7 +38,7 @@ export const packages: PackagePlan[] = [
     features: [
       "~40 QA hours every week",
       "Manual exploratory & regression testing",
-      "Ecommerce / web / mobile journeys (positive + negative)",
+      "Shopify / Magento / web / mobile journeys (positive + negative)",
       "Clear bug reports and test notes",
       "Weekly status summary",
       "Weekends & holidays match your region",
@@ -47,6 +52,9 @@ export const packages: PackagePlan[] = [
     priceNote: "per month",
     description:
       "Same ~40 hours a week — plus API checks and automation so releases move faster with fewer surprises.",
+    youWant:
+      "Cypress, Playwright, Selenium, or APIs that stay green when you ship.",
+    youGet: "Automation start + API checks. $1,899/mo.",
     capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "Dedicated full-time pod or multi-brand portfolios",
     featured: true,
@@ -69,6 +77,8 @@ export const packages: PackagePlan[] = [
     priceNote: "per month",
     description:
       "Same weekly capacity, deeper stack — gates, reporting, performance spot checks, and a named lead cadence.",
+    youWant: "A go / no-go before you ship — not Friday-night clicking.",
+    youGet: "Release gates, JMeter spots, named lead. $2,799/mo.",
     capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "24/7 follow-the-sun staffing (available as Enterprise)",
     ctaLabel: "Choose Scale",
@@ -90,6 +100,8 @@ export const packages: PackagePlan[] = [
     priceNote: "let’s discuss",
     description:
       "Need more than one pod, a game or desktop scope, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
+    youWant: "A game, desktop app, several products, or a custom SLA.",
+    youGet: "A scoped pod after the free audit — not a guess.",
     capacity: "Dedicated pods · custom SLA · your region's calendar",
     notIncluded: "Scoped only after discovery — no surprise line items",
     ctaLabel: "Talk to an expert",

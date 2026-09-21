@@ -17,7 +17,8 @@ export const qaPlainSpeak = [
   },
   {
     term: "Positive / negative",
-    meaning: "Happy path (pay with a valid card) and bad path (expired card, empty cart).",
+    meaning:
+      "Happy path (it works as promised) and bad path (wrong password, expired session, empty form).",
   },
   {
     term: "UAT",
@@ -125,28 +126,30 @@ export const clientNeeds: ClientNeed[] = [
   },
 ];
 
-export const packageNeedMap = [
-  {
-    ifYouHave: "Shopify / Magento / store bugs",
-    pick: "Basic — $999/mo",
-    href: "/contact?plan=basic&need=ecommerce&source=pricing-map",
-  },
-  {
-    ifYouHave: "Cypress, Playwright, or Selenium work",
-    pick: "Growth — $1,899/mo",
-    href: "/contact?plan=growth&need=automation&source=pricing-map",
-  },
-  {
-    ifYouHave: "APIs + weekly releases",
-    pick: "Growth — $1,899/mo",
-    href: "/contact?plan=growth&need=api&source=pricing-map",
-  },
-  {
-    ifYouHave: "Game, desktop, or several products",
-    pick: "Talk to an expert",
-    href: "/contact?plan=audit&need=desktop&source=pricing-map",
-  },
-] as const;
+const PLAN_PICK: Record<string, string> = {
+  basic: "Basic — $999/mo",
+  growth: "Growth — $1,899/mo",
+  scale: "Scale — $2,799/mo",
+  audit: "Talk to an expert",
+  enterprise: "Talk to an expert",
+  ai: "Talk about AI testing",
+};
+
+const aiNeed: ClientNeed = {
+  id: "ai",
+  title: "AI chatbot / LLM feature",
+  plain: "The bot answers from your data, does not leak, and fails loudly when it is wrong.",
+  fit: "A scoped AI testing sprint — not buried inside Basic.",
+  plan: "ai",
+  cta: "Talk to an expert",
+};
+
+export function explainNeed(id: string): ClientNeed {
+  return (
+    clientNeeds.find((item) => item.id === id) ||
+    (id === "ai" ? aiNeed : clientNeeds.find((item) => item.id === "not-sure")!)
+  );
+}
 
 const NEED_IDS = new Set(productNeedOptions.map((item) => item.id));
 const TOOL_IDS = new Set(toolOptions.map((item) => item.id));
@@ -173,3 +176,13 @@ export function needContactHref(need: ClientNeed, source: string) {
   });
   return `/contact?${params.toString()}`;
 }
+
+export const packageNeedMap = clientNeeds
+  .filter((item) => item.id !== "not-sure")
+  .map((item) => ({
+    id: item.id,
+    youWant: item.title,
+    youGet: item.fit,
+    pick: PLAN_PICK[item.plan] || "Talk to an expert",
+    href: needContactHref(item, "pricing-map"),
+  }));
