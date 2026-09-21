@@ -155,13 +155,13 @@ export const serviceLandings: ServiceLanding[] = [
       "CI wiring and flake reduction",
       "Page objects / fixtures your team can own",
       "Release smoke automation",
-      "Optional Selenium support when required",
+      "Cypress or Selenium when that's already your stack",
     ],
     faqs: [
       {
-        question: "Playwright or Selenium?",
+        question: "Playwright, Cypress, or Selenium?",
         answer:
-          "Playwright is our default for modern web apps. We support Selenium when you already have a suite worth stabilizing instead of rewriting.",
+          "Playwright is our default for modern web apps. If your team already standardized on Cypress or Selenium, we work in that stack instead of forcing a rewrite.",
       },
       {
         question: "When should we automate?",

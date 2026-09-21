@@ -25,7 +25,7 @@ export const packages: PackagePlan[] = [
     priceLabel: "$999",
     priceNote: "per month",
     description:
-      "Hands-on manual QA with full weekly capacity — reliable coverage without building an in-house test function yet.",
+      "Hands-on manual QA for web, ecommerce (Magento/Shopify), mobile, and apps — including happy-path and negative checks.",
     capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "Heavy automation builds, load campaigns, or multi-app pods",
     ctaLabel: "Start with Basic",
@@ -33,6 +33,7 @@ export const packages: PackagePlan[] = [
     features: [
       "~40 QA hours every week",
       "Manual exploratory & regression testing",
+      "Ecommerce / web / mobile journeys (positive + negative)",
       "Clear bug reports and test notes",
       "Weekly status summary",
       "Weekends & holidays match your region",
@@ -55,7 +56,7 @@ export const packages: PackagePlan[] = [
       "~40 QA hours every week",
       "Everything in Basic",
       "API / contract validation",
-      "Playwright or Selenium automation start",
+      "Playwright, Cypress, or Selenium automation start",
       "Regression suites ready for CI",
       "Priority bug triage support",
       "Optional AI testing add-on (scoped separately)",
@@ -88,10 +89,10 @@ export const packages: PackagePlan[] = [
     priceLabel: "Custom",
     priceNote: "let’s discuss",
     description:
-      "Need more than one pod, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
+      "Need more than one pod, a game or desktop scope, multi-product coverage, SLAs, or compliance-minded delivery? We’ll scope it with you.",
     capacity: "Dedicated pods · custom SLA · your region's calendar",
     notIncluded: "Scoped only after discovery — no surprise line items",
-    ctaLabel: "Talk to us",
+    ctaLabel: "Talk to an expert",
     ctaHref: "/contact?plan=enterprise&source=pricing-card",
     features: [
       "Multi-app / multi-squad capacity",

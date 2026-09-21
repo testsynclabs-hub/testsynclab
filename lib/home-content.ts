@@ -75,7 +75,7 @@ export const capabilityAreas = [
     id: "automation",
     title: "Automation & CI gates",
     summary:
-      "Playwright and Selenium suites that protect high-value paths without flaky noise.",
+      "Playwright, Cypress, or Selenium suites that protect high-value paths without flaky noise.",
     points: [
       "Stable critical-path coverage",
       "CI wiring and flake reduction",
@@ -125,28 +125,29 @@ export const workflowTools = [
   { name: "Linear", mark: "Ln" },
   { name: "Azure DevOps", mark: "Az" },
   { name: "Playwright", mark: "Pw" },
+  { name: "Cypress", mark: "Cy" },
   { name: "Postman", mark: "Pm" },
 ] as const;
 
 /** QA tools we actually run — not a staffing logo wall. */
 export const qaToolStack = [
   { name: "Playwright", group: "Automation" },
+  { name: "Cypress", group: "Automation" },
   { name: "Selenium", group: "Automation" },
   { name: "Postman", group: "API" },
   { name: "JMeter", group: "Performance" },
-  { name: "GitHub", group: "CI" },
+  { name: "Magento", group: "Ecommerce" },
+  { name: "Shopify", group: "Ecommerce" },
   { name: "Jira", group: "Workflow" },
-  { name: "Slack", group: "Workflow" },
-  { name: "Linear", group: "Workflow" },
 ] as const;
 
 export const productDomains = [
   { name: "SaaS & B2B" },
-  { name: "Marketplaces" },
-  { name: "Fintech-lite" },
+  { name: "Ecommerce" },
   { name: "Mobile & web" },
+  { name: "Desktop apps" },
+  { name: "Games" },
   { name: "AI products" },
-  { name: "Early-stage startups" },
 ] as const;
 
 export const engagementModels = [
@@ -222,12 +223,14 @@ export const industries = [
     detail: "Multi-role flows, permissions, billing edges, and release trains.",
   },
   {
-    title: "Marketplaces & fintech-lite",
-    detail: "Checkout, payouts, KYC-adjacent flows, and partner integrations.",
+    title: "Ecommerce stores",
+    detail:
+      "Magento, Shopify, and custom checkout — cart, pay, refunds, coupons.",
   },
   {
-    title: "Mobile & web apps",
-    detail: "Cross-device smoke, regression depth, and store-release confidence.",
+    title: "Mobile, desktop, and games",
+    detail:
+      "Cross-device smoke, installers, play-throughs, and store-release checks.",
   },
   {
     title: "Startups scaling QA",

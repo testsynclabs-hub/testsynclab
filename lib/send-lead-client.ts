@@ -12,6 +12,8 @@ export type LeadFields = {
   releaseDate: string;
   plan: string;
   source: string;
+  need?: string;
+  tool?: string;
   message: string;
 };
 
@@ -32,6 +34,8 @@ function payload(fields: LeadFields) {
     release_date: fields.releaseDate || "—",
     plan: fields.plan,
     source: fields.source || "direct",
+    need: fields.need || "—",
+    tool: fields.tool || "—",
     message: fields.message,
     from_name: SITE_NAME,
   };

@@ -14,6 +14,7 @@ import { Reveal } from "@/components/reveal";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { StickyCta } from "@/components/sticky-cta";
 import { AiServiceBanner } from "@/components/ai-service-banner";
+import { NeedChooser, QaPlainSpeak } from "@/components/client-guide";
 import { ExpertiseSwitcher } from "@/components/expertise-switcher";
 import { ServiceTiles } from "@/components/service-tiles";
 import {
@@ -27,6 +28,7 @@ import {
   serviceTiles,
 } from "@/lib/home-content";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
+import { clientNeeds, needContactHref } from "@/lib/client-guide";
 import { faqs } from "@/lib/faq";
 import { SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
 import { markets, outsourcedQa, qaAgency } from "@/lib/markets";
@@ -75,9 +77,9 @@ export default function HomePage() {
             </p>
             <HeroHeadline />
             <p className="animate-fade-up delay-200 mt-3 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-4 sm:text-lg lg:text-xl">
-              {SITE_NAME} is a remote QA agency for SaaS teams — manual, API,
-              Playwright automation, and release gates, monthly from $999,
-              worldwide.
+              {SITE_NAME} is a remote QA lab — we test ecommerce, web, mobile,
+              desktop, games, APIs, and automation (Cypress, Playwright,
+              Selenium). Monthly from $999. You do not need to know QA words.
             </p>
             <div className="animate-fade-up delay-300 mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap">
               <Link
@@ -164,6 +166,61 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-white py-14 sm:py-20"
+        aria-labelledby="plain-speak-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="plain-speak-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                Not a QA person? Start here.
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                Tell us what you built. We translate it into a test plan and a
+                package. You never have to say “SQA” out loud.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal>
+            <QaPlainSpeak />
+          </Reveal>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-surface py-14 sm:py-20"
+        aria-labelledby="need-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2
+                id="need-heading"
+                className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl"
+              >
+                What do you need tested?
+              </h2>
+              <p className="mt-4 text-lg text-muted">
+                Magento store, game, desktop app, Cypress suite — pick the
+                closest match. We reply in 24 hours with the fit.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal>
+            <NeedChooser
+              needs={clientNeeds.map((need) => ({
+                ...need,
+                href: needContactHref(need, "home-need"),
+              }))}
+            />
+          </Reveal>
         </div>
       </section>
 

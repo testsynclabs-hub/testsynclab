@@ -8,12 +8,15 @@ import {
   planDisplayName,
 } from "@/lib/cta";
 import { SITE_EMAIL, SITE_LINKEDIN } from "@/lib/site";
+import { sanitizeNeed, sanitizeTool } from "@/lib/client-guide";
 
 export const maxDuration = 30;
 
 type ContactSearch = {
   plan?: string;
   source?: string;
+  need?: string;
+  tool?: string;
 };
 
 export async function generateMetadata({
@@ -49,6 +52,8 @@ export default async function ContactPage({
   const params = await searchParams;
   const plan = params.plan || "audit";
   const source = params.source || "contact-page";
+  const need = sanitizeNeed(params.need || "not-sure");
+  const tool = sanitizeTool(params.tool || "not-sure");
   const aiMode = isAiInquiry(plan);
 
   return (
@@ -61,12 +66,12 @@ export default async function ContactPage({
           <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-brand-deep sm:text-5xl">
             {aiMode
               ? "Talk about AI testing"
-              : "Book your free QA audit"}
+              : "Talk to an expert — free QA audit"}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
             {aiMode
               ? "Share the AI surface (chatbot, RAG, agent), the stack, and the next release date. We will recommend an AI testing sprint or an AI add-on to your QA retainer — or tell you it is not a fit yet."
-              : "Share your website, product context, and release goals. We'll map risks and recommend the right monthly package — this is the same form every blog post sends you to."}
+              : "Magento store, game, desktop app, Cypress, Playwright — say it in your own words. We map the need to a package and reply within 24 hours."}
           </p>
           <BookingCta
             source="contact-hero"
@@ -128,7 +133,7 @@ export default async function ContactPage({
               )}
             </ul>
           </div>
-          <ContactForm plan={plan} source={source} />
+          <ContactForm plan={plan} source={source} need={need} tool={tool} />
         </div>
       </section>
 

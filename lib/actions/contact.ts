@@ -12,6 +12,7 @@ import {
   sanitizeSource,
 } from "@/lib/security";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
+import { sanitizeNeed, sanitizeTool } from "@/lib/client-guide";
 
 const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
 
@@ -28,6 +29,8 @@ type LeadFields = {
   releaseDate: string;
   plan: string;
   source: string;
+  need: string;
+  tool: string;
   message: string;
 };
 
@@ -40,6 +43,8 @@ function leadText(fields: LeadFields) {
     `Role: ${fields.role || "—"}`,
     `Next release: ${fields.releaseDate || "—"}`,
     `Plan: ${fields.plan}`,
+    `Need: ${fields.need || "—"}`,
+    `Tool: ${fields.tool || "—"}`,
     `Source: ${fields.source || "direct"}`,
     "",
     fields.message,
@@ -65,6 +70,8 @@ function leadHtml(fields: LeadFields) {
         ${row("Role", fields.role || "—")}
         ${row("Next release", fields.releaseDate || "—")}
         ${row("Plan", fields.plan)}
+        ${row("Need", fields.need || "—")}
+        ${row("Tool", fields.tool || "—")}
         ${row("Source", fields.source || "direct")}
       </table>
     </td></tr>
@@ -236,6 +243,8 @@ export async function submitContact(
   const message = clampText(asString(formData.get("message")), 5000);
   const plan = sanitizePlan(asString(formData.get("plan")) || "audit");
   const source = sanitizeSource(asString(formData.get("source")));
+  const need = sanitizeNeed(asString(formData.get("need")));
+  const tool = sanitizeTool(asString(formData.get("tool")));
 
   if (!name || !email || !message || !isValidEmail(email)) {
     return { status: "validation" };
@@ -250,6 +259,8 @@ export async function submitContact(
     releaseDate,
     plan,
     source,
+    need,
+    tool,
     message,
   };
   const subject = `New lead (${plan}): ${name}${company ? ` @ ${company}` : ""}`;
@@ -276,6 +287,8 @@ export async function submitContact(
     releaseDate,
     plan,
     source,
+    need,
+    tool,
   });
   return { status: "delivery" };
 }
