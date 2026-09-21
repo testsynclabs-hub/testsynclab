@@ -1,9 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import {
   AI_CONSULT_LABEL,
-  FREE_QA_AUDIT_LABEL,
   isAiInquiry,
   planDisplayName,
 } from "@/lib/cta";
@@ -12,6 +11,8 @@ import type { ContactState } from "@/lib/contact-state";
 import { sendLeadFromBrowser } from "@/lib/send-lead-client";
 import { SITE_EMAIL } from "@/lib/site";
 import { readAdsAttribution } from "@/components/ads-utm";
+import { explainNeed, productNeedOptions, toolOptions } from "@/lib/client-guide";
+import { WantGet } from "@/components/client-guide";
 
 function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
@@ -22,6 +23,8 @@ const initialContactState: ContactState = { status: "idle" };
 type ContactFormProps = {
   plan?: string;
   source?: string;
+  need?: string;
+  tool?: string;
 };
 
 const inputClassName =
@@ -38,8 +41,12 @@ function thanksUrl(plan: string, source: string) {
 export function ContactForm({
   plan = "audit",
   source = "",
+  need = "not-sure",
+  tool = "not-sure",
 }: ContactFormProps) {
   const aiMode = isAiInquiry(plan);
+  const [selectedNeed, setSelectedNeed] = useState(need);
+  const needHint = explainNeed(selectedNeed);
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
     async (prev, formData) => {
       if (asString(formData.get("company_website"))) {
@@ -55,6 +62,8 @@ export function ContactForm({
         releaseDate: asString(formData.get("releaseDate")),
         plan: asString(formData.get("plan")) || plan,
         source: asString(formData.get("source")) || source,
+        need: asString(formData.get("need")) || need,
+        tool: asString(formData.get("tool")) || tool,
         message: asString(formData.get("message")),
       };
       const ads = readAdsAttribution();
@@ -256,12 +265,66 @@ export function ContactForm({
           </div>
         </div>
 
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label
+              htmlFor="need"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              What should we test?
+            </label>
+            <select
+              id="need"
+              name="need"
+              value={selectedNeed}
+              onChange={(event) => setSelectedNeed(event.target.value)}
+              className={inputClassName}
+            >
+              {productNeedOptions.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label
+              htmlFor="tool"
+              className="mb-1.5 block text-sm font-semibold text-slate-700"
+            >
+              Tool or platform
+            </label>
+            <select
+              id="tool"
+              name="tool"
+              defaultValue={tool}
+              className={inputClassName}
+            >
+              {toolOptions.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {!aiMode ? (
+          <WantGet
+            className="rounded-xl border border-brand/15 bg-brand-soft/40 px-4 py-3"
+            want={needHint.plain}
+            get={needHint.fit}
+          />
+        ) : null}
+
         <div>
           <label
             htmlFor="message"
             className="mb-1.5 block text-sm font-semibold text-slate-700"
           >
-            {aiMode ? "What AI surface should we test?" : "What should we audit?"}
+            {aiMode
+              ? "What AI surface should we test?"
+              : "In your own words"}
           </label>
           <textarea
             id="message"
@@ -271,7 +334,7 @@ export function ContactForm({
             placeholder={
               aiMode
                 ? "Chatbot / RAG / agent, stack, and failure modes that worry you..."
-                : "Product, stack, and the journeys that must not break..."
+                : "Shopify discount code, iOS onboarding, a Windows installer, a game crash, or Cypress login — say it in your words."
             }
             className={`${inputClassName} resize-y`}
           />
@@ -285,7 +348,7 @@ export function ContactForm({
             ? "Submitting…"
             : aiMode
               ? AI_CONSULT_LABEL
-              : `Request ${FREE_QA_AUDIT_LABEL}`}
+              : `Talk to an expert`}
         </button>
         <p className="text-center text-xs text-muted">
           Stays on this page. Goes to {SITE_EMAIL}. No commitment. Response

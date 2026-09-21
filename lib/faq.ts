@@ -7,6 +7,12 @@ export type FaqItem = {
 export const faqs: FaqItem[] = [
   {
     category: "Getting Started",
+    question: "I am not a QA person — can you still help?",
+    answer:
+      "Yes. Tell us what you built in your own words: Shopify store, game, desktop app, web app, Cypress suite. We map that to a test plan and a package. You do not need to know QA, QC, SQA, alpha, or beta.",
+  },
+  {
+    category: "Getting Started",
     question: "How fast can TestSync Lab start?",
     answer:
       "Usually within 3–5 business days after scope confirmation. If you have an urgent release, tell us the date — we can often prioritize a focused smoke + regression cycle sooner.",
@@ -49,6 +55,24 @@ export const faqs: FaqItem[] = [
   },
   {
     category: "Coverage",
+    question: "Do you test Shopify or Magento stores?",
+    answer:
+      "Yes — Shopify, Magento, and custom stores. Checkout, cart, pay, refunds, coupons, and admin — including happy-path and negative cases. Most store owners start on Basic ($999). If you also want Cypress or Playwright on checkout, Growth is the usual next step.",
+  },
+  {
+    category: "Coverage",
+    question: "Do you test games and desktop applications?",
+    answer:
+      "Yes. Games and desktop apps need a short scope (build, devices, OS). Use Talk to an expert / free audit — we will not force a Basic card if Enterprise or a custom cycle is the honest fit.",
+  },
+  {
+    category: "Coverage",
+    question: "Cypress, Playwright, or Selenium — which do you use?",
+    answer:
+      "All three. Playwright is our default for modern web. If your team already standardized on Cypress or Selenium, we work in that stack. Growth ($1,899) is the usual automation start.",
+  },
+  {
+    category: "Coverage",
     question: "Do you test web, mobile, and APIs?",
     answer:
       "Yes — web and API are core. Mobile coverage depends on build access and package scope. Share your platforms in the audit form and we will confirm fit.",
@@ -57,7 +81,7 @@ export const faqs: FaqItem[] = [
     category: "Coverage",
     question: "Do you only use Playwright?",
     answer:
-      "Playwright is our default for modern web automation, but we also work with Selenium, Postman/API suites, and JMeter for performance spot checks when needed.",
+      "Playwright is our default for modern web automation, but we also work with Cypress, Selenium, Postman/API suites, and JMeter for performance spot checks when needed.",
   },
   {
     category: "Process",

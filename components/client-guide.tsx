@@ -1,0 +1,77 @@
+import Link from "next/link";
+import { qaPlainSpeak } from "@/lib/client-guide";
+
+export function QaPlainSpeak() {
+  return (
+    <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {qaPlainSpeak.map((item) => (
+        <li
+          key={item.term}
+          className="rounded-2xl border border-line bg-white p-5"
+        >
+          <p className="font-[family-name:var(--font-display)] text-sm font-extrabold uppercase tracking-[0.12em] text-brand">
+            {item.term}
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-muted">{item.meaning}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function WantGet({
+  want,
+  get,
+  className = "",
+}: {
+  want: string;
+  get: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+        You want
+      </p>
+      <p className="mt-1 text-sm text-muted">{want}</p>
+      <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+        You get
+      </p>
+      <p className="mt-1 text-sm font-semibold text-brand-deep">{get}</p>
+    </div>
+  );
+}
+
+export function NeedChooser({
+  needs,
+}: {
+  needs: {
+    id: string;
+    title: string;
+    plain: string;
+    fit: string;
+    href: string;
+    cta: string;
+  }[];
+}) {
+  return (
+    <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {needs.map((need) => (
+        <li key={need.id}>
+          <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-5 shadow-sm">
+            <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
+              {need.title}
+            </h3>
+            <WantGet className="mt-3 flex-1" want={need.plain} get={need.fit} />
+            <Link
+              href={need.href}
+              className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+            >
+              {need.cta} →
+            </Link>
+          </article>
+        </li>
+      ))}
+    </ul>
+  );
+}

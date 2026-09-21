@@ -6,6 +6,7 @@ import { PackageGrid } from "@/components/package-grid";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { aiPackagePolicy, aiPackages } from "@/lib/ai";
 import { pricingComparePoints } from "@/lib/packages";
+import { packageNeedMap } from "@/lib/client-guide";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -108,15 +109,58 @@ export default function PricingPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <PackageGrid />
           <p className="mt-10 text-center text-sm text-muted">
-            Need more than one pod or a custom SLA?{" "}
+            Need more than one pod, a game/desktop scope, or a custom SLA?{" "}
             <Link
-              href="/contact?plan=enterprise"
+              href="/contact?plan=audit&source=pricing-enterprise"
               className="font-semibold text-brand hover:text-brand-deep"
             >
-              Contact us for Enterprise
+              Talk to an expert
             </Link>
             .
           </p>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-line bg-surface py-16 sm:py-20"
+        aria-labelledby="pricing-map-heading"
+      >
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <h2
+            id="pricing-map-heading"
+            className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight text-brand-deep"
+          >
+            If you only know this, pick this
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            Same pattern as the homepage cards — you want this, you get that.
+            We confirm the fit on the free audit.
+          </p>
+          <ul className="mt-10 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white">
+            {packageNeedMap.map((row) => (
+              <li
+                key={row.id}
+                className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-start sm:justify-between"
+              >
+                <div className="max-w-xl">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                    You want
+                  </p>
+                  <p className="mt-1 font-medium text-slate-800">{row.youWant}</p>
+                  <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                    You get
+                  </p>
+                  <p className="mt-1 text-sm text-muted">{row.youGet}</p>
+                </div>
+                <Link
+                  href={row.href}
+                  className="shrink-0 text-sm font-bold text-brand hover:text-brand-deep"
+                >
+                  {row.pick} →
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -182,7 +226,7 @@ export default function PricingPage() {
       <FreeQaAuditCta
         source="pricing-footer"
         heading="Unsure which package fits?"
-        body="Book a free QA audit for Classic QA fit — or talk about AI testing if a chatbot or RAG feature is already live."
+        body="Shopify, game, desktop, Cypress — say it in your words. Free audit, then we point you at Basic, Growth, Scale, or a custom scope."
       />
     </main>
   );
