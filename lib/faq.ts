@@ -9,7 +9,7 @@ export const faqs: FaqItem[] = [
     category: "Getting Started",
     question: "I am not a QA person — can you still help?",
     answer:
-      "Yes. Tell us what you built in your own words: Magento store, game, desktop app, web app, Cypress suite. We map that to a test plan and a package. You do not need to know QA, QC, SQA, alpha, or beta.",
+      "Yes. Tell us what you built in your own words: Shopify store, game, desktop app, web app, Cypress suite. We map that to a test plan and a package. You do not need to know QA, QC, SQA, alpha, or beta.",
   },
   {
     category: "Getting Started",
@@ -55,9 +55,9 @@ export const faqs: FaqItem[] = [
   },
   {
     category: "Coverage",
-    question: "Do you test Magento or Shopify stores?",
+    question: "Do you test Shopify or Magento stores?",
     answer:
-      "Yes. Checkout, cart, pay, refunds, coupons, and admin flows — including happy-path and negative cases. Most store owners start on Basic ($999). If you also want Cypress or Playwright coverage, Growth is the usual next step.",
+      "Yes — Shopify, Magento, and custom stores. Checkout, cart, pay, refunds, coupons, and admin — including happy-path and negative cases. Most store owners start on Basic ($999). If you also want Cypress or Playwright on checkout, Growth is the usual next step.",
   },
   {
     category: "Coverage",

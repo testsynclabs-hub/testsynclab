@@ -216,7 +216,7 @@ export default function PricingPage() {
       <FreeQaAuditCta
         source="pricing-footer"
         heading="Unsure which package fits?"
-        body="Magento, game, desktop, Cypress — say it in your words. Free audit, then we point you at Basic, Growth, Scale, or a custom scope."
+        body="Shopify, game, desktop, Cypress — say it in your words. Free audit, then we point you at Basic, Growth, Scale, or a custom scope."
       />
     </main>
   );

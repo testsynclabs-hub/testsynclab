@@ -25,7 +25,7 @@ export const packages: PackagePlan[] = [
     priceLabel: "$999",
     priceNote: "per month",
     description:
-      "Hands-on manual QA for web, ecommerce (Magento/Shopify), mobile, and apps — including happy-path and negative checks.",
+      "Hands-on manual QA for web, ecommerce (Shopify/Magento), mobile, and apps — including happy-path and negative checks.",
     capacity: WEEKLY_QA_CAPACITY,
     notIncluded: "Heavy automation builds, load campaigns, or multi-app pods",
     ctaLabel: "Start with Basic",

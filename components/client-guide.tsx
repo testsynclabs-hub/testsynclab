@@ -39,8 +39,14 @@ export function NeedChooser({
             <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900">
               {need.title}
             </h3>
-            <p className="mt-2 flex-1 text-sm text-muted">{need.plain}</p>
-            <p className="mt-3 text-sm font-semibold text-brand-deep">{need.fit}</p>
+            <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+              You want
+            </p>
+            <p className="mt-1 flex-1 text-sm text-muted">{need.plain}</p>
+            <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+              You get
+            </p>
+            <p className="mt-1 text-sm font-semibold text-brand-deep">{need.fit}</p>
             <Link
               href={need.href}
               className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-deep"

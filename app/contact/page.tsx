@@ -71,7 +71,7 @@ export default async function ContactPage({
           <p className="mt-4 max-w-2xl text-lg text-muted">
             {aiMode
               ? "Share the AI surface (chatbot, RAG, agent), the stack, and the next release date. We will recommend an AI testing sprint or an AI add-on to your QA retainer — or tell you it is not a fit yet."
-              : "Magento store, game, desktop app, Cypress, Playwright — say it in your own words. We map the need to a package and reply within 24 hours."}
+              : "Shopify store, game, desktop app, Cypress, Playwright — say it in your own words. We map the need to a package and reply within 24 hours."}
           </p>
           <BookingCta
             source="contact-hero"

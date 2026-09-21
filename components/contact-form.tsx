@@ -322,7 +322,7 @@ export function ContactForm({
             placeholder={
               aiMode
                 ? "Chatbot / RAG / agent, stack, and failure modes that worry you..."
-                : "Example: Magento checkout fails on discount codes. Or: we need Cypress coverage for login."
+                : "Shopify discount code, iOS onboarding, a Windows installer, a game crash, or Cypress login — say it in your words."
             }
             className={`${inputClassName} resize-y`}
           />

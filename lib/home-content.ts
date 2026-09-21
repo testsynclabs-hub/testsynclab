@@ -136,8 +136,8 @@ export const qaToolStack = [
   { name: "Selenium", group: "Automation" },
   { name: "Postman", group: "API" },
   { name: "JMeter", group: "Performance" },
-  { name: "Magento", group: "Ecommerce" },
   { name: "Shopify", group: "Ecommerce" },
+  { name: "Magento", group: "Ecommerce" },
   { name: "Jira", group: "Workflow" },
 ] as const;
 
@@ -225,7 +225,7 @@ export const industries = [
   {
     title: "Ecommerce stores",
     detail:
-      "Magento, Shopify, and custom checkout — cart, pay, refunds, coupons.",
+      "Shopify, Magento, and custom checkout — cart, pay, refunds, coupons.",
   },
   {
     title: "Mobile, desktop, and games",

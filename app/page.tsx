@@ -208,8 +208,9 @@ export default function HomePage() {
                 What do you need tested?
               </h2>
               <p className="mt-4 text-lg text-muted">
-                Magento store, game, desktop app, Cypress suite — pick the
-                closest match. We reply in 24 hours with the fit.
+                Shopify store, game, desktop app, Cypress suite — pick the
+                closest match. Each card says what you want done and what you
+                get. We reply in 24 hours.
               </p>
             </div>
           </Reveal>

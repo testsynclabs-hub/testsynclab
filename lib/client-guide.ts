@@ -27,7 +27,7 @@ export const qaPlainSpeak = [
 
 export const productNeedOptions = [
   { id: "not-sure", label: "Not sure — I will describe it" },
-  { id: "ecommerce", label: "Ecommerce (Magento, Shopify, custom store)" },
+  { id: "ecommerce", label: "Shopify / Magento / custom store" },
   { id: "saas", label: "Web / SaaS app" },
   { id: "mobile", label: "Mobile app" },
   { id: "desktop", label: "Desktop application" },
@@ -44,8 +44,8 @@ export const toolOptions = [
   { id: "selenium", label: "Selenium" },
   { id: "postman", label: "Postman" },
   { id: "jmeter", label: "JMeter" },
-  { id: "magento", label: "Magento" },
   { id: "shopify", label: "Shopify" },
+  { id: "magento", label: "Magento" },
 ] as const;
 
 export type ClientNeed = {
@@ -60,65 +60,66 @@ export type ClientNeed = {
 export const clientNeeds: ClientNeed[] = [
   {
     id: "ecommerce",
-    title: "Ecommerce — Magento, Shopify, custom",
-    plain: "Cart, checkout, pay, refunds, coupons, admin. We click it like a shopper.",
-    fit: "Usually Basic ($999). Growth if you also want Cypress / Playwright scripts.",
+    title: "Shopify / Magento / store",
+    plain:
+      "Shoppers can add to cart, check out, pay, use a discount, refund, and you can run admin — on Shopify, Magento, or a custom store.",
+    fit: "A shopper-style test cycle on Basic ($999). Growth if you also want Cypress / Playwright on checkout.",
     plan: "basic",
     cta: "Talk to an expert",
   },
   {
     id: "saas",
     title: "Web / SaaS app",
-    plain: "Logins, roles, billing, the journeys that make revenue.",
-    fit: "Basic for manual. Growth when APIs and automation start.",
+    plain: "People can sign in, use the right role, pay you, and finish the journey that makes revenue.",
+    fit: "Manual coverage on Basic ($999). Growth when APIs and weekly automation start.",
     plan: "basic",
     cta: "Talk to an expert",
   },
   {
     id: "mobile",
     title: "Mobile app",
-    plain: "iOS / Android smoke, onboarding, store-release checks.",
-    fit: "Usually Basic. Tell us the devices in the form.",
+    plain: "iOS / Android install, onboarding, and the taps that matter before a store release.",
+    fit: "A device smoke + regression cycle on Basic ($999). Name the devices in the form.",
     plan: "basic",
     cta: "Talk to an expert",
   },
   {
     id: "desktop",
     title: "Desktop application",
-    plain: "Windows or Mac installers, updates, core workflows.",
-    fit: "Talk to us first — we scope the build after a free audit.",
+    plain: "Windows or Mac install, update, and the core workflows your users live in.",
+    fit: "A scoped plan after the free audit — not a forced Basic card.",
     plan: "audit",
     cta: "Talk to an expert",
   },
   {
     id: "game",
     title: "Game",
-    plain: "Builds, devices, play-throughs, crash and progression bugs.",
-    fit: "Talk to us first — games need a short scope, not a guess.",
+    plain: "A build that launches, a play-through that progresses, and crashes caught on the devices you ship.",
+    fit: "A short scope after the free audit. Games are not a $999 guess.",
     plan: "audit",
     cta: "Talk to an expert",
   },
   {
     id: "api",
     title: "API / backend",
-    plain: "Contracts, auth, webhooks, error shapes.",
-    fit: "Usually Growth ($1,899).",
+    plain: "Auth, contracts, webhooks, and error shapes stay true when the UI is not the product.",
+    fit: "API checks on Growth ($1,899), with notes your engineers can action.",
     plan: "growth",
     cta: "Talk to an expert",
   },
   {
     id: "automation",
     title: "Cypress, Playwright, or Selenium",
-    plain: "You already picked a tool. We build or stabilize suites on it.",
-    fit: "Usually Growth ($1,899).",
+    plain: "A suite on the tool you already picked — new coverage or less flake, not a rewrite speech.",
+    fit: "Automation start on Growth ($1,899). We work in Cypress, Playwright, or Selenium.",
     plan: "growth",
     cta: "Talk to an expert",
   },
   {
     id: "not-sure",
     title: "Not sure — I will describe it",
-    plain: "Tell us the product in your words. We map it to a test plan.",
-    fit: "Free QA audit first — no retainer required.",
+    plain: "You tell us the product in your words. No QA vocabulary required.",
+    fit: "A free QA audit that maps the need to a package. No retainer to start.",
     plan: "audit",
     cta: "Talk to an expert",
   },
@@ -126,7 +127,7 @@ export const clientNeeds: ClientNeed[] = [
 
 export const packageNeedMap = [
   {
-    ifYouHave: "Magento / Shopify / store bugs",
+    ifYouHave: "Shopify / Magento / store bugs",
     pick: "Basic — $999/mo",
     href: "/contact?plan=basic&need=ecommerce&source=pricing-map",
   },
