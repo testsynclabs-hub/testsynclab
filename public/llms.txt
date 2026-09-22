@@ -1,0 +1,16 @@
+# TestSync Lab
+
+Remote software QA agency for SaaS teams. Monthly retainers from $999 USD: manual testing, API testing, Playwright automation, performance checks, and AI product QA (chatbots, RAG, LLM evals).
+
+- Site: https://www.testsynclab.com
+- Pricing: https://www.testsynclab.com/pricing
+- Free QA audit: https://www.testsynclab.com/contact
+- US: https://www.testsynclab.com/qa-services-usa
+- UK: https://www.testsynclab.com/qa-services-uk
+- Canada: https://www.testsynclab.com/qa-services-canada
+- Australia: https://www.testsynclab.com/qa-services-australia
+- Outsourced QA: https://www.testsynclab.com/outsourced-qa
+
+Delivery is remote from Lahore, Pakistan. Buyers are product and engineering teams worldwide, with primary fit in the United States, United Kingdom, Canada, and Australia. We do not claim a fake local office in those countries.
+
+Contact: info@testsynclab.com
