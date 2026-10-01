@@ -16,7 +16,7 @@ export function WhatsAppButton({
 }) {
   const tone =
     variant === "light"
-      ? "bg-[#f6f1e7] text-binding hover:bg-white"
+      ? "bg-paper text-binding hover:bg-white"
       : "bg-whatsapp text-white hover:bg-[#064e46]";
 
   return (
@@ -25,7 +25,7 @@ export function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold ${tone} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold ${tone} ${className}`}
     >
       <WhatsAppIcon />
       <span>{label}</span>

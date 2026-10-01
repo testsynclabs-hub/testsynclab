@@ -25,7 +25,7 @@ export function FavoriteButton({
       className={
         variant === "icon"
           ? "inline-flex h-11 w-11 items-center justify-center rounded-full bg-card/95 text-binding shadow-sm hover:text-seal"
-          : "inline-flex min-h-11 items-center justify-center gap-2 border border-line bg-card px-4 py-2.5 text-sm font-semibold text-binding hover:border-binding"
+          : "inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-line bg-card px-4 py-2.5 text-sm font-semibold text-binding hover:border-binding"
       }
     >
       <HeartIcon filled={saved} className={saved ? "h-5 w-5 text-seal" : "h-5 w-5"} />

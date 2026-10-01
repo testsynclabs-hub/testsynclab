@@ -30,8 +30,8 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="border-b border-line">
-        <Container className="grid items-end gap-12 py-14 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+      <section>
+        <Container className="grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
           <div className="rise">
             <p className="kicker">Chishti Publications</p>
             <h1 className="font-display mt-4 max-w-3xl text-[2.35rem] leading-[1.08] text-ink sm:text-6xl lg:text-[4.15rem]">
@@ -44,7 +44,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/products"
-                className="inline-flex min-h-11 items-center justify-center bg-binding px-5 py-2.5 text-sm font-semibold text-[#f6f1e7] hover:bg-binding-mid"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-binding px-5 py-2.5 text-sm font-semibold text-paper shadow-sm hover:bg-binding-mid"
               >
                 Explore Products
               </Link>
@@ -56,17 +56,23 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside className="border border-line bg-card p-6 sm:p-8">
+          <aside className="rounded-3xl border border-line bg-card p-6 shadow-[0_16px_40px_rgba(107,49,66,0.08)] sm:p-8">
             <p className="kicker">In the catalog</p>
-            <ul className="mt-2 divide-y divide-line">
+            <ul className="mt-2">
               {categories.map((category, index) => (
                 <li key={category.slug}>
                   <Link
                     href={`/categories/${category.slug}`}
-                    className="flex items-baseline justify-between gap-4 py-3"
+                    className="flex items-center justify-between gap-4 rounded-2xl px-2 py-2.5 hover:bg-paper-deep/70"
                   >
-                    <span className="font-display text-2xl text-ink hover:text-binding">
-                      {category.name}
+                    <span className="flex items-center gap-3">
+                      <span
+                        className="h-2.5 w-2.5 shrink-0 rounded-full"
+                        style={{ backgroundColor: category.accent }}
+                      />
+                      <span className="font-display text-2xl text-ink hover:text-binding">
+                        {category.name}
+                      </span>
                     </span>
                     <span className="text-sm text-muted">{String(index + 1).padStart(2, "0")}</span>
                   </Link>
@@ -122,9 +128,9 @@ export default function HomePage() {
           <h2 id="inquire-heading" className="font-display mt-2 text-3xl text-ink sm:text-4xl">
             Browse, then WhatsApp
           </h2>
-          <ol className="mt-8 grid gap-6 md:grid-cols-3">
+          <ol className="mt-8 grid gap-4 md:grid-cols-3">
             {steps.map((step) => (
-              <li key={step.number} className="border-t border-gilt-line pt-4">
+              <li key={step.number} className="rounded-3xl border border-line bg-card p-6">
                 <p className="font-display text-3xl text-gilt">{step.number}</p>
                 <h3 className="font-display mt-3 text-2xl">{step.title}</h3>
                 <p className="mt-2 text-ink-soft">{step.text}</p>
@@ -134,21 +140,23 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-binding text-[#f6f1e7]">
-        <Container className="flex flex-col items-start gap-6 py-12 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 className="font-display text-3xl">Ask about any item on WhatsApp.</h2>
-            <p className="mt-2 max-w-xl text-[#f6f1e7]/80">
-              There is no cart and no online payment. Tell us which product you want and we will reply
-              on WhatsApp.
-            </p>
+      <section className="pb-4">
+        <Container>
+          <div className="flex flex-col items-start gap-6 rounded-3xl bg-binding px-6 py-10 text-paper sm:flex-row sm:items-center sm:justify-between sm:px-10">
+            <div>
+              <h2 className="font-display text-3xl">Ask about any item on WhatsApp.</h2>
+              <p className="mt-2 max-w-xl text-paper/80">
+                There is no cart and no online payment. Tell us which product you want and we will reply
+                on WhatsApp.
+              </p>
+            </div>
+            <WhatsAppButton
+              message={generalInquiryMessage}
+              label="WhatsApp Us"
+              ariaLabel="WhatsApp Chishti Publications about the catalog"
+              variant="light"
+            />
           </div>
-          <WhatsAppButton
-            message={generalInquiryMessage}
-            label="WhatsApp Us"
-            ariaLabel="WhatsApp Chishti Publications about the catalog"
-            variant="light"
-          />
         </Container>
       </section>
     </>

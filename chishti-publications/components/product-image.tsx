@@ -8,7 +8,7 @@ function CoverPlaceholder({ name, category }: { name: string; category?: string 
     <div
       role="img"
       aria-label={`${name}. Image not available yet.`}
-      className="flex h-full w-full flex-col justify-between bg-binding px-4 py-5 text-center text-[#f6f1e7]"
+      className="flex h-full w-full flex-col justify-between bg-binding px-4 py-5 text-center text-paper"
     >
       <span className="text-[0.65rem] font-semibold tracking-[0.18em] text-gilt-soft uppercase">
         {category || "Catalog"}

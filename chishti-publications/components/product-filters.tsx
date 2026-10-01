@@ -25,9 +25,9 @@ export function ProductFilters({
               type="button"
               aria-pressed={active}
               onClick={() => onChange(option.slug)}
-              className={`min-h-11 px-3 py-2 text-sm font-semibold ${
+              className={`min-h-11 rounded-full px-4 py-2 text-sm font-semibold ${
                 active
-                  ? "bg-binding text-[#f6f1e7]"
+                  ? "bg-binding text-paper"
                   : "border border-line bg-card text-ink hover:border-binding"
               }`}
             >

@@ -16,11 +16,11 @@ export function Footer() {
   const whatsapp = displayWhatsappNumber();
 
   return (
-    <footer className="mt-16 bg-binding text-[#f6f1e7]">
+    <footer className="mt-16 bg-binding text-paper">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 pt-12 pb-24 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] md:pb-12">
         <div>
           <p className="font-display text-2xl">Chishti Publications</p>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-[#f6f1e7]/80">{site.tagline}</p>
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-paper/80">{site.tagline}</p>
         </div>
         <div>
           <p className="text-xs font-semibold tracking-[0.16em] text-gilt-soft uppercase">Quick links</p>
@@ -60,7 +60,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-5 pr-24 text-sm text-[#f6f1e7]/75 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-5 pr-24 text-sm text-paper/75 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>© {year} Chishti Publications</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white">

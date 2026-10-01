@@ -11,7 +11,7 @@ export default function ProductNotFound() {
       </p>
       <Link
         href="/products"
-        className="mt-8 inline-flex min-h-11 items-center justify-center bg-binding px-5 py-2.5 text-sm font-semibold text-[#f6f1e7] hover:bg-binding-mid"
+        className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-binding px-5 py-2.5 text-sm font-semibold text-paper hover:bg-binding-mid"
       >
         Browse products
       </Link>
