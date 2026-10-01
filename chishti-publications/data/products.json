@@ -1,0 +1,209 @@
+[
+  {
+    "id": "001",
+    "name": "English Grammar Practice Book",
+    "slug": "english-grammar-practice-book",
+    "category": "Books",
+    "price": null,
+    "image": "/products/english-grammar-practice-book.svg",
+    "description": "Practice book for English grammar lessons.",
+    "sku": "CP-001",
+    "featured": true
+  },
+  {
+    "id": "002",
+    "name": "Urdu Qaida",
+    "slug": "urdu-qaida",
+    "category": "Books",
+    "price": null,
+    "image": "/products/urdu-qaida.svg",
+    "description": "Introductory Urdu reading book for early learners.",
+    "sku": "CP-002",
+    "featured": true
+  },
+  {
+    "id": "003",
+    "name": "Primary Science Reader",
+    "slug": "primary-science-reader",
+    "category": "Books",
+    "price": null,
+    "image": "/products/primary-science-reader.svg",
+    "description": "Science reader for primary-level study.",
+    "sku": "CP-003"
+  },
+  {
+    "id": "004",
+    "name": "Islamic Studies Reader",
+    "slug": "islamic-studies-reader",
+    "category": "Books",
+    "price": null,
+    "image": "/products/islamic-studies-reader.svg",
+    "description": "Reader for Islamic studies lessons.",
+    "sku": "CP-004"
+  },
+  {
+    "id": "005",
+    "name": "Four Line English Copy",
+    "slug": "four-line-english-copy",
+    "category": "Copies",
+    "price": null,
+    "image": "/products/four-line-english-copy.svg",
+    "description": "Four-line copy for early English handwriting.",
+    "sku": "CP-005",
+    "specifications": [
+      { "label": "Ruling", "value": "Four line" },
+      { "label": "Use", "value": "Early English writing" }
+    ],
+    "featured": true
+  },
+  {
+    "id": "006",
+    "name": "Single Line Copy",
+    "slug": "single-line-copy",
+    "category": "Copies",
+    "price": null,
+    "image": "/products/single-line-copy.svg",
+    "description": "Single-line copy for everyday classwork.",
+    "sku": "CP-006",
+    "specifications": [{ "label": "Ruling", "value": "Single line" }]
+  },
+  {
+    "id": "007",
+    "name": "Mathematics Square Copy",
+    "slug": "mathematics-square-copy",
+    "category": "Copies",
+    "price": null,
+    "image": "/products/mathematics-square-copy.svg",
+    "description": "Square-ruled copy for mathematics work.",
+    "sku": "CP-007",
+    "specifications": [
+      { "label": "Ruling", "value": "Square" },
+      { "label": "Use", "value": "Mathematics classwork" }
+    ],
+    "featured": true
+  },
+  {
+    "id": "008",
+    "name": "Broad Line Copy",
+    "slug": "broad-line-copy",
+    "category": "Copies",
+    "price": null,
+    "image": "/products/broad-line-copy.svg",
+    "description": "Broad-line copy for younger students.",
+    "sku": "CP-008",
+    "specifications": [{ "label": "Ruling", "value": "Broad line" }]
+  },
+  {
+    "id": "009",
+    "name": "Hardcover Notebook",
+    "slug": "hardcover-notebook",
+    "category": "Notebooks",
+    "price": null,
+    "image": "/products/hardcover-notebook.svg",
+    "description": "Hardcover notebook for notes that need a firmer cover.",
+    "sku": "CP-009",
+    "featured": true
+  },
+  {
+    "id": "010",
+    "name": "Subject Notebook",
+    "slug": "subject-notebook",
+    "category": "Notebooks",
+    "price": null,
+    "image": "/products/subject-notebook.svg",
+    "description": "Soft cover notebook for a single subject.",
+    "sku": "CP-010"
+  },
+  {
+    "id": "011",
+    "name": "Sketch Notebook",
+    "slug": "sketch-notebook",
+    "category": "Notebooks",
+    "price": null,
+    "image": "/products/sketch-notebook.svg",
+    "description": "Plain notebook for drawing and sketching."
+  },
+  {
+    "id": "012",
+    "name": "Plain Ruled Notebook",
+    "slug": "plain-ruled-notebook",
+    "category": "Notebooks",
+    "price": null,
+    "image": "",
+    "description": "Ruled notebook for everyday notes.",
+    "sku": "CP-012"
+  },
+  {
+    "id": "013",
+    "name": "Attendance Register",
+    "slug": "attendance-register",
+    "category": "Registers",
+    "price": null,
+    "image": "/products/attendance-register.svg",
+    "description": "Register for recording class attendance.",
+    "sku": "CP-013",
+    "specifications": [{ "label": "Use", "value": "Class attendance" }]
+  },
+  {
+    "id": "014",
+    "name": "Cash Register",
+    "slug": "cash-register",
+    "category": "Registers",
+    "price": null,
+    "image": "/products/cash-register.svg",
+    "description": "Register for writing daily cash entries.",
+    "sku": "CP-014",
+    "specifications": [{ "label": "Use", "value": "Cash records" }],
+    "featured": true
+  },
+  {
+    "id": "015",
+    "name": "Stock Register",
+    "slug": "stock-register",
+    "category": "Registers",
+    "price": null,
+    "image": "/products/stock-register.svg",
+    "description": "Register for keeping a simple stock record.",
+    "sku": "CP-015"
+  },
+  {
+    "id": "016",
+    "name": "Drawing Pencil Set",
+    "slug": "drawing-pencil-set",
+    "category": "Stationery",
+    "price": null,
+    "image": "/products/drawing-pencil-set.svg",
+    "description": "Set of drawing pencils for school artwork.",
+    "sku": "CP-016"
+  },
+  {
+    "id": "017",
+    "name": "Geometry Box",
+    "slug": "geometry-box",
+    "category": "Stationery",
+    "price": null,
+    "image": "/products/geometry-box.svg",
+    "description": "Geometry box for mathematics drawing."
+  },
+  {
+    "id": "018",
+    "name": "Alphabet Flash Cards",
+    "slug": "alphabet-flash-cards",
+    "category": "Educational Products",
+    "price": null,
+    "image": "/products/alphabet-flash-cards.svg",
+    "description": "Card set for practising the alphabet.",
+    "sku": "CP-018",
+    "featured": true
+  },
+  {
+    "id": "019",
+    "name": "Classroom Chart Set",
+    "slug": "classroom-chart-set",
+    "category": "Educational Products",
+    "price": null,
+    "image": "/products/classroom-chart-set.svg",
+    "description": "Charts for classroom display and revision.",
+    "sku": "CP-019"
+  }
+]

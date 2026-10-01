@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Standalone catalog app with its own Next.js project.
+    "chishti-publications/**",
   ]),
 ]);
 

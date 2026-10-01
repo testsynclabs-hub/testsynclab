@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Books",
+    "slug": "books",
+    "description": "Subject books and readers for study at school and at home.",
+    "accent": "#1B3630"
+  },
+  {
+    "name": "Copies",
+    "slug": "copies",
+    "description": "Ruled copies for classwork, practice, and daily writing.",
+    "accent": "#6B3A2A"
+  },
+  {
+    "name": "Notebooks",
+    "slug": "notebooks",
+    "description": "Notebooks for notes, subjects, and sketching.",
+    "accent": "#243044"
+  },
+  {
+    "name": "Registers",
+    "slug": "registers",
+    "description": "Registers for attendance, cash, and stock records.",
+    "accent": "#6E3340"
+  },
+  {
+    "name": "Stationery",
+    "slug": "stationery",
+    "description": "Everyday writing and drawing supplies.",
+    "accent": "#6B5428"
+  },
+  {
+    "name": "Educational Products",
+    "slug": "educational-products",
+    "description": "Learning materials for classrooms and home practice.",
+    "accent": "#2F4A3E"
+  }
+]
