@@ -5,7 +5,7 @@ export function CategoryCard({ category, count }: { category: Category; count: n
   return (
     <Link
       href={`/categories/${category.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[0_10px_28px_rgba(107,49,66,0.05)] hover:border-binding"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[0_10px_28px_rgba(18,49,90,0.06)] hover:border-binding"
     >
       <span className="h-1.5 w-full" style={{ backgroundColor: category.accent }} />
       <span className="flex flex-1 flex-col p-5">

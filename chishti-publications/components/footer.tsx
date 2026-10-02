@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoMark } from "@/components/icons";
 import { site } from "@/lib/site";
 import { displayWhatsappNumber, generalInquiryMessage, whatsappHref } from "@/lib/whatsapp";
 
@@ -19,7 +20,10 @@ export function Footer() {
     <footer className="mt-16 bg-binding text-paper">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 pt-12 pb-24 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] md:pb-12">
         <div>
-          <p className="font-display text-2xl">Chishti Publications</p>
+          <div className="flex items-center gap-3">
+            <LogoMark className="h-11 w-11 shrink-0" />
+            <p className="font-display text-2xl leading-none">Chishti Publications</p>
+          </div>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-paper/80">{site.tagline}</p>
         </div>
         <div>

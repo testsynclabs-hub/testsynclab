@@ -24,16 +24,16 @@ export default async function ProductOpenGraphImage({
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#6B3142",
-          color: "#FFF6F2",
+          background: "#12315A",
+          color: "#F3F6FB",
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontSize: 22, letterSpacing: 6, color: "#F8DDE2" }}>
+        <div style={{ display: "flex", fontSize: 22, letterSpacing: 6, color: "#D6E6F7" }}>
           CHISHTI PUBLICATIONS
         </div>
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 980 }}>
-          <div style={{ display: "flex", fontSize: 24, color: "#F8DDE2", marginBottom: 18 }}>
+          <div style={{ display: "flex", fontSize: 24, color: "#D6E6F7", marginBottom: 18 }}>
             {category}
           </div>
           <div style={{ display: "flex", fontSize: 64, lineHeight: 1.05 }}>{title}</div>

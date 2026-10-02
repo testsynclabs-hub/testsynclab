@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Broad Line Copy">
-  <rect width="600" height="800" fill="#8C4A3C"/>
-  <rect x="36" y="36" width="528" height="728" fill="none" stroke="#F8DDE2" stroke-width="2"/>
-  <rect x="48" y="48" width="504" height="704" fill="none" stroke="#F8DDE2" stroke-width="1" opacity="0.45"/>
-  <text x="300" y="128" text-anchor="middle" fill="#F8DDE2" font-family="Georgia, serif" font-size="18" letter-spacing="5">COPIES</text>
-  <line x1="190" y1="156" x2="410" y2="156" stroke="#F8DDE2" stroke-width="1"/>
-  <text x="300" y="400" text-anchor="middle" fill="#FFF6F2" font-family="Georgia, 'Times New Roman', serif" font-size="36">Broad Line Copy</text>
-  <text x="300" y="700" text-anchor="middle" fill="#F8DDE2" font-family="Georgia, serif" font-size="16" letter-spacing="3">CHISHTI PUBLICATIONS</text>
+  <rect width="600" height="800" fill="#245C88"/>
+  <rect x="36" y="36" width="528" height="728" fill="none" stroke="#D6E6F7" stroke-width="2"/>
+  <rect x="48" y="48" width="504" height="704" fill="none" stroke="#D6E6F7" stroke-width="1" opacity="0.45"/>
+  <text x="300" y="128" text-anchor="middle" fill="#D6E6F7" font-family="Georgia, serif" font-size="18" letter-spacing="5">COPIES</text>
+  <line x1="190" y1="156" x2="410" y2="156" stroke="#D6E6F7" stroke-width="1"/>
+  <text x="300" y="400" text-anchor="middle" fill="#F4F7FB" font-family="Georgia, 'Times New Roman', serif" font-size="36">Broad Line Copy</text>
+  <text x="300" y="700" text-anchor="middle" fill="#D6E6F7" font-family="Georgia, serif" font-size="16" letter-spacing="3">CHISHTI PUBLICATIONS</text>
 </svg>

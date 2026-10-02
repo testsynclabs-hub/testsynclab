@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #fff6f2;
-  --paper-deep: #f6e4de;
-  --card: #fffdfb;
-  --ink: #2c2426;
-  --ink-soft: #4a3e41;
-  --muted: #6e5c60;
-  --line: #f0ddd7;
-  --binding: #6b3142;
-  --binding-mid: #854055;
-  --gilt: #8c3e52;
-  --gilt-line: #e7b7c0;
-  --gilt-soft: #f8dde2;
-  --seal: #c45c6a;
+  --paper: #f3f6fb;
+  --paper-deep: #e4ecf6;
+  --card: #ffffff;
+  --ink: #102033;
+  --ink-soft: #2a3d56;
+  --muted: #52627a;
+  --line: #d5e1ef;
+  --binding: #12315a;
+  --binding-mid: #1c4b86;
+  --gilt: #1a4f8c;
+  --gilt-line: #b9d0ea;
+  --gilt-soft: #d6e6f7;
+  --seal: #1a4f8c;
   --whatsapp: #075e54;
 }
 
@@ -40,8 +40,8 @@ html {
 
 body {
   background:
-    radial-gradient(900px 420px at 0% -10%, #ffe4dc 0%, transparent 60%),
-    radial-gradient(700px 380px at 100% 0%, #fde8c8 0%, transparent 55%),
+    radial-gradient(900px 420px at 0% -10%, #d7e6f8 0%, transparent 60%),
+    radial-gradient(700px 380px at 100% 0%, #e8f1fb 0%, transparent 55%),
     var(--paper);
   color: var(--ink);
   font-family: var(--font-body), "Source Sans 3", ui-sans-serif, sans-serif;
@@ -53,7 +53,7 @@ body {
 }
 
 ::selection {
-  background: #f6d0d6;
+  background: #d4e4f7;
   color: var(--ink);
 }
 
