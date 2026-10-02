@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, access } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,12 +6,12 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const products = JSON.parse(await readFile(path.join(root, "data/products.json"), "utf8"));
 
 const cloth = {
-  Books: ["#1B3630", "#23443C", "#16302B"],
-  Copies: ["#6B3A2A", "#5A3124", "#7A4634"],
-  Notebooks: ["#243044", "#1C2838", "#314258"],
-  Registers: ["#6E3340", "#5C2A36", "#7E3E4C"],
-  Stationery: ["#6B5428", "#574420", "#7C6434"],
-  "Educational Products": ["#2F4A3E", "#243C32", "#3B5A4C"],
+  Books: ["#6B3142", "#7A3A4C", "#542636"],
+  Copies: ["#6E3A2E", "#8C4A3C", "#5A3026"],
+  Notebooks: ["#3D4E68", "#2E3C52", "#4E6280"],
+  Registers: ["#5C2E40", "#7A3E55", "#4A2434"],
+  Stationery: ["#6E5324", "#5A431C", "#7A5C28"],
+  "Educational Products": ["#2E5246", "#3F6B5C", "#244238"],
 };
 
 function escapeXml(value) {
@@ -41,7 +41,7 @@ function wrap(title, max = 16) {
 }
 
 function coverSvg(product, index) {
-  const palette = cloth[product.category] ?? ["#1B3630"];
+  const palette = cloth[product.category] ?? ["#6B3142"];
   const fill = palette[index % palette.length];
   const lines = wrap(product.name);
   const fontSize = lines.length > 3 ? 30 : 36;
@@ -50,19 +50,19 @@ function coverSvg(product, index) {
   const title = lines
     .map(
       (line, lineIndex) =>
-        `<text x="300" y="${start + lineIndex * lineHeight}" text-anchor="middle" fill="#F6F1E7" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}">${escapeXml(line)}</text>`,
+        `<text x="300" y="${start + lineIndex * lineHeight}" text-anchor="middle" fill="#FFF6F2" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}">${escapeXml(line)}</text>`,
     )
     .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="${escapeXml(product.name)}">
   <rect width="600" height="800" fill="${fill}"/>
-  <rect x="36" y="36" width="528" height="728" fill="none" stroke="#E7D3A8" stroke-width="2"/>
-  <rect x="48" y="48" width="504" height="704" fill="none" stroke="#E7D3A8" stroke-width="1" opacity="0.45"/>
-  <text x="300" y="128" text-anchor="middle" fill="#E7D3A8" font-family="Georgia, serif" font-size="18" letter-spacing="5">${escapeXml(product.category.toUpperCase())}</text>
-  <line x1="190" y1="156" x2="410" y2="156" stroke="#E7D3A8" stroke-width="1"/>
+  <rect x="36" y="36" width="528" height="728" fill="none" stroke="#F8DDE2" stroke-width="2"/>
+  <rect x="48" y="48" width="504" height="704" fill="none" stroke="#F8DDE2" stroke-width="1" opacity="0.45"/>
+  <text x="300" y="128" text-anchor="middle" fill="#F8DDE2" font-family="Georgia, serif" font-size="18" letter-spacing="5">${escapeXml(product.category.toUpperCase())}</text>
+  <line x1="190" y1="156" x2="410" y2="156" stroke="#F8DDE2" stroke-width="1"/>
   ${title}
-  <text x="300" y="700" text-anchor="middle" fill="#E7D3A8" font-family="Georgia, serif" font-size="16" letter-spacing="3">CHISHTI PUBLICATIONS</text>
+  <text x="300" y="700" text-anchor="middle" fill="#F8DDE2" font-family="Georgia, serif" font-size="16" letter-spacing="3">CHISHTI PUBLICATIONS</text>
 </svg>
 `;
 }
@@ -73,14 +73,18 @@ for (const [index, product] of products.entries()) {
   if (!product.image || !product.image.endsWith(".svg")) continue;
 
   const file = path.join(root, "public", product.image);
+  let existing = "";
   try {
-    await access(file);
-    continue;
+    existing = await readFile(file, "utf8");
   } catch {
-    await mkdir(path.dirname(file), { recursive: true });
-    await writeFile(file, coverSvg(product, index));
-    written += 1;
+    existing = "";
   }
+
+  if (existing && !existing.includes("#E7D3A8") && !existing.includes("#1B3630")) continue;
+
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, coverSvg(product, index));
+  written += 1;
 }
 
 console.log(`Wrote ${written} placeholder cover${written === 1 ? "" : "s"}.`);

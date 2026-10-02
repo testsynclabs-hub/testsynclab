@@ -77,7 +77,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </nav>
 
       <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12">
-        <div className="relative aspect-[3/4] overflow-hidden border border-line bg-paper-deep">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-line bg-paper-deep shadow-[0_16px_40px_rgba(107,49,66,0.08)]">
           <ProductImage
             src={product.image}
             name={product.name}

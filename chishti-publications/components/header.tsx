@@ -43,7 +43,7 @@ export function Header() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-line bg-paper">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-2.5 text-binding">
           <LogoMark className="h-8 w-8 shrink-0" />

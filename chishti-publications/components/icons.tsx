@@ -5,16 +5,16 @@ type IconProps = {
 export function LogoMark({ className = "h-8 w-8" }: IconProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <rect width="32" height="32" rx="6" fill="currentColor" />
+      <rect width="32" height="32" rx="8" fill="currentColor" />
       <path
-        fill="#F6F1E7"
+        fill="#FFF6F2"
         d="M7 9.2h7.6c1.2 1.3 1.2 1.3.1 2.7-.3.4-.8.6-1.3.6H7V9.2zm18 0h-7.6c-1.2 1.3-1.2 1.3-.1 2.7.3.4.8.6 1.3.6H25V9.2z"
       />
       <path
-        fill="#F6F1E7"
+        fill="#FFF6F2"
         d="M7 14h6.8c1.3 0 2 .5 2.3 1.4.3-.9 1-1.4 2.3-1.4H25v8.2h-6.2c-1.1 0-1.9.4-2.3 1.2-.4-.8-1.2-1.2-2.3-1.2H7V14z"
       />
-      <path stroke="#E7D3A8" strokeWidth="0.8" d="M16 11.4v12.2" />
+      <path stroke="#F8DDE2" strokeWidth="0.8" d="M16 11.4v12.2" />
     </svg>
   );
 }

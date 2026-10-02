@@ -10,7 +10,7 @@ export function SearchBar({
       <label htmlFor="product-search" className="text-sm font-semibold text-ink">
         Search
       </label>
-      <div className="mt-2 flex items-center gap-3 border-b border-line focus-within:border-binding">
+      <div className="mt-2 flex items-center gap-3 rounded-full border border-line bg-card px-4 focus-within:border-binding">
         <input
           id="product-search"
           type="search"

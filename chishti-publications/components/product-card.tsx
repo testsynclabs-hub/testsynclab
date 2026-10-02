@@ -21,7 +21,7 @@ export function ProductCard({
   const price = priceLabel(product);
 
   return (
-    <article className="flex h-full flex-col border border-line bg-card">
+    <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[0_12px_32px_rgba(107,49,66,0.06)]">
       <div className="relative">
         <Link href={`/products/${product.slug}`} className="relative block aspect-[3/4] overflow-hidden bg-paper-deep">
           <ProductImage
