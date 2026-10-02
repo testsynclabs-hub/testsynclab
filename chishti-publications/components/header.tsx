@@ -43,15 +43,15 @@ export function Header() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-binding">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-2.5">
           <LogoMark className="h-9 w-9 shrink-0" />
           <span className="min-w-0">
-            <span className="font-display block truncate text-[1.05rem] leading-none text-ink sm:text-lg">
+            <span className="font-display block truncate text-[1.05rem] leading-none text-paper sm:text-lg">
               Chishti
             </span>
-            <span className="mt-1 block truncate text-[0.62rem] leading-none font-semibold tracking-[0.16em] text-gilt uppercase">
+            <span className="mt-1 block truncate text-[0.62rem] leading-none font-semibold tracking-[0.16em] text-gilt-soft uppercase">
               Publications
             </span>
           </span>
@@ -64,12 +64,14 @@ export function Header() {
               href={link.href}
               aria-current={isActive(pathname, link.href) ? "page" : undefined}
               className={`text-sm font-semibold ${
-                isActive(pathname, link.href) ? "text-binding" : "text-ink-soft hover:text-ink"
+                isActive(pathname, link.href)
+                  ? "text-paper underline decoration-gilt-soft underline-offset-4"
+                  : "text-paper/80 hover:text-paper"
               }`}
             >
               {link.label}
               {link.href === "/favorites" && ready && ids.length > 0 ? (
-                <span className="ml-1 text-gilt">({ids.length})</span>
+                <span className="ml-1 text-gilt-soft">({ids.length})</span>
               ) : null}
             </Link>
           ))}
@@ -77,7 +79,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center text-ink lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center text-paper lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpenPath(open ? null : pathname)}
@@ -92,20 +94,20 @@ export function Header() {
         id="mobile-nav"
         aria-label="Mobile"
         hidden={!open}
-        className="fixed inset-x-0 top-16 bottom-0 z-50 overflow-y-auto bg-paper px-4 py-4 lg:hidden"
+        className="fixed inset-x-0 top-16 bottom-0 z-50 overflow-y-auto bg-binding px-4 py-4 lg:hidden"
       >
           <ul className="mx-auto flex max-w-6xl flex-col">
             {links.map((link) => (
-              <li key={link.href} className="border-b border-line">
+              <li key={link.href} className="border-b border-white/15">
                 <Link
                   href={link.href}
                   aria-current={isActive(pathname, link.href) ? "page" : undefined}
                   onClick={() => setOpenPath(null)}
-                  className="flex min-h-12 items-center justify-between py-3 text-lg font-semibold text-ink"
+                  className="flex min-h-12 items-center justify-between py-3 text-lg font-semibold text-paper"
                 >
                   <span>{link.label}</span>
                   {link.href === "/favorites" && ready && ids.length > 0 ? (
-                    <span className="text-sm text-gilt">{ids.length} saved</span>
+                    <span className="text-sm text-gilt-soft">{ids.length} saved</span>
                   ) : null}
                 </Link>
               </li>
