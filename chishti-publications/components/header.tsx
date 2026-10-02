@@ -45,10 +45,15 @@ export function Header() {
     <>
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-        <Link href="/" className="flex min-w-0 items-center gap-2.5 text-binding">
-          <LogoMark className="h-8 w-8 shrink-0" />
-          <span className="font-display truncate text-base leading-none text-ink sm:text-lg">
-            Chishti Publications
+        <Link href="/" className="flex min-w-0 items-center gap-2.5">
+          <LogoMark className="h-9 w-9 shrink-0" />
+          <span className="min-w-0">
+            <span className="font-display block truncate text-[1.05rem] leading-none text-ink sm:text-lg">
+              Chishti
+            </span>
+            <span className="mt-1 block truncate text-[0.62rem] leading-none font-semibold tracking-[0.16em] text-gilt uppercase">
+              Publications
+            </span>
           </span>
         </Link>
 

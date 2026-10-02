@@ -2,19 +2,23 @@ type IconProps = {
   className?: string;
 };
 
-export function LogoMark({ className = "h-8 w-8" }: IconProps) {
+export function LogoMark({ className = "h-9 w-9" }: IconProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="currentColor" />
-      <path
-        fill="#FFF6F2"
-        d="M7 9.2h7.6c1.2 1.3 1.2 1.3.1 2.7-.3.4-.8.6-1.3.6H7V9.2zm18 0h-7.6c-1.2 1.3-1.2 1.3-.1 2.7.3.4.8.6 1.3.6H25V9.2z"
+      <rect width="32" height="32" rx="9" fill="#6B3142" />
+      <rect
+        x="0.8"
+        y="0.8"
+        width="30.4"
+        height="30.4"
+        rx="8.2"
+        fill="none"
+        stroke="#F8DDE2"
+        strokeWidth="1.15"
       />
-      <path
-        fill="#FFF6F2"
-        d="M7 14h6.8c1.3 0 2 .5 2.3 1.4.3-.9 1-1.4 2.3-1.4H25v8.2h-6.2c-1.1 0-1.9.4-2.3 1.2-.4-.8-1.2-1.2-2.3-1.2H7V14z"
-      />
-      <path stroke="#F8DDE2" strokeWidth="0.8" d="M16 11.4v12.2" />
+      <path fill="#FFF6F2" d="M5.2 9.4c2.9.85 6 1.35 9 1.55v13.1c-3-.2-6.1-.7-9-1.55V9.4z" />
+      <path fill="#F6E3DC" d="M26.8 9.4c-2.9.85-6 1.35-9 1.55v13.1c3-.2 6.1-.7 9-1.55V9.4z" />
+      <path fill="#6B3142" d="M19.2 10.7h3.1v6.6l-1.55-1.25L19.2 17.3z" />
     </svg>
   );
 }
