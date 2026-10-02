@@ -56,7 +56,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside className="rounded-3xl border border-line bg-card p-6 shadow-[0_16px_40px_rgba(107,49,66,0.08)] sm:p-8">
+          <aside className="rounded-3xl border border-line bg-card p-6 shadow-[0_16px_40px_rgba(18,49,90,0.08)] sm:p-8">
             <p className="kicker">In the catalog</p>
             <ul className="mt-2">
               {categories.map((category, index) => (

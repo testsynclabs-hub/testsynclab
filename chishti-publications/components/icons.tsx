@@ -5,7 +5,7 @@ type IconProps = {
 export function LogoMark({ className = "h-9 w-9" }: IconProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <rect width="32" height="32" rx="9" fill="#6B3142" />
+      <rect width="32" height="32" rx="9" fill="#12315A" />
       <rect
         x="0.8"
         y="0.8"
@@ -13,12 +13,12 @@ export function LogoMark({ className = "h-9 w-9" }: IconProps) {
         height="30.4"
         rx="8.2"
         fill="none"
-        stroke="#F8DDE2"
+        stroke="#D6E6F7"
         strokeWidth="1.15"
       />
-      <path fill="#FFF6F2" d="M5.2 9.4c2.9.85 6 1.35 9 1.55v13.1c-3-.2-6.1-.7-9-1.55V9.4z" />
-      <path fill="#F6E3DC" d="M26.8 9.4c-2.9.85-6 1.35-9 1.55v13.1c3-.2 6.1-.7 9-1.55V9.4z" />
-      <path fill="#6B3142" d="M19.2 10.7h3.1v6.6l-1.55-1.25L19.2 17.3z" />
+      <path fill="#F7FBFF" d="M5.2 9.4c2.9.85 6 1.35 9 1.55v13.1c-3-.2-6.1-.7-9-1.55V9.4z" />
+      <path fill="#E4EEF8" d="M26.8 9.4c-2.9.85-6 1.35-9 1.55v13.1c3-.2 6.1-.7 9-1.55V9.4z" />
+      <path fill="#12315A" d="M19.2 10.7h3.1v6.6l-1.55-1.25L19.2 17.3z" />
     </svg>
   );
 }

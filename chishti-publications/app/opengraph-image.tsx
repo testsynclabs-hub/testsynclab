@@ -14,12 +14,12 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#6B3142",
-          color: "#FFF6F2",
+          background: "#12315A",
+          color: "#F3F6FB",
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontSize: 22, letterSpacing: 6, color: "#F8DDE2" }}>
+        <div style={{ display: "flex", fontSize: 22, letterSpacing: 6, color: "#D6E6F7" }}>
           CHISHTI PUBLICATIONS
         </div>
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 900 }}>
@@ -27,7 +27,7 @@ export default function OpenGraphImage() {
             Quality Books & Copies for Every Learning Journey
           </div>
         </div>
-        <div style={{ display: "flex", fontSize: 24, color: "#F8DDE2" }}>chishtipublications.com</div>
+        <div style={{ display: "flex", fontSize: 24, color: "#D6E6F7" }}>chishtipublications.com</div>
       </div>
     ),
     { ...size },
