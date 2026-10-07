@@ -53,12 +53,35 @@ Then in Hostinger → Domains → DNS / DNS Zone for `testsynclab.com`, set what
 
 | Type  | Name | Value                         | TTL  |
 |-------|------|-------------------------------|------|
-| A     | @    | 76.76.21.21                   | 300  |
-| CNAME | www  | cname.vercel-dns.com.         | 300  |
+| A     | @    | *(copy from Vercel Domains)*  | 300  |
+| CNAME | www  | *(copy from Vercel Domains)*  | 300  |
 
-Exact values can differ — **always copy from the Vercel Domains panel**.
+Exact values can differ — **always copy from the Vercel Domains panel** (may look like `216.198.79.1` + a `*.vercel-dns-017.com` CNAME, not the old `76.76.21.21` / `cname.vercel-dns.com` examples).
 
 Remove conflicting Hostinger parking / default A records that point elsewhere.
+
+### Fix: browser shows `DNS_PROBE_FINISHED_NXDOMAIN` for a few seconds, then loads
+This is **DNS flakiness**, not a Next.js bug. Chrome fails the first lookup, then retries and the site appears.
+
+Do this in order:
+
+1. **Vercel → Project → Settings → Domains**
+   - Both `testsynclab.com` and `www.testsynclab.com` must show **Valid**.
+   - Copy the exact A / CNAME values Vercel shows (do not guess).
+
+2. **Hostinger → Domains → DNS Zone** for `testsynclab.com`
+   - `@` (apex) → **A** → Vercel’s IP, TTL **300**
+   - `www` → **CNAME** → Vercel’s target, TTL **300**
+   - Delete extra/old A or CNAME rows for `@` or `www` (parking pages, old hosts)
+   - Keep **MX** records for `info@` email — do not delete those
+
+3. **Prefer linking `https://www.testsynclab.com`** in LinkedIn / Reddit / email (canonical host). Apex should 308 → www after DNS works.
+
+4. **If NXDOMAIN flash continues (best durable fix):** move DNS off Hostinger’s flaky `*.dns-parking.com` nameservers:
+   - **Option A (recommended):** Cloudflare free → change nameservers at Hostinger registrar to Cloudflare → proxy **DNS only** (grey cloud) for `@` and `www` → same A/CNAME as Vercel
+   - **Option B:** Vercel Domains → use **Vercel nameservers** for the domain (then recreate MX at the new DNS host so email still works)
+
+5. After changes: wait 15–60 min, then on your PC run `ipconfig /flushdns` (Windows) or reboot router Wi‑Fi, and retry in an Incognito window.
 
 ## 4) Email (info@testsynclab.com)
 Keep Hostinger email / MX records for mailbox. DNS for web (A/CNAME) and email (MX) can coexist.
