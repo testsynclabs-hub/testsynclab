@@ -44,6 +44,14 @@ export const metadata: Metadata = {
   category: "technology",
   alternates: {
     canonical: "/",
+    languages: {
+      en: "/",
+      "en-US": "/qa-services-usa",
+      "en-GB": "/qa-services-uk",
+      "en-CA": "/qa-services-canada",
+      "en-AU": "/qa-services-australia",
+      "x-default": "/",
+    },
   },
   icons: {
     icon: [
@@ -54,12 +62,14 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     shortcut: ["/favicon.ico"],
   },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
+    alternateLocale: ["en_GB", "en_CA", "en_AU"],
     type: "website",
     images: [
       {

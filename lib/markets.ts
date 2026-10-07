@@ -20,6 +20,8 @@ export type MarketPage = {
   countryName: string;
   ogLocale: string;
   hreflang: string;
+  /** Country hubs show on the homepage grid; city pages are SEO satellites. */
+  tier?: "country" | "city";
 };
 
 export const markets: MarketPage[] = [
@@ -28,6 +30,7 @@ export const markets: MarketPage[] = [
     path: "/qa-services-usa",
     navLabel: "QA for US teams",
     navDescription: "Remote retainers with follow-the-sun coverage for US product teams.",
+    tier: "country",
     eyebrow: "United States",
     h1: "Remote QA services for US product teams",
     title: "QA Services for US Startups | Remote Retainers from $999",
@@ -103,6 +106,7 @@ export const markets: MarketPage[] = [
     path: "/qa-services-canada",
     navLabel: "QA for Canadian teams",
     navDescription: "Remote QA retainers for Canadian SaaS — USD pricing, ET-friendly handoffs.",
+    tier: "country",
     eyebrow: "Canada",
     h1: "Remote QA services for Canadian product teams",
     title: "QA Services for Canadian Startups | Remote Testing from $999",
@@ -178,6 +182,7 @@ export const markets: MarketPage[] = [
     path: "/qa-services-uk",
     navLabel: "QA for UK teams",
     navDescription: "Remote QA retainers for UK SaaS — USD pricing, UK-hour overlap.",
+    tier: "country",
     eyebrow: "United Kingdom",
     h1: "Remote QA services for UK product teams",
     title: "QA Services UK | Remote Testing Retainers from $999",
@@ -253,6 +258,7 @@ export const markets: MarketPage[] = [
     path: "/qa-services-australia",
     navLabel: "QA for Australian teams",
     navDescription: "Remote QA retainers for AU SaaS — USD pricing, AEST-friendly handoffs.",
+    tier: "country",
     eyebrow: "Australia",
     h1: "Remote QA services for Australian product teams",
     title: "QA Services Australia | Remote Testing from $999",
@@ -328,6 +334,7 @@ export const markets: MarketPage[] = [
     path: "/qa-services-europe",
     navLabel: "QA for European teams",
     navDescription: "Remote QA retainers for EU SaaS — USD pricing, CET overlap.",
+    tier: "country",
     eyebrow: "Europe",
     h1: "Remote QA services for European product teams",
     title: "QA Services Europe | Remote Testing Retainers from $999 | TestSync Lab",
@@ -404,6 +411,7 @@ export const markets: MarketPage[] = [
     path: "/qa-services-germany",
     navLabel: "QA for German teams",
     navDescription: "Remote QA for German SaaS — English delivery, CET overlap.",
+    tier: "country",
     eyebrow: "Germany",
     h1: "Remote QA services for German product teams",
     title: "QA Services Germany | Remote Testing from $999 | TestSync Lab",
@@ -475,10 +483,322 @@ export const markets: MarketPage[] = [
     ogLocale: "en_DE",
     hreflang: "en-DE",
   },
+  {
+    slug: "new-york",
+    path: "/qa-services-new-york",
+    navLabel: "QA for New York teams",
+    navDescription: "Remote QA for NYC / EST SaaS — overnight verification.",
+    tier: "city",
+    eyebrow: "New York",
+    h1: "Remote QA services for New York product teams",
+    title: "QA Services New York NYC | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for New York and NYC SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — EST follow-the-sun handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services New York",
+      "QA testing NYC",
+      "hire QA testers New York",
+      "outsourced QA NYC",
+      "remote QA New York startups",
+      "software testing company NYC",
+    ],
+    intro:
+      "New York SaaS teams ship on Eastern Time with expensive local QA talent. TestSync Lab is a remote QA lab for NYC and broader New York product teams: senior testers, USD retainers from $999, and overnight verification so an evening deploy is checked before your next standup.",
+    highlights: [
+      {
+        title: "Built for EST release trains",
+        detail:
+          "You close the NYC day with a build. We verify on our morning and drop engineer-ready bugs in Slack or Jira before your next working block.",
+      },
+      {
+        title: "Cheaper than a NYC full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a Manhattan hiring cycle.",
+      },
+      {
+        title: "Same tools as NYC eng orgs",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "Common in NYC seed and Series A. A retainer replaces heroics with a named cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "A New York QA salary plus recruiting is heavy runway. Remote coverage starts in days.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths instead of rewriting everything.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with NYC remote-first teams?",
+        answer:
+          "Yes. Most New York clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira with EST-friendly handoffs.",
+      },
+      {
+        question: "How is this different from the USA page?",
+        answer:
+          "Same retainers and lab. This page targets New York / NYC search intent and EST examples. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "san-francisco",
+    path: "/qa-services-san-francisco",
+    navLabel: "QA for San Francisco / Bay Area teams",
+    navDescription: "Remote QA for SF and Bay Area SaaS — PST handoffs.",
+    tier: "city",
+    eyebrow: "San Francisco Bay Area",
+    h1: "Remote QA services for San Francisco & Bay Area teams",
+    title: "QA Services San Francisco Bay Area | Remote Retainers from $999",
+    description:
+      "Hire remote QA for San Francisco and Bay Area SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — PST follow-the-sun handoffs, free audit in 24 hours.",
+    keywords: [
+      "QA services San Francisco",
+      "QA testing Bay Area",
+      "hire QA testers SF",
+      "outsourced QA Silicon Valley",
+      "remote QA San Francisco startups",
+      "software testing company Bay Area",
+    ],
+    intro:
+      "Bay Area product teams move fast and pay a premium for local QA. TestSync Lab gives SF, Palo Alto, and remote Bay Area startups senior remote QA on a monthly USD retainer — overnight verification after PST deploys, clear bugs, no huge hiring loop.",
+    highlights: [
+      {
+        title: "PST evening deploy → morning evidence",
+        detail:
+          "Follow-the-sun verification so SF teams wake up to severity, steps, and evidence — not silence.",
+      },
+      {
+        title: "Runway-friendly vs Bay Area salaries",
+        detail:
+          "Retainers from $999/mo with ~40 QA hours/week. Upgrade depth with Growth or Scale as you ship faster.",
+      },
+      {
+        title: "Startup tooling native",
+        detail:
+          "Slack, Linear, GitHub, Playwright. We join mid-sprint — not after a six-week SOW.",
+      },
+    ],
+    pains: [
+      {
+        title: "Series A still clicking through checkout",
+        detail:
+          "A named QA cycle beats founder Friday QA when every deploy is customer-facing.",
+      },
+      {
+        title: "Automation theater before risk mapping",
+        detail:
+          "We map money paths first, then automate what stays stable.",
+      },
+      {
+        title: "Vendors that only sell junior hours",
+        detail:
+          "Busy weeks should not explode the invoice. Retainers reserve senior capacity.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you serve teams outside San Francisco city?",
+        answer:
+          "Yes — Bay Area and remote PST teams. National USA page: /qa-services-usa.",
+      },
+      {
+        question: "Can you overlap late PST standups?",
+        answer:
+          "Default is async overnight verification. Short live overlap can be scheduled when a release is critical.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Free QA audit via /contact. Typical start is 3–5 business days after scope.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "toronto",
+    path: "/qa-services-toronto",
+    navLabel: "QA for Toronto teams",
+    navDescription: "Remote QA for Toronto SaaS — ET handoffs, USD pricing.",
+    tier: "city",
+    eyebrow: "Toronto",
+    h1: "Remote QA services for Toronto product teams",
+    title: "QA Services Toronto | Remote Testing Retainers from $999 USD",
+    description:
+      "Hire remote QA for Toronto startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Eastern Time handoffs, Slack/Jira, free audit.",
+    keywords: [
+      "QA services Toronto",
+      "hire QA testers Toronto",
+      "outsourced QA Toronto",
+      "software testing company Toronto",
+      "remote QA Toronto startups",
+      "QA testing GTA",
+    ],
+    intro:
+      "Toronto SaaS teams face US-style release pressure with a competitive local hiring market. TestSync Lab delivers senior remote QA on a USD retainer — ET-friendly handoffs, English reporting, and clear packages from $999/mo so you cover the next launch without waiting on a GTA full-time seat.",
+    highlights: [
+      {
+        title: "ET handoffs Toronto teams understand",
+        detail:
+          "Ship in your afternoon. We verify on our morning and drop reproducible bugs before your next standup.",
+      },
+      {
+        title: "USD packages, no hourly drift",
+        detail:
+          "Same public pricing as our Canada hub: $999 / $1,899 / $2,799. Ask if finance needs a custom invoice format.",
+      },
+      {
+        title: "Privacy-minded staging access",
+        detail:
+          "Least-privilege access and NDA/terms before kickoff — the bar Canadian B2B buyers ask for.",
+      },
+    ],
+    pains: [
+      {
+        title: "QA talent scarce for early teams",
+        detail:
+          "A remote retainer starts in days while you keep recruiting if you want a hire later.",
+      },
+      {
+        title: "Offshore dumps that waste eng mornings",
+        detail:
+          "We write severity, steps, and evidence — not screenshots without context.",
+      },
+      {
+        title: "Still doing release QA yourselves",
+        detail:
+          "Common in Toronto seed SaaS. A named cycle replaces heroics.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this only for downtown Toronto?",
+        answer:
+          "No — Toronto, GTA, and remote Canadian teams on Eastern Time. National page: /qa-services-canada.",
+      },
+      {
+        question: "Can we pay in USD from Canada?",
+        answer:
+          "Yes. Public retainers are USD. Confirm invoice format on the audit form if needed.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact with staging URL and next release date.",
+      },
+    ],
+    countryName: "Canada",
+    ogLocale: "en_CA",
+    hreflang: "en-CA",
+  },
+  {
+    slug: "london",
+    path: "/qa-services-london",
+    navLabel: "QA for London teams",
+    navDescription: "Remote QA for London SaaS — UK-hour overlap, USD retainers.",
+    tier: "city",
+    eyebrow: "London",
+    h1: "Remote QA services for London product teams",
+    title: "QA Services London | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for London startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — UK-hour overlap, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services London",
+      "hire QA testers London",
+      "outsourced QA London",
+      "software testing company London",
+      "remote QA London startups",
+      "QA testing UK London",
+    ],
+    intro:
+      "London product teams need release confidence without a slow local hire. TestSync Lab is a remote QA lab for London and UK-remote SaaS: senior testers, USD retainers from $999, UK-hour overlap for questions, and follow-the-sun verification on evening deploys.",
+    highlights: [
+      {
+        title: "UK-hour overlap, not a black box",
+        detail:
+          "Morning/midday London overlap for Slack. Evening deploys verified on our next working morning with engineer-ready bugs.",
+      },
+      {
+        title: "Clear USD packages",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. Finance can budget quality like any other vendor.",
+      },
+      {
+        title: "GDPR-minded access",
+        detail:
+          "Least-privilege staging, NDA/terms before kickoff. Share a staging URL on the audit form to start.",
+      },
+    ],
+    pains: [
+      {
+        title: "London QA hires are expensive and slow",
+        detail:
+          "A retainer covers critical paths this month while you decide whether to hire.",
+      },
+      {
+        title: "You need bugs engineers can fix",
+        detail:
+          "Severity, steps, environment, evidence in Slack or Jira — the bar London B2B teams expect.",
+      },
+      {
+        title: "Agencies selling only junior hours",
+        detail:
+          "Busy sprints should not explode the invoice. Retainers reserve senior capacity.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you only serve central London?",
+        answer:
+          "No — London and UK remote-first teams. National UK page: /qa-services-uk.",
+      },
+      {
+        question: "What overlap do you have with UK hours?",
+        answer:
+          "UK morning/midday overlap our afternoon. Default delivery remains follow-the-sun verification.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Free QA audit at /contact. Typical start 3–5 business days after scope.",
+      },
+    ],
+    countryName: "United Kingdom",
+    ogLocale: "en_GB",
+    hreflang: "en-GB",
+  },
 ];
 
 export function getMarket(slug: string) {
   return markets.find((market) => market.slug === slug);
+}
+
+export function countryMarkets() {
+  return markets.filter((market) => market.tier !== "city");
+}
+
+export function cityMarkets() {
+  return markets.filter((market) => market.tier === "city");
 }
 
 export const marketLanguageAlternates = {
@@ -650,14 +970,34 @@ export const marketNavChildren = [
     description: "Remote retainers for United States product teams.",
   },
   {
+    href: "/qa-services-new-york",
+    label: "QA for New York",
+    description: "NYC / EST overnight verification.",
+  },
+  {
+    href: "/qa-services-san-francisco",
+    label: "QA for San Francisco",
+    description: "Bay Area / PST follow-the-sun QA.",
+  },
+  {
     href: "/qa-services-canada",
     label: "QA for Canadian teams",
     description: "USD packages and ET/PT-friendly handoffs.",
   },
   {
+    href: "/qa-services-toronto",
+    label: "QA for Toronto",
+    description: "Toronto SaaS — ET handoffs.",
+  },
+  {
     href: "/qa-services-uk",
     label: "QA for UK teams",
     description: "USD retainers with UK-hour overlap.",
+  },
+  {
+    href: "/qa-services-london",
+    label: "QA for London",
+    description: "London SaaS — UK-hour overlap.",
   },
   {
     href: "/qa-services-australia",

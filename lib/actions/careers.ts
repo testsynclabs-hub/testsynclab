@@ -17,6 +17,7 @@ import {
   rateLimit,
   sanitizeSource,
 } from "@/lib/security";
+import { assertTrustedOrigin } from "@/lib/request-guards";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
@@ -266,6 +267,13 @@ export async function submitCareer(
   _prev: CareerState,
   formData: FormData,
 ): Promise<CareerState> {
+  if (!(await assertTrustedOrigin())) {
+    return {
+      status: "delivery",
+      message: "This form can only be submitted from testsynclab.com.",
+    };
+  }
+
   const honeypot = asString(formData.get("company_website"));
   if (honeypot) return { status: "success" };
 

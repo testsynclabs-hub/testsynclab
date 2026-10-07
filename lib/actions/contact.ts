@@ -11,6 +11,7 @@ import {
   sanitizePlan,
   sanitizeSource,
 } from "@/lib/security";
+import { assertTrustedOrigin } from "@/lib/request-guards";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 import { sanitizeNeed, sanitizeTool } from "@/lib/client-guide";
 
@@ -221,6 +222,13 @@ export async function submitContact(
   _prev: ContactState,
   formData: FormData,
 ): Promise<ContactState> {
+  if (!(await assertTrustedOrigin())) {
+    return {
+      status: "delivery",
+      message: "This form can only be submitted from testsynclab.com.",
+    };
+  }
+
   const honeypot = asString(formData.get("company_website"));
   if (honeypot) {
     return { status: "success" };

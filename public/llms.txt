@@ -13,8 +13,12 @@
 
 ## Markets (high priority)
 - USA: https://www.testsynclab.com/qa-services-usa
+- New York: https://www.testsynclab.com/qa-services-new-york
+- San Francisco / Bay Area: https://www.testsynclab.com/qa-services-san-francisco
 - Canada: https://www.testsynclab.com/qa-services-canada
+- Toronto: https://www.testsynclab.com/qa-services-toronto
 - UK: https://www.testsynclab.com/qa-services-uk
+- London: https://www.testsynclab.com/qa-services-london
 - Australia: https://www.testsynclab.com/qa-services-australia
 - Europe: https://www.testsynclab.com/qa-services-europe
 - Germany: https://www.testsynclab.com/qa-services-germany

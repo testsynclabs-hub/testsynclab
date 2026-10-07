@@ -31,12 +31,35 @@ import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { clientNeeds, needContactHref } from "@/lib/client-guide";
 import { faqs } from "@/lib/faq";
 import { SITE_EMAIL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site";
-import { markets, outsourcedQa, qaAgency } from "@/lib/markets";
+import { cityMarkets, countryMarkets, outsourcedQa, qaAgency } from "@/lib/markets";
 
 export const metadata: Metadata = {
   title: { absolute: SITE_TITLE },
   description: SITE_DESCRIPTION,
-  alternates: { canonical: "/" },
+  keywords: [
+    "remote QA agency USA",
+    "QA services UK",
+    "QA services Canada",
+    "outsourced QA New York",
+    "QA testing London",
+    "QA services Toronto",
+    "Playwright testing company",
+    "software testing services",
+  ],
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      "en-US": "/qa-services-usa",
+      "en-GB": "/qa-services-uk",
+      "en-CA": "/qa-services-canada",
+      "x-default": "/",
+    },
+  },
+  openGraph: {
+    locale: "en_US",
+    alternateLocale: ["en_GB", "en_CA"],
+  },
 };
 
 const homeFaqJsonLd = {
@@ -605,8 +628,9 @@ export default function HomePage() {
                 Remote QA for product teams shipping weekly
               </h2>
               <p className="mt-4 text-lg text-muted">
-                USD retainers, English reporting, Slack/Jira, and follow-the-sun
-                verification — so releases stay covered wherever your team sits.
+                USA-first retainers, plus UK, Canada, Australia, and Europe —
+                USD pricing, English reporting, Slack/Jira, and follow-the-sun
+                verification.
               </p>
             </div>
           </Reveal>
@@ -627,7 +651,7 @@ export default function HomePage() {
                 </article>
               </Reveal>
             </li>
-            {markets.map((market, index) => (
+            {countryMarkets().map((market, index) => (
               <li key={market.path}>
                 <Reveal delayMs={(index + 1) * 60}>
                   <article className="h-full border-t border-brand/25 pt-5">
@@ -662,6 +686,25 @@ export default function HomePage() {
               </Reveal>
             </li>
           </ul>
+          <Reveal>
+            <div className="mt-12 rounded-2xl border border-line bg-white px-5 py-6 sm:px-8">
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand">
+                Top cities — USA · UK · Canada
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                {cityMarkets().map((city) => (
+                  <li key={city.path}>
+                    <Link
+                      href={city.path}
+                      className="text-brand hover:text-brand-deep"
+                    >
+                      {city.eyebrow} →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 
