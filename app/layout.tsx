@@ -98,7 +98,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en-US"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="flex min-h-full w-full max-w-[100%] flex-col overflow-x-clip bg-background text-foreground">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

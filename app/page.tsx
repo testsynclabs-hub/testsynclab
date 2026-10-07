@@ -693,7 +693,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-brand-deep py-12 sm:py-16">
+      <section className="w-full border-t border-line bg-brand-deep py-12 sm:py-16">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center sm:px-8">
           <div className="max-w-xl">
             <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
