@@ -39,7 +39,7 @@ export function SiteFooter() {
 
   return (
     <footer
-      className="border-t border-line bg-slate-950 text-slate-300"
+      className="w-full border-t border-line bg-slate-950 text-slate-300"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
