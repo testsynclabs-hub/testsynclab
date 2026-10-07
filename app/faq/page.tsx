@@ -45,7 +45,7 @@ export default function FaqPage() {
       </section>
 
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-5 sm:px-8">
+        <div className="mx-auto w-full max-w-3xl px-5 sm:px-8 lg:max-w-[70%]">
           <FaqList />
           <FaqCta />
         </div>
