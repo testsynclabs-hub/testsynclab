@@ -117,6 +117,15 @@ export const clientNeeds: ClientNeed[] = [
     cta: "Talk to an expert",
   },
   {
+    id: "ai",
+    title: "AI chatbot / LLM feature",
+    plain:
+      "The bot answers from your data, does not leak, and fails loudly when it is wrong.",
+    fit: "A scoped AI testing sprint — golden sets and jailbreak checks, not buried inside Basic.",
+    plan: "ai",
+    cta: "Talk to an expert",
+  },
+  {
     id: "not-sure",
     title: "Not sure — I will describe it",
     plain: "You tell us the product in your words. No QA vocabulary required.",
@@ -135,19 +144,10 @@ const PLAN_PICK: Record<string, string> = {
   ai: "Talk about AI testing",
 };
 
-const aiNeed: ClientNeed = {
-  id: "ai",
-  title: "AI chatbot / LLM feature",
-  plain: "The bot answers from your data, does not leak, and fails loudly when it is wrong.",
-  fit: "A scoped AI testing sprint — not buried inside Basic.",
-  plan: "ai",
-  cta: "Talk to an expert",
-};
-
 export function explainNeed(id: string): ClientNeed {
   return (
     clientNeeds.find((item) => item.id === id) ||
-    (id === "ai" ? aiNeed : clientNeeds.find((item) => item.id === "not-sure")!)
+    clientNeeds.find((item) => item.id === "not-sure")!
   );
 }
 
