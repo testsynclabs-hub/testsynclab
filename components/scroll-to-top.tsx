@@ -1,25 +1,29 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
+
+function jumpToTop() {
+  if (typeof window === "undefined") return;
+  if (window.location.hash) return;
+
+  const html = document.documentElement;
+  const previous = html.style.scrollBehavior;
+  html.style.scrollBehavior = "auto";
+
+  window.scrollTo(0, 0);
+  html.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  html.style.scrollBehavior = previous;
+}
 
 /**
- * App Router keeps the previous scroll offset on some navigations when
- * `html { scroll-behavior: smooth }` is set. Force the document to the top
- * on every pathname change (unless the URL has a hash target).
+ * App Router can restore the previous page’s scroll offset after paint.
+ * Force top on every pathname change (skip hash targets).
  */
 export function ScrollToTop() {
   const pathname = usePathname();
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.location.hash) return;
-
-    // Instant jump — smooth CSS scroll-behavior can leave mid-page offsets.
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }, [pathname]);
 
   useEffect(() => {
     if ("scrollRestoration" in history) {
@@ -30,6 +34,26 @@ export function ScrollToTop() {
       };
     }
   }, []);
+
+  useLayoutEffect(() => {
+    jumpToTop();
+
+    // Beat Next’s late scroll restoration on soft navigations.
+    const raf1 = requestAnimationFrame(() => {
+      jumpToTop();
+      requestAnimationFrame(jumpToTop);
+    });
+    const t0 = window.setTimeout(jumpToTop, 0);
+    const t1 = window.setTimeout(jumpToTop, 50);
+    const t2 = window.setTimeout(jumpToTop, 120);
+
+    return () => {
+      cancelAnimationFrame(raf1);
+      window.clearTimeout(t0);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, [pathname]);
 
   return null;
 }
