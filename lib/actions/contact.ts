@@ -267,14 +267,34 @@ export async function submitContact(
   const text = leadText(fields);
   const html = leadHtml(fields);
 
-  const attempts = [sendViaSmtp, sendViaResend, sendViaBrevo];
-  for (const send of attempts) {
+  const smtpReady = Boolean(
+    process.env.SMTP_HOST?.trim() &&
+      process.env.SMTP_USER?.trim() &&
+      process.env.SMTP_PASS?.trim(),
+  );
+  const resendReady = Boolean(process.env.RESEND_API_KEY?.trim());
+  const brevoReady = Boolean(process.env.BREVO_API_KEY?.trim());
+
+  if (!smtpReady && !resendReady && !brevoReady) {
+    console.error(
+      "Lead mail skipped: no SMTP_HOST/SMTP_USER/SMTP_PASS, RESEND_API_KEY, or BREVO_API_KEY on this deploy",
+    );
+  }
+
+  const attempts = [
+    { name: "smtp", send: sendViaSmtp },
+    { name: "resend", send: sendViaResend },
+    { name: "brevo", send: sendViaBrevo },
+  ] as const;
+
+  for (const attempt of attempts) {
     try {
-      if (await send({ replyTo: email, subject, text, html })) {
+      if (await attempt.send({ replyTo: email, subject, text, html })) {
+        console.info("Lead emailed via", attempt.name, { plan, email });
         return { status: "success" };
       }
     } catch (error) {
-      console.error("Lead email attempt failed", error);
+      console.error(`Lead email attempt failed (${attempt.name})`, error);
     }
   }
 
@@ -289,6 +309,13 @@ export async function submitContact(
     source,
     need,
     tool,
+    smtpReady,
+    resendReady,
+    brevoReady,
   });
-  return { status: "delivery" };
+  return {
+    status: "delivery",
+    message:
+      "We could not deliver that email just now. Please write us directly and we will pick it up.",
+  };
 }

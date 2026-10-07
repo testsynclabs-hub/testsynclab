@@ -104,3 +104,15 @@ Delivery order:
 4. Brevo (`BREVO_API_KEY`)
 
 Set SMTP on Vercel as a durable mailbox send. If every path fails, the visitor sees an on-page error and can email `info@` directly.
+
+## Form submitted but no email in inbox
+1. **Vercel → Project → Settings → Environment Variables** (Production):
+   - `SMTP_HOST=smtp.hostinger.com`
+   - `SMTP_PORT=465`
+   - `SMTP_USER=info@testsynclab.com`
+   - `SMTP_PASS=` *(Hostinger email password for info@ — not your Hostinger login)*
+2. After saving vars → **Deployments → … → Redeploy** (env vars apply only on a new deploy).
+3. Check **info@testsynclab.com** → Inbox **and Spam/Junk** for subjects like `New lead (audit): …`.
+4. Hostinger → Email → confirm `info@` mailbox exists and webmail login works.
+5. Vercel → Deployments → latest → **Logs / Functions**: look for `Lead emailed via smtp` or `Lead NOT emailed` / `SMTP not configured`.
+6. FormSubmit alone is unreliable (Cloudflare challenges). Do **not** rely on it — SMTP on Vercel is required.

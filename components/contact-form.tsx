@@ -143,7 +143,8 @@ export function ContactForm({
           className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800"
           role="alert"
         >
-          We could not send that just now. Email us directly at{" "}
+          {state.message || "We could not send that just now."} Email us
+          directly at{" "}
           <a className="font-semibold underline" href={`mailto:${SITE_EMAIL}`}>
             {SITE_EMAIL}
           </a>{" "}

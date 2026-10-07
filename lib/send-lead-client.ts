@@ -54,15 +54,15 @@ function isDeliveredResponse(
   ok: boolean,
   body: { success?: boolean | string; message?: string } | null,
 ) {
-  if (!ok) return false;
-  const message = String(body?.message || "");
+  // Require a real JSON success body. Cloudflare challenge HTML / empty
+  // bodies used to count as delivered → thanks page with no inbox email.
+  if (!ok || !body) return false;
+  const message = String(body.message || "");
   if (isActivationMessage(message)) return false;
-  if (!body) return true;
   return (
     body.success === true ||
     body.success === "true" ||
-    message.toLowerCase().includes("success") ||
-    message.length === 0
+    message.toLowerCase().includes("success")
   );
 }
 
