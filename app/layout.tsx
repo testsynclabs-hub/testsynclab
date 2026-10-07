@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import { AdsUtmCapture } from "@/components/ads-utm";
 import { GoogleAdsTag } from "@/components/google-ads";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -116,6 +117,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to main content
         </a>
+        <ScrollToTop />
         <SiteHeader />
         <div id="main-content" className="flex flex-1 flex-col">
           {children}

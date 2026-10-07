@@ -140,8 +140,16 @@ body.mobile-nav-open [data-sticky-cta] {
   }
 }
 
+/* Keep auto so App Router navigations land at the top.
+   Smooth scrolling on route change left users mid-page (had to scroll up). */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(:target) {
+    scroll-behavior: smooth;
+  }
 }
 
 .reveal {
@@ -163,7 +171,8 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html,
+  html:has(:target) {
     scroll-behavior: auto;
   }
 
