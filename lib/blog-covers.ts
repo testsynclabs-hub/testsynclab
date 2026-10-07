@@ -227,6 +227,21 @@ export const blogCovers: Record<
     accent: "#2563EB",
     bg: "#0B1F4B",
   },
+  "qa-retainer-vs-full-time-hire-usa": {
+    src: "/images/blog/qa-retainer-vs-full-time-hire-usa.jpg",
+    accent: "#FDE68A",
+    bg: "#B45309",
+  },
+  "red-flags-when-choosing-a-qa-company": {
+    src: "/images/blog/red-flags-when-choosing-a-qa-company.jpg",
+    accent: "#FCA5A5",
+    bg: "#7F1D1D",
+  },
+  "overnight-qa-handoff-for-us-saas-teams": {
+    src: "/images/blog/overnight-qa-handoff-for-us-saas-teams.jpg",
+    accent: "#93C5FD",
+    bg: "#1E3A8A",
+  },
 };
 
 export function getBlogCover(slug: string) {
