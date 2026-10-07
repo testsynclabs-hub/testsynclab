@@ -131,23 +131,115 @@ export const workflowTools = [
 
 /** QA tools we actually run — not a staffing logo wall. */
 export const qaToolStack = [
-  { name: "Playwright", group: "Automation" },
-  { name: "Cypress", group: "Automation" },
-  { name: "Selenium", group: "Automation" },
-  { name: "Postman", group: "API" },
-  { name: "JMeter", group: "Performance" },
-  { name: "Shopify", group: "Ecommerce" },
-  { name: "Magento", group: "Ecommerce" },
-  { name: "Jira", group: "Workflow" },
+  {
+    name: "Playwright",
+    group: "Automation",
+    summary:
+      "Critical-path UI automation that stays stable in CI — traces, retries, and less flake theater.",
+    deliver:
+      "Smoke + regression suites on money paths, wired to your pipeline with engineer-ready failures.",
+  },
+  {
+    name: "Cypress",
+    group: "Automation",
+    summary:
+      "If your repo already runs Cypress, we deepen coverage there — we do not force a rewrite speech.",
+    deliver:
+      "New specs on durable journeys, flake triage, and a suite your team can own after handoff.",
+  },
+  {
+    name: "Selenium",
+    group: "Automation",
+    summary:
+      "Legacy or multi-browser suites that still need senior ownership — stabilize before you expand.",
+    deliver:
+      "Flake reduction, grid hygiene, and selective growth on paths that actually repay the cost.",
+  },
+  {
+    name: "Postman",
+    group: "API",
+    summary:
+      "Contract and integration checks when the UI is fine but the backend is lying.",
+    deliver:
+      "Auth, webhooks, error shapes, and collections ready for CI — payloads, not screenshots.",
+  },
+  {
+    name: "JMeter",
+    group: "Performance",
+    summary:
+      "Spot-check load before a launch spike — p95 and error rates inside a release gate.",
+    deliver:
+      "Focused scenarios on hot endpoints, not a six-week performance science project.",
+  },
+  {
+    name: "Shopify",
+    group: "Ecommerce",
+    summary:
+      "Theme + checkout + admin flows that break revenue when they fail on a Friday.",
+    deliver:
+      "Cart, discounts, payments, refunds, and merchant admin — shopper-style bug reports.",
+  },
+  {
+    name: "Magento",
+    group: "Ecommerce",
+    summary:
+      "Heavier catalog, pricing, and checkout edges that need more than a click-script.",
+    deliver:
+      "Storefront + admin regression with severity on money and inventory paths.",
+  },
+  {
+    name: "Jira",
+    group: "Workflow",
+    summary:
+      "Bugs land where engineers already work — severity, steps, evidence, ready to reopen.",
+    deliver:
+      "Tickets your eng lead can action without a clarifying call the next morning.",
+  },
 ] as const;
 
 export const productDomains = [
-  { name: "SaaS & B2B" },
-  { name: "Ecommerce" },
-  { name: "Mobile & web" },
-  { name: "Desktop apps" },
-  { name: "Games" },
-  { name: "AI products" },
+  {
+    name: "SaaS & B2B",
+    summary:
+      "Multi-tenant products where roles, billing, and invites are the blast radius.",
+    deliver:
+      "Auth, permissions, seats, billing, and the journeys that define your revenue.",
+  },
+  {
+    name: "Ecommerce",
+    summary:
+      "Stores that cannot afford silent checkout or refund failures.",
+    deliver:
+      "Browse → cart → pay → fulfill → refund coverage on Shopify, Magento, or custom.",
+  },
+  {
+    name: "Mobile & web",
+    summary:
+      "Cross-device releases where install, onboarding, and parity bugs hide until store day.",
+    deliver:
+      "Device smoke, exploratory depth, and regression notes for iOS, Android, and web.",
+  },
+  {
+    name: "Desktop apps",
+    summary:
+      "Installers, updates, and workflows that live outside the browser.",
+    deliver:
+      "Scoped Windows/Mac cycles after a free audit — not a forced $999 guess.",
+  },
+  {
+    name: "Games",
+    summary:
+      "Builds that must launch, progress, and survive the devices you ship.",
+    deliver:
+      "Play-through + crash focus scoped after discovery — games are not a template pack.",
+  },
+  {
+    name: "AI products",
+    summary:
+      "Chatbots, RAG, and LLM features that need golden sets — not buried in Basic.",
+    deliver:
+      "Prompt regression, jailbreak checks, and failure modes that fail loudly.",
+  },
 ] as const;
 
 export const engagementModels = [
