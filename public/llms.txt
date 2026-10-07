@@ -28,6 +28,16 @@
 - Remote QA services: https://www.testsynclab.com/remote-qa-services
 - QA outsourcing: https://www.testsynclab.com/qa-outsourcing
 - Software testing services: https://www.testsynclab.com/software-testing-services
+- Software quality assurance (SQA): https://www.testsynclab.com/software-quality-assurance
+- SQA services: https://www.testsynclab.com/sqa-services
+- Quality assurance services: https://www.testsynclab.com/quality-assurance-services
+- Quality control testing: https://www.testsynclab.com/quality-control-testing
+- QA QC services: https://www.testsynclab.com/qa-qc-services
+- Software QA services: https://www.testsynclab.com/software-qa-services
+- Regression testing services: https://www.testsynclab.com/regression-testing-services
+- Automation testing services: https://www.testsynclab.com/automation-testing-services
+- Mobile app testing: https://www.testsynclab.com/mobile-app-testing
+- AI QA testing / AI SQA: https://www.testsynclab.com/ai-qa-testing
 - Playwright testing company: https://www.testsynclab.com/playwright-testing-company
 - Best QA company: https://www.testsynclab.com/best-qa-company
 - Hire QA testers: https://www.testsynclab.com/hire-qa-testers

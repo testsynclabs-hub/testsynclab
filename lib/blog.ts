@@ -1,6 +1,7 @@
 import { getBlogCover } from "@/lib/blog-covers";
 import { geoBlogPosts } from "@/lib/blog-geo-posts";
 import { growthBlogPosts } from "@/lib/blog-growth-posts";
+import { qaKeywordBlogPosts } from "@/lib/blog-qa-keyword-posts";
 import { seoBlogPosts } from "@/lib/blog-seo-posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -21,6 +22,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...qaKeywordBlogPosts,
   ...geoBlogPosts,
   ...growthBlogPosts,
   ...seoBlogPosts,

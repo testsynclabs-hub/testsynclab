@@ -9,6 +9,14 @@ const serviceLinks = [
   { href: "/services/playwright-automation", label: "Playwright automation" },
   { href: "/services/performance-testing", label: "Performance testing" },
   { href: "/ai", label: "AI testing" },
+  { href: "/ai-qa-testing", label: "AI QA / AI SQA" },
+  { href: "/software-quality-assurance", label: "Software quality assurance" },
+  { href: "/quality-assurance-services", label: "Quality assurance services" },
+  { href: "/sqa-services", label: "SQA services" },
+  { href: "/qa-qc-services", label: "QA QC services" },
+  { href: "/regression-testing-services", label: "Regression testing" },
+  { href: "/automation-testing-services", label: "Automation testing" },
+  { href: "/mobile-app-testing", label: "Mobile app testing" },
 ] as const;
 
 const companyLinks = [

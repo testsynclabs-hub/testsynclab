@@ -1,4 +1,5 @@
 import type { MarketFaq } from "@/lib/markets";
+import { qaKeywordLandings } from "@/lib/qa-keyword-landings";
 
 export type RankLanding = {
   slug: string;
@@ -811,6 +812,7 @@ export const rankLandings: RankLanding[] = [
     ],
     serviceName: "Software testing services for SaaS",
   },
+  ...qaKeywordLandings,
 ];
 
 export function getRankLanding(slug: string) {
