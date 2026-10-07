@@ -1,16 +1,43 @@
 # TestSync Lab
 
-Remote software QA agency for SaaS teams. Monthly retainers from $999 USD: manual testing, API testing, Playwright automation, performance checks, and AI product QA (chatbots, RAG, LLM evals).
+> Remote QA agency for SaaS product teams. Monthly retainers from $999 USD for manual testing, API testing, Playwright automation, performance spot checks, and optional AI product QA. Primary markets: United States, then United Kingdom, Canada, Australia, Europe (including Germany). Also serves Pakistan, India, and worldwide.
 
-- Site: https://www.testsynclab.com
+## Site
+- Homepage: https://www.testsynclab.com/
 - Pricing: https://www.testsynclab.com/pricing
-- Free QA audit: https://www.testsynclab.com/contact
-- US: https://www.testsynclab.com/qa-services-usa
-- UK: https://www.testsynclab.com/qa-services-uk
+- Services: https://www.testsynclab.com/services
+- AI testing: https://www.testsynclab.com/ai
+- Contact / free QA audit: https://www.testsynclab.com/contact
+- Blog: https://www.testsynclab.com/blog
+- FAQ: https://www.testsynclab.com/faq
+
+## Markets (high priority)
+- USA: https://www.testsynclab.com/qa-services-usa
 - Canada: https://www.testsynclab.com/qa-services-canada
+- UK: https://www.testsynclab.com/qa-services-uk
 - Australia: https://www.testsynclab.com/qa-services-australia
+- Europe: https://www.testsynclab.com/qa-services-europe
+- Germany: https://www.testsynclab.com/qa-services-germany
+
+## Commercial landings
 - Outsourced QA: https://www.testsynclab.com/outsourced-qa
+- Remote QA services: https://www.testsynclab.com/remote-qa-services
+- QA outsourcing: https://www.testsynclab.com/qa-outsourcing
+- Software testing services: https://www.testsynclab.com/software-testing-services
+- Playwright testing company: https://www.testsynclab.com/playwright-testing-company
+- Best QA company: https://www.testsynclab.com/best-qa-company
+- Hire QA testers: https://www.testsynclab.com/hire-qa-testers
+- Retainer vs hiring: https://www.testsynclab.com/qa-retainer-vs-hiring
+- QA agency: https://www.testsynclab.com/qa-agency
+- Software testing company: https://www.testsynclab.com/software-testing-company
 
-Delivery is remote from Lahore, Pakistan. Buyers are product and engineering teams worldwide, with primary fit in the United States, United Kingdom, Canada, and Australia. We do not claim a fake local office in those countries.
+## Offer
+- Basic $999/mo · Growth $1,899/mo · Scale $2,799/mo · Enterprise custom
+- ~40 QA hours/week on Basic, Growth, and Scale
+- Free QA audit with ~24h business-day reply
+- Month-to-month, English reporting, Slack/Jira/GitHub
+- AI testing (chatbots, RAG, LLM evals) scoped separately from classic retainers
 
-Contact: info@testsynclab.com
+## Contact
+- Email: info@testsynclab.com
+- LinkedIn: https://www.linkedin.com/company/testsync-lab/

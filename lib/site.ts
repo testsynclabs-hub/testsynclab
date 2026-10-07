@@ -6,13 +6,13 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "TestSync Lab | Remote QA Agency for SaaS Teams from $999" as const;
+  "TestSync Lab | Remote QA Agency USA, UK, Europe & Worldwide from $999" as const;
 
 export const SITE_DESCRIPTION =
-  "TestSync Lab is a remote QA agency for SaaS teams worldwide. Hire monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA — free audit, senior SQA without a full-time hire." as const;
+  "Remote QA agency for SaaS teams in the USA, UK, Canada, Australia, and Europe. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA — free audit, senior coverage without a full-time hire." as const;
 
 export const SITE_TAGLINE =
-  "Remote QA agency for SaaS teams that ship every week." as const;
+  "Remote QA for US, UK, EU & global SaaS teams that ship every week." as const;
 
 export const SITE_ALTERNATE_NAMES = [
   "TestSync Lab QA",
@@ -47,9 +47,17 @@ export const SITE_KEYWORDS = [
   "QA services Canada",
   "QA services UK",
   "QA services Australia",
+  "QA services Europe",
+  "QA services Germany",
   "hire QA testers London",
   "hire QA testers Sydney",
+  "hire QA testers Berlin",
   "outsourced QA United States",
+  "outsourced QA Europe",
+  "remote QA services",
+  "QA outsourcing",
+  "Playwright testing company",
+  "software testing services",
   "hire remote QA team",
   "Free QA Audit",
   "QA Testing Blog",
@@ -233,6 +241,36 @@ export const primaryNav: PrimaryNavItem[] = [
         description: "USD packages and AEST-friendly handoffs.",
       },
       {
+        href: "/qa-services-europe",
+        label: "QA for European teams",
+        description: "USD retainers with EU-hour overlap.",
+      },
+      {
+        href: "/qa-services-germany",
+        label: "QA for German teams",
+        description: "Remote QA for German SaaS — English delivery.",
+      },
+      {
+        href: "/remote-qa-services",
+        label: "Remote QA services",
+        description: "Follow-the-sun QA without a local hire.",
+      },
+      {
+        href: "/qa-outsourcing",
+        label: "QA outsourcing",
+        description: "Outsource software QA on a monthly retainer.",
+      },
+      {
+        href: "/playwright-testing-company",
+        label: "Playwright testing company",
+        description: "Playwright automation wired into CI.",
+      },
+      {
+        href: "/software-testing-services",
+        label: "Software testing services",
+        description: "Manual, API, automation, and performance QA.",
+      },
+      {
         href: "/outsourced-qa",
         label: "Outsourced QA",
         description: "Senior coverage without a hiring cycle.",
@@ -359,6 +397,9 @@ export const organizationJsonLd = {
     { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United Kingdom" },
     { "@type": "Country", name: "Australia" },
+    { "@type": "Country", name: "Germany" },
+    { "@type": "Place", name: "European Union" },
+    "Europe",
     "Worldwide",
   ],
   serviceType: [

@@ -488,6 +488,329 @@ export const rankLandings: RankLanding[] = [
     areaServedName: ["United States", "Canada", "United Kingdom", "Australia", "Pakistan"],
     serviceName: "QA retainer versus full-time hiring advisory and delivery",
   },
+  {
+    slug: "remote-qa-services",
+    path: "/remote-qa-services",
+    navLabel: "Remote QA services",
+    navDescription: "Follow-the-sun QA for US, UK, EU, CA, and AU teams.",
+    eyebrow: "Remote QA",
+    h1: "Remote QA services for SaaS teams that ship every week",
+    title: "Remote QA Services USA & Worldwide | Monthly Retainers from $999",
+    description:
+      "Remote QA services for US, UK, Canadian, Australian, and European SaaS teams. Monthly retainers from $999 for manual testing, API checks, and Playwright automation — free audit in 24 hours.",
+    keywords: [
+      "remote QA services",
+      "remote QA testing",
+      "remote software testing services",
+      "hire remote QA team",
+      "remote QA for SaaS",
+      "follow the sun QA",
+      "remote QA USA",
+    ],
+    intro:
+      "Remote QA works when a named pod sits in your Slack, tests revenue journeys, and returns engineer-ready bugs on a follow-the-sun cadence — not when a vendor hides behind a ticket portal. TestSync Lab sells remote QA retainers from $999/mo for SaaS teams in the USA first, plus UK, Canada, Australia, Europe, and worldwide.",
+    highlights: [
+      {
+        title: "Follow-the-sun verification",
+        detail:
+          "You close with a build. We start verification on our morning and drop reproducible bugs before your next standup — built for US evenings and EU afternoons alike.",
+      },
+      {
+        title: "Same tools your engineers already use",
+        detail:
+          "Slack, Jira, Linear, GitHub, Playwright CI. No extra portal. English reporting, USD invoices, month-to-month.",
+      },
+      {
+        title: "Depth you can upgrade",
+        detail:
+          "Basic is manual. Growth adds API + automation start. Scale adds gates and a named lead. ~40 QA hours/week on each plan.",
+      },
+    ],
+    pains: [
+      {
+        title: "Local hires are too slow for the next release",
+        detail:
+          "Remote QA starts in days after scope. Keep recruiting in parallel if you want — coverage does not wait on the req.",
+      },
+      {
+        title: "Timezone dumps with vague bugs",
+        detail:
+          "We write severity, steps, environment, and evidence. Remote only works when eng time is respected.",
+      },
+      {
+        title: "Hourly offshore that vanishes on busy weeks",
+        detail:
+          "Retainers reserve capacity so quality does not stop when the sprint gets hard.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who are remote QA services best for?",
+        answer:
+          "SaaS and product teams that ship weekly, need senior coverage before the next launch, and cannot wait on a full-time hire — especially in the US, UK, Canada, Australia, and Europe.",
+      },
+      {
+        question: "How do handoffs work across timezones?",
+        answer:
+          "Default is follow-the-sun: you ship in your afternoon/evening, we verify on our morning. Short live overlap can be scheduled for US, UK, or CET mornings.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit. We return a practical risk map and recommend Basic, Growth, Scale, or Enterprise.",
+      },
+    ],
+    areaServedName: [
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia",
+      "Germany",
+      "Europe",
+      "Pakistan",
+    ],
+    serviceName: "Remote QA services for SaaS",
+  },
+  {
+    slug: "qa-outsourcing",
+    path: "/qa-outsourcing",
+    navLabel: "QA outsourcing",
+    navDescription: "Outsource software QA without losing release visibility.",
+    eyebrow: "QA outsourcing",
+    h1: "QA outsourcing that keeps you in control of the release",
+    title: "QA Outsourcing for SaaS | Outsource Software Testing from $999/mo",
+    description:
+      "QA outsourcing for US and global SaaS teams. Outsource software testing on a monthly retainer from $999 — manual, API, Playwright — with Slack/Jira visibility and a free audit.",
+    keywords: [
+      "QA outsourcing",
+      "outsource software testing",
+      "software QA outsourcing",
+      "outsourcing QA testing",
+      "QA outsourcing company",
+      "outsource QA to agency",
+      "QA outsourcing USA",
+    ],
+    intro:
+      "QA outsourcing fails when you buy anonymous hours. It works when you buy a named pod, a written risk map, and weekly evidence on the journeys that make money. TestSync Lab is built for that model — primarily for US product teams, also serving UK, Canada, Australia, Europe, and worldwide buyers who pay in strong currencies.",
+    highlights: [
+      {
+        title: "Outsource the work, keep the bar",
+        detail:
+          "You still own go/no-go. We own smoke, regression, and clear bugs so engineers are not translating a 40-person dump.",
+      },
+      {
+        title: "Retainer beats hourly drift",
+        detail:
+          "Busy release weeks should not punish you with surprise invoices. Capacity is reserved month to month from $999.",
+      },
+      {
+        title: "USA-first, globally ready",
+        detail:
+          "USD pricing, English reporting, follow-the-sun handoffs. See market pages for US, UK, Canada, Australia, Europe, and Germany.",
+      },
+    ],
+    pains: [
+      {
+        title: "Body shops that optimize for billable hours",
+        detail:
+          "You need outcomes on critical paths. We scope a risk-ranked pack before you pay.",
+      },
+      {
+        title: "Lost context when testers rotate",
+        detail:
+          "Retainers keep a small named pod warm. Regression memory compounds month over month.",
+      },
+      {
+        title: "No idea what was tested",
+        detail:
+          "Every cycle includes written findings, severity, and evidence — not a buried PDF.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is QA outsourcing the same as staff augmentation?",
+        answer:
+          "Staff aug fills a seat. Our retainers deliver a testing outcome: risk map, execution, bugs, and weekly cadence. Read /qa-retainer-vs-hiring if you are comparing models.",
+      },
+      {
+        question: "Can we outsource only automation?",
+        answer:
+          "Yes — Growth and Scale include Playwright/Cypress/Selenium starts. Most teams still want senior manual coverage on new work in the same retainer.",
+      },
+      {
+        question: "How fast can outsourcing start?",
+        answer:
+          "Typically 3–5 business days after scope. Urgent releases can get a focused cycle sooner — tell us the date on the audit form.",
+      },
+    ],
+    areaServedName: [
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia",
+      "Germany",
+      "Europe",
+    ],
+    serviceName: "QA outsourcing retainers for SaaS",
+  },
+  {
+    slug: "playwright-testing-company",
+    path: "/playwright-testing-company",
+    navLabel: "Playwright testing company",
+    navDescription: "Playwright automation for SaaS CI — stable critical paths.",
+    eyebrow: "Playwright",
+    h1: "Playwright testing company for SaaS release trains",
+    title: "Playwright Testing Company | Automation for SaaS CI from TestSync Lab",
+    description:
+      "Hire a Playwright testing company for SaaS CI. TestSync Lab builds stable Playwright suites on critical paths, wires them into CI, and pairs automation with senior manual QA — retainers from $999.",
+    keywords: [
+      "Playwright testing company",
+      "Playwright automation services",
+      "Playwright testing services",
+      "hire Playwright testers",
+      "Playwright CI testing",
+      "Playwright QA agency",
+      "Playwright testing USA",
+    ],
+    intro:
+      "A Playwright testing company should leave you with maintainable suites — not a brittle script pile. TestSync Lab pairs Playwright automation with senior exploratory QA so you automate what stays stable and still catch UX and edge-case risk before customers do. Built for US SaaS teams; also serving UK, Canada, Australia, and Europe.",
+    highlights: [
+      {
+        title: "Critical paths first",
+        detail:
+          "Auth, permissions, checkout/billing, and the workflows that define your product — not a thousand flaky UI clicks.",
+      },
+      {
+        title: "CI wiring and flake ownership",
+        detail:
+          "Suites that engineers wait for. We reduce flakes and document what blocks deploy vs what warns.",
+      },
+      {
+        title: "Automation inside a retainer",
+        detail:
+          "Growth ($1,899) and Scale ($2,799) include automation depth. Basic stays manual-first when you are not ready for CI yet.",
+      },
+    ],
+    pains: [
+      {
+        title: "Playwright installed, nobody owns flakes",
+        detail:
+          "We triage flakes, shrink the suite to signal, and grow coverage from escape data — not vanity counts.",
+      },
+      {
+        title: "Automation before risk mapping",
+        detail:
+          "We start with money paths and failure modes, then automate. Theater suites that never block a bad build waste runway.",
+      },
+      {
+        title: "Vendor scripts you cannot maintain",
+        detail:
+          "You get suites structured for your repo conventions so your team can own them later.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you only do Playwright?",
+        answer:
+          "Playwright is our default for modern web SaaS. We also work with Cypress and Selenium when that is already your stack. See /services/playwright-automation.",
+      },
+      {
+        question: "Can Playwright be the whole engagement?",
+        answer:
+          "Usually we pair automation with manual coverage on new work. Pure automation pods are available on Growth, Scale, or Enterprise after a short discovery.",
+      },
+      {
+        question: "How do US teams use your Playwright services?",
+        answer:
+          "Common pattern: overnight verification handoff + CI smoke on PRs. Start with a free QA audit to size the pack.",
+      },
+    ],
+    areaServedName: ["United States", "United Kingdom", "Canada", "Australia", "Europe"],
+    serviceName: "Playwright testing and automation services",
+  },
+  {
+    slug: "software-testing-services",
+    path: "/software-testing-services",
+    navLabel: "Software testing services",
+    navDescription: "Manual, API, automation, and performance under one retainer.",
+    eyebrow: "Software testing",
+    h1: "Software testing services for SaaS product teams",
+    title: "Software Testing Services | Manual, API & Playwright from $999",
+    description:
+      "Software testing services for US and global SaaS teams: manual QA, API testing, Playwright automation, and performance spot checks on monthly retainers from $999. Free QA audit.",
+    keywords: [
+      "software testing services",
+      "software testing company",
+      "software QA services",
+      "application testing services",
+      "web application testing services",
+      "SaaS testing services",
+      "software testing services USA",
+    ],
+    intro:
+      "Software testing services should match how you ship — not a 200-page methodology binder. TestSync Lab delivers manual exploratory QA, API/contract checks, Playwright automation, and performance spot checks under one remote retainer. Primary buyers: USA SaaS teams. Also serving UK, Canada, Australia, Europe, and worldwide.",
+    highlights: [
+      {
+        title: "Four lanes, one pod",
+        detail:
+          "Functional/exploratory, API, automation, and performance gates — priced as Basic, Growth, or Scale so finance can budget.",
+      },
+      {
+        title: "Release-ready reporting",
+        detail:
+          "Severity, repro, environment, evidence. Weekly summaries for the person who owns go/no-go.",
+      },
+      {
+        title: "Optional AI testing lane",
+        detail:
+          "Chatbots, RAG, and LLM evals stay scoped separately so classic software testing services stay predictable.",
+      },
+    ],
+    pains: [
+      {
+        title: "Generic IT vendors who “also do testing”",
+        detail:
+          "We are a focused QA lab. Strategy stays next to execution — not a staffing logo wall.",
+      },
+      {
+        title: "Checklists that miss business logic",
+        detail:
+          "Senior exploratory work finds the broken permission and the bad discount code — not only broken CSS.",
+      },
+      {
+        title: "No path from manual to automation",
+        detail:
+          "Growth and Scale grow automation on paths that stayed stable, so coverage compounds.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What software testing services do you include?",
+        answer:
+          "Manual exploratory and regression, API/contract validation, Playwright/Cypress/Selenium automation, performance spot checks on Scale, and optional AI product QA. Details on /services.",
+      },
+      {
+        question: "Do you test mobile and ecommerce?",
+        answer:
+          "Yes — web, mobile, Shopify/Magento journeys, desktop, and games on scoped engagements. Tell us the product type on the audit form.",
+      },
+      {
+        question: "Where should US buyers start?",
+        answer:
+          "Open /qa-services-usa or /contact for a free audit. Compare packages on /pricing.",
+      },
+    ],
+    areaServedName: [
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia",
+      "Germany",
+      "Europe",
+      "Pakistan",
+    ],
+    serviceName: "Software testing services for SaaS",
+  },
 ];
 
 export function getRankLanding(slug: string) {

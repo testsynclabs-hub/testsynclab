@@ -26,11 +26,17 @@ const marketLinks = [
   { href: "/qa-retainer-vs-hiring", label: "Retainer vs hiring" },
   { href: "/qa-agency", label: "QA agency" },
   { href: "/software-testing-company", label: "Testing company" },
+  { href: "/software-testing-services", label: "Software testing services" },
+  { href: "/remote-qa-services", label: "Remote QA services" },
+  { href: "/qa-outsourcing", label: "QA outsourcing" },
+  { href: "/playwright-testing-company", label: "Playwright testing company" },
   { href: "/qa-agency-lahore", label: "QA agency Lahore" },
   { href: "/qa-services-usa", label: "QA for US teams" },
   { href: "/qa-services-canada", label: "QA for Canadian teams" },
   { href: "/qa-services-uk", label: "QA for UK teams" },
   { href: "/qa-services-australia", label: "QA for Australian teams" },
+  { href: "/qa-services-europe", label: "QA for European teams" },
+  { href: "/qa-services-germany", label: "QA for German teams" },
   { href: "/outsourced-qa", label: "Outsourced QA" },
 ] as const;
 

@@ -323,6 +323,158 @@ export const markets: MarketPage[] = [
     ogLocale: "en_AU",
     hreflang: "en-AU",
   },
+  {
+    slug: "europe",
+    path: "/qa-services-europe",
+    navLabel: "QA for European teams",
+    navDescription: "Remote QA retainers for EU SaaS — USD pricing, CET overlap.",
+    eyebrow: "Europe",
+    h1: "Remote QA services for European product teams",
+    title: "QA Services Europe | Remote Testing Retainers from $999 | TestSync Lab",
+    description:
+      "Hire a remote software QA partner for European startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira, CET-friendly overlap, free audit in 24 hours.",
+    keywords: [
+      "QA services Europe",
+      "outsourced QA Europe",
+      "hire QA testers EU",
+      "software testing company Europe",
+      "remote QA for European startups",
+      "Playwright testing Europe",
+      "QA outsourcing EU",
+    ],
+    intro:
+      "European SaaS teams in Berlin, Amsterdam, Paris, Stockholm, Lisbon, and remote-first EU companies ship on US-style cadences with tighter hiring pools. TestSync Lab is a remote QA lab: senior testers, USD monthly retainers, English reporting, and afternoon overlap into Central European time — plus follow-the-sun verification on evening deploys.",
+    highlights: [
+      {
+        title: "CET-friendly overlap",
+        detail:
+          "Pakistan afternoon lines up with EU morning/midday for Slack or short live questions. Evening EU deploys are verified on our next working morning with reproducible bugs.",
+      },
+      {
+        title: "USD retainers EU finance can budget",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. Clear packages beat open-ended hourly quotes. Ask if you need a custom invoice format before kickoff.",
+      },
+      {
+        title: "GDPR-minded access",
+        detail:
+          "Least-privilege staging, no unnecessary production data, NDA/terms before kickoff. Share a staging URL on the audit form — that is enough to start.",
+      },
+    ],
+    pains: [
+      {
+        title: "EU QA hires are slow outside the biggest hubs",
+        detail:
+          "Waiting on a Berlin or Amsterdam full-time seat delays the next launch. A remote retainer covers critical paths this month.",
+      },
+      {
+        title: "You need engineer-ready bugs, not a ticket dump",
+        detail:
+          "We write severity, steps, environment, and evidence in Slack or Jira — the bar EU B2B buyers actually ask for.",
+      },
+      {
+        title: "Agencies that only sell junior hours",
+        detail:
+          "Busy sprints should not explode the invoice. A retainer reserves senior capacity so coverage does not stop when the release gets hard.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with EU companies if the team is remote?",
+        answer:
+          "Yes. Retainers are built for English-speaking product and engineering teams across Europe. We invoice in USD, report in English, and use Slack/Jira. Coverage is remote — we do not pretend to sit in an EU office.",
+      },
+      {
+        question: "What overlap do you have with CET / CEST?",
+        answer:
+          "EU morning and midday overlap our afternoon for live questions. Default delivery is still follow-the-sun: you ship in your afternoon, we verify on our morning and drop bugs before your next working block.",
+      },
+      {
+        question: "Is $999 enough for a European SaaS release train?",
+        answer:
+          "Basic is manual exploratory and regression for early products. Weekly shippers with APIs and CI usually fit Growth ($1,899) or Scale ($2,799). A free QA audit will say which — or if you need Enterprise.",
+      },
+    ],
+    countryName: "Europe",
+    ogLocale: "en_GB",
+    hreflang: "en-EU",
+  },
+  {
+    slug: "germany",
+    path: "/qa-services-germany",
+    navLabel: "QA for German teams",
+    navDescription: "Remote QA for German SaaS — English delivery, CET overlap.",
+    eyebrow: "Germany",
+    h1: "Remote QA services for German product teams",
+    title: "QA Services Germany | Remote Testing from $999 | TestSync Lab",
+    description:
+      "Hire a remote software QA partner for German startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — English reporting, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Germany",
+      "outsourced QA Germany",
+      "hire QA testers Berlin",
+      "software testing company Germany",
+      "remote QA Munich",
+      "Playwright testing Germany",
+      "QA outsourcing Deutschland",
+    ],
+    intro:
+      "German product teams in Berlin, Munich, Hamburg, and Frankfurt need release confidence without a six-month hiring cycle. TestSync Lab delivers senior remote QA on a monthly USD retainer: manual exploration, API checks, Playwright automation, and clear English bug reports that German engineering leads can act on immediately.",
+    highlights: [
+      {
+        title: "English delivery German teams already use",
+        detail:
+          "Most German SaaS teams run eng in English. We report in English with reproducible steps, severity, and evidence in Slack or Jira.",
+      },
+      {
+        title: "CET overlap + overnight verification",
+        detail:
+          "Short live overlap into German mornings when needed. Evening deploys are verified on our next working morning so your standup starts with a risk map, not silence.",
+      },
+      {
+        title: "Predictable USD packages",
+        detail:
+          "Same public pricing as our US retainers: $999 / $1,899 / $2,799. Finance can budget quality like any other vendor.",
+      },
+    ],
+    pains: [
+      {
+        title: "Berlin and Munich QA talent is scarce",
+        detail:
+          "A full-time hire plus recruiting burns runway. A remote retainer starts coverage this month while you decide whether to hire later.",
+      },
+      {
+        title: "Vague offshore dumps waste eng time",
+        detail:
+          "German teams expect precision. We write bugs engineers reopen and fix — not screenshots without steps.",
+      },
+      {
+        title: "Compliance questions before staging access",
+        detail:
+          "We confirm access, data handling, and NDA/terms up front. Least-privilege staging is the default.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you speak German?",
+        answer:
+          "Delivery and reporting are in English — the language most German SaaS engineering orgs already use for product work. If you need German-language customer-facing copy testing, say so on the audit form.",
+      },
+      {
+        question: "Can German companies pay in USD?",
+        answer:
+          "Yes. Public retainers are priced in USD. If finance needs a custom invoice format, tell us on the audit form before kickoff.",
+      },
+      {
+        question: "Is this only for Berlin SaaS?",
+        answer:
+          "No. Basic ($999) fits early products anywhere in Germany. Growth and Scale fit teams with APIs, CI, and a weekly release train in any DE city.",
+      },
+    ],
+    countryName: "Germany",
+    ogLocale: "en_DE",
+    hreflang: "en-DE",
+  },
 ];
 
 export function getMarket(slug: string) {
@@ -334,6 +486,8 @@ export const marketLanguageAlternates = {
   "en-CA": "/qa-services-canada",
   "en-GB": "/qa-services-uk",
   "en-AU": "/qa-services-australia",
+  "en-EU": "/qa-services-europe",
+  "en-DE": "/qa-services-germany",
   "x-default": "/qa-services-usa",
 } as const;
 
@@ -345,7 +499,7 @@ export const outsourcedQa = {
   h1: "Outsourced QA that product teams can actually run with",
   title: "Outsourced QA for Startups | Monthly Testing Retainers from $999",
   description:
-    "Outsource software QA without losing visibility. TestSync Lab monthly retainers cover manual testing, API validation, and Playwright automation for US, UK, Canadian, and Australian product teams from $999.",
+    "Outsource software QA without losing visibility. TestSync Lab monthly retainers cover manual testing, API validation, and Playwright automation for US, UK, Canadian, Australian, and European product teams from $999.",
   keywords: [
     "outsourced QA",
     "outsource software testing",
@@ -353,9 +507,10 @@ export const outsourcedQa = {
     "hire QA agency",
     "outsourced QA for startups",
     "remote software testing services",
+    "outsourced QA Europe",
   ],
   intro:
-    "Outsourced QA fails when the vendor hides in a ticket pile. It works when a named pod sits in your Slack, tests the journeys that make revenue, and reports like an in-house teammate. That is the TestSync Lab retainer.",
+    "Outsourced QA fails when the vendor hides in a ticket pile. It works when a named pod sits in your Slack, tests the journeys that make revenue, and reports like an in-house teammate. That is the TestSync Lab retainer — USA-first, also built for UK, Canada, Australia, and Europe.",
   highlights: [
     {
       title: "Capacity this month, not next quarter",
@@ -368,7 +523,7 @@ export const outsourcedQa = {
         "We do not throw 40 junior testers at a checklist. Senior exploratory work, then automation on paths that matter, with a package you can upgrade.",
     },
     {
-      title: "Built for US, UK, Canadian, and Australian buyers",
+      title: "Built for US, UK, CA, AU, and European buyers",
       detail:
         "USD pricing, English reporting, GitHub/Jira/Slack, follow-the-sun verification. Open the matching market page if you want timezone-specific detail.",
     },
@@ -508,6 +663,26 @@ export const marketNavChildren = [
     href: "/qa-services-australia",
     label: "QA for Australian teams",
     description: "USD packages and AEST-friendly handoffs.",
+  },
+  {
+    href: "/qa-services-europe",
+    label: "QA for European teams",
+    description: "USD retainers with CET-friendly overlap.",
+  },
+  {
+    href: "/qa-services-germany",
+    label: "QA for German teams",
+    description: "Remote QA for German SaaS — English delivery.",
+  },
+  {
+    href: "/remote-qa-services",
+    label: "Remote QA services",
+    description: "Follow-the-sun QA without a local hire.",
+  },
+  {
+    href: "/qa-outsourcing",
+    label: "QA outsourcing",
+    description: "Outsource software QA on a monthly retainer.",
   },
   {
     href: "/outsourced-qa",
