@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FooterLinkGroup } from "@/components/footer-link-group";
+import { FooterColumns } from "@/components/footer-link-group";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { SITE_EMAIL, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
@@ -92,6 +92,60 @@ const marketLinks = [
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
+  const brand = (
+    <div className="md:col-span-2 lg:col-span-1">
+      <p className="font-[family-name:var(--font-display)] text-lg font-bold text-white">
+        {SITE_NAME}
+      </p>
+      <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
+        Remote QA retainers for SaaS teams — manual, API, Playwright, and AI
+        testing from $999/mo.
+      </p>
+      <a
+        href={`mailto:${SITE_EMAIL}`}
+        className="mt-4 inline-block text-sm font-medium text-white transition-colors hover:text-blue-300"
+      >
+        {SITE_EMAIL}
+      </a>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <Link
+          href={auditHref("footer-contact")}
+          className="inline-flex rounded-lg bg-brand px-3.5 py-2 text-sm font-bold text-white hover:bg-brand-bright"
+        >
+          {FREE_QA_AUDIT_LABEL}
+        </Link>
+        <a
+          href={SITE_LINKEDIN}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-colors hover:border-blue-400/40 hover:bg-white/10"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  );
+
+  const company = (
+    <nav aria-label="Company">
+      <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
+        Company
+      </h3>
+      <ul className="mt-3 space-y-2 text-sm">
+        {companyLinks.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="transition-colors hover:text-blue-300"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+
   return (
     <footer
       className="border-t border-line bg-slate-950 text-slate-300"
@@ -101,69 +155,12 @@ export function SiteFooter() {
         Company information
       </h2>
 
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-10 sm:px-8 sm:py-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-        <div className="md:col-span-2 lg:col-span-1">
-          <p className="font-[family-name:var(--font-display)] text-lg font-bold text-white">
-            {SITE_NAME}
-          </p>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
-            Remote QA retainers for SaaS teams — manual, API, Playwright, and AI
-            testing from $999/mo.
-          </p>
-          <a
-            href={`mailto:${SITE_EMAIL}`}
-            className="mt-4 inline-block text-sm font-medium text-white transition-colors hover:text-blue-300"
-          >
-            {SITE_EMAIL}
-          </a>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <Link
-              href={auditHref("footer-contact")}
-              className="inline-flex rounded-lg bg-brand px-3.5 py-2 text-sm font-bold text-white hover:bg-brand-bright"
-            >
-              {FREE_QA_AUDIT_LABEL}
-            </Link>
-            <a
-              href={SITE_LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-colors hover:border-blue-400/40 hover:bg-white/10"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <FooterLinkGroup
-          title="Services"
-          ariaLabel="Services"
-          links={serviceLinks}
-        />
-
-        <nav aria-label="Company">
-          <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
-            Company
-          </h3>
-          <ul className="mt-3 space-y-2 text-sm">
-            {companyLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="transition-colors hover:text-blue-300"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <FooterLinkGroup
-          title="Markets"
-          ariaLabel="Markets"
-          links={marketLinks}
-        />
-      </div>
+      <FooterColumns
+        brand={brand}
+        company={company}
+        serviceLinks={serviceLinks}
+        marketLinks={marketLinks}
+      />
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:text-sm">
