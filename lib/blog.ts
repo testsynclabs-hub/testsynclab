@@ -1,8 +1,11 @@
 import { getBlogCover } from "@/lib/blog-covers";
+import { cityBlogPosts } from "@/lib/blog-city-posts";
 import { geoBlogPosts } from "@/lib/blog-geo-posts";
 import { growthBlogPosts } from "@/lib/blog-growth-posts";
+import { intentBlogPosts } from "@/lib/blog-intent-posts";
 import { qaKeywordBlogPosts } from "@/lib/blog-qa-keyword-posts";
 import { seoBlogPosts } from "@/lib/blog-seo-posts";
+import { testingBlogPosts } from "@/lib/blog-testing-posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export type BlogSection = {
@@ -22,6 +25,9 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...intentBlogPosts,
+  ...cityBlogPosts,
+  ...testingBlogPosts,
   ...qaKeywordBlogPosts,
   ...geoBlogPosts,
   ...growthBlogPosts,

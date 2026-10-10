@@ -787,6 +787,1070 @@ export const markets: MarketPage[] = [
     ogLocale: "en_GB",
     hreflang: "en-GB",
   },
+  {
+    slug: "austin",
+    path: "/qa-services-austin",
+    navLabel: "QA for Austin teams",
+    navDescription: "Remote QA for Austin / Central Texas — CT handoffs.",
+    tier: "city",
+    eyebrow: "Austin / Central Texas",
+    h1: "Remote QA services for Austin product teams",
+    title: "QA Services Austin | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Austin SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — CT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Austin",
+      "QA testing Austin TX",
+      "hire QA testers Austin",
+      "outsourced QA Austin",
+      "remote QA Austin startups",
+      "software testing company Austin",
+    ],
+    intro:
+      "Austin SaaS teams ship on Central Time with a competitive local talent market. TestSync Lab is a remote QA lab for Austin product teams: senior testers, USD retainers from $999, and overnight verification so an evening deploy is checked before your next standup.",
+    highlights: [
+      {
+        title: "Built for CT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Austin?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Austin search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "seattle",
+    path: "/qa-services-seattle",
+    navLabel: "QA for Seattle teams",
+    navDescription: "Remote QA for Seattle / Pacific Northwest — PT handoffs.",
+    tier: "city",
+    eyebrow: "Seattle / Pacific Northwest",
+    h1: "Remote QA services for Seattle product teams",
+    title: "QA Services Seattle | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Seattle SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — PT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Seattle",
+      "QA testing Seattle",
+      "hire QA testers Seattle",
+      "outsourced QA Seattle",
+      "remote QA Seattle startups",
+      "software testing company Seattle",
+    ],
+    intro:
+      "Seattle and PNW SaaS teams need release confidence without a slow local hire. TestSync Lab delivers remote QA for Seattle product teams with USD retainers from $999 and PT-friendly follow-the-sun handoffs.",
+    highlights: [
+      {
+        title: "Built for PT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Seattle?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Seattle search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "chicago",
+    path: "/qa-services-chicago",
+    navLabel: "QA for Chicago teams",
+    navDescription: "Remote QA for Chicago / Midwest — CT handoffs.",
+    tier: "city",
+    eyebrow: "Chicago / Midwest",
+    h1: "Remote QA services for Chicago product teams",
+    title: "QA Services Chicago | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Chicago SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — CT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Chicago",
+      "QA testing Chicago",
+      "hire QA testers Chicago",
+      "outsourced QA Chicago",
+      "remote QA Chicago startups",
+      "software testing company Chicago",
+    ],
+    intro:
+      "Chicago product teams ship on Central Time and compete for scarce senior QA. TestSync Lab is a remote QA partner for Chicago SaaS: retainers from $999, Slack/Jira bugs, and overnight verification.",
+    highlights: [
+      {
+        title: "Built for CT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Chicago?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Chicago search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "los-angeles",
+    path: "/qa-services-los-angeles",
+    navLabel: "QA for Los Angeles teams",
+    navDescription: "Remote QA for Los Angeles / Southern California — PT handoffs.",
+    tier: "city",
+    eyebrow: "Los Angeles / Southern California",
+    h1: "Remote QA services for Los Angeles product teams",
+    title: "QA Services Los Angeles | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Los Angeles SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — PT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Los Angeles",
+      "QA testing LA",
+      "hire QA testers Los Angeles",
+      "outsourced QA Los Angeles",
+      "remote QA LA startups",
+      "software testing company Los Angeles",
+    ],
+    intro:
+      "Los Angeles SaaS and consumer product teams need QA that keeps up with weekly releases. TestSync Lab runs remote QA for LA teams on USD retainers from $999 with PT handoffs.",
+    highlights: [
+      {
+        title: "Built for PT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Los Angeles?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Los Angeles search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "boston",
+    path: "/qa-services-boston",
+    navLabel: "QA for Boston teams",
+    navDescription: "Remote QA for Boston / New England — ET handoffs.",
+    tier: "city",
+    eyebrow: "Boston / New England",
+    h1: "Remote QA services for Boston product teams",
+    title: "QA Services Boston | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Boston SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — ET handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Boston",
+      "QA testing Boston",
+      "hire QA testers Boston",
+      "outsourced QA Boston",
+      "remote QA Boston startups",
+      "software testing company Boston",
+    ],
+    intro:
+      "Boston SaaS and health-tech teams ship on Eastern Time with expensive local QA seats. TestSync Lab provides remote QA retainers from $999 with EST-friendly overnight verification.",
+    highlights: [
+      {
+        title: "Built for ET release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Boston?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Boston search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "dallas",
+    path: "/qa-services-dallas",
+    navLabel: "QA for Dallas teams",
+    navDescription: "Remote QA for Dallas / Fort Worth — CT handoffs.",
+    tier: "city",
+    eyebrow: "Dallas / Fort Worth",
+    h1: "Remote QA services for Dallas product teams",
+    title: "QA Services Dallas | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Dallas SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — CT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Dallas",
+      "QA testing Dallas TX",
+      "hire QA testers Dallas",
+      "outsourced QA Dallas",
+      "remote QA Dallas startups",
+      "software testing company Dallas",
+    ],
+    intro:
+      "Dallas–Fort Worth product teams need predictable QA without a long hiring cycle. TestSync Lab delivers remote QA for Dallas SaaS on retainers from $999 with CT-friendly handoffs.",
+    highlights: [
+      {
+        title: "Built for CT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Dallas?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Dallas search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "denver",
+    path: "/qa-services-denver",
+    navLabel: "QA for Denver teams",
+    navDescription: "Remote QA for Denver / Colorado — MT handoffs.",
+    tier: "city",
+    eyebrow: "Denver / Colorado",
+    h1: "Remote QA services for Denver product teams",
+    title: "QA Services Denver | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Denver SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — MT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Denver",
+      "QA testing Denver",
+      "hire QA testers Denver",
+      "outsourced QA Denver",
+      "remote QA Denver startups",
+      "software testing company Denver",
+    ],
+    intro:
+      "Denver and Boulder SaaS teams ship on Mountain Time and often outgrow founder-led QA. TestSync Lab offers remote retainers from $999 with MT-aware follow-the-sun coverage.",
+    highlights: [
+      {
+        title: "Built for MT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Denver?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Denver search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "miami",
+    path: "/qa-services-miami",
+    navLabel: "QA for Miami teams",
+    navDescription: "Remote QA for Miami / South Florida — ET handoffs.",
+    tier: "city",
+    eyebrow: "Miami / South Florida",
+    h1: "Remote QA services for Miami product teams",
+    title: "QA Services Miami | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Miami SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — ET handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Miami",
+      "QA testing Miami",
+      "hire QA testers Miami",
+      "outsourced QA Miami",
+      "remote QA Miami startups",
+      "software testing company Miami",
+    ],
+    intro:
+      "Miami and South Florida startups need release QA without waiting on a local hire. TestSync Lab runs remote QA for Miami product teams on USD retainers from $999 with EST handoffs.",
+    highlights: [
+      {
+        title: "Built for ET release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Miami?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Miami search intent. National overview: /qa-services-usa.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United States",
+    ogLocale: "en_US",
+    hreflang: "en-US",
+  },
+  {
+    slug: "vancouver",
+    path: "/qa-services-vancouver",
+    navLabel: "QA for Vancouver teams",
+    navDescription: "Remote QA for Vancouver / BC — PT handoffs.",
+    tier: "city",
+    eyebrow: "Vancouver / BC",
+    h1: "Remote QA services for Vancouver product teams",
+    title: "QA Services Vancouver | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Vancouver SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — PT handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Vancouver",
+      "QA testing Vancouver",
+      "hire QA testers Vancouver",
+      "outsourced QA Vancouver",
+      "remote QA Vancouver startups",
+      "software testing company Vancouver",
+    ],
+    intro:
+      "Vancouver SaaS teams want USD-clear packages and PT-friendly delivery. TestSync Lab is a remote QA lab for Vancouver product teams — retainers from $999, English reporting, Slack/Jira.",
+    highlights: [
+      {
+        title: "Built for PT release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Vancouver?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Vancouver search intent. National overview: /qa-services-canada.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "Canada",
+    ogLocale: "en_CA",
+    hreflang: "en-CA",
+  },
+  {
+    slug: "sydney",
+    path: "/qa-services-sydney",
+    navLabel: "QA for Sydney teams",
+    navDescription: "Remote QA for Sydney / NSW — AEST handoffs.",
+    tier: "city",
+    eyebrow: "Sydney / NSW",
+    h1: "Remote QA services for Sydney product teams",
+    title: "QA Services Sydney | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Sydney SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — AEST handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Sydney",
+      "QA testing Sydney",
+      "hire QA testers Sydney",
+      "outsourced QA Sydney",
+      "remote QA Sydney startups",
+      "software testing company Sydney",
+    ],
+    intro:
+      "Sydney product teams need QA overlap that respects AEST without a slow local hire. TestSync Lab delivers remote QA for Sydney SaaS on USD retainers from $999 with AEST-friendly handoffs.",
+    highlights: [
+      {
+        title: "Built for AEST release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Sydney?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Sydney search intent. National overview: /qa-services-australia.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "Australia",
+    ogLocale: "en_AU",
+    hreflang: "en-AU",
+  },
+  {
+    slug: "melbourne",
+    path: "/qa-services-melbourne",
+    navLabel: "QA for Melbourne teams",
+    navDescription: "Remote QA for Melbourne / Victoria — AEST handoffs.",
+    tier: "city",
+    eyebrow: "Melbourne / Victoria",
+    h1: "Remote QA services for Melbourne product teams",
+    title: "QA Services Melbourne | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Melbourne SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — AEST handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Melbourne",
+      "QA testing Melbourne",
+      "hire QA testers Melbourne",
+      "outsourced QA Melbourne",
+      "remote QA Melbourne startups",
+      "software testing company Melbourne",
+    ],
+    intro:
+      "Melbourne SaaS teams ship on AEST and compete for scarce senior QA. TestSync Lab provides remote retainers from $999 with English delivery and AEST-friendly overlap.",
+    highlights: [
+      {
+        title: "Built for AEST release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Melbourne?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Melbourne search intent. National overview: /qa-services-australia.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "Australia",
+    ogLocale: "en_AU",
+    hreflang: "en-AU",
+  },
+  {
+    slug: "manchester",
+    path: "/qa-services-manchester",
+    navLabel: "QA for Manchester teams",
+    navDescription: "Remote QA for Manchester / Northern England — UK handoffs.",
+    tier: "city",
+    eyebrow: "Manchester / Northern England",
+    h1: "Remote QA services for Manchester product teams",
+    title: "QA Services Manchester | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Manchester SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — UK handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Manchester",
+      "QA testing Manchester",
+      "hire QA testers Manchester",
+      "outsourced QA Manchester",
+      "remote QA Manchester startups",
+      "software testing company Manchester",
+    ],
+    intro:
+      "Manchester and Northern England product teams need UK-hour overlap without London hire costs. TestSync Lab runs remote QA for Manchester SaaS on USD retainers from $999.",
+    highlights: [
+      {
+        title: "Built for UK release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Manchester?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Manchester search intent. National overview: /qa-services-uk.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "United Kingdom",
+    ogLocale: "en_GB",
+    hreflang: "en-GB",
+  },
+  {
+    slug: "berlin",
+    path: "/qa-services-berlin",
+    navLabel: "QA for Berlin teams",
+    navDescription: "Remote QA for Berlin — CET handoffs.",
+    tier: "city",
+    eyebrow: "Berlin",
+    h1: "Remote QA services for Berlin product teams",
+    title: "QA Services Berlin | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Berlin SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — CET handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Berlin",
+      "QA testing Berlin",
+      "hire QA testers Berlin",
+      "outsourced QA Berlin",
+      "remote QA Berlin startups",
+      "software testing company Berlin",
+    ],
+    intro:
+      "Berlin SaaS teams ship in English with CET calendars and GDPR-minded access needs. TestSync Lab delivers remote QA for Berlin product teams on USD retainers from $999.",
+    highlights: [
+      {
+        title: "Built for CET release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Berlin?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Berlin search intent. National overview: /qa-services-germany.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "Germany",
+    ogLocale: "en_DE",
+    hreflang: "en-DE",
+  },
+  {
+    slug: "amsterdam",
+    path: "/qa-services-amsterdam",
+    navLabel: "QA for Amsterdam teams",
+    navDescription: "Remote QA for Amsterdam / Netherlands — CET handoffs.",
+    tier: "city",
+    eyebrow: "Amsterdam / Netherlands",
+    h1: "Remote QA services for Amsterdam product teams",
+    title: "QA Services Amsterdam | Remote Testing Retainers from $999",
+    description:
+      "Hire remote QA for Amsterdam SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — CET handoffs, Slack/Jira, free audit in 24 hours.",
+    keywords: [
+      "QA services Amsterdam",
+      "QA testing Amsterdam",
+      "hire QA testers Amsterdam",
+      "outsourced QA Amsterdam",
+      "remote QA Amsterdam startups",
+      "software testing company Amsterdam",
+    ],
+    intro:
+      "Amsterdam and Dutch SaaS teams want CET overlap and clear USD packages. TestSync Lab is a remote QA partner for Amsterdam product teams — retainers from $999, English Slack/Jira delivery.",
+    highlights: [
+      {
+        title: "Built for CET release trains",
+        detail:
+          "Evening deploys get verified on our next working morning with engineer-ready bugs in Slack or Jira.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Flaky automation nobody owns",
+        detail:
+          "Growth and Scale stabilize Playwright on money paths.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Amsterdam?",
+        answer:
+          "Yes. Most clients are hybrid or remote-first. We invoice in USD and deliver in Slack/Jira.",
+      },
+      {
+        question: "How is this different from the national page?",
+        answer:
+          "Same retainers and lab. This page targets Amsterdam search intent. National overview: /qa-services-europe.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and next release date.",
+      },
+    ],
+    countryName: "Netherlands",
+    ogLocale: "en_GB",
+    hreflang: "en-EU",
+  },
 ];
 
 export function getMarket(slug: string) {
@@ -1013,6 +2077,76 @@ export const marketNavChildren = [
     href: "/qa-services-germany",
     label: "QA for German teams",
     description: "Remote QA for German SaaS — English delivery.",
+  },
+  {
+    href: "/qa-services-austin",
+    label: "QA for Austin",
+    description: "Remote QA for Austin product teams.",
+  },
+  {
+    href: "/qa-services-seattle",
+    label: "QA for Seattle",
+    description: "Remote QA for Seattle product teams.",
+  },
+  {
+    href: "/qa-services-chicago",
+    label: "QA for Chicago",
+    description: "Remote QA for Chicago product teams.",
+  },
+  {
+    href: "/qa-services-los-angeles",
+    label: "QA for Los Angeles",
+    description: "Remote QA for Los Angeles product teams.",
+  },
+  {
+    href: "/qa-services-boston",
+    label: "QA for Boston",
+    description: "Remote QA for Boston product teams.",
+  },
+  {
+    href: "/qa-services-dallas",
+    label: "QA for Dallas",
+    description: "Remote QA for Dallas product teams.",
+  },
+  {
+    href: "/qa-services-denver",
+    label: "QA for Denver",
+    description: "Remote QA for Denver product teams.",
+  },
+  {
+    href: "/qa-services-miami",
+    label: "QA for Miami",
+    description: "Remote QA for Miami product teams.",
+  },
+  {
+    href: "/qa-services-vancouver",
+    label: "QA for Vancouver",
+    description: "Remote QA for Vancouver product teams.",
+  },
+  {
+    href: "/qa-services-sydney",
+    label: "QA for Sydney",
+    description: "Remote QA for Sydney product teams.",
+  },
+  {
+    href: "/qa-services-melbourne",
+    label: "QA for Melbourne",
+    description: "Remote QA for Melbourne product teams.",
+  },
+  {
+    href: "/qa-services-manchester",
+    label: "QA for Manchester",
+    description: "Remote QA for Manchester product teams.",
+  },
+  {
+    href: "/qa-services-berlin",
+    label: "QA for Berlin",
+    description: "Remote QA for Berlin product teams.",
+  },
+  {
+    href: "/qa-services-amsterdam",
+    label: "QA for Amsterdam",
+    description: "Remote QA for Amsterdam product teams.",
   },
   {
     href: "/remote-qa-services",
