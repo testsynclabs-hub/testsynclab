@@ -1,32 +1,35 @@
 import Link from "next/link";
+import { FooterLinkGroup } from "@/components/footer-link-group";
 import { auditHref, FREE_QA_AUDIT_LABEL } from "@/lib/cta";
 import { SITE_EMAIL, SITE_LINKEDIN, SITE_NAME } from "@/lib/site";
 
+/** Top 10 shown first; remainder behind “Show more”. */
 const serviceLinks = [
   { href: "/services", label: "All services" },
+  { href: "/saas-testing-services", label: "SaaS testing" },
+  { href: "/manual-testing-services", label: "Manual testing services" },
+  { href: "/automation-testing-services", label: "Automation testing" },
+  { href: "/ai-qa-testing", label: "AI QA / AI SQA" },
+  { href: "/qa-as-a-service", label: "QA as a service" },
+  { href: "/api-testing-services", label: "API testing services" },
+  { href: "/mobile-app-testing", label: "Mobile app testing" },
+  { href: "/software-quality-assurance", label: "Software quality assurance" },
+  { href: "/test-automation-company", label: "Test automation company" },
+  // More
   { href: "/services/manual-testing", label: "Manual testing" },
   { href: "/services/api-testing", label: "API testing" },
   { href: "/services/playwright-automation", label: "Playwright automation" },
   { href: "/services/performance-testing", label: "Performance testing" },
   { href: "/ai", label: "AI testing" },
-  { href: "/ai-qa-testing", label: "AI QA / AI SQA" },
-  { href: "/software-quality-assurance", label: "Software quality assurance" },
   { href: "/quality-assurance-services", label: "Quality assurance services" },
   { href: "/sqa-services", label: "SQA services" },
   { href: "/qa-qc-services", label: "QA QC services" },
   { href: "/regression-testing-services", label: "Regression testing" },
-  { href: "/automation-testing-services", label: "Automation testing" },
-  { href: "/mobile-app-testing", label: "Mobile app testing" },
-  { href: "/saas-testing-services", label: "SaaS testing" },
   { href: "/ecommerce-testing-services", label: "Ecommerce testing" },
   { href: "/functional-testing-services", label: "Functional testing" },
   { href: "/end-to-end-testing", label: "End-to-end testing" },
-  { href: "/api-testing-services", label: "API testing services" },
   { href: "/continuous-testing-services", label: "Continuous testing" },
-  { href: "/manual-testing-services", label: "Manual testing services" },
   { href: "/web-application-testing", label: "Web application testing" },
-  { href: "/qa-as-a-service", label: "QA as a service" },
-  { href: "/test-automation-company", label: "Test automation company" },
   { href: "/fintech-testing-services", label: "Fintech testing" },
   { href: "/exploratory-testing-services", label: "Exploratory testing" },
   { href: "/cross-browser-testing", label: "Cross-browser testing" },
@@ -46,26 +49,29 @@ const companyLinks = [
   { href: "/become-a-tester", label: "Become a tester" },
 ] as const;
 
+/** Top 10 shown first; remainder behind “Show more”. */
 const marketLinks = [
+  { href: "/qa-services-usa", label: "QA for US teams" },
   { href: "/best-qa-company", label: "Best QA company" },
   { href: "/hire-qa-testers", label: "Hire QA testers" },
-  { href: "/qa-retainer-vs-hiring", label: "Retainer vs hiring" },
+  { href: "/remote-qa-services", label: "Remote QA services" },
+  { href: "/qa-services-uk", label: "QA for UK teams" },
+  { href: "/qa-services-canada", label: "QA for Canadian teams" },
+  { href: "/qa-services-australia", label: "QA for Australian teams" },
+  { href: "/qa-services-europe", label: "QA for European teams" },
+  { href: "/outsourced-qa", label: "Outsourced QA" },
   { href: "/qa-agency", label: "QA agency" },
+  // More
+  { href: "/qa-retainer-vs-hiring", label: "Retainer vs hiring" },
   { href: "/software-testing-company", label: "Testing company" },
   { href: "/software-testing-services", label: "Software testing services" },
-  { href: "/remote-qa-services", label: "Remote QA services" },
   { href: "/qa-outsourcing", label: "QA outsourcing" },
   { href: "/playwright-testing-company", label: "Playwright testing company" },
   { href: "/qa-agency-lahore", label: "QA agency Lahore" },
-  { href: "/qa-services-usa", label: "QA for US teams" },
   { href: "/qa-services-new-york", label: "QA for New York" },
   { href: "/qa-services-san-francisco", label: "QA for San Francisco" },
-  { href: "/qa-services-canada", label: "QA for Canadian teams" },
   { href: "/qa-services-toronto", label: "QA for Toronto" },
-  { href: "/qa-services-uk", label: "QA for UK teams" },
   { href: "/qa-services-london", label: "QA for London" },
-  { href: "/qa-services-australia", label: "QA for Australian teams" },
-  { href: "/qa-services-europe", label: "QA for European teams" },
   { href: "/qa-services-germany", label: "QA for German teams" },
   { href: "/qa-services-austin", label: "QA for Austin" },
   { href: "/qa-services-seattle", label: "QA for Seattle" },
@@ -81,7 +87,6 @@ const marketLinks = [
   { href: "/qa-services-manchester", label: "QA for Manchester" },
   { href: "/qa-services-berlin", label: "QA for Berlin" },
   { href: "/qa-services-amsterdam", label: "QA for Amsterdam" },
-  { href: "/outsourced-qa", label: "Outsourced QA" },
 ] as const;
 
 export function SiteFooter() {
@@ -129,23 +134,11 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <nav aria-label="Services">
-          <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
-            Services
-          </h3>
-          <ul className="mt-3 space-y-2 text-sm">
-            {serviceLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="transition-colors hover:text-blue-300"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <FooterLinkGroup
+          title="Services"
+          ariaLabel="Services"
+          links={serviceLinks}
+        />
 
         <nav aria-label="Company">
           <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
@@ -165,23 +158,11 @@ export function SiteFooter() {
           </ul>
         </nav>
 
-        <nav aria-label="Markets">
-          <h3 className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.14em] text-blue-300">
-            Markets
-          </h3>
-          <ul className="mt-3 space-y-2 text-sm">
-            {marketLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="transition-colors hover:text-blue-300"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <FooterLinkGroup
+          title="Markets"
+          ariaLabel="Markets"
+          links={marketLinks}
+        />
       </div>
 
       <div className="border-t border-white/10">
