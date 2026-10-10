@@ -1,0 +1,26 @@
+company,website,region,decision_maker,role,email,product_focus,why_fit,verified_from
+LedgerUp,https://www.ledgerup.ai,USA,Bailey Spell,Founder/CEO,founders@ledgerup.ai,AI billing / AR for B2B SaaS,Release + billing edge-case QA,YC page founders@
+Duckie,https://www.duckie.ai,USA,Valerie Li,Cofounder/CEO,founders@duckie.ai,AI customer support agents,Support workflows need regression QA,YC page founders@
+Callback,https://www.getcallback.ai,USA,Alan Xie,Cofounder/CEO,founders@getcallback.ai,AI ops automation,Fast shipping product — overnight bug loop fit,YC page founders@
+Karumi,https://www.karumi.ai,USA,Pablo Omenaca,Founder/CEO,founders@karumi.ai,AI live demo agent,UI changes break demos — QA retainer fit,YC page founders@
+SigmaMind AI,https://sigmamind.ai,USA,Ashish Agarwal,Cofounder,hello@sigmamind.ai,Voice AI for contact centers,Telephony + CRM regression surface,YC page hello@
+Soren,https://www.soren-ai.com,USA,Kevin Xie,Founder/CEO,kevin@soren-ai.com,Private AI for regulated ops,Reliability/audit = QA buying trigger,Cal.com + site kevin@
+Humoniq,https://www.humoniq.ai,USA,Todd Sullivan,Founder/CEO,founders@humoniq.ai,AI BPO for travel support,Complex agent actions need release QA,YC page founders@
+Tinfoil,https://tinfoil.sh,USA,Tanya Verma,Founder/CEO,founders@tinfoil.sh,Confidential AI inference,Security-sensitive releases need QA,YC page founders@
+Avent,https://www.aventindustrial.com,USA,Abhay Kalra,Founder/CEO,founders@aventindustrial.com,AI quoting / order entry,ERP sync bugs = retainer QA,YC page founders@
+Serafis,https://www.serafis.ai,USA,Rohan Sharma,Founder/CEO,founders@serafis.ai,Narrative intel for investors,Fintech data product; founder-led,YC page founders@
+Den,https://www.getden.io,USA,Linus Talacko,Founder,founders@getden.io,AI agent workspace,Fast-shipping agent platform,YC page founders@
+Merlin AI,https://www.merlinai.co,USA,Sneha Kumari,Founder,snehak@merlinai.co,AI construction ERP,Multi-module ERP regression,YC page snehak@
+OpenMart,https://www.openmart.ai,USA,,Founders,founders@openmart.ai,AI ecommerce / marketplace tooling,YC product team — QA before release,YC page founders@
+Basedash,https://www.basedash.com,Canada,Max Musing,Founder/CEO,hello@basedash.com,AI-native BI,SQL/connector accuracy QA pitch,Site footer hello@
+NexScale,https://www.nexscale.ai,Canada,Soodeh Farokhi,Founder/CEO,hi@nexscale.ai,AI for wellness operators,SMB SaaS integrations; Toronto,Contact hi@
+Delam,https://delam.ai,Canada,,Engineering / founders,info@delam.ai,Medspa membership OS,Apps + AI desk; compliance QA,Site info@
+Edgecom Energy,https://edgecom.ai,Canada,Behdad Bahrami,Cofounder/CEO,info@edgecom.ai,Industrial energy SaaS,IoT/data accuracy needs,Contact info@
+Klarify,https://www.klarify.ca,Canada,Moody Abdul,Cofounder/CEO,info@klarify.ca,AI ops for therapists,Health AI; PHIPA/HIPAA QA angle,Site info@
+Mihron AI,https://mihronai.ca,Canada,,Founders,hello@mihronai.ca,AI voice receptionist (Maya),Call/booking regression QA,Homepage hello@
+Mastt,https://www.mastt.com,Australia,Doug Vincent,Cofounder/CEO,hello@mastt.com,Capital project management SaaS,Construction SaaS + AI agent,Contact hello@
+Carbonly,https://carbonly.ai,Australia,,Founders,hello@carbonly.ai,AI carbon accounting,Compliance calc bugs are costly,Contact hello@
+Agento,https://www.agento.au,Australia,Arsalan Usmani,Founder/CEO,contact@agento.com.au,Governed AI workflows,Audit trails ↔ QA pitch,Contact contact@
+Subi,https://www.subi.au,Australia,Max Moran,Cofounder/CEO,hello@subi.au,Wage/payroll compliance SaaS,False negatives = legal risk,Contact hello@
+Bell Path,https://www.bellpath.com.au,Australia,James Hooke,Founder,hello@bellpath.com.au,School timetabling SaaS,Founder-led AU edtech,Press/site hello@
+Upstock,https://www.upstock.app,Australia,,Founders,hello@upstock.app,Equity / cap-table SaaS,Product SaaS shipping updates,Site hello@

@@ -1,0 +1,23 @@
+{
+  "name": "TestSync Lab",
+  "short_name": "TestSync",
+  "description": "Remote QA agency for USA, UK, Canada, Australia, and Europe SaaS teams. Monthly retainers from $999.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#1d4ed8",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+# TestSync Lab
+
+> Remote QA agency for SaaS product teams. Monthly retainers from $999 USD for manual testing, API testing, Playwright automation, performance spot checks, and optional AI product QA. Primary markets: United States, then United Kingdom, Canada, Australia, Europe (including Germany). Also serves Pakistan, India, and worldwide.
+
+## Site
+- Homepage: https://www.testsynclab.com/
+- Pricing: https://www.testsynclab.com/pricing
+- Services: https://www.testsynclab.com/services
+- AI testing: https://www.testsynclab.com/ai
+- Contact / free QA audit: https://www.testsynclab.com/contact
+- Blog: https://www.testsynclab.com/blog
+- FAQ: https://www.testsynclab.com/faq
+
+## Markets (high priority)
+- USA: https://www.testsynclab.com/qa-services-usa
+- New York: https://www.testsynclab.com/qa-services-new-york
+- San Francisco / Bay Area: https://www.testsynclab.com/qa-services-san-francisco
+- Canada: https://www.testsynclab.com/qa-services-canada
+- Toronto: https://www.testsynclab.com/qa-services-toronto
+- UK: https://www.testsynclab.com/qa-services-uk
+- London: https://www.testsynclab.com/qa-services-london
+- Australia: https://www.testsynclab.com/qa-services-australia
+- Europe: https://www.testsynclab.com/qa-services-europe
+- Germany: https://www.testsynclab.com/qa-services-germany
+- Austin: https://www.testsynclab.com/qa-services-austin
+- Seattle: https://www.testsynclab.com/qa-services-seattle
+- Chicago: https://www.testsynclab.com/qa-services-chicago
+- Los Angeles: https://www.testsynclab.com/qa-services-los-angeles
+- Boston: https://www.testsynclab.com/qa-services-boston
+- Dallas: https://www.testsynclab.com/qa-services-dallas
+- Denver: https://www.testsynclab.com/qa-services-denver
+- Miami: https://www.testsynclab.com/qa-services-miami
+- Vancouver: https://www.testsynclab.com/qa-services-vancouver
+- Sydney: https://www.testsynclab.com/qa-services-sydney
+- Melbourne: https://www.testsynclab.com/qa-services-melbourne
+- Manchester: https://www.testsynclab.com/qa-services-manchester
+- Berlin: https://www.testsynclab.com/qa-services-berlin
+- Amsterdam: https://www.testsynclab.com/qa-services-amsterdam
+
+## Commercial landings
+- Outsourced QA: https://www.testsynclab.com/outsourced-qa
+- Remote QA services: https://www.testsynclab.com/remote-qa-services
+- QA outsourcing: https://www.testsynclab.com/qa-outsourcing
+- Software testing services: https://www.testsynclab.com/software-testing-services
+- Software quality assurance (SQA): https://www.testsynclab.com/software-quality-assurance
+- SQA services: https://www.testsynclab.com/sqa-services
+- Quality assurance services: https://www.testsynclab.com/quality-assurance-services
+- Quality control testing: https://www.testsynclab.com/quality-control-testing
+- QA QC services: https://www.testsynclab.com/qa-qc-services
+- Software QA services: https://www.testsynclab.com/software-qa-services
+- Regression testing services: https://www.testsynclab.com/regression-testing-services
+- Automation testing services: https://www.testsynclab.com/automation-testing-services
+- Mobile app testing: https://www.testsynclab.com/mobile-app-testing
+- AI QA testing / AI SQA: https://www.testsynclab.com/ai-qa-testing
+- SaaS testing services: https://www.testsynclab.com/saas-testing-services
+- Ecommerce testing services: https://www.testsynclab.com/ecommerce-testing-services
+- Functional testing services: https://www.testsynclab.com/functional-testing-services
+- End-to-end testing: https://www.testsynclab.com/end-to-end-testing
+- Smoke testing services: https://www.testsynclab.com/smoke-testing-services
+- UAT testing services: https://www.testsynclab.com/uat-testing-services
+- API testing services: https://www.testsynclab.com/api-testing-services
+- Performance testing services: https://www.testsynclab.com/performance-testing-services
+- Load testing services: https://www.testsynclab.com/load-testing-services
+- Continuous testing services: https://www.testsynclab.com/continuous-testing-services
+- Cypress testing services: https://www.testsynclab.com/cypress-testing-services
+- Selenium testing services: https://www.testsynclab.com/selenium-testing-services
+- Accessibility testing services: https://www.testsynclab.com/accessibility-testing-services
+- Manual testing services: https://www.testsynclab.com/manual-testing-services
+- Web application testing: https://www.testsynclab.com/web-application-testing
+- Website testing services: https://www.testsynclab.com/website-testing-services
+- Exploratory testing services: https://www.testsynclab.com/exploratory-testing-services
+- Integration testing services: https://www.testsynclab.com/integration-testing-services
+- Cross-browser testing: https://www.testsynclab.com/cross-browser-testing
+- QA as a service (QAaaS): https://www.testsynclab.com/qa-as-a-service
+- Dedicated QA team: https://www.testsynclab.com/dedicated-qa-team
+- Offshore QA testing: https://www.testsynclab.com/offshore-qa-testing
+- Agile testing services: https://www.testsynclab.com/agile-testing-services
+- Fintech testing services: https://www.testsynclab.com/fintech-testing-services
+- Test automation company: https://www.testsynclab.com/test-automation-company
+- Independent software testing: https://www.testsynclab.com/independent-software-testing
+- Compatibility testing services: https://www.testsynclab.com/compatibility-testing-services
+- Usability testing services: https://www.testsynclab.com/usability-testing-services
+- Chatbot testing services: https://www.testsynclab.com/chatbot-testing-services
+- iOS app testing: https://www.testsynclab.com/ios-app-testing
+- Android app testing: https://www.testsynclab.com/android-app-testing
+- Playwright testing company: https://www.testsynclab.com/playwright-testing-company
+- Best QA company: https://www.testsynclab.com/best-qa-company
+- Hire QA testers: https://www.testsynclab.com/hire-qa-testers
+- Retainer vs hiring: https://www.testsynclab.com/qa-retainer-vs-hiring
+- QA agency: https://www.testsynclab.com/qa-agency
+- Software testing company: https://www.testsynclab.com/software-testing-company
+
+## Offer
+- Basic $999/mo · Growth $1,899/mo · Scale $2,799/mo · Enterprise custom
+- ~40 QA hours/week on Basic, Growth, and Scale
+- Free QA audit with ~24h business-day reply
+- Month-to-month, English reporting, Slack/Jira/GitHub
+- AI testing (chatbots, RAG, LLM evals) scoped separately from classic retainers
+
+## Contact
+- Email: info@testsynclab.com
+- LinkedIn: https://www.linkedin.com/company/testsync-lab/

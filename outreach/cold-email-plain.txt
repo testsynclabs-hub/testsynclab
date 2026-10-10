@@ -1,0 +1,31 @@
+Subject options (pick one):
+1) You close with a build — we send engineer-ready bugs by morning
+2) Overnight QA handoff for {{company}}?
+3) Free QA audit before your next {{product_or_ai_surface}} release
+
+---
+
+Hi {{first_name}},
+
+Most QA notes say “please check.” Ours don’t.
+
+You close with a build. We start verification on our morning. You wake up to engineer-ready bugs — steps, severity, evidence — ready for Jira.
+
+That’s how TestSync Lab runs remote monthly QA for SaaS / AI teams (manual, API, Playwright; AI testing optional).
+
+If useful: free QA audit → short release-risk map. No deck.
+
+https://www.testsynclab.com/contact?plan=audit&source=cold-email
+
+Or reply with staging URL + next release window — I’ll say if we’re a fit.
+
+{{sender_name}}
+TestSync Lab · info@testsynclab.com
+https://www.testsynclab.com
+Retainers from $999/mo · Lahore, Pakistan
+
+---
+Privacy: https://www.testsynclab.com/privacy
+Terms: https://www.testsynclab.com/terms
+Unsubscribe: https://www.testsynclab.com/unsubscribe
+Or reply “stop” and we won’t email again.

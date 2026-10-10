@@ -1,0 +1,58 @@
+# LinkedIn — Purple Cow posts (the work)
+
+Post from personal profiles first. Hook = overnight engineer-ready bugs.
+Do not invent client names or ratings.
+
+---
+
+## Post 1 — Core cow
+
+Most QA updates look like this:
+
+“Login issue — please check.”
+
+Ours look like this:
+
+Title · severity · env · steps · expected/actual · evidence
+
+You close with a build. We start verification on our morning. You wake up to engineer-ready bugs.
+
+That’s how TestSync Lab runs remote QA for SaaS teams.
+
+Free audit → https://www.testsynclab.com/contact
+
+---
+
+## Post 2 — Why founders forward it
+
+The best marketing isn’t a slogan.
+
+It’s a Slack note a CTO can forward to eng without translating.
+
+Overnight verification + bugs written like an engineer wrote them.
+
+If that sounds useful, happy to do a free QA audit this week:
+https://www.testsynclab.com/contact
+
+---
+
+## Post 3 — AI same lab (supporting)
+
+Shipping a chatbot or RAG feature?
+
+We don’t bolt “AI testing” onto a different vendor.
+Classic QA + AI checks in the same lab — golden sets, jailbreak checks, release gates.
+
+Start here: https://www.testsynclab.com/ai
+
+---
+
+## Post 4 — Referral ask
+
+If you’ve seen our handoff style (build at night → engineer-ready bugs by morning), the best thank-you is one intro.
+
+One line to forward:
+
+“You close with a build. They start verification on their morning. You wake up to bugs with steps, severity, and evidence.”
+
+→ https://www.testsynclab.com
