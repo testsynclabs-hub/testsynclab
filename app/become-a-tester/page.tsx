@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { CareersForm } from "@/components/careers-form";
 import { CAREERS_PATH, hiringProcessSteps } from "@/lib/careers";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
@@ -89,7 +90,15 @@ export default function BecomeATesterPage() {
             </p>
           </div>
 
-          <CareersForm source="become-a-tester-page" />
+          <Suspense
+            fallback={
+              <div className="rounded-2xl border border-line bg-white p-8 text-sm text-slate-500">
+                Loading application form…
+              </div>
+            }
+          >
+            <CareersForm source="become-a-tester-page" />
+          </Suspense>
         </div>
       </section>
     </main>

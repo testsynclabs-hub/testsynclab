@@ -14,7 +14,10 @@ Push to `main` (production branch).
 3. Add env vars (Project → Settings → Environment Variables), then **redeploy**:
 
 ### Lead form → info@ inbox (required)
-The contact form stays on `/contact` and shows an on-page “Form submitted” message. It emails **info@testsynclab.com** using the first working provider:
+**Without SMTP (or Resend/Brevo) on Vercel, both `/contact` and `/become-a-tester` fail to deliver.**  
+Browser FormSubmit AJAX is often blocked by CORS/Cloudflare, so Hostinger SMTP is the durable path.
+
+After setting env vars, open `/api/mail-status` — `ok` should be `true`. Then redeploy and submit a test lead.
 
 | Name | Value |
 |------|--------|
@@ -23,7 +26,8 @@ The contact form stays on `/contact` and shows an on-page “Form submitted” m
 | `SMTP_USER` | `info@testsynclab.com` |
 | `SMTP_PASS` | your Hostinger email password |
 
-Optional fallbacks: `RESEND_API_KEY` (https://resend.com) or `BREVO_API_KEY` (https://www.brevo.com). Without at least one of these, the form shows an on-page error and a `mailto:` link — it will not send visitors to a third-party site.
+Optional fallbacks: `RESEND_API_KEY` (https://resend.com) or `BREVO_API_KEY` (https://www.brevo.com).  
+If server mail fails, the site falls back to a classic FormSubmit POST (then returns to `/contact/thanks` or `?applied=1`).
 
 ### Optional booking calendar
 Set `NEXT_PUBLIC_BOOKING_URL` to your Cal.com / Calendly (or similar) public link. Contact and “Book a call” buttons open that URL. If unset, they fall back to the `/contact` form.
@@ -94,16 +98,16 @@ Keep Hostinger email / MX records for mailbox. DNS for web (A/CNAME) and email (
 Submit sitemap in Google Search Console.
 
 ## Lead form
-The contact form never leaves testsynclab.com. After a successful send it replaces the fields with a “Form submitted” confirmation.
-
 Delivery order:
 
-1. Browser posts to the activated FormSubmit form (and CCs **info@testsynclab.com**)
-2. Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)
-3. Resend (`RESEND_API_KEY`)
-4. Brevo (`BREVO_API_KEY`)
+1. Hostinger SMTP (`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`) — preferred
+2. Resend (`RESEND_API_KEY`)
+3. Brevo (`BREVO_API_KEY`)
+4. Browser FormSubmit AJAX (often blocked)
+5. Classic FormSubmit HTML POST → redirect back to `/contact/thanks` or `/become-a-tester?applied=1`
 
-Set SMTP on Vercel as a durable mailbox send. If every path fails, the visitor sees an on-page error and can email `info@` directly.
+Set SMTP on Vercel. Confirm with `https://www.testsynclab.com/api/mail-status`.  
+If every path fails, the visitor sees an on-page error and can email `info@` directly.
 
 ## Form submitted but no email in inbox
 1. **Vercel → Project → Settings → Environment Variables** (Production):

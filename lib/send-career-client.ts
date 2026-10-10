@@ -76,16 +76,21 @@ function appendCv(data: FormData, cv: File) {
 }
 
 async function postAjax(url: string, data: FormData) {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: { Accept: "application/json" },
-    body: data,
-  });
-  const body = (await Promise.race([
-    response.json().catch(() => null),
-    new Promise<null>((resolve) => setTimeout(() => resolve(null), 20000)),
-  ])) as { success?: boolean | string; message?: string } | null;
-  return { ok: response.ok, body };
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: data,
+    });
+    const body = (await Promise.race([
+      response.json().catch(() => null),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 20000)),
+    ])) as { success?: boolean | string; message?: string } | null;
+    return { ok: response.ok, body };
+  } catch {
+    // CORS / Cloudflare often blocks FormSubmit fetch from the browser.
+    return { ok: false, body: null };
+  }
 }
 
 /**
@@ -108,19 +113,23 @@ async function postClassicWithAttachment(
   // Disable FormSubmit redirect back to our domain.
   data.set("_next", "https://formsubmit.co/thank-you-page");
 
-  const response = await fetch(endpoint, {
-    method: "POST",
-    body: data,
-    // Don't follow redirects into a top-level navigation of our site.
-    redirect: "manual",
-  });
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: data,
+      // Don't follow redirects into a top-level navigation of our site.
+      redirect: "manual",
+    });
 
-  // 2xx, or opaque/manual redirect from FormSubmit = accepted.
-  return (
-    response.ok ||
-    response.type === "opaqueredirect" ||
-    (response.status >= 300 && response.status < 400)
-  );
+    // 2xx, or opaque/manual redirect from FormSubmit = accepted.
+    return (
+      response.ok ||
+      response.type === "opaqueredirect" ||
+      (response.status >= 300 && response.status < 400)
+    );
+  } catch {
+    return false;
+  }
 }
 
 /** Browser multipart post so CV files can reach FormSubmit. */
