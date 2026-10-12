@@ -6,7 +6,7 @@ export function StickyCta() {
   return (
     <div
       data-sticky-cta
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-brand/20 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(29,78,216,0.12)] backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 w-full border-t border-brand/20 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(29,78,216,0.12)] backdrop-blur md:hidden"
     >
       <div className="mx-auto flex max-w-6xl gap-2">
         <a

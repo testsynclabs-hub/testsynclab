@@ -102,7 +102,7 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-line/80 bg-white/95 shadow-sm shadow-brand/5 backdrop-blur-xl"
+      className="sticky top-0 z-50 w-full border-b border-line/80 bg-white/95 shadow-sm shadow-brand/5 backdrop-blur-xl"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8 sm:py-3.5">
         <Link
