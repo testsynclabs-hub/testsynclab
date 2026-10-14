@@ -163,6 +163,7 @@ export const navLinks = [
   { href: "/ai", label: "AI testing" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -296,6 +297,11 @@ export const primaryNav: PrimaryNavItem[] = [
         href: "/about",
         label: "About us",
         description: "Hands-on QA with AI testing and optional AI build.",
+      },
+      {
+        href: "/portfolio",
+        label: "Portfolio",
+        description: "Anonymized QA snapshots — one lab, one report.",
       },
       {
         href: "/best-qa-company",
