@@ -52,13 +52,17 @@ const companyLinks = [
 /** Top 10 shown first; remainder behind “Show more”. */
 const marketLinks = [
   { href: "/qa-services-usa", label: "QA for US teams" },
-  { href: "/best-qa-company", label: "Best QA company" },
-  { href: "/hire-qa-testers", label: "Hire QA testers" },
-  { href: "/remote-qa-services", label: "Remote QA services" },
+  { href: "/best-qa-agency", label: "Best QA agency" },
   { href: "/qa-services-uk", label: "QA for UK teams" },
   { href: "/qa-services-canada", label: "QA for Canadian teams" },
   { href: "/qa-services-australia", label: "QA for Australian teams" },
+  { href: "/qa-services-gulf", label: "QA for Gulf teams" },
+  { href: "/qa-services-uae", label: "QA for UAE teams" },
+  { href: "/qa-services-dubai", label: "QA for Dubai" },
   { href: "/qa-services-europe", label: "QA for European teams" },
+  { href: "/best-qa-company", label: "Best QA company" },
+  { href: "/hire-qa-testers", label: "Hire QA testers" },
+  { href: "/remote-qa-services", label: "Remote QA services" },
   { href: "/outsourced-qa", label: "Outsourced QA" },
   { href: "/qa-agency", label: "QA agency" },
   // More
@@ -87,6 +91,14 @@ const marketLinks = [
   { href: "/qa-services-manchester", label: "QA for Manchester" },
   { href: "/qa-services-berlin", label: "QA for Berlin" },
   { href: "/qa-services-amsterdam", label: "QA for Amsterdam" },
+  { href: "/qa-services-abu-dhabi", label: "QA for Abu Dhabi" },
+  { href: "/qa-services-saudi-arabia", label: "QA for Saudi teams" },
+  { href: "/qa-services-riyadh", label: "QA for Riyadh" },
+  { href: "/qa-services-qatar", label: "QA for Qatar" },
+  { href: "/qa-services-doha", label: "QA for Doha" },
+  { href: "/qa-services-kuwait", label: "QA for Kuwait" },
+  { href: "/qa-services-bahrain", label: "QA for Bahrain" },
+  { href: "/qa-services-oman", label: "QA for Oman" },
 ] as const;
 
 export function SiteFooter() {

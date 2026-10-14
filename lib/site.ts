@@ -6,13 +6,13 @@ export const SITE_LINKEDIN =
   "https://www.linkedin.com/company/testsync-lab/" as const;
 
 export const SITE_TITLE =
-  "TestSync Lab | Remote QA Agency USA, UK, Europe & Worldwide from $999" as const;
+  "TestSync Lab | Best QA Agency USA, UK, Canada, Australia, Gulf & Worldwide" as const;
 
 export const SITE_DESCRIPTION =
-  "Remote QA agency for SaaS teams in the USA, UK, Canada, Australia, and Europe. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA — free audit, senior coverage without a full-time hire." as const;
+  "Best-fit remote QA agency for product teams in the USA, UK, Canada, Australia, Europe, and the Gulf. Monthly retainers from $999 for manual testing, API testing, Playwright automation, and AI QA — free audit, senior coverage without a full-time hire." as const;
 
 export const SITE_TAGLINE =
-  "Remote QA for US, UK, EU & global SaaS teams that ship every week." as const;
+  "Best-fit remote QA for USA, UK, Canada, Australia, Gulf, and global SaaS teams." as const;
 
 export const SITE_ALTERNATE_NAMES = [
   "TestSync Lab QA",
@@ -153,6 +153,24 @@ export const SITE_KEYWORDS = [
   "QA services Manchester",
   "QA services Berlin",
   "QA services Amsterdam",
+  "best QA agency",
+  "best QA agency USA",
+  "best QA agency UK",
+  "best QA agency Canada",
+  "best QA agency Australia",
+  "best QA agency worldwide",
+  "best QA company USA",
+  "QA services Gulf",
+  "QA services UAE",
+  "QA services Dubai",
+  "QA services Saudi Arabia",
+  "QA services Qatar",
+  "QA services Kuwait",
+  "QA services Bahrain",
+  "QA services Oman",
+  "best QA agency Dubai",
+  "best QA agency UAE",
+  "software testing company GCC",
   "how to choose a QA agency",
 ] as const;
 
@@ -328,9 +346,14 @@ export const primaryNav: PrimaryNavItem[] = [
         description: "Manual, API, and Playwright software testing.",
       },
       {
+        href: "/best-qa-agency",
+        label: "Best QA agency",
+        description: "USA, UK, Canada, Australia, Gulf, and worldwide.",
+      },
+      {
         href: "/qa-services-usa",
         label: "QA for US teams",
-        description: "Remote retainers for United States product teams.",
+        description: "Best-fit remote QA agency for United States product teams.",
       },
       {
         href: "/qa-services-new-york",
@@ -376,6 +399,31 @@ export const primaryNav: PrimaryNavItem[] = [
         href: "/qa-services-germany",
         label: "QA for German teams",
         description: "Remote QA for German SaaS — English delivery.",
+      },
+      {
+        href: "/qa-services-gulf",
+        label: "QA for Gulf teams",
+        description: "UAE, Saudi Arabia, Qatar, and the wider GCC.",
+      },
+      {
+        href: "/qa-services-uae",
+        label: "QA for UAE teams",
+        description: "Dubai and Abu Dhabi QA retainers with same-day overlap.",
+      },
+      {
+        href: "/qa-services-dubai",
+        label: "QA for Dubai",
+        description: "Remote QA agency for Dubai product and fintech teams.",
+      },
+      {
+        href: "/qa-services-saudi-arabia",
+        label: "QA for Saudi teams",
+        description: "Riyadh and KSA SaaS — English delivery, AST overlap.",
+      },
+      {
+        href: "/qa-services-qatar",
+        label: "QA for Qatar teams",
+        description: "Doha product teams — remote QA on USD retainers.",
       },
       {
         href: "/remote-qa-services",
@@ -530,7 +578,18 @@ export const organizationJsonLd = {
     { "@type": "Country", name: "Australia" },
     { "@type": "Country", name: "Germany" },
     { "@type": "Place", name: "European Union" },
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "Country", name: "Saudi Arabia" },
+    { "@type": "Country", name: "Qatar" },
+    { "@type": "Country", name: "Kuwait" },
+    { "@type": "Country", name: "Bahrain" },
+    { "@type": "Country", name: "Oman" },
+    { "@type": "City", name: "Dubai" },
+    { "@type": "City", name: "Abu Dhabi" },
+    { "@type": "City", name: "Riyadh" },
+    { "@type": "City", name: "Doha" },
     "Europe",
+    "Gulf",
     "Worldwide",
   ],
   serviceType: [

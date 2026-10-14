@@ -35,7 +35,7 @@ export const rankLandings: RankLanding[] = [
     h1: "Best QA company for SaaS — especially US product teams",
     title: "Best QA Company USA & Worldwide | Remote Retainers from $999 | TestSync Lab",
     description:
-      "Looking for the best QA company for US SaaS startups? Compare fit signals: release speed, bug quality, retainer clarity. TestSync Lab offers remote QA from $999/mo with a free audit — also serving Canada, UK, AU, and worldwide.",
+      "Looking for the best QA company for US, UK, Canadian, Australian, and Gulf product teams? Compare fit signals: release speed, bug quality, retainer clarity. TestSync Lab offers remote QA from $999/mo with a free audit.",
     keywords: [
       "best QA company",
       "best QA company USA",
@@ -100,8 +100,106 @@ export const rankLandings: RankLanding[] = [
           "Usually within 3–5 business days after scope confirmation. Start with a free QA audit on the contact page.",
       },
     ],
-    areaServedName: ["United States", "Canada", "United Kingdom", "Australia", "Pakistan"],
+    areaServedName: [
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Qatar",
+      "Europe",
+      "Pakistan",
+    ],
     serviceName: "Best-fit remote QA company for SaaS",
+  },
+  {
+    slug: "best-qa-agency",
+    path: "/best-qa-agency",
+    navLabel: "Best QA agency",
+    navDescription: "Best-fit remote QA agency for USA, UK, Canada, Australia, Gulf, and worldwide.",
+    eyebrow: "Best QA agency",
+    h1: "Best QA agency for teams in the USA, UK, Canada, Australia, and the Gulf",
+    title: "Best QA Agency Worldwide | USA, UK, Canada, Australia & Gulf | TestSync Lab",
+    description:
+      "Best QA agency for product teams in the USA, UK, Canada, Australia, Europe, and the Gulf. TestSync Lab remote retainers from $999 — manual, API, Playwright, and AI QA. Free audit.",
+    keywords: [
+      "best QA agency",
+      "best QA agency worldwide",
+      "best QA agency USA",
+      "best QA agency UK",
+      "best QA agency Canada",
+      "best QA agency Australia",
+      "best QA agency Dubai",
+      "best QA agency UAE",
+      "top QA agency",
+      "best software testing company",
+      "TestSync Lab",
+    ],
+    intro:
+      "The best QA agency for a team that ships every week is the one that protects revenue journeys, writes bugs engineers can fix, and starts this month. TestSync Lab is built for that job in the USA, UK, Canada, Australia, Europe, and the Gulf: monthly retainers from $999, about 40 QA hours a week, and a free audit before you buy. Open the market page for your region, or start at /contact.",
+    highlights: [
+      {
+        title: "One lab, every region you ship in",
+        detail:
+          "USA and Canada get follow-the-sun verification. UK and Europe get afternoon overlap. Gulf teams on GST and AST get same-day coverage. Same packages, same bug standard.",
+      },
+      {
+        title: "A price you can put in the budget",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. Manual depth on Basic. API and Playwright on Growth. Release gates on Scale.",
+      },
+      {
+        title: "Proof before a retainer",
+        detail:
+          "The free audit is a risk map and a package fit, not a slide deck. You see how we would test the next release before you commit.",
+      },
+    ],
+    pains: [
+      {
+        title: "A long vendor list with no fit",
+        detail:
+          "Enterprise crowd-testing brands are rarely the best QA agency for an early SaaS or fintech release. Stage and timezone matter more than a logo.",
+      },
+      {
+        title: "Cheap hours that create more work",
+        detail:
+          "Vague bugs cost engineering time. We write severity, steps, environment, and evidence.",
+      },
+      {
+        title: "Hiring that misses the launch",
+        detail:
+          "A full-time seat in New York, London, Sydney, or Dubai can take a quarter. A retainer covers the critical paths now.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are you the number-one QA agency in every country?",
+        answer:
+          "We do not buy fake rankings. We are the best fit when you want a remote monthly QA retainer — manual, API, Playwright, and optional AI testing — for teams in the USA, UK, Canada, Australia, Europe, or the Gulf.",
+      },
+      {
+        question: "Which page should we open?",
+        answer:
+          "USA: /qa-services-usa. UK: /qa-services-uk. Canada: /qa-services-canada. Australia: /qa-services-australia. Gulf: /qa-services-gulf. Dubai: /qa-services-dubai.",
+      },
+      {
+        question: "How fast can we start?",
+        answer:
+          "Usually within 3–5 business days after scope. Start with a free QA audit on /contact.",
+      },
+    ],
+    areaServedName: [
+      "United States",
+      "United Kingdom",
+      "Canada",
+      "Australia",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Qatar",
+      "Worldwide",
+    ],
+    serviceName: "Best-fit remote QA agency",
   },
   {
     slug: "qa-agency",

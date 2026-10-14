@@ -628,9 +628,9 @@ export default function HomePage() {
                 Remote QA for product teams shipping weekly
               </h2>
               <p className="mt-4 text-lg text-muted">
-                USA-first retainers, plus UK, Canada, Australia, and Europe —
-                USD pricing, English reporting, Slack/Jira, and follow-the-sun
-                verification.
+                Best-fit remote QA for the USA, UK, Canada, Australia, Europe,
+                and the Gulf — USD pricing, English reporting, and timezone-aware
+                handoffs.
               </p>
             </div>
           </Reveal>
@@ -689,7 +689,7 @@ export default function HomePage() {
           <Reveal>
             <div className="mt-12 rounded-2xl border border-line bg-white px-5 py-6 sm:px-8">
               <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand">
-                Top cities — USA · UK · Canada
+                Cities — USA · UK · Canada · Australia · Gulf
               </p>
               <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
                 {cityMarkets().map((city) => (

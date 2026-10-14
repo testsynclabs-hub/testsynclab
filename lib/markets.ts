@@ -32,11 +32,15 @@ export const markets: MarketPage[] = [
     navDescription: "Remote retainers with follow-the-sun coverage for US product teams.",
     tier: "country",
     eyebrow: "United States",
-    h1: "Remote QA services for US product teams",
-    title: "QA Services for US Startups | Remote Retainers from $999",
+    h1: "Best QA agency for US product teams",
+    title: "Best QA Agency USA | Remote QA Services from $999 | TestSync Lab",
     description:
-      "Hire a remote software QA partner for US startups and SaaS teams. Monthly retainers from $999 for manual testing, API checks, and Playwright automation — USD pricing, Slack/Jira, 24h audit.",
+      "Best QA agency for US startups and SaaS teams. TestSync Lab runs remote QA retainers from $999 for manual testing, API checks, and Playwright automation — USD pricing, Slack/Jira, free audit in 24 hours.",
     keywords: [
+      "best QA agency USA",
+      "best QA company USA",
+      "top QA agency United States",
+      "best software testing company USA",
       "QA services USA",
       "outsourced QA United States",
       "hire QA testers US startup",
@@ -45,7 +49,7 @@ export const markets: MarketPage[] = [
       "Playwright testing services USA",
     ],
     intro:
-      "US product teams do not need a six-week hiring cycle to stop shipping bugs. TestSync Lab is a remote QA lab: senior testers, USD monthly retainers, and a follow-the-sun cadence so an evening deploy in New York or San Francisco can be verified before your next standup.",
+      "Teams searching for the best QA agency in the USA want senior coverage this month, not a six-week hiring cycle. TestSync Lab is that remote QA lab: senior testers, USD monthly retainers, and a follow-the-sun cadence so an evening deploy in New York or San Francisco can be verified before your next standup.",
     highlights: [
       {
         title: "USD retainers, not hourly drift",
@@ -108,11 +112,15 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA retainers for Canadian SaaS — USD pricing, ET-friendly handoffs.",
     tier: "country",
     eyebrow: "Canada",
-    h1: "Remote QA services for Canadian product teams",
-    title: "QA Services for Canadian Startups | Remote Testing from $999",
+    h1: "Best QA agency for Canadian product teams",
+    title: "Best QA Agency Canada | Remote QA Services from $999 | TestSync Lab",
     description:
-      "Hire a remote software QA partner for Canadian startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira cadence and a free audit in 24 hours.",
+      "Best QA agency for Canadian startups and SaaS teams in Toronto, Vancouver, and beyond. Remote retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira and a free audit in 24 hours.",
     keywords: [
+      "best QA agency Canada",
+      "best QA company Canada",
+      "top QA agency Toronto",
+      "best software testing company Canada",
       "QA services Canada",
       "outsourced QA Canada",
       "hire QA testers Toronto",
@@ -121,7 +129,7 @@ export const markets: MarketPage[] = [
       "Playwright testing Canada",
     ],
     intro:
-      "Canadian SaaS teams in Toronto, Vancouver, Montreal, and Waterloo face the same release pressure as US peers — with smaller hiring pools. TestSync Lab gives you senior QA on a monthly retainer, invoiced in USD, without standing up a local test department first.",
+      "Canadian teams looking for the best QA agency want US-grade release coverage without a Toronto or Vancouver hiring cycle. TestSync Lab gives you senior QA on a monthly retainer, invoiced in USD, for SaaS teams in Toronto, Vancouver, Montreal, and Waterloo.",
     highlights: [
       {
         title: "Clear USD packages",
@@ -184,11 +192,15 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA retainers for UK SaaS — USD pricing, UK-hour overlap.",
     tier: "country",
     eyebrow: "United Kingdom",
-    h1: "Remote QA services for UK product teams",
-    title: "QA Services UK | Remote Testing Retainers from $999",
+    h1: "Best QA agency for UK product teams",
+    title: "Best QA Agency UK | Remote QA Services from $999 | TestSync Lab",
     description:
-      "Hire a remote software QA partner for UK startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira cadence and a free audit in 24 hours.",
+      "Best QA agency for UK startups and SaaS teams in London, Manchester, and beyond. Remote retainers from $999 USD for manual, API, and Playwright testing — UK-hour overlap, Slack/Jira, free audit in 24 hours.",
     keywords: [
+      "best QA agency UK",
+      "best QA company UK",
+      "top QA agency London",
+      "best software testing company UK",
       "QA services UK",
       "outsourced QA United Kingdom",
       "hire QA testers London",
@@ -197,7 +209,7 @@ export const markets: MarketPage[] = [
       "Playwright testing UK",
     ],
     intro:
-      "UK product teams in London, Manchester, Edinburgh, and remote-first companies hit the same release pressure as US peers — with a tighter hiring market. TestSync Lab gives you senior QA on a monthly USD retainer, with afternoon overlap into UK working hours and a follow-the-sun cycle on evening deploys.",
+      "UK teams searching for the best QA agency want senior coverage without a London hiring cycle. TestSync Lab gives product teams in London, Manchester, Edinburgh, and remote-first companies a monthly USD retainer, with afternoon overlap into UK working hours and follow-the-sun verification on evening deploys.",
     highlights: [
       {
         title: "UK-hour overlap, not a black box",
@@ -260,11 +272,15 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA retainers for AU SaaS — USD pricing, AEST-friendly handoffs.",
     tier: "country",
     eyebrow: "Australia",
-    h1: "Remote QA services for Australian product teams",
-    title: "QA Services Australia | Remote Testing from $999",
+    h1: "Best QA agency for Australian product teams",
+    title: "Best QA Agency Australia | Remote QA Services from $999 | TestSync Lab",
     description:
-      "Hire a remote software QA partner for Australian startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira cadence and a free audit in 24 hours.",
+      "Best QA agency for Australian startups and SaaS teams in Sydney, Melbourne, and beyond. Remote retainers from $999 USD for manual, API, and Playwright testing — AEST-friendly handoffs and a free audit in 24 hours.",
     keywords: [
+      "best QA agency Australia",
+      "best QA company Australia",
+      "top QA agency Sydney",
+      "best software testing company Australia",
       "QA services Australia",
       "outsourced QA Australia",
       "hire QA testers Sydney",
@@ -273,7 +289,7 @@ export const markets: MarketPage[] = [
       "Playwright testing Melbourne",
     ],
     intro:
-      "Australian SaaS teams in Sydney, Melbourne, Brisbane, and Perth face US-style release pressure with a smaller local QA pool. TestSync Lab is a remote QA lab: senior testers, USD monthly retainers, and a cadence that catches overnight deploys before your next standup.",
+      "Australian teams looking for the best QA agency want senior coverage without waiting on a Sydney or Melbourne hire. TestSync Lab is a remote QA lab for SaaS teams in Sydney, Melbourne, Brisbane, and Perth: USD monthly retainers, and a cadence that catches overnight deploys before your next standup.",
     highlights: [
       {
         title: "AEST-friendly verification",
@@ -336,11 +352,14 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA retainers for EU SaaS — USD pricing, CET overlap.",
     tier: "country",
     eyebrow: "Europe",
-    h1: "Remote QA services for European product teams",
-    title: "QA Services Europe | Remote Testing Retainers from $999 | TestSync Lab",
+    h1: "Best QA agency for European product teams",
+    title: "Best QA Agency Europe | Remote QA Services from $999 | TestSync Lab",
     description:
-      "Hire a remote software QA partner for European startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira, CET-friendly overlap, free audit in 24 hours.",
+      "Best QA agency for European startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Slack/Jira, CET-friendly overlap, free audit in 24 hours.",
     keywords: [
+      "best QA agency Europe",
+      "best QA company Europe",
+      "top QA agency EU",
       "QA services Europe",
       "outsourced QA Europe",
       "hire QA testers EU",
@@ -490,8 +509,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for NYC / EST SaaS — overnight verification.",
     tier: "city",
     eyebrow: "New York",
-    h1: "Remote QA services for New York product teams",
-    title: "QA Services New York NYC | Remote Testing Retainers from $999",
+    h1: "Best QA agency for New York product teams",
+    title: "Best QA Agency New York | NYC QA Services from $999 | TestSync Lab",
     description:
       "Hire remote QA for New York and NYC SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — EST follow-the-sun handoffs, Slack/Jira, free audit in 24 hours.",
     keywords: [
@@ -566,8 +585,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for SF and Bay Area SaaS — PST handoffs.",
     tier: "city",
     eyebrow: "San Francisco Bay Area",
-    h1: "Remote QA services for San Francisco & Bay Area teams",
-    title: "QA Services San Francisco Bay Area | Remote Retainers from $999",
+    h1: "Best QA agency for San Francisco and Bay Area teams",
+    title: "Best QA Agency San Francisco | Bay Area QA from $999 | TestSync Lab",
     description:
       "Hire remote QA for San Francisco and Bay Area SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — PST follow-the-sun handoffs, free audit in 24 hours.",
     keywords: [
@@ -642,8 +661,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for Toronto SaaS — ET handoffs, USD pricing.",
     tier: "city",
     eyebrow: "Toronto",
-    h1: "Remote QA services for Toronto product teams",
-    title: "QA Services Toronto | Remote Testing Retainers from $999 USD",
+    h1: "Best QA agency for Toronto product teams",
+    title: "Best QA Agency Toronto | Remote QA Services from $999 | TestSync Lab",
     description:
       "Hire remote QA for Toronto startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — Eastern Time handoffs, Slack/Jira, free audit.",
     keywords: [
@@ -718,8 +737,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for London SaaS — UK-hour overlap, USD retainers.",
     tier: "city",
     eyebrow: "London",
-    h1: "Remote QA services for London product teams",
-    title: "QA Services London | Remote Testing Retainers from $999",
+    h1: "Best QA agency for London product teams",
+    title: "Best QA Agency London | Remote QA Services from $999 | TestSync Lab",
     description:
       "Hire remote QA for London startups and SaaS teams. Monthly retainers from $999 USD for manual, API, and Playwright testing — UK-hour overlap, Slack/Jira, free audit in 24 hours.",
     keywords: [
@@ -1402,8 +1421,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for Vancouver / BC — PT handoffs.",
     tier: "city",
     eyebrow: "Vancouver / BC",
-    h1: "Remote QA services for Vancouver product teams",
-    title: "QA Services Vancouver | Remote Testing Retainers from $999",
+    h1: "Best QA agency for Vancouver product teams",
+    title: "Best QA Agency Vancouver | Remote QA Services from $999 | TestSync Lab",
     description:
       "Hire remote QA for Vancouver SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — PT handoffs, Slack/Jira, free audit in 24 hours.",
     keywords: [
@@ -1478,8 +1497,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for Sydney / NSW — AEST handoffs.",
     tier: "city",
     eyebrow: "Sydney / NSW",
-    h1: "Remote QA services for Sydney product teams",
-    title: "QA Services Sydney | Remote Testing Retainers from $999",
+    h1: "Best QA agency for Sydney product teams",
+    title: "Best QA Agency Sydney | Remote QA Services from $999 | TestSync Lab",
     description:
       "Hire remote QA for Sydney SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — AEST handoffs, Slack/Jira, free audit in 24 hours.",
     keywords: [
@@ -1554,8 +1573,8 @@ export const markets: MarketPage[] = [
     navDescription: "Remote QA for Melbourne / Victoria — AEST handoffs.",
     tier: "city",
     eyebrow: "Melbourne / Victoria",
-    h1: "Remote QA services for Melbourne product teams",
-    title: "QA Services Melbourne | Remote Testing Retainers from $999",
+    h1: "Best QA agency for Melbourne product teams",
+    title: "Best QA Agency Melbourne | Remote QA Services from $999 | TestSync Lab",
     description:
       "Hire remote QA for Melbourne SaaS teams. Monthly retainers from $999 for manual, API, and Playwright testing — AEST handoffs, Slack/Jira, free audit in 24 hours.",
     keywords: [
@@ -1851,6 +1870,847 @@ export const markets: MarketPage[] = [
     ogLocale: "en_GB",
     hreflang: "en-EU",
   },
+  {
+    slug: "gulf",
+    path: "/qa-services-gulf",
+    navLabel: "QA for Gulf teams",
+    navDescription: "Best-fit remote QA for UAE, Saudi Arabia, Qatar, and the wider GCC.",
+    tier: "country",
+    eyebrow: "Gulf / GCC",
+    h1: "Best QA agency for Gulf product teams",
+    title: "Best QA Agency Gulf | UAE, Saudi, Qatar QA Services | TestSync Lab",
+    description:
+      "Best QA agency for Gulf and GCC product teams. Remote retainers from $999 USD for UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman — same-day overlap, English reporting, free audit.",
+    keywords: [
+      "best QA agency Gulf",
+      "best QA company GCC",
+      "QA services Gulf",
+      "software testing company GCC",
+      "outsourced QA Middle East",
+      "hire QA testers UAE",
+      "QA services Dubai",
+      "QA services Saudi Arabia",
+      "QA services Qatar",
+    ],
+    intro:
+      "Gulf product teams in Dubai, Abu Dhabi, Riyadh, and Doha ship in English on GST and AST calendars, and local senior QA is expensive. TestSync Lab is the remote QA agency built for that market: USD retainers from $999, and a one-to-two hour timezone gap so your morning questions get answered the same day. Country pages: /qa-services-uae, /qa-services-saudi-arabia, and /qa-services-qatar.",
+    highlights: [
+      {
+        title: "Same-day overlap across the GCC",
+        detail:
+          "UAE and Oman (GST, UTC+4) sit one hour behind our lab. Saudi Arabia, Qatar, Kuwait, and Bahrain (AST, UTC+3) sit two hours behind. Standups and bug questions happen in your working day, not the next morning.",
+      },
+      {
+        title: "USD retainers finance can budget",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. Clear monthly packages for fintech, ecommerce, and marketplace teams — no surprise hourly invoices after a launch week.",
+      },
+      {
+        title: "Journeys that move money",
+        detail:
+          "Checkout, wallets, rewards, merchant admin, and API contracts. English bug reports in Slack or Jira with steps, severity, and evidence.",
+      },
+    ],
+    pains: [
+      {
+        title: "Dubai and Riyadh hires take a quarter",
+        detail:
+          "A retainer covers the next release this month. You still own the product; we own the test cycle.",
+      },
+      {
+        title: "Agencies that cannot join a GST standup",
+        detail:
+          "US-only vendors miss your day. Our overlap is built for Gulf hours, with written notes your engineers can act on.",
+      },
+      {
+        title: "Arabic and English products, one release",
+        detail:
+          "We test the English and localized journeys you ship, including RTL layout issues that break checkout on mobile.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which Gulf countries do you cover?",
+        answer:
+          "UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman, plus remote-first teams anywhere in the GCC. Start with the country page closest to you, or book a free audit at /contact.",
+      },
+      {
+        question: "Do you have an office in Dubai?",
+        answer:
+          "No. Coverage is remote from our lab, with same-day overlap into GST and AST. We invoice in USD, report in English, and work in Slack, Jira, GitHub, or Linear.",
+      },
+      {
+        question: "Is $999 enough for a Gulf fintech release?",
+        answer:
+          "Basic fits early products that need exploratory and regression coverage. Weekly shippers with payments and APIs usually fit Growth ($1,899) or Scale ($2,799). The free audit says which.",
+      },
+    ],
+    countryName: "Gulf Cooperation Council",
+    ogLocale: "en_AE",
+    hreflang: "en-AE",
+  },
+  {
+    slug: "uae",
+    path: "/qa-services-uae",
+    navLabel: "QA for UAE teams",
+    navDescription: "Best-fit remote QA for Dubai, Abu Dhabi, and UAE SaaS teams.",
+    tier: "country",
+    eyebrow: "United Arab Emirates",
+    h1: "Best QA agency for UAE product teams",
+    title: "Best QA Agency UAE | Dubai & Abu Dhabi QA from $999 | TestSync Lab",
+    description:
+      "Best QA agency in the UAE for Dubai and Abu Dhabi product teams. Remote QA retainers from $999 USD — manual, API, and Playwright testing with GST overlap and a free audit.",
+    keywords: [
+      "best QA agency UAE",
+      "best QA company Dubai",
+      "QA services UAE",
+      "software testing company UAE",
+      "outsourced QA Dubai",
+      "hire QA testers Abu Dhabi",
+      "QA services Dubai",
+      "QA agency United Arab Emirates",
+    ],
+    intro:
+      "UAE product teams in Dubai and Abu Dhabi run fintech, marketplaces, and SaaS on GST hours, and a full-time QA hire in DIFC or Abu Dhabi is a slow, expensive seat. TestSync Lab is the remote QA agency for that release train: senior testers, USD retainers from $999, and live overlap one hour ahead of GST. City pages: /qa-services-dubai and /qa-services-abu-dhabi. Gulf overview: /qa-services-gulf.",
+    highlights: [
+      {
+        title: "GST overlap for Dubai and Abu Dhabi",
+        detail:
+          "Your morning is our late morning. Bugs, severity, and evidence land in Slack or Jira while your engineers are still in the office.",
+      },
+      {
+        title: "Priced for startup runway",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. Same public packages as our US retainers, invoiced in USD.",
+      },
+      {
+        title: "Fits UAE product stacks",
+        detail:
+          "Web, mobile, Arabic/English UI, payments, and APIs. GitHub, Jira, Linear, Slack, Playwright CI.",
+      },
+    ],
+    pains: [
+      {
+        title: "Launch week still depends on founders",
+        detail:
+          "A named weekly cycle replaces last-night clicking before an app-store or marketplace release.",
+      },
+      {
+        title: "Local QA quotes that only sell hours",
+        detail:
+          "A retainer reserves capacity. Busy sprints do not turn into a surprise invoice.",
+      },
+      {
+        title: "RTL and bilingual checkout bugs",
+        detail:
+          "We test both locales on the journeys that take payment, not only the English happy path.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with Dubai and Abu Dhabi companies?",
+        answer:
+          "Yes. Most UAE clients are hybrid or remote-first. We do not sit in a Dubai office. Coverage is remote, with same-day GST overlap.",
+      },
+      {
+        question: "Can UAE companies pay in USD?",
+        answer:
+          "Yes. Public retainers are priced in USD. If finance needs a custom invoice format, say so on the audit form before kickoff.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and the next release date.",
+      },
+    ],
+    countryName: "United Arab Emirates",
+    ogLocale: "en_AE",
+    hreflang: "en-AE",
+  },
+  {
+    slug: "dubai",
+    path: "/qa-services-dubai",
+    navLabel: "QA for Dubai teams",
+    navDescription: "Best-fit remote QA for Dubai SaaS, fintech, and marketplace teams.",
+    tier: "city",
+    eyebrow: "Dubai",
+    h1: "Best QA agency for Dubai product teams",
+    title: "Best QA Agency Dubai | UAE QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Dubai for SaaS, fintech, and marketplace teams. Remote retainers from $999 USD with GST overlap, English bug reports, and a free audit in 24 hours.",
+    keywords: [
+      "best QA agency Dubai",
+      "best QA company Dubai",
+      "QA services Dubai",
+      "software testing company Dubai",
+      "outsourced QA Dubai",
+      "hire QA testers Dubai",
+      "QA agency DIFC",
+    ],
+    intro:
+      "Dubai product teams ship fast across fintech, ecommerce, and super-app style products, and DIFC salaries make a first QA hire a heavy seat. TestSync Lab is the remote QA agency for Dubai: USD retainers from $999 and GST overlap so a morning deploy is tested the same day. UAE overview: /qa-services-uae.",
+    highlights: [
+      {
+        title: "Built for Dubai release hours",
+        detail:
+          "GST standups and Slack questions land in your working day. Engineer-ready bugs include steps, severity, and evidence.",
+      },
+      {
+        title: "Cheaper than a Dubai full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Payments, rewards, and merchant flows",
+        detail:
+          "We test the journeys that move money, including failed payments, refunds, and admin permissions.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing release QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local vendors that miss the stack",
+        detail:
+          "We work in GitHub, Jira, Linear, Slack, and Playwright — the tools Dubai eng teams already use.",
+      },
+      {
+        title: "Mobile launches with no device notes",
+        detail:
+          "iOS and Android journeys are checked on the paths users actually finish.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Dubai?",
+        answer:
+          "Yes. We invoice in USD and deliver in English via Slack or Jira. Coverage is remote, with same-day GST overlap.",
+      },
+      {
+        question: "How is this different from the UAE page?",
+        answer:
+          "Same retainers and lab. This page is for Dubai search intent. National overview: /qa-services-uae. Gulf overview: /qa-services-gulf.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and the next release date.",
+      },
+    ],
+    countryName: "United Arab Emirates",
+    ogLocale: "en_AE",
+    hreflang: "en-AE",
+  },
+  {
+    slug: "abu-dhabi",
+    path: "/qa-services-abu-dhabi",
+    navLabel: "QA for Abu Dhabi teams",
+    navDescription: "Remote QA for Abu Dhabi product and enterprise teams.",
+    tier: "city",
+    eyebrow: "Abu Dhabi",
+    h1: "Best QA agency for Abu Dhabi product teams",
+    title: "Best QA Agency Abu Dhabi | UAE QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Abu Dhabi for product and enterprise teams. Remote QA retainers from $999 USD — GST overlap, English reporting, Slack/Jira, free audit.",
+    keywords: [
+      "best QA agency Abu Dhabi",
+      "QA services Abu Dhabi",
+      "software testing company Abu Dhabi",
+      "outsourced QA Abu Dhabi",
+      "hire QA testers Abu Dhabi",
+      "QA company UAE",
+    ],
+    intro:
+      "Abu Dhabi product teams ship enterprise, government-adjacent, and energy-sector digital products where a missed release is expensive. TestSync Lab provides remote QA on USD retainers from $999, with GST overlap and written evidence your engineers can ship against. UAE overview: /qa-services-uae.",
+    highlights: [
+      {
+        title: "Same-day GST coverage",
+        detail:
+          "Abu Dhabi office hours overlap our lab. Critical bugs are written up in the same working day.",
+      },
+      {
+        title: "Release gates, not a ticket dump",
+        detail:
+          "Scale adds a named lead and a go / no-go checklist. Growth adds API and Playwright coverage.",
+      },
+      {
+        title: "Least-privilege staging access",
+        detail:
+          "We confirm access, data handling, and terms before kickoff. A staging URL is enough to start the audit.",
+      },
+    ],
+    pains: [
+      {
+        title: "Enterprise vendors with a six-week start",
+        detail:
+          "A focused retainer starts in days after scope, not after a procurement novel.",
+      },
+      {
+        title: "QA notes nobody can reproduce",
+        detail:
+          "Every finding has steps, environment, severity, and evidence.",
+      },
+      {
+        title: "Bilingual UI regressions",
+        detail:
+          "Arabic and English layouts are checked on the flows that matter, including RTL breakage.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with Abu Dhabi companies?",
+        answer:
+          "Yes. Remote coverage, USD invoices, English reporting, GST overlap. We do not require an on-site team.",
+      },
+      {
+        question: "How is this different from the Dubai page?",
+        answer:
+          "Same lab and packages. This page targets Abu Dhabi. Dubai: /qa-services-dubai. UAE: /qa-services-uae.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "United Arab Emirates",
+    ogLocale: "en_AE",
+    hreflang: "en-AE",
+  },
+  {
+    slug: "saudi-arabia",
+    path: "/qa-services-saudi-arabia",
+    navLabel: "QA for Saudi teams",
+    navDescription: "Best-fit remote QA for Riyadh and Saudi product teams.",
+    tier: "country",
+    eyebrow: "Saudi Arabia",
+    h1: "Best QA agency for Saudi product teams",
+    title: "Best QA Agency Saudi Arabia | KSA QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Saudi Arabia for Riyadh and KSA product teams. Remote retainers from $999 USD — AST overlap, English reporting, manual, API, and Playwright testing.",
+    keywords: [
+      "best QA agency Saudi Arabia",
+      "best QA company KSA",
+      "QA services Saudi Arabia",
+      "software testing company Riyadh",
+      "outsourced QA KSA",
+      "hire QA testers Saudi Arabia",
+      "QA services Riyadh",
+    ],
+    intro:
+      "Saudi product teams in Riyadh and Jeddah are shipping fintech, commerce, and national-scale digital products on AST hours. Senior QA hiring does not keep up. TestSync Lab is the remote QA agency for that gap: USD retainers from $999 and a two-hour overlap into the Saudi workday. Riyadh page: /qa-services-riyadh. Gulf overview: /qa-services-gulf.",
+    highlights: [
+      {
+        title: "AST overlap for Riyadh",
+        detail:
+          "Saudi morning lines up with our midday. You get Slack answers the same day, plus written bugs before the next build.",
+      },
+      {
+        title: "Arabic and English coverage",
+        detail:
+          "We test the localized journeys you ship, including RTL layout, checkout, and account flows.",
+      },
+      {
+        title: "Clear USD packages",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. API and payment-contract checks start on Growth.",
+      },
+    ],
+    pains: [
+      {
+        title: "Riyadh hires miss the launch date",
+        detail:
+          "A retainer covers critical paths this month while you decide on a full-time seat later.",
+      },
+      {
+        title: "Payment edge cases in production",
+        detail:
+          "Failed payments, refunds, and permission gaps are first-class scenarios, not leftovers.",
+      },
+      {
+        title: "Vendors who only test the English UI",
+        detail:
+          "If Arabic is a shipping locale, it is in the cycle.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with companies in Saudi Arabia?",
+        answer:
+          "Yes. Remote coverage for Riyadh, Jeddah, and remote-first KSA teams. USD invoices, English reporting, AST overlap.",
+      },
+      {
+        question: "Can you test Arabic interfaces?",
+        answer:
+          "Yes, as part of the agreed journeys: RTL layout, copy truncation, and the flows a customer must finish. Share the locales on the audit form.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact. Share staging, stack, and the next release date.",
+      },
+    ],
+    countryName: "Saudi Arabia",
+    ogLocale: "en_AE",
+    hreflang: "en-SA",
+  },
+  {
+    slug: "riyadh",
+    path: "/qa-services-riyadh",
+    navLabel: "QA for Riyadh teams",
+    navDescription: "Remote QA for Riyadh SaaS and fintech teams.",
+    tier: "city",
+    eyebrow: "Riyadh",
+    h1: "Best QA agency for Riyadh product teams",
+    title: "Best QA Agency Riyadh | Saudi QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Riyadh for Saudi product teams. Remote QA from $999 USD with AST overlap, English bug reports, and a free audit in 24 hours.",
+    keywords: [
+      "best QA agency Riyadh",
+      "QA services Riyadh",
+      "software testing company Riyadh",
+      "outsourced QA Riyadh",
+      "hire QA testers Riyadh",
+      "QA company Saudi Arabia",
+    ],
+    intro:
+      "Riyadh product teams ship on AST calendars with Arabic and English in the same release. TestSync Lab delivers remote QA for Riyadh on USD retainers from $999, with same-day overlap and engineer-ready bugs. Saudi overview: /qa-services-saudi-arabia.",
+    highlights: [
+      {
+        title: "Built for AST release trains",
+        detail:
+          "Morning deploys in Riyadh are tested while your team is still online.",
+      },
+      {
+        title: "Cheaper than a local full-time seat",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799 — coverage this month without a long hiring cycle.",
+      },
+      {
+        title: "Same tools as your eng org",
+        detail:
+          "GitHub, Linear, Jira, Slack, Playwright CI. English reporting. Month-to-month.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders still doing Friday QA",
+        detail:
+          "A retainer replaces heroics with a named weekly cycle.",
+      },
+      {
+        title: "Local hires are slow and expensive",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+      {
+        title: "Localized UI nobody regression-tests",
+        detail:
+          "Arabic and English paths stay in the pack as the product moves.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with remote-first teams in Riyadh?",
+        answer:
+          "Yes. We invoice in USD and deliver in Slack or Jira, with AST overlap.",
+      },
+      {
+        question: "How is this different from the Saudi page?",
+        answer:
+          "Same retainers and lab. This page targets Riyadh. National overview: /qa-services-saudi-arabia.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "Saudi Arabia",
+    ogLocale: "en_AE",
+    hreflang: "en-SA",
+  },
+  {
+    slug: "qatar",
+    path: "/qa-services-qatar",
+    navLabel: "QA for Qatar teams",
+    navDescription: "Best-fit remote QA for Doha and Qatar product teams.",
+    tier: "country",
+    eyebrow: "Qatar",
+    h1: "Best QA agency for Qatar product teams",
+    title: "Best QA Agency Qatar | Doha QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Qatar for Doha product teams. Remote retainers from $999 USD — AST overlap, English reporting, manual, API, and Playwright testing, free audit.",
+    keywords: [
+      "best QA agency Qatar",
+      "best QA company Doha",
+      "QA services Qatar",
+      "software testing company Qatar",
+      "outsourced QA Doha",
+      "hire QA testers Qatar",
+    ],
+    intro:
+      "Qatar product teams in Doha run a small, expensive hiring market and still need weekly release confidence. TestSync Lab is the remote QA agency for that: USD retainers from $999 and a two-hour overlap into AST. Doha page: /qa-services-doha. Gulf overview: /qa-services-gulf.",
+    highlights: [
+      {
+        title: "AST overlap for Doha",
+        detail:
+          "Questions in your morning get answers the same day. Bugs land in Slack or Jira with repro steps.",
+      },
+      {
+        title: "A pod, not a bench",
+        detail:
+          "Named testers on a monthly retainer. Context stays warm from one release to the next.",
+      },
+      {
+        title: "Startup and enterprise paths",
+        detail:
+          "Basic for early products. Growth and Scale when APIs, payments, and CI are in the release.",
+      },
+    ],
+    pains: [
+      {
+        title: "One hire cannot cover every surface",
+        detail:
+          "Web, mobile, and API checks share one cycle instead of three vendors.",
+      },
+      {
+        title: "Offshore notes that waste the morning",
+        detail:
+          "Severity, steps, environment, and evidence — so engineers fix on the first pass.",
+      },
+      {
+        title: "No local QA bench to hire from",
+        detail:
+          "Remote coverage starts in days after a free audit.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with companies in Qatar?",
+        answer:
+          "Yes. Remote coverage for Doha and remote-first teams. USD invoices, English reporting, AST overlap.",
+      },
+      {
+        question: "How is pricing set?",
+        answer:
+          "Public retainers are Basic $999, Growth $1,899, and Scale $2,799 per month. A free audit maps your release risk to a package.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "Qatar",
+    ogLocale: "en_AE",
+    hreflang: "en-QA",
+  },
+  {
+    slug: "doha",
+    path: "/qa-services-doha",
+    navLabel: "QA for Doha teams",
+    navDescription: "Remote QA for Doha product teams.",
+    tier: "city",
+    eyebrow: "Doha",
+    h1: "Best QA agency for Doha product teams",
+    title: "Best QA Agency Doha | Qatar QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Doha for Qatar product teams. Remote QA from $999 USD with AST overlap, Slack/Jira bugs, and a free audit in 24 hours.",
+    keywords: [
+      "best QA agency Doha",
+      "QA services Doha",
+      "software testing company Doha",
+      "outsourced QA Qatar",
+      "hire QA testers Doha",
+    ],
+    intro:
+      "Doha product teams need release coverage without standing up a local test department. TestSync Lab runs remote QA for Doha on USD retainers from $999, with AST overlap. Qatar overview: /qa-services-qatar.",
+    highlights: [
+      {
+        title: "Same-day AST handoff",
+        detail:
+          "You ship in the Doha day. We verify while your team can still ask questions.",
+      },
+      {
+        title: "Clear monthly price",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. No hourly drift after a busy sprint.",
+      },
+      {
+        title: "English reporting",
+        detail:
+          "Bugs your engineers can reopen: steps, severity, environment, evidence.",
+      },
+    ],
+    pains: [
+      {
+        title: "Founders are the QA team",
+        detail:
+          "A named cycle takes release testing off the founder calendar.",
+      },
+      {
+        title: "Hiring in a small market",
+        detail:
+          "Remote coverage starts in days, not a recruiting quarter.",
+      },
+      {
+        title: "Flaky automation",
+        detail:
+          "Growth and Scale stabilize Playwright on the paths that make revenue.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with teams in Doha?",
+        answer:
+          "Yes. Remote, USD, English, AST overlap.",
+      },
+      {
+        question: "How is this different from the Qatar page?",
+        answer:
+          "Same lab. This page targets Doha search intent. National overview: /qa-services-qatar.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "Qatar",
+    ogLocale: "en_AE",
+    hreflang: "en-QA",
+  },
+  {
+    slug: "kuwait",
+    path: "/qa-services-kuwait",
+    navLabel: "QA for Kuwait teams",
+    navDescription: "Remote QA for Kuwait product teams — AST overlap.",
+    tier: "city",
+    eyebrow: "Kuwait",
+    h1: "Best QA agency for Kuwait product teams",
+    title: "Best QA Agency Kuwait | QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Kuwait for product teams. Remote QA retainers from $999 USD with AST overlap, English bug reports, and a free audit.",
+    keywords: [
+      "best QA agency Kuwait",
+      "QA services Kuwait",
+      "software testing company Kuwait",
+      "outsourced QA Kuwait",
+      "hire QA testers Kuwait",
+    ],
+    intro:
+      "Kuwait product teams ship on AST hours with a thin local QA market. TestSync Lab is the remote QA agency for that: USD retainers from $999 and same-day overlap. Gulf overview: /qa-services-gulf.",
+    highlights: [
+      {
+        title: "AST overlap",
+        detail:
+          "Kuwait office hours line up with our afternoon. Bugs are written while your engineers can still respond.",
+      },
+      {
+        title: "Monthly capacity",
+        detail:
+          "About 40 QA hours a week on Basic, Growth, and Scale. Depth changes with the package, not a thinner clock.",
+      },
+      {
+        title: "Web, mobile, and API",
+        detail:
+          "Manual exploratory first. API and Playwright when the release train needs them.",
+      },
+    ],
+    pains: [
+      {
+        title: "No bench to hire this month",
+        detail:
+          "A retainer starts after a free audit, not after a local search.",
+      },
+      {
+        title: "Vague test notes",
+        detail:
+          "We send severity, steps, and evidence, not a screenshot with no repro.",
+      },
+      {
+        title: "Release risk on payments",
+        detail:
+          "Checkout and failure paths are named in the cycle before go-live.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with companies in Kuwait?",
+        answer:
+          "Yes. Remote coverage, USD invoices, English reporting, AST overlap.",
+      },
+      {
+        question: "Where is the Gulf overview?",
+        answer:
+          "See /qa-services-gulf for UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "Kuwait",
+    ogLocale: "en_AE",
+    hreflang: "en-KW",
+  },
+  {
+    slug: "bahrain",
+    path: "/qa-services-bahrain",
+    navLabel: "QA for Bahrain teams",
+    navDescription: "Remote QA for Bahrain fintech and product teams.",
+    tier: "city",
+    eyebrow: "Bahrain",
+    h1: "Best QA agency for Bahrain product teams",
+    title: "Best QA Agency Bahrain | QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Bahrain for fintech and product teams. Remote QA from $999 USD with AST overlap, English reporting, and a free audit.",
+    keywords: [
+      "best QA agency Bahrain",
+      "QA services Bahrain",
+      "software testing company Bahrain",
+      "fintech QA Bahrain",
+      "outsourced QA Bahrain",
+      "hire QA testers Manama",
+    ],
+    intro:
+      "Bahrain’s fintech and product teams in Manama need payment-path confidence without a large local QA department. TestSync Lab runs remote QA on USD retainers from $999, with AST overlap. Gulf overview: /qa-services-gulf.",
+    highlights: [
+      {
+        title: "Fintech journeys first",
+        detail:
+          "Auth, payments, failures, refunds, and permissions — then the rest of the release.",
+      },
+      {
+        title: "AST same-day coverage",
+        detail:
+          "Manama hours overlap our lab. Written bugs land in Slack or Jira the same day.",
+      },
+      {
+        title: "API checks on Growth",
+        detail:
+          "Growth ($1,899) adds contract and webhook validation beside manual testing.",
+      },
+    ],
+    pains: [
+      {
+        title: "Payment bugs found by customers",
+        detail:
+          "A named cycle catches failed-payment and reconciliation gaps before launch.",
+      },
+      {
+        title: "Hiring is slower than the roadmap",
+        detail:
+          "Remote coverage starts in days after scope.",
+      },
+      {
+        title: "Hourly vendors during launch week",
+        detail:
+          "A retainer keeps capacity when the sprint gets busy.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you test fintech products in Bahrain?",
+        answer:
+          "Yes. We test the business journeys and APIs you scope. We do not replace a regulator’s certification sign-off.",
+      },
+      {
+        question: "Do you work in Manama hours?",
+        answer:
+          "Yes. AST overlap means same-day Slack and a weekly cadence. Short live calls can be scheduled.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "Bahrain",
+    ogLocale: "en_AE",
+    hreflang: "en-BH",
+  },
+  {
+    slug: "oman",
+    path: "/qa-services-oman",
+    navLabel: "QA for Oman teams",
+    navDescription: "Remote QA for Muscat and Oman product teams.",
+    tier: "city",
+    eyebrow: "Oman",
+    h1: "Best QA agency for Oman product teams",
+    title: "Best QA Agency Oman | Muscat QA Services from $999 | TestSync Lab",
+    description:
+      "Best QA agency in Oman for Muscat product teams. Remote QA retainers from $999 USD with GST overlap, English reporting, and a free audit.",
+    keywords: [
+      "best QA agency Oman",
+      "QA services Oman",
+      "QA services Muscat",
+      "software testing company Oman",
+      "outsourced QA Muscat",
+      "hire QA testers Oman",
+    ],
+    intro:
+      "Oman product teams in Muscat work on GST, one hour from our lab, with few senior QA hires available locally. TestSync Lab is the remote QA agency for that calendar: USD retainers from $999 and same-day coverage. Gulf overview: /qa-services-gulf.",
+    highlights: [
+      {
+        title: "GST overlap with Muscat",
+        detail:
+          "One hour apart. Your working day and ours line up for questions and bug triage.",
+      },
+      {
+        title: "Predictable monthly price",
+        detail:
+          "Basic $999 · Growth $1,899 · Scale $2,799. About 40 QA hours every week.",
+      },
+      {
+        title: "Web and mobile journeys",
+        detail:
+          "Exploratory testing, regression, and optional Playwright on the paths customers finish.",
+      },
+    ],
+    pains: [
+      {
+        title: "A small local hiring pool",
+        detail:
+          "Waiting on a Muscat full-time hire delays the release. A retainer starts in days.",
+      },
+      {
+        title: "Founder-led QA",
+        detail:
+          "The weekly cycle is named, so launch week is not a scramble.",
+      },
+      {
+        title: "Bugs without steps",
+        detail:
+          "Engineers get a repro, not a vague note.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with companies in Oman?",
+        answer:
+          "Yes. Remote coverage for Muscat and remote-first teams. USD invoices, English reporting, GST overlap.",
+      },
+      {
+        question: "How is Oman different from the UAE on timezone?",
+        answer:
+          "Both use GST (UTC+4). Overlap with our lab is about one hour, so same-day calls are straightforward.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Book a free QA audit at /contact.",
+      },
+    ],
+    countryName: "Oman",
+    ogLocale: "en_AE",
+    hreflang: "en-OM",
+  },
 ];
 
 export function getMarket(slug: string) {
@@ -1872,6 +2732,7 @@ export const marketLanguageAlternates = {
   "en-AU": "/qa-services-australia",
   "en-EU": "/qa-services-europe",
   "en-DE": "/qa-services-germany",
+  "en-AE": "/qa-services-uae",
   "x-default": "/qa-services-usa",
 } as const;
 
