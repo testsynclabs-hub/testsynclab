@@ -50,6 +50,7 @@ export const metadata: Metadata = {
       "en-GB": "/qa-services-uk",
       "en-CA": "/qa-services-canada",
       "en-AU": "/qa-services-australia",
+      "en-AE": "/qa-services-uae",
       "x-default": "/",
     },
   },
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
-    alternateLocale: ["en_GB", "en_CA", "en_AU"],
+    alternateLocale: ["en_GB", "en_CA", "en_AU", "en_AE"],
     type: "website",
     images: [
       {
