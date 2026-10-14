@@ -23,6 +23,12 @@ export function CaseStudiesSection() {
             Anonymized patterns from product teams that needed coverage before
             the next release — without hiring a full QA department.
           </p>
+          <Link
+            href="/portfolio"
+            className="mt-5 inline-flex text-sm font-bold text-brand hover:text-brand-deep"
+          >
+            Full portfolio →
+          </Link>
         </div>
         <ul className="mt-12 grid gap-6 lg:grid-cols-3">
           {caseStudies.map((item) => (
@@ -32,7 +38,12 @@ export function CaseStudiesSection() {
                   {item.industry}
                 </p>
                 <h3 className="mt-3 font-[family-name:var(--font-display)] text-xl font-bold text-slate-900">
-                  {item.title}
+                  <Link
+                    href={`/portfolio/${item.id}`}
+                    className="hover:text-brand-deep"
+                  >
+                    {item.title}
+                  </Link>
                 </h3>
                 <dl className="mt-5 space-y-4 text-sm leading-relaxed">
                   <div>

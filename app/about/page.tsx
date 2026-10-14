@@ -67,10 +67,10 @@ export default function AboutPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="/qa-agency"
+              href="/portfolio"
               className="rounded-xl border border-brand/25 bg-white px-5 py-2.5 text-sm font-bold text-brand-deep hover:bg-brand-soft"
             >
-              QA agency overview →
+              Portfolio →
             </Link>
             <Link
               href={auditHref("about-hero")}
