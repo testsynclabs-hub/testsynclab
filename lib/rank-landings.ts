@@ -1,4 +1,5 @@
 import type { MarketFaq } from "@/lib/markets";
+import { expansionLandings } from "@/lib/expansion-landings";
 import { qaIntentLandings } from "@/lib/qa-intent-landings";
 import { qaKeywordLandings } from "@/lib/qa-keyword-landings";
 import { qaTestingLandings } from "@/lib/qa-testing-landings";
@@ -912,6 +913,7 @@ export const rankLandings: RankLanding[] = [
     ],
     serviceName: "Software testing services for SaaS",
   },
+  ...expansionLandings,
   ...qaKeywordLandings,
   ...qaTestingLandings,
   ...qaIntentLandings,

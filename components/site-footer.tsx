@@ -99,6 +99,22 @@ const marketLinks = [
   { href: "/qa-services-kuwait", label: "QA for Kuwait" },
   { href: "/qa-services-bahrain", label: "QA for Bahrain" },
   { href: "/qa-services-oman", label: "QA for Oman" },
+  { href: "/qa-testing-services", label: "QA testing services" },
+  { href: "/qa-company", label: "QA company" },
+  { href: "/best-qa-services", label: "Best QA services" },
+  { href: "/qa-services-for-startups", label: "QA for startups" },
+  { href: "/software-testing-outsourcing", label: "Software testing outsourcing" },
+  { href: "/shopify-testing-services", label: "Shopify testing" },
+  { href: "/payment-testing-services", label: "Payment testing" },
+  { href: "/qa-consulting", label: "QA consulting" },
+  { href: "/localization-testing-services", label: "Localization testing" },
+  { href: "/qa-services-middle-east", label: "QA for Middle East" },
+  { href: "/qa-services-singapore", label: "QA for Singapore" },
+  { href: "/qa-services-india", label: "QA for India" },
+  { href: "/qa-services-pakistan", label: "QA for Pakistan" },
+  { href: "/qa-services-ireland", label: "QA for Ireland" },
+  { href: "/qa-services-new-zealand", label: "QA for New Zealand" },
+  { href: "/qa-services-france", label: "QA for France" },
 ] as const;
 
 export function SiteFooter() {

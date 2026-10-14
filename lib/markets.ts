@@ -1,3 +1,5 @@
+import { expansionMarkets } from "@/lib/expansion-markets";
+
 export type MarketFaq = {
   question: string;
   answer: string;
@@ -2711,6 +2713,7 @@ export const markets: MarketPage[] = [
     ogLocale: "en_AE",
     hreflang: "en-OM",
   },
+  ...expansionMarkets,
 ];
 
 export function getMarket(slug: string) {
@@ -2873,7 +2876,7 @@ export const qaAgency = {
     {
       question: "Where does TestSync Lab work from?",
       answer:
-        "We deliver remotely for product teams worldwide, with strong focus on US and Canadian SaaS buyers. Engagements run in English over Slack, Jira, and GitHub — not a walk-in storefront model.",
+        "We deliver remotely for product teams worldwide: USA, UK, Canada, Australia, Europe, the Gulf, Singapore, India, and Pakistan. Engagements run in English over Slack, Jira, and GitHub — not a walk-in storefront model.",
     },
     {
       question: "How do I hire TestSync Lab?",
@@ -3008,6 +3011,46 @@ export const marketNavChildren = [
     href: "/qa-services-amsterdam",
     label: "QA for Amsterdam",
     description: "Remote QA for Amsterdam product teams.",
+  },
+  {
+    href: "/best-qa-agency",
+    label: "Best QA agency",
+    description: "USA, UK, Canada, Australia, Gulf, and worldwide.",
+  },
+  {
+    href: "/qa-testing-services",
+    label: "QA testing services",
+    description: "Monthly QA testing for web, mobile, and API.",
+  },
+  {
+    href: "/qa-services-for-startups",
+    label: "QA for startups",
+    description: "Startup retainers from $999.",
+  },
+  {
+    href: "/shopify-testing-services",
+    label: "Shopify testing",
+    description: "Checkout and campaign QA for Shopify.",
+  },
+  {
+    href: "/payment-testing-services",
+    label: "Payment testing",
+    description: "Checkout, failure, and refund paths.",
+  },
+  {
+    href: "/qa-services-gulf",
+    label: "QA for Gulf teams",
+    description: "UAE, Saudi Arabia, Qatar, and the GCC.",
+  },
+  {
+    href: "/qa-services-middle-east",
+    label: "QA for Middle East",
+    description: "GST and AST overlap for Middle East teams.",
+  },
+  {
+    href: "/qa-services-singapore",
+    label: "QA for Singapore",
+    description: "SGT overlap for Singapore product teams.",
   },
   {
     href: "/remote-qa-services",
