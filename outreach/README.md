@@ -12,6 +12,7 @@ Lead list and email templates for remote QA outreach to IT / AI / SaaS product t
 | `HOW-TO-HEADER-FOOTER.md` | Copy HTML header+footer into Gmail (cold mail + signature) |
 | `calendly-setup.md` | Free Calendly/Cal.com → set `NEXT_PUBLIC_BOOKING_URL` on Vercel |
 | `google-ads.md` | US Search ads — paste-ready keywords, RSA copy, spend rules |
+| `clutch-profile.md` | Paste-ready Clutch listing — Basic profile, services, confidential portfolio, real-review ask |
 | `leads-50-ai-saas.csv` | ~50 public lead targets (company, site, contact, region, focus, notes) |
 | `leads-25-us-ca-au.csv` | **25 ready sends** — USA / Canada / Australia, public founder/hello emails only |
 | `leads-25-whitelabel-agencies.csv` | **25 agency partnership leads** — software houses (US/CA/AU/PK); public hello/info/contact/sales only |
