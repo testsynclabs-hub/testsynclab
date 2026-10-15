@@ -12,9 +12,18 @@ Live profile tab tak nahi banta jab tak koi **Google, LinkedIn, ya `info@testsyn
    Dashboard: [vendor.clutch.co](https://vendor.clutch.co/)
 2. Offering: **Basic** (free).
 3. Sign in with the company Google account, the LinkedIn used for [TestSync Lab](https://www.linkedin.com/company/testsync-lab/), or `info@testsynclab.com`.
-4. Paste the fields below. Save and submit for review.
-5. Clutch manually checks the site. Publish is often about **3 days**. An analyst emails when it is live. Search-bar indexing can take longer; buyers usually find you on the software-testing directory.
-6. Jab profile URL aaye (`https://clutch.co/profile/…`), usay yahan note kar dena. Site par badge us URL ke baghair mat lagana.
+4. Step 1 of 5 (`vendor.clutch.co/onboarding/goal`): select **Generate and convert leads for my business**, then **Add Company Information**.
+5. Paste the fields below. Save and submit for review.
+6. Clutch manually checks the site. Publish is often about **3 days**. An analyst emails when it is live. Search-bar indexing can take longer; buyers usually find you on the software-testing directory.
+7. Jab profile URL aaye (`https://clutch.co/profile/…`), usay yahan note kar dena. Site par badge us URL ke baghair mat lagana.
+
+### Step 1 — Select Main Goal
+
+On `https://vendor.clutch.co/onboarding/goal`, choose the middle card:
+
+**Generate and convert leads for my business**
+
+Yeh listing inbound enquiries ke liye hai. Reviews baad mein isi profile se collect hoti hain — pehla card wizard ko review-collection par le jata hai, teesra card recognition / paid badges ki taraf. Radio select karo, phir red **Add Company Information**.
 
 Analyst ko website dikhegi: [www.testsynclab.com](https://www.testsynclab.com). Woh B2B QA services page honi chahiye, blog-only nahi.
 
