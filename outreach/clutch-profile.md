@@ -45,7 +45,15 @@ Analyst ko website dikhegi: [www.testsynclab.com](https://www.testsynclab.com). 
 | Languages | English |
 | Time zone | Pakistan Standard Time (PKT, UTC+5). Delivery calendar client region ke mutabiq. |
 
-Street address aur phone site par published nahi. Form maange to **asli** registered office / number daalo. Ghar ka guess mat likho. Doosra office (US/UK) mat add karo — remote clients hain, wahan office nahi.
+### Step 4 — Add Location
+
+`vendor.clutch.co/onboarding/locations`. Sirf **ek** Headquarter. **Add Additional Location** mat dabana — US/UK office nahi hai. Clutch location 7–10 business days mein verify karta hai; tab tak woh profile par nahi dikhega.
+
+| Field | Paste this |
+| --- | --- |
+| Address | **Can't find your address? Add it in manually.** City Lahore, Punjab, Pakistan, plus the real street where the lab sits. Site par street published nahi — guess, coworking, ya ghar ka fake address mat likho. |
+| Phone Number | Asli business ya mobile number jo Clutch verify kar sake. Public number site par nahi hai. |
+| Employees At This Location | **2–9** (poori team isi city mein hai) |
 
 Logo: `public/brand/logo-icon-1024.png` (square). Wide mark chahiye ho to `public/brand/logo-horizontal.svg`.
 
