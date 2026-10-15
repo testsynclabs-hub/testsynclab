@@ -33,11 +33,13 @@ Analyst ko website dikhegi: [www.testsynclab.com](https://www.testsynclab.com). 
 | --- | --- |
 | Company name | TestSync Lab |
 | Website | `https://www.testsynclab.com` |
-| Email | `info@testsynclab.com` |
+| Sales email | `info@testsynclab.com` |
+| Scheduling link | Leave blank. Optional. No Calendly/Cal.com URL is set yet. |
+| Admin contact phone | Leave blank. Optional. No public phone number. |
 | LinkedIn | `https://www.linkedin.com/company/testsync-lab/` |
 | HQ | Lahore, Punjab, Pakistan |
-| Employees | **2–9** |
-| Founded | **2026** — legal registration year alag ho to wahi likho |
+| Total employees | **2–9** |
+| Founding year | **2026** — legal registration year alag ho to wahi likho |
 | Hourly rate | **< $25** |
 | Minimum project size | Lowest bracket that includes a **$999** start (often under $5,000 or $1,000+). **$5,000+ mat chuno.** |
 | Languages | English |
@@ -47,17 +49,15 @@ Street address aur phone site par published nahi. Form maange to **asli** regist
 
 Logo: `public/brand/logo-icon-1024.png` (square). Wide mark chahiye ho to `public/brand/logo-horizontal.svg`.
 
-### Tagline (82 characters)
+### Tagline (50 characters — live Clutch limit)
+
+Step 2 counter is **0 / 50**. Is se lamba text save nahi hoga.
 
 ```
-You close with a build. We start verification. You wake up to engineer-ready bugs.
+You close a build. Wake up to engineer-ready bugs.
 ```
 
-Agar field chhoti ho:
-
-```
-Overnight engineer-ready bugs for SaaS teams that ship every week.
-```
+Poori handoff line description mein hai.
 
 ### Summary
 
