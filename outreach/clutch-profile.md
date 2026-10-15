@@ -38,7 +38,7 @@ Street address aur phone site par published nahi. Form maange to **asli** regist
 
 Logo: `public/brand/logo-icon-1024.png` (square). Wide mark chahiye ho to `public/brand/logo-horizontal.svg`.
 
-### Tagline (80 characters)
+### Tagline (82 characters)
 
 ```
 You close with a build. We start verification. You wake up to engineer-ready bugs.
