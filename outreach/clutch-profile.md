@@ -106,6 +106,10 @@ Agar form ek line ko 70% se upar save na hone de:
 
 **Mat chuno:** Marketing, Digital marketing, Creative, Artificial Intelligence, Business Services, Engineering, HR, Data Processing, Blockchain, mobile app development, custom software development, cybersecurity, BPO. AI testing ek QA lane hai, alag AI service line nahi.
 
+### Dashboard — profile Unpublished
+
+Onboarding ke baad `vendor.clutch.co` par status **Unpublished** rehta hai. Agli click **Add focus area** hai. **Verify your business** aur red **Get Custom Recommendations** skip. Woh paid verification aur ads hain.
+
 ### Application Testing focus (100%)
 
 Jo naam dropdown mein hon, unhi ko map karo:
