@@ -87,16 +87,24 @@ Hourly band sirf Clutch ke dropdown ke liye hai. Hum hourly nahi bechte. $999 / 
 
 ## Service lines
 
-Kam az kam 2, zyada se zyada 6. Kisi ek line ko 70% se upar mat le jao. “Other” wale options skip.
+Step 5 (`vendor.clutch.co/onboarding/services`). Jo list dikhti hai woh parent categories hain. Search box mein **Application Testing** likho. Na mile to **Application development** ka **+** kholo — line andar hoti hai.
 
-| Service line | Share | Kyun |
+| Service line | Share |
+| --- | --- |
+| Application Testing | **100%** |
+
+Total **100%** hona chahiye. Har line kam az kam 10% ho to hi directory par aati hai. Sirf yeh ek line chahiye, kyunki buyers software-testing directory par dhundhte hain.
+
+Agar form ek line ko 70% se upar save na hone de:
+
+| Service line | Share | Kahan |
 | --- | --- | --- |
-| Application Testing | **70%** | Manual, API, automation, performance — yahi kaam hai |
-| IT Staff Augmentation | **30%** | Sirf tab, jab dropdown mein dedicated / embedded QA isi naam se ho |
+| Application Testing | **70%** | Application development |
+| IT Staff Augmentation | **30%** | IT Consulting, SI & Managed Services |
 
-30% ka matlab general developers rent par nahi. Summary aur focus mein likho: embedded QA capacity on a monthly retainer, not a body shop.
+30% ka matlab developers rent par nahi. Embedded QA retainer hai.
 
-**Mat chuno:** Blockchain, AR/VR, mobile app development, custom software development, cybersecurity, DevOps managed services, BPO, AI development. AI testing ek QA lane hai, product build nahi. BPO aur custom development site par “coming later” hain.
+**Mat chuno:** Marketing, Digital marketing, Creative, Artificial Intelligence, Business Services, Engineering, HR, Data Processing, Blockchain, mobile app development, custom software development, cybersecurity, BPO. AI testing ek QA lane hai, alag AI service line nahi.
 
 ### Application Testing focus (100%)
 
