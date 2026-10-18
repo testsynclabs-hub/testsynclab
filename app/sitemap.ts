@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
+import { caseStudies } from "@/lib/case-studies";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const highPriority = new Set([
     "/blog",
+    "/portfolio",
     "/contact",
     "/pricing",
     "/ai",
@@ -174,6 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/qa-agency-lahore",
     "/pricing",
     "/about",
+    "/portfolio",
     "/contact",
     "/become-a-tester",
     "/blog",
@@ -205,5 +208,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...staticRoutes, ...posts];
+  const portfolioPieces = caseStudies.map((item) => ({
+    url: `${SITE_URL}/portfolio/${item.id}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...portfolioPieces, ...posts];
 }
