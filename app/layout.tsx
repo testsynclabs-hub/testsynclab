@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@/components/analytics";
+import { AdsUtmCapture } from "@/components/ads-utm";
+import { GoogleAdsTag } from "@/components/google-ads";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import {
   organizationJsonLd,
   SITE_DESCRIPTION,
@@ -7,6 +13,7 @@ import {
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
+  websiteJsonLd,
 } from "@/lib/site";
 import "./globals.css";
 
@@ -36,21 +43,40 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   category: "technology",
   alternates: {
-    canonical: SITE_URL,
+    canonical: "/",
+    languages: {
+      en: "/",
+      "en-US": "/qa-services-usa",
+      "en-GB": "/qa-services-uk",
+      "en-CA": "/qa-services-canada",
+      "en-AU": "/qa-services-australia",
+      "x-default": "/",
+    },
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/logo-mark.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
+    alternateLocale: ["en_GB", "en_CA", "en_AU"],
     type: "website",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Enterprise Software Quality Assurance & Automation`,
+        alt: `${SITE_NAME} — Best remote QA retainers for USA startups from $999`,
       },
     ],
   },
@@ -71,12 +97,15 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    google: "Myj-hBUpjsoltJrhz47JZdWOoRqeDSgwXSMJIewj8rE",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
@@ -86,7 +115,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: JSON.stringify(organizationJsonLd),
           }}
         />
-        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}
+        />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to main content
+        </a>
+        <ScrollToTop />
+        <SiteHeader />
+        <div id="main-content" className="flex flex-1 flex-col">
+          {children}
+        </div>
+        <SiteFooter />
+        <Analytics />
+        <GoogleAdsTag />
+        <AdsUtmCapture />
       </body>
     </html>
   );

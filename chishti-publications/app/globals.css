@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3f6fb;
+  --paper-deep: #e4ecf6;
+  --card: #ffffff;
+  --ink: #102033;
+  --ink-soft: #2a3d56;
+  --muted: #52627a;
+  --line: #d5e1ef;
+  --binding: #12315a;
+  --binding-mid: #1c4b86;
+  --gilt: #1a4f8c;
+  --gilt-line: #b9d0ea;
+  --gilt-soft: #d6e6f7;
+  --seal: #1a4f8c;
+  --whatsapp: #075e54;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-binding: var(--binding);
+  --color-binding-mid: var(--binding-mid);
+  --color-gilt: var(--gilt);
+  --color-gilt-line: var(--gilt-line);
+  --color-gilt-soft: var(--gilt-soft);
+  --color-seal: var(--seal);
+  --color-whatsapp: var(--whatsapp);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(900px 420px at 0% -10%, #d7e6f8 0%, transparent 60%),
+    radial-gradient(700px 380px at 100% 0%, #e8f1fb 0%, transparent 55%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), "Source Sans 3", ui-sans-serif, sans-serif;
+  overflow-x: clip;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+}
+
+::selection {
+  background: #d4e4f7;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gilt);
+  outline-offset: 3px;
+}
+
+.kicker {
+  color: var(--gilt);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.6s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

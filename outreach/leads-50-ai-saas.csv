@@ -1,0 +1,51 @@
+company,website,contact_email_or_url,region,focus,notes
+Linear,https://linear.app,https://linear.app/contact,USA,B2B tooling,use contact form
+Vercel,https://vercel.com,https://vercel.com/contact,USA,SaaS,use contact form
+Retool,https://retool.com,https://retool.com/contact,USA,B2B tooling,use contact form
+Clerk,https://clerk.com,https://clerk.com/contact,USA,SaaS,use contact form
+Supabase,https://supabase.com,https://supabase.com/contact,USA,SaaS,use contact form
+LangChain,https://www.langchain.com,https://www.langchain.com/contact,USA,RAG/LLM,use contact form
+Pinecone,https://www.pinecone.io,https://www.pinecone.io/contact/,USA,RAG/LLM,use contact form
+PostHog,https://posthog.com,https://posthog.com/talk-to-a-human,USA,SaaS,use contact form
+LaunchDarkly,https://launchdarkly.com,https://launchdarkly.com/contact-us/,USA,B2B tooling,use contact form
+Sentry,https://sentry.io,https://sentry.io/contact/sales/,USA,SaaS,use contact form
+Neon,https://neon.tech,https://neon.tech/contact-sales,USA,SaaS,use contact form
+PlanetScale,https://planetscale.com,https://planetscale.com/contact,USA,SaaS,use contact form
+Temporal,https://temporal.io,https://temporal.io/contact,USA,B2B tooling,use contact form
+Jasper,https://www.jasper.ai,https://www.jasper.ai/contact-us,USA,AI chatbot,use contact form
+Writer,https://writer.com,https://writer.com/contact/,USA,RAG/LLM,use contact form
+Glean,https://www.glean.com,https://www.glean.com/contact,USA,RAG/LLM,use contact form
+Intercom,https://www.intercom.com,https://www.intercom.com/contact-sales,USA,AI chatbot,use contact form
+Webflow,https://webflow.com,https://webflow.com/contact,USA,SaaS,use contact form
+Airtable,https://www.airtable.com,https://www.airtable.com/company/contact-sales,USA,SaaS,use contact form
+Amplitude,https://amplitude.com,https://amplitude.com/contact,USA,SaaS,use contact form
+Hex,https://hex.tech,https://hex.tech/contact,USA,B2B tooling,use contact form
+Replicate,https://replicate.com,https://replicate.com/,USA,RAG/LLM,use contact form; public hello@ if listed
+Together AI,https://www.together.ai,https://www.together.ai/contact,USA,RAG/LLM,use contact form
+Cal.com,https://cal.com,hello@cal.com,USA,SaaS,public hello@ if listed
+Inngest,https://www.inngest.com,https://www.inngest.com/contact,USA,B2B tooling,use contact form
+GoCardless,https://gocardless.com,https://gocardless.com/contact/,UK,fintech,use contact form
+Wise,https://wise.com,https://wise.com/help/contact,UK,fintech,use contact form
+Monzo,https://monzo.com,https://monzo.com/business/,UK,fintech,use contact form
+Checkout.com,https://www.checkout.com,https://www.checkout.com/get-in-touch,UK,fintech,use contact form
+Thought Machine,https://www.thoughtmachine.net,https://www.thoughtmachine.net/contact,UK,fintech,use contact form
+Starling Bank,https://www.starlingbank.com,https://www.starlingbank.com/contact/,UK,fintech,use contact form
+Ada,https://www.ada.cx,https://www.ada.cx/contact/,Canada,AI chatbot,use contact form
+Cohere,https://cohere.com,https://cohere.com/contact-sales,Canada,RAG/LLM,use contact form
+Wealthsimple,https://www.wealthsimple.com,https://www.wealthsimple.com/en-ca/contact-us,Canada,fintech,use contact form
+Dialogue,https://www.dialogue.co,https://www.dialogue.co/en/contact-us,Canada,healthtech,use contact form
+Canva,https://www.canva.com,https://www.canva.com/contact/,Australia,SaaS,use contact form
+Culture Amp,https://www.cultureamp.com,https://www.cultureamp.com/contact,Australia,B2B tooling,use contact form
+Employment Hero,https://employmenthero.com,https://employmenthero.com/contact/,Australia,SaaS,use contact form
+SafetyCulture,https://safetyculture.com,https://safetyculture.com/contact/,Australia,B2B tooling,use contact form
+Airwallex,https://www.airwallex.com,https://www.airwallex.com/contact,Australia,fintech,use contact form
+Careem,https://www.careem.com,https://www.careem.com/en-AE/contact/,Dubai/UAE,e-commerce,use contact form
+Tabby,https://tabby.ai,https://tabby.ai/en-AE/business,Dubai/UAE,fintech,use contact form
+Bayzat,https://www.bayzat.com,https://www.bayzat.com/contact/,Dubai/UAE,SaaS,use contact form
+Property Finder,https://www.propertyfinder.ae,https://www.propertyfinder.ae/en/contact-us.html,Dubai/UAE,e-commerce,use contact form
+Lean Technologies,https://www.leantech.me,https://www.leantech.me/contact,Middle East,fintech,use contact form
+Miro,https://miro.com,https://miro.com/contact/,Global,SaaS,use contact form
+Contentful,https://www.contentful.com,https://www.contentful.com/contact/,Global,SaaS,use contact form
+Monday.com,https://monday.com,https://monday.com/w/contact,Global,B2B tooling,use contact form
+Klarna,https://www.klarna.com,https://www.klarna.com/international/business/,Global,fintech,use contact form
+Nubank,https://nubank.com.br,https://nubank.com.br/en/business/,Global,fintech,use contact form
