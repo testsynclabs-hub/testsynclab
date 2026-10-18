@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Meet Assist settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Meet Assist</h1>
+      <ol>
+        <li>Chrome mein <code>chrome://extensions</code> kholo.</li>
+        <li>Developer mode on karo.</li>
+        <li>Load unpacked se yeh <code>meet-assist</code> folder choose karo.</li>
+        <li>Neeche keys aur apna asal tajurba save karo.</li>
+        <li>Google Meet Chrome mein kholo, extension ka icon dabao, Start dabao.</li>
+      </ol>
+      <label>
+        Deepgram key
+        <input id="deepgramKey" type="password" autocomplete="off" />
+      </label>
+      <p class="note">Awaaz se text. Free key: console.deepgram.com</p>
+      <label>
+        Gemini key
+        <input id="geminiKey" type="password" autocomplete="off" />
+      </label>
+      <p class="note">Urdu aur English line. Free key: aistudio.google.com/apikey</p>
+      <label>
+        Gemini model
+        <input id="model" type="text" />
+      </label>
+      <p class="note">Agar model error aaye to gemini-flash-latest likh do.</p>
+      <label>
+        Aapka asal tajurba
+        <textarea id="experience" rows="10" placeholder="I am a junior SQA tester. I tested a shopping website by hand. Tools I have used: Chrome DevTools, Postman. I have not used Selenium."></textarea>
+      </label>
+      <p class="note">Sirf woh kaam likho jo aapne asal mein kiya hai. Tool naya project nahi banayega.</p>
+      <button id="save" type="button">Save</button>
+      <p id="saved"></p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

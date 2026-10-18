@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Standalone catalog app with its own Next.js project.
     "chishti-publications/**",
+    // Local Chrome extension, not part of the Next.js app.
+    "meet-assist/**",
   ]),
 ]);
 
