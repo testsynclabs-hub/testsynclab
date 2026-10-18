@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
+import Link from "next/link";
 import {
   AI_CONSULT_LABEL,
   isAiInquiry,
@@ -50,7 +51,10 @@ export function ContactForm({
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
     async (prev, formData) => {
       if (asString(formData.get("company_website"))) {
-        return { status: "success" };
+        return {
+          status: "success",
+          redirectTo: thanksUrl(plan, source || "direct"),
+        };
       }
 
       const fields = {
@@ -72,18 +76,21 @@ export function ContactForm({
         formData.set("source", fields.source);
       }
 
+      const href = thanksUrl(fields.plan, fields.source);
+
       // Prefer server SMTP / Resend / Brevo so inbox mail has no FormSubmit “Sponsor” ad.
       const result = await submitContact(prev, formData);
       if (result.status === "success") {
-        window.location.assign(thanksUrl(fields.plan, fields.source));
-        return result;
+        // Do not navigate inside the action — mobile browsers often ignore
+        // location.assign during useActionState transitions and leave users
+        // stuck on “Sending you to confirmation…”.
+        return { ...result, redirectTo: href };
       }
 
       // Fallback only if server mail is not configured / fails.
       try {
         if (await sendLeadFromBrowser(fields)) {
-          window.location.assign(thanksUrl(fields.plan, fields.source));
-          return { status: "success" };
+          return { status: "success", redirectTo: href };
         }
       } catch {
         // Fall through to server error message.
@@ -94,11 +101,36 @@ export function ContactForm({
     initialContactState,
   );
 
-  if (state.status === "success") {
+  const redirectTo =
+    state.status === "success"
+      ? state.redirectTo || thanksUrl(plan, source || "direct")
+      : null;
+
+  useEffect(() => {
+    if (!redirectTo) return;
+    const timer = window.setTimeout(() => {
+      window.location.replace(redirectTo);
+    }, 50);
+    return () => window.clearTimeout(timer);
+  }, [redirectTo]);
+
+  if (state.status === "success" && redirectTo) {
     return (
-      <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-8 text-center text-sm font-medium text-emerald-900">
-        Sending you to confirmation…
-      </p>
+      <div
+        className="rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-8 text-center shadow-sm"
+        role="status"
+        aria-live="polite"
+      >
+        <p className="text-sm font-medium text-emerald-900">
+          Request received — opening confirmation…
+        </p>
+        <Link
+          href={redirectTo}
+          className="mt-5 inline-flex items-center justify-center rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand/25 hover:bg-brand-deep"
+        >
+          Continue to confirmation
+        </Link>
+      </div>
     );
   }
 
