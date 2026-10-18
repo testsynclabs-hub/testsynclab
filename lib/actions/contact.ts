@@ -12,10 +12,9 @@ import {
   sanitizeSource,
 } from "@/lib/security";
 import { assertTrustedOrigin } from "@/lib/request-guards";
-import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
+import { leadMailTargets, smtpPassword } from "@/lib/lead-inbox";
+import { SITE_NAME } from "@/lib/site";
 import { sanitizeNeed, sanitizeTool } from "@/lib/client-guide";
-
-const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
 
 function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
@@ -92,9 +91,10 @@ async function sendViaSmtp(options: {
 }) {
   const host = process.env.SMTP_HOST?.trim();
   const user = process.env.SMTP_USER?.trim();
-  const pass = process.env.SMTP_PASS?.trim();
+  const pass = smtpPassword();
   if (!host || !user || !pass) return false;
 
+  const { all } = leadMailTargets();
   const preferredPort = Number(process.env.SMTP_PORT || "465");
   const attempts = [
     { port: preferredPort, secure: preferredPort === 465 },
@@ -125,7 +125,7 @@ async function sendViaSmtp(options: {
 
       await transporter.sendMail({
         from: `"${SITE_NAME} Website" <${user}>`,
-        to: LEAD_INBOX,
+        to: all,
         replyTo: options.replyTo,
         subject: options.subject,
         text: options.text,
@@ -154,6 +154,8 @@ async function sendViaResend(options: {
     process.env.RESEND_FROM?.trim() ||
     `${SITE_NAME} Website <onboarding@resend.dev>`;
 
+  const { all } = leadMailTargets();
+
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -162,7 +164,7 @@ async function sendViaResend(options: {
     },
     body: JSON.stringify({
       from,
-      to: [LEAD_INBOX],
+      to: all,
       reply_to: options.replyTo,
       subject: options.subject,
       text: options.text,
@@ -187,10 +189,11 @@ async function sendViaBrevo(options: {
   const apiKey = process.env.BREVO_API_KEY?.trim();
   if (!apiKey) return false;
 
+  const { all, to } = leadMailTargets();
   const fromEmail =
     process.env.BREVO_FROM?.trim() ||
     process.env.SMTP_USER?.trim() ||
-    LEAD_INBOX;
+    to;
 
   const response = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
@@ -201,7 +204,7 @@ async function sendViaBrevo(options: {
     },
     body: JSON.stringify({
       sender: { name: `${SITE_NAME} Website`, email: fromEmail },
-      to: [{ email: LEAD_INBOX, name: SITE_NAME }],
+      to: all.map((email) => ({ email, name: SITE_NAME })),
       replyTo: { email: options.replyTo },
       subject: options.subject,
       textContent: options.text,
@@ -278,7 +281,7 @@ export async function submitContact(
   const smtpReady = Boolean(
     process.env.SMTP_HOST?.trim() &&
       process.env.SMTP_USER?.trim() &&
-      process.env.SMTP_PASS?.trim(),
+      smtpPassword(),
   );
   const resendReady = Boolean(process.env.RESEND_API_KEY?.trim());
   const brevoReady = Boolean(process.env.BREVO_API_KEY?.trim());
@@ -298,7 +301,11 @@ export async function submitContact(
   for (const attempt of attempts) {
     try {
       if (await attempt.send({ replyTo: email, subject, text, html })) {
-        console.info("Lead emailed via", attempt.name, { plan, email });
+        console.info("Lead emailed via", attempt.name, {
+          plan,
+          email,
+          to: leadMailTargets().all,
+        });
         return { status: "success" };
       }
     } catch (error) {
