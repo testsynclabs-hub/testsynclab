@@ -18,9 +18,8 @@ import {
   sanitizeSource,
 } from "@/lib/security";
 import { assertTrustedOrigin } from "@/lib/request-guards";
+import { leadMailTargets, smtpPassword } from "@/lib/lead-inbox";
 import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
-
-const LEAD_INBOX = process.env.SITE_EMAIL?.trim() || SITE_EMAIL;
 
 function asString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
@@ -119,9 +118,10 @@ type MailPayload = {
 async function sendViaSmtp(options: MailPayload) {
   const host = process.env.SMTP_HOST?.trim();
   const user = process.env.SMTP_USER?.trim();
-  const pass = process.env.SMTP_PASS?.trim();
+  const pass = smtpPassword();
   if (!host || !user || !pass) return false;
 
+  const { all } = leadMailTargets();
   const preferredPort = Number(process.env.SMTP_PORT || "465");
   const attempts = [
     { port: preferredPort, secure: preferredPort === 465 },
@@ -152,7 +152,7 @@ async function sendViaSmtp(options: MailPayload) {
 
       await transporter.sendMail({
         from: `"${SITE_NAME} Careers" <${user}>`,
-        to: LEAD_INBOX,
+        to: all,
         replyTo: options.replyTo,
         subject: options.subject,
         text: options.text,
@@ -185,9 +185,10 @@ async function sendViaResend(options: MailPayload) {
     process.env.RESEND_FROM?.trim() ||
     `${SITE_NAME} Careers <onboarding@resend.dev>`;
 
+  const { all } = leadMailTargets();
   const body: Record<string, unknown> = {
     from,
-    to: [LEAD_INBOX],
+    to: all,
     reply_to: options.replyTo,
     subject: options.subject,
     text: options.text,
@@ -223,14 +224,15 @@ async function sendViaBrevo(options: MailPayload) {
   const apiKey = process.env.BREVO_API_KEY?.trim();
   if (!apiKey) return false;
 
+  const { all, to } = leadMailTargets();
   const fromEmail =
     process.env.BREVO_FROM?.trim() ||
     process.env.SMTP_USER?.trim() ||
-    LEAD_INBOX;
+    to;
 
   const payload: Record<string, unknown> = {
     sender: { name: `${SITE_NAME} Careers`, email: fromEmail },
-    to: [{ email: LEAD_INBOX, name: SITE_NAME }],
+    to: all.map((email) => ({ email, name: SITE_NAME })),
     replyTo: { email: options.replyTo },
     subject: options.subject,
     textContent: options.text,
@@ -411,6 +413,6 @@ export async function submitCareer(
   });
   return {
     status: "delivery",
-    message: `We could not reach ${LEAD_INBOX}. Please try again or email your CV directly.`,
+    message: `We could not reach ${SITE_EMAIL}. Please try again or email your CV directly.`,
   };
 }
