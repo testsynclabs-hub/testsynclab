@@ -9,8 +9,12 @@ import {
 } from "@/lib/cta";
 import { submitContact } from "@/lib/actions/contact";
 import type { ContactState } from "@/lib/contact-state";
+import {
+  contactThanksAbsoluteUrl,
+  navigateFormSubmit,
+} from "@/lib/formsubmit-navigate";
 import { sendLeadFromBrowser } from "@/lib/send-lead-client";
-import { SITE_EMAIL } from "@/lib/site";
+import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 import { readAdsAttribution } from "@/components/ads-utm";
 import { explainNeed, productNeedOptions, toolOptions } from "@/lib/client-guide";
 import { WantGet } from "@/components/client-guide";
@@ -92,6 +96,37 @@ export function ContactForm({
         if (await sendLeadFromBrowser(fields)) {
           return { status: "success", redirectTo: href };
         }
+      } catch {
+        // AJAX FormSubmit is often CORS-blocked — try classic POST next.
+      }
+
+      // Classic FormSubmit POST bypasses fetch CORS. Visitor leaves briefly,
+      // then returns via `_next` to /contact/thanks (Ads conversion page).
+      try {
+        navigateFormSubmit({
+          fields: {
+            name: fields.name,
+            email: fields.email,
+            _replyto: fields.email,
+            _subject: `New lead (${fields.plan}): ${fields.name}${
+              fields.company ? ` @ ${fields.company}` : ""
+            }`,
+            company: fields.company || "—",
+            website: fields.website || "—",
+            role: fields.role || "—",
+            release_date: fields.releaseDate || "—",
+            plan: fields.plan,
+            source: fields.source || "direct",
+            need: fields.need || "—",
+            tool: fields.tool || "—",
+            message: fields.message,
+            from_name: SITE_NAME,
+            _cc: SITE_EMAIL,
+          },
+          nextUrl: contactThanksAbsoluteUrl(fields.plan, fields.source),
+          endpoint: "id",
+        });
+        return { status: "success" };
       } catch {
         // Fall through to server error message.
       }

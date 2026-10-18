@@ -2,6 +2,7 @@
 
 import { useActionState, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { trackCareerSubmit } from "@/lib/analytics";
 import { submitCareer } from "@/lib/actions/careers";
 import type { CareerFormValues, CareerState } from "@/lib/career-state";
@@ -13,8 +14,12 @@ import {
   formatMb,
   isAllowedCvFile,
 } from "@/lib/careers";
+import {
+  careersAppliedAbsoluteUrl,
+  navigateFormSubmit,
+} from "@/lib/formsubmit-navigate";
 import { sendCareerFromBrowser } from "@/lib/send-career-client";
-import { SITE_EMAIL } from "@/lib/site";
+import { SITE_EMAIL, SITE_NAME } from "@/lib/site";
 
 const emptyValues: CareerFormValues = {
   name: "",
@@ -104,6 +109,8 @@ type CareersFormProps = {
 };
 
 export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
+  const searchParams = useSearchParams();
+  const appliedViaRedirect = searchParams.get("applied") === "1";
   const [values, setValues] = useState<CareerFormValues>(emptyValues);
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
@@ -217,7 +224,37 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
           };
         }
 
-        return { ...serverResult, values: nextValues };
+        // Classic FormSubmit POST (with CV) bypasses fetch CORS.
+        try {
+          navigateFormSubmit({
+            fields: {
+              name: fields.name,
+              email: fields.email,
+              _replyto: fields.email,
+              _subject: `[TestSync Lab] New tester applied: ${fields.name} (${fields.interest})`,
+              location: fields.location || "—",
+              phone: fields.phone || "—",
+              experience: fields.experience || "—",
+              skills: fields.skills || "—",
+              linkedin: fields.linkedin || "—",
+              interest: fields.interest,
+              source: fields.source || "become-a-tester",
+              note: fields.note,
+              from_name: SITE_NAME,
+              _cc: SITE_EMAIL,
+            },
+            files: [
+              { fieldName: "attachment", file: cv },
+              { fieldName: "cv", file: cv },
+            ],
+            nextUrl: careersAppliedAbsoluteUrl(),
+            endpoint: "email",
+          });
+          trackCareerSubmit({ source: fields.source });
+          return { status: "success", cvAttached: true, values: nextValues };
+        } catch {
+          return { ...serverResult, values: nextValues };
+        }
       } catch {
         try {
           const browserResult = await sendCareerFromBrowser(fields, cv);
@@ -229,6 +266,37 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
               values: nextValues,
             };
           }
+        } catch {
+          // Fall through to classic navigate.
+        }
+
+        try {
+          navigateFormSubmit({
+            fields: {
+              name: fields.name,
+              email: fields.email,
+              _replyto: fields.email,
+              _subject: `[TestSync Lab] New tester applied: ${fields.name} (${fields.interest})`,
+              location: fields.location || "—",
+              phone: fields.phone || "—",
+              experience: fields.experience || "—",
+              skills: fields.skills || "—",
+              linkedin: fields.linkedin || "—",
+              interest: fields.interest,
+              source: fields.source || "become-a-tester",
+              note: fields.note,
+              from_name: SITE_NAME,
+              _cc: SITE_EMAIL,
+            },
+            files: [
+              { fieldName: "attachment", file: cv },
+              { fieldName: "cv", file: cv },
+            ],
+            nextUrl: careersAppliedAbsoluteUrl(),
+            endpoint: "email",
+          });
+          trackCareerSubmit({ source: fields.source });
+          return { status: "success", cvAttached: true, values: nextValues };
         } catch {
           // Fall through.
         }
@@ -243,8 +311,12 @@ export function CareersForm({ source = "become-a-tester" }: CareersFormProps) {
     initialState,
   );
 
-  if (state.status === "success") {
-    return <SuccessPanel cvAttached={state.cvAttached} />;
+  if (state.status === "success" || appliedViaRedirect) {
+    return (
+      <SuccessPanel
+        cvAttached={state.status === "success" ? state.cvAttached : true}
+      />
+    );
   }
 
   const draft = values;

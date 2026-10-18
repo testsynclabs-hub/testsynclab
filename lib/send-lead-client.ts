@@ -76,16 +76,21 @@ async function readBodyWithTimeout(response: Response) {
 }
 
 async function postJson(url: string, data: Record<string, string>) {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  const body = await readBodyWithTimeout(response);
-  return { ok: response.ok, body };
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const body = await readBodyWithTimeout(response);
+    return { ok: response.ok, body };
+  } catch {
+    // CORS / Cloudflare often blocks FormSubmit fetch from the browser.
+    return { ok: false, body: null };
+  }
 }
 
 export async function sendLeadFromBrowser(fields: LeadFields) {
